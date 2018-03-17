@@ -10,6 +10,7 @@ namespace ISE182_PROJECT_G8
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Hello Chat!");
         }
     }
 }
