@@ -9,12 +9,13 @@ namespace ISE182_PROJECT_G8.presentationLayer
 {
     class GUI
     {
-        private static void displayGui()
+
+        private static void displayGui(Chatroom chatRoom)
         {
             Console.BackgroundColor = ConsoleColor.Blue;
             Console.WriteLine("Welcome to ISE_182 chat, please choose one of the options: \n");
             Console.BackgroundColor = ConsoleColor.Black;
-            Console.WriteLine("a. Rigistration");
+            Console.WriteLine("a. Registration");
             Console.WriteLine("b. Login/Logoff");
             Console.WriteLine("c. Retrieve last 10 messages from server");
             Console.WriteLine("d. Display last 20 retrieved messages");
@@ -24,17 +25,19 @@ namespace ISE182_PROJECT_G8.presentationLayer
             Console.WriteLine();
             Console.Write("Your Choice: ");
             char choice = (char)Console.Read();
-            agent(choice);
+            agent(choice,chatRoom);
         }
-        private static void agent(char choice)
+
+        //this agent will take the user wherever he wants to go//
+        public static void agent(char choice,Chatroom chatRoom) 
         {
             switch (choice)
             {
                 case 'a':
-                    //something//
+                    chatRoom.Register();
                     break;
                 case 'b':
-                    //something//
+                    chatRoom.log_inOrOff();
                     break;
                 case 'c':
                     //something//
@@ -49,19 +52,19 @@ namespace ISE182_PROJECT_G8.presentationLayer
                     //something//
                     break;
                 case 'g':
-                    
+                    //nothing to do-just break//
                     break;
             }
         }
-        private static void systemInit()
+        private static Chatroom systemInit()
         {
-            Chatroom chatRoom = new Chatroom();
-            chatRoom.chatroomInit();
+           Chatroom chatRoom = new Chatroom(); //initiates a new Chatroom//
+            return chatRoom;
         }
         public static void Main(String[]args)
         {
-            systemInit();    //initiates the chatroom, loads data from persistant layer to RAM, etc..//
-            displayGui();
+            Chatroom chatRoom=systemInit();    //initiates the chatroom, loads data from persistant layer to RAM, etc..//
+            displayGui(chatRoom);
         }
     }
 }
