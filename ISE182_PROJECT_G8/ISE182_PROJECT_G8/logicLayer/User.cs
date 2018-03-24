@@ -17,6 +17,6 @@ namespace logicLayer
             this.status = status;
         }
 
-        public void logout()
+        
     }
 }
