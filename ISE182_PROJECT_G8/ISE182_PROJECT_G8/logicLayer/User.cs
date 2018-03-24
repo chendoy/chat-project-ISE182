@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ISE182_PROJECT_G8.logicLayer
 {
-    class User
+    public class User
     {
         public String nickname;
         public int status;
@@ -26,6 +26,11 @@ namespace ISE182_PROJECT_G8.logicLayer
 
             else
             { status = 0; Console.WriteLine(this.nickname + " Logged-off Successfully"); }
+        }
+        public void retreive_n_messages(int n)
+        {
+            Console.WriteLine("complete this method");
+            Console.ReadLine();
         }
 
     }

@@ -9,6 +9,7 @@ namespace ISE182_PROJECT_G8.logicLayer
 {
     public class Chatroom
     {
+        public static int _nMessages = 10;
         private  static  String _url = "http://ise172.ise.bgu.ac.il" ;
         private int port=80;
         private User loggedInUser;
@@ -38,6 +39,15 @@ namespace ISE182_PROJECT_G8.logicLayer
             
         }
 
+        public User getLoggedInUser()
+        {
+            if(this.loggedInUser==null)
+                Console.WriteLine("No logged-in user, login first with a valid user");
+            else
+            return this.loggedInUser;
+            return null;
+        }
+     
 
 
 

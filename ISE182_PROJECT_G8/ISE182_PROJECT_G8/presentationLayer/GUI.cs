@@ -24,35 +24,35 @@ namespace ISE182_PROJECT_G8.presentationLayer
             Console.WriteLine("g. Exit");
             Console.WriteLine();
             Console.Write("Your Choice: ");
-            char choice = Console.ReadKey().KeyChar;
+            String choice = Console.ReadLine();
             Console.WriteLine();
             agent(choice,chatRoom);
         }
 
         //this agent will take the user wherever he wants to go//
-        public static void agent(char choice,Chatroom chatRoom) 
+        public static void agent(String choice,Chatroom chatRoom) 
         {
             switch (choice)
             {
-                case 'a':
+                case "a":
                     chatRoom.Register();
                     break;
-                case 'b':
+                case "b":
                     chatRoom.log_inOrOff();
                     break;
-                case 'c':
+                case "c":
+                    chatRoom.getLoggedInUser().retreive_n_messages(10);
+                    break;
+                case "d":
                     //something//
                     break;
-                case 'd':
+                case "e":
                     //something//
                     break;
-                case 'e':
+                case "f":
                     //something//
                     break;
-                case 'f':
-                    //something//
-                    break;
-                case 'g':
+                case "g":
                     //nothing to do-just break//
                     break;
             }
