@@ -29,6 +29,7 @@ namespace ISE182_PROJECT_G8.logicLayer
             User newUser = new User(nickname);    //todo: check if it doesn't already exist//
             this.userList.Add(newUser);
             persistantLayer.Saver.saveUser(newUser);
+            Console.WriteLine("Registration was Scuccessfull");
         }
 
         public void log_inOrOff()

@@ -10,7 +10,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
     class GUI
     {
 
-        private static void displayGui(Chatroom chatRoom)
+        public static void displayGui(Chatroom chatRoom)
         {
             Console.BackgroundColor = ConsoleColor.Blue;
             Console.WriteLine("Welcome to ISE_182 chat, please choose one of the options: \n");
@@ -24,7 +24,8 @@ namespace ISE182_PROJECT_G8.presentationLayer
             Console.WriteLine("g. Exit");
             Console.WriteLine();
             Console.Write("Your Choice: ");
-            char choice = (char)Console.Read();
+            char choice = Console.ReadKey().KeyChar;
+            Console.WriteLine();
             agent(choice,chatRoom);
         }
 
