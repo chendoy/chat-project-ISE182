@@ -4,17 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace logicLayer
+namespace ISE182_PROJECT_G8.logicLayer
 {
     class User
     {
         private String nickname;
-        private String status;
+        private int status;
 
-        public User(String nickname, String status)
+        public User(String nickname)
         {
             this.nickname = nickname;
-            this.status = status;
+            this.status = 0;
         }
 
         
