@@ -8,15 +8,25 @@ namespace ISE182_PROJECT_G8.logicLayer
 {
     class User
     {
-        private String nickname;
-        private int status;
+        public String nickname;
+        public int status;
 
+        //constructor//
         public User(String nickname)
         {
             this.nickname = nickname;
             this.status = 0;
         }
 
-        
+        public void loginOrOff()
+        {
+            if (status == 0)
+
+            { status = 1; Console.WriteLine(this.nickname + " Logged-in Successfully"); }
+
+            else
+            { status = 0; Console.WriteLine(this.nickname + " Logged-off Successfully"); }
+        }
+
     }
 }

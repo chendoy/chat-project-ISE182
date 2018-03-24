@@ -9,9 +9,8 @@ namespace ISE182_PROJECT_G8.persistantLayer
 {
     static class Saver
     {
-        private static String path= "C:\Users\חן\source\repos\ISE182_PROJECT_G8\ISE182_PROJECT_G8\ISE182_PROJECT_G8\persistantLayer";
-        private static List<User> persistantUserList;
-        private static List<Message> persistantMessageList;
+      //  private static String path= "C:\Users\חן\source\repos\ISE182_PROJECT_G8\ISE182_PROJECT_G8\ISE182_PROJECT_G8\persistantLayer";//
+     
 
        /*  static Saver()
         {
@@ -22,7 +21,7 @@ namespace ISE182_PROJECT_G8.persistantLayer
 
         public static void saveUser(User userToSave)
         {
-            this.persistantUserList.Add(userToSave);
+           
 
         }
     }

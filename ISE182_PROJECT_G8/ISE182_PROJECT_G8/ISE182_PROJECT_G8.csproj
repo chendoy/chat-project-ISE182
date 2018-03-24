@@ -11,6 +11,21 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,6 +46,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>ISE182_PROJECT_G8.presentationLayer.GUI</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -45,8 +63,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="communicationLayer\Communication.cs" />
-    <Compile Include="communicationLayer\IMessage.cs" />
     <Compile Include="Component1.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -54,11 +70,13 @@
       <DependentUpon>Component1.cs</DependentUpon>
     </Compile>
     <Compile Include="logicLayer\Chatroom.cs" />
+    <Compile Include="logicLayer\UserHandler.cs" />
     <Compile Include="logicLayer\ICheckable.cs" />
     <Compile Include="logicLayer\Message.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="persistantLayer\Database.cs" />
     <Compile Include="persistantLayer\Saver.cs" />
     <Compile Include="presentationLayer\GUI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -67,6 +85,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="bin\Debug\ISE182_PROJECT_G8.exe.config" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -75,6 +94,18 @@
   <ItemGroup>
     <Content Include="bin\Debug\ISE182_PROJECT_G8.exe" />
     <Content Include="bin\Debug\ISE182_PROJECT_G8.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
