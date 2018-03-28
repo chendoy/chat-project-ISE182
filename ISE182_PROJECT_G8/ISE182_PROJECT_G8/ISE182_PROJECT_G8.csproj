@@ -47,7 +47,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>ISE182_PROJECT_G8.presentationLayer.GUI</StartupObject>
+    <StartupObject>ISE182_PROJECT_G8.logicLayer.StartMain</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -63,6 +63,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="communicationLayer\Communication.cs" />
+    <Compile Include="communicationLayer\IMessage.cs" />
     <Compile Include="Component1.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -70,6 +72,8 @@
       <DependentUpon>Component1.cs</DependentUpon>
     </Compile>
     <Compile Include="logicLayer\Chatroom.cs" />
+    <Compile Include="logicLayer\Chat_EventHandler.cs" />
+    <Compile Include="logicLayer\StartMain.cs" />
     <Compile Include="logicLayer\UserHandler.cs" />
     <Compile Include="logicLayer\ICheckable.cs" />
     <Compile Include="logicLayer\Message.cs" />
@@ -79,6 +83,7 @@
     <Compile Include="persistantLayer\Database.cs" />
     <Compile Include="persistantLayer\Saver.cs" />
     <Compile Include="presentationLayer\GUI.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="logicLayer\User.cs" />
   </ItemGroup>

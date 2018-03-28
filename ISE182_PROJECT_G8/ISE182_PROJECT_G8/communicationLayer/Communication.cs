@@ -5,7 +5,7 @@ using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.Text;
 
-namespace CommunicationLayer
+namespace ISE182_PROJECT_G8.CommunicationLayer
 {
 
     public sealed class Communication // singleTon

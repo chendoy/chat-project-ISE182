@@ -1,5 +1,4 @@
-﻿using ISE182_PROJECT_G8.logicLayer;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,15 +9,15 @@ namespace ISE182_PROJECT_G8.logicLayer
     public class Chatroom
     {
         public static int _nMessages = 10;
-        private  static  String _url = "http://ise172.ise.bgu.ac.il" ;
+        public  static  String _url = "http://ise172.ise.bgu.ac.il" ;
         private int port=80;
-        private User loggedInUser;
+        private User loggedInUser; //temp...remove this//
         private List<User> userList;
         private List<Message> messageList;
 
         public Chatroom()
         {
-            this.loggedInUser = null;
+            this.loggedInUser = new User ("Chato");
             this.userList = new List<User>();
             this.messageList = new List<Message>();
         }
@@ -29,8 +28,8 @@ namespace ISE182_PROJECT_G8.logicLayer
             String nickname = Console.ReadLine();
             User newUser = new User(nickname);    //todo: check if it doesn't already exist//
             this.userList.Add(newUser);
-            persistantLayer.Saver.saveUser(newUser);
-            Console.WriteLine("Registration was Scuccessfull");
+            Console.WriteLine("Registration was Scuccessfull, Welcome to ISE_182 chat!");
+            Chat_EventHandler.chat_prepareNext(this);
         }
 
         public void log_inOrOff()
@@ -48,10 +47,23 @@ namespace ISE182_PROJECT_G8.logicLayer
             return null;
         }
      
+        public void saveUsers()
+        {
+            presenttationLayer.Saver.saveUsers(this.userList);
+        }
+        public void loadUsers()
+        {
+            this.userList = presenttationLayer.Saver.LoadUsers();
+        }
 
-
-
-
+        public void printAllUsers() //***test function****//
+        {
+            foreach(User user in userList)
+            {
+                Console.WriteLine(user.toString());
+            }
+            Console.ReadLine();
+        }
 
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ISE182_PROJECT_G8.logicLayer;
 
-namespace ISE182_PROJECT_G8.persistantLayer
+namespace ISE182_PROJECT_G8.presenttationLayer
 {
     class Database
     {
