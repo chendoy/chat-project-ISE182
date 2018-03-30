@@ -11,7 +11,7 @@ namespace ISE182_PROJECT_G8.logicLayer
     public class User
     {
         public String nickname;
-        public int status;  //0 means logged-of, 1 means logged-in//
+        public int status;  
 
         //constructor//
         public User(String nickname)
@@ -29,19 +29,29 @@ namespace ISE182_PROJECT_G8.logicLayer
             else
             { status = 0; Console.WriteLine(this.nickname + " Logged-off Successfully"); }
         }
+
+        public void log_out(Chatroom chatRoom)
+        {
+
+            chatRoom.logUserOut();
+            loginOrOff();
+        }
         public void retreive_n_messages(int n) //todo: implement this method//
         {
             Console.WriteLine("complete this method");
             Console.ReadLine();
         }
-        public void send()
+        public Message send(String url, String _group)
         {
-            Console.Write("Please Enter Your Message:");
+            Console.Write("Please Enter Your Message: ");
             String content = Console.ReadLine();
-            IMessage msg = Communication.Instance.Send(Chatroom._url, "8", this.nickname, content);
-            
+            return new Message (Communication.Instance.Send(url, _group, this.nickname, content));
         }
 
+        public String getNickname()
+        {
+            return this.nickname;
+        }
 
         public String toString()
         {

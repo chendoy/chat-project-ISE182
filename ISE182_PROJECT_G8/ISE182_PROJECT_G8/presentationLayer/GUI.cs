@@ -42,7 +42,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
                     Chat_EventHandler.Register(chatRoom);
                     break;
                 case "b":
-                  //  Chat_EventHandler.log_inOrOff(chatRoom);/
+                    Chat_EventHandler.loginOut(chatRoom);
                     break;
                 case "c":
                    // Chat_EventHandler.getLoggedInUser(chatRoom).retreive_n_messages(10);//

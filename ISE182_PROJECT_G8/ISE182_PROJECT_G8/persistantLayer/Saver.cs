@@ -7,15 +7,16 @@ using ISE182_PROJECT_G8.logicLayer;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
-namespace ISE182_PROJECT_G8.presenttationLayer
+namespace ISE182_PROJECT_G8.persistantLayer
 {
     static class Saver
     {
-        public static string Filename = @"C:\chat_database\users.bin";
+        public static string UsersFilename = @"C:\chat_database\users.bin";
+        public static string MessagesFilename = @"C:\chat_database\Messages.bin";
 
         public static void saveUsers(List<User> usersToSave)
         {
-            Stream Filestream = File.Create(Filename);
+            Stream Filestream = File.Create(UsersFilename);
             BinaryFormatter serializer = new BinaryFormatter();
             serializer.Serialize(Filestream, usersToSave);
             Filestream.Close();
@@ -23,9 +24,9 @@ namespace ISE182_PROJECT_G8.presenttationLayer
 
         public static List<User> LoadUsers()
         {
-            if(File.Exists(Filename))
+            if (File.Exists(UsersFilename))
             {
-                Stream Filestream = File.OpenRead(Filename);
+                Stream Filestream = File.OpenRead(UsersFilename);
                 BinaryFormatter deserializer = new BinaryFormatter();
                 List<User> loadedUsers = (List<User>)deserializer.Deserialize(Filestream);
                 Filestream.Close();
@@ -34,8 +35,28 @@ namespace ISE182_PROJECT_G8.presenttationLayer
             return null; //todo: implement an error here or something//
         }
 
-     
-     
+        public static void saveMessages(List<Message> MessagesToSave)
+        {
+            Stream Filestream = File.Create(MessagesFilename);
+            BinaryFormatter serializer = new BinaryFormatter();
+            serializer.Serialize(Filestream, MessagesToSave);
+            Filestream.Close();
+        }
+
+        public static List<Message> LoadMessages()
+        {
+            if (File.Exists(MessagesFilename))
+            {
+                Stream Filestream = File.OpenRead(MessagesFilename);
+                BinaryFormatter deserializer = new BinaryFormatter();
+                List<Message> loadedMessages = (List<Message>)deserializer.Deserialize(Filestream);
+                Filestream.Close();
+                return loadedMessages;
+            }
+            return null; //todo: implement an error here or something//
+
+
+        }
     }
 
 }

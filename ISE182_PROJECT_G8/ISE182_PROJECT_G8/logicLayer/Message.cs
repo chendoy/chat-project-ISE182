@@ -8,7 +8,7 @@ using ISE182_PROJECT_G8.CommunicationLayer;
 
 namespace ISE182_PROJECT_G8.logicLayer
 {
-    class Message : logicLayer.ICheckable
+    public class Message
     {
         Guid Id { get; }
         string UserName { get; }
@@ -16,20 +16,22 @@ namespace ISE182_PROJECT_G8.logicLayer
         string MessageContent { get; }
         string GroupID { get; }
 
-        public Message(String MessageContent, string GroupID, Guid Id)
+        public Message (IMessage msg)
         {
-            this.MessageContent = MessageContent;
-            this.GroupID = GroupID;
-            this.Id = Id;
+            this.Id = msg.Id;
+            this.UserName = msg.UserName;
+            this.Date = msg.Date;
+            this.MessageContent = msg.MessageContent;
+            this.GroupID = msg.GroupID;
         }
         private Boolean Check (object obj, int n) {
             throw new NotImplementedException();
         }
 
-        bool ICheckable.Check(object var, int n)
+        /*bool ICheckable.Check(object var, int n)
         {
             throw new NotImplementedException();
         }
-
+        */
     }
 }

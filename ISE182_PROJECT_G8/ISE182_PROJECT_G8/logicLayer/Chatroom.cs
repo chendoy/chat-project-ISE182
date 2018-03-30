@@ -8,18 +8,19 @@ namespace ISE182_PROJECT_G8.logicLayer
 {
     public class Chatroom
     {
+        public static String _group = "8";
         public static int _nMessages = 10;
-        public  static  String _url = "http://ise172.ise.bgu.ac.il" ;
+        public String _url = "http://localhost/" ; //localhost means non BGU environment//
         private int port=80;
-        private User loggedInUser; //temp...remove this//
+        private User loggedInUser; 
         private List<User> userList;
         private List<Message> messageList;
 
         public Chatroom()
         {
             this.loggedInUser = new User ("Chato");
-            this.userList = new List<User>();
             this.messageList = new List<Message>();
+            this.userList = new List<User>();
         }
 
         public void Register()
@@ -32,10 +33,21 @@ namespace ISE182_PROJECT_G8.logicLayer
             Chat_EventHandler.chat_prepareNext(this);
         }
 
-        public void log_inOrOff()
+        public void log_in()
         {
+            Console.Write("User name:");
             String nickname = Console.ReadLine();
-            
+            var loggedin = (from user in userList
+                            where user.getNickname().Equals(nickname)
+                            select user).FirstOrDefault();
+            if (loggedin != null)
+            {
+                this.loggedInUser = loggedin;
+                this.loggedInUser.loginOrOff();
+            }
+            else
+                Console.WriteLine("Error: no user found!");
+            Chat_EventHandler.chat_prepareNext(this);
         }
 
         public User getLoggedInUser()
@@ -49,11 +61,20 @@ namespace ISE182_PROJECT_G8.logicLayer
      
         public void saveUsers()
         {
-            presenttationLayer.Saver.saveUsers(this.userList);
+            persistantLayer.Saver.saveUsers(this.userList);
         }
         public void loadUsers()
         {
-            this.userList = presenttationLayer.Saver.LoadUsers();
+            this.userList = persistantLayer.Saver.LoadUsers();
+        }
+        public void saveMessages()
+        {
+            persistantLayer.Saver.saveMessages(this.messageList);
+        }
+        public void loadMessages()
+        {
+            if (this.messageList == null)
+                this.messageList = persistantLayer.Saver.LoadMessages();
         }
 
         public void printAllUsers() //***test function****//
@@ -62,8 +83,17 @@ namespace ISE182_PROJECT_G8.logicLayer
             {
                 Console.WriteLine(user.toString());
             }
-            Console.ReadLine();
+            Console.ReadKey();
         }
 
+        public void logUserOut()
+        {
+            this.loggedInUser = null;
+        }
+
+        public void send()
+        {
+            this.messageList.Add(this.getLoggedInUser().send(this._url, _group));
+        }
     }
 }
