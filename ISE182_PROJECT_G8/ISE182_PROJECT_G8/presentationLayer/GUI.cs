@@ -48,16 +48,16 @@ namespace ISE182_PROJECT_G8.presentationLayer
                    // Chat_EventHandler.getLoggedInUser(chatRoom).retreive_n_messages(10);//
                     break;
                 case "d":
-                    //something//
+                    Chat_EventHandler.displayNmessages(chatRoom);
                     break;
                 case "e":
-                    //something//
+                    Chat_EventHandler.displayAllMsg(chatRoom);
                     break;
                 case "f":
                     Chat_EventHandler.send(chatRoom);
                     break; 
                 case "g":
-                   Chat_EventHandler.Exit(chatRoom);
+                    Chat_EventHandler.Exit(chatRoom);
                     break;
                 case "h":
                     Chat_EventHandler.test(chatRoom);

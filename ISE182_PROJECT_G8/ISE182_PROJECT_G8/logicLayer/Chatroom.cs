@@ -9,7 +9,8 @@ namespace ISE182_PROJECT_G8.logicLayer
     public class Chatroom
     {
         public static String _group = "8";
-        public static int _nMessages = 10;
+        public static int _nMessagesRetreive = 10;
+        public static int _nMessagesDisplay = 20;
         public String _url = "http://localhost/" ; //localhost means non BGU environment//
         private int port=80;
         private User loggedInUser; 
@@ -50,6 +51,7 @@ namespace ISE182_PROJECT_G8.logicLayer
             Chat_EventHandler.chat_prepareNext(this);
         }
 
+
         public User getLoggedInUser()
         {
             if(this.loggedInUser==null)
@@ -73,7 +75,6 @@ namespace ISE182_PROJECT_G8.logicLayer
         }
         public void loadMessages()
         {
-            if (this.messageList == null)
                 this.messageList = persistantLayer.Saver.LoadMessages();
         }
 
@@ -94,6 +95,23 @@ namespace ISE182_PROJECT_G8.logicLayer
         public void send()
         {
             this.messageList.Add(this.getLoggedInUser().send(this._url, _group));
+        }
+
+        public void displayAllMsg()
+        {
+            foreach(Message msg in this.messageList)
+            {
+                Console.WriteLine(msg.toString());
+            }
+            
+        }
+
+        public void displayNmessages()
+        {
+            for(int i=0;this.messageList.ElementAtOrDefault(i)!=null & i<20;i++)
+            {
+                Console.WriteLine(this.messageList.ElementAt(i).toString());
+            }
         }
     }
 }

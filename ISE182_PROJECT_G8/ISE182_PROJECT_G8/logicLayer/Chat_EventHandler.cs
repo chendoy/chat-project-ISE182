@@ -18,8 +18,13 @@ namespace ISE182_PROJECT_G8.logicLayer
         {
             chatRoom.saveUsers();
             chatRoom.saveMessages();
-            Console.WriteLine("Hope to see you soon!");
-            System.Threading.Thread.Sleep(4000);
+            Console.Write("Thank you for using ISE_182 chat!");
+            Console.Write(".");
+            System.Threading.Thread.Sleep(1000);
+            Console.Write(".");
+            System.Threading.Thread.Sleep(1000);
+            Console.Write(".");
+            System.Threading.Thread.Sleep(1000);
         }
 
         //makes the chat be ready for the next user input//
@@ -48,6 +53,18 @@ namespace ISE182_PROJECT_G8.logicLayer
                 chatRoom.log_in();
             else
                 logeed_in_user.log_out(chatRoom);
+            Chat_EventHandler.chat_prepareNext(chatRoom);
+        }
+
+        public static void displayAllMsg(Chatroom chatRoom)
+        {
+            chatRoom.displayAllMsg();
+            Chat_EventHandler.chat_prepareNext(chatRoom);
+        }
+
+        public static void displayNmessages(Chatroom chatRoom)
+        {
+            chatRoom.displayNmessages();
             Chat_EventHandler.chat_prepareNext(chatRoom);
         }
 

@@ -8,6 +8,7 @@ using ISE182_PROJECT_G8.CommunicationLayer;
 
 namespace ISE182_PROJECT_G8.logicLayer
 {
+    [Serializable]
     public class Message
     {
         Guid Id { get; }
@@ -28,6 +29,23 @@ namespace ISE182_PROJECT_G8.logicLayer
             throw new NotImplementedException();
         }
 
+        public String getUserName()
+        {
+            return this.UserName;
+        }
+        public String getContent()
+        {
+            return this.MessageContent;
+        }
+        public DateTime getTime()
+        {
+            return this.Date;
+        }
+
+        public String toString()
+        {
+            return this.Date + " " + this.UserName + ": " + this.MessageContent;
+        }
         /*bool ICheckable.Check(object var, int n)
         {
             throw new NotImplementedException();

@@ -53,7 +53,7 @@ namespace ISE182_PROJECT_G8.persistantLayer
                 Filestream.Close();
                 return loadedMessages;
             }
-            return null; //todo: implement an error here or something//
+            return new List<Message>(); //todo: implement an error here or something//
 
 
         }

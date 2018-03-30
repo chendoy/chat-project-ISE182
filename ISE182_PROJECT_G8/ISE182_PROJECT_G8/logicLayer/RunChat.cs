@@ -8,7 +8,7 @@ using ISE182_PROJECT_G8.presentationLayer;
 
 namespace ISE182_PROJECT_G8.logicLayer
 {
-    class StartMain
+    class RunChat
     {
         private static Chatroom systemInit()
         {
