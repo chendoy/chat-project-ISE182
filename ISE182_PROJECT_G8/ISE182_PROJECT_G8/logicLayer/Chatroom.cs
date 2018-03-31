@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ISE182_PROJECT_G8.CommunicationLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -113,5 +114,22 @@ namespace ISE182_PROJECT_G8.logicLayer
                 Console.WriteLine(this.messageList.ElementAt(i).toString());
             }
         }
+
+        public void retreive()
+        {
+            List<IMessage> imsgRetreived = Communication.Instance.GetTenMessages(this._url);
+
+            List<Message> msgRetreived = new List<Message>();
+            foreach (IMessage imsg in imsgRetreived)
+                msgRetreived.Add(new Message(imsg));
+
+            messageList.AddRange(msgRetreived);
+            foreach (Message msgItem in msgRetreived)
+            {
+                Console.WriteLine(msgItem.ToString());
+                Console.WriteLine("");
+            }
+        }
+
     }
 }

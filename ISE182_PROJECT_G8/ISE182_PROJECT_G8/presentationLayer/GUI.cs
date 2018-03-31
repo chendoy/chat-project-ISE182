@@ -26,7 +26,10 @@ namespace ISE182_PROJECT_G8.presentationLayer
             Console.WriteLine("g. Exit");
             Console.WriteLine("h. Test tools (For us - not for release)");
             Console.WriteLine();
-            Console.Write("Your Choice: ");
+            Console.BackgroundColor = ConsoleColor.Blue;
+            Console.Write("Your Choice:");
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.Write(" ");
             String choice = Console.ReadLine();
             Console.WriteLine();
 
@@ -45,7 +48,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
                     Chat_EventHandler.loginOut(chatRoom);
                     break;
                 case "c":
-                   // Chat_EventHandler.getLoggedInUser(chatRoom).retreive_n_messages(10);//
+                    Chat_EventHandler.retreiveMessages(chatRoom);
                     break;
                 case "d":
                     Chat_EventHandler.displayNmessages(chatRoom);

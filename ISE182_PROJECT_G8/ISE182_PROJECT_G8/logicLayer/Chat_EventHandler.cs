@@ -68,6 +68,12 @@ namespace ISE182_PROJECT_G8.logicLayer
             Chat_EventHandler.chat_prepareNext(chatRoom);
         }
 
+        public static void retreiveMessages(Chatroom chatRoom)
+        {
+            chatRoom.retreive();
+            Chat_EventHandler.chat_prepareNext(chatRoom);
+        }
+
         public static void test(Chatroom chatRoom)
         {
 
