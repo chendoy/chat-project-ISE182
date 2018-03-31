@@ -18,5 +18,6 @@ What is left to do?
 
 ***Please write in whatsapp before you start coding something so we will know***
 
-Basic guideline for the code: 
+# Basic guideline for the code: 
+
 RunChat-->GUI-->Chat_EventHandler-->Chatroom-->anything else depends on the user's choice
