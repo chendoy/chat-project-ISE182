@@ -3,7 +3,7 @@ ISE BGU project-Group 8
 
 "todo" comments in the code means uncompleted feature we need to implement.
 
-What is left to do?
+What is left to do? (update this on the go)
 
 - handling error/exceptions
 
