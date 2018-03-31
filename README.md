@@ -11,7 +11,7 @@ What is left to do?
 
 - sorting of messages
 
--cheking 150 characters of message before sending
+- cheking 150 characters of message before sending
 
 - implementation of the logger
 
