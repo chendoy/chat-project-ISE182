@@ -1,7 +1,7 @@
 # ISE182_project
 ISE BGU project-Group 8
 
-"todo" means uncompleted feature we need to implement.
+"todo" comments in the code means uncompleted feature we need to implement.
 
 What is left to do?
 
