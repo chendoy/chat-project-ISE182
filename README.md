@@ -11,7 +11,7 @@ What is left to do? (update this on the go)
 
 - sorting of messages
 
-- cheking 150 characters of message before sending
+- checking 150 characters of message before sending
 
 - implementation of the logger (https://moodle2.bgu.ac.il/moodle/mod/forum/discuss.php?d=253650)
 
