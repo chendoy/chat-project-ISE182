@@ -1,20 +1,23 @@
 # ISE182_project
 ISE BGU project-Group 8
 
-"todo" means uncompleted feature we need to implement.
+"todo" comments in the code means uncompleted feature we need to implement.
 
-What does the chat knows to do at this point? (wed 28/03/18 20:30)
+What is left to do? (update this on the go)
 
--basic GUI
--supports registration of a new user
+- handling error/exceptions
 
--supports persisting users to database and loading them to RAM when chat inits
+- working with handlers of objects instead of objects themselves
 
--sending new message works but needs more implementation
+- sorting of messages
 
-What is left?
+- cheking 150 characters of message before sending
 
--anything else
+- implementation of the logger (https://moodle2.bgu.ac.il/moodle/mod/forum/discuss.php?d=253650)
 
 
 ***Please write in whatsapp before you start coding something so we will know***
+
+# Basic guideline for the code: 
+
+RunChat-->GUI-->Chat_EventHandler-->Chatroom-->anything else depends on the user's choice
