@@ -25,9 +25,6 @@ namespace ISE182_PROJECT_G8.logicLayer
             this.MessageContent = msg.MessageContent;
             this.GroupID = msg.GroupID;
         }
-        private Boolean Check (object obj, int n) {
-            throw new NotImplementedException();
-        }
 
         public String getUserName()
         {
@@ -46,10 +43,6 @@ namespace ISE182_PROJECT_G8.logicLayer
         {
             return this.Date + " " + this.UserName + ": " + this.MessageContent;
         }
-        /*bool ICheckable.Check(object var, int n)
-        {
-            throw new NotImplementedException();
-        }
-        */
+    
     }
 }

@@ -7,14 +7,12 @@ using ISE182_PROJECT_G8.logicLayer;
 
 
 namespace ISE182_PROJECT_G8.presentationLayer
-{
-
+{ 
     class GUI
     {
-
         public static void displayGui(Chatroom chatRoom)
         {
-            Console.BackgroundColor = ConsoleColor.Blue;
+            Console.BackgroundColor = ConsoleColor.Blue; //UI tweak//
             Console.WriteLine("Welcome to ISE_182 chat, please choose one of the options: \n");
             Console.BackgroundColor = ConsoleColor.Black;
             Console.WriteLine("a. Registration");
@@ -24,19 +22,16 @@ namespace ISE182_PROJECT_G8.presentationLayer
             Console.WriteLine("e. Display all retrieved messages");
             Console.WriteLine("f. Write (and send) a new message (max. Length 150 characters)");
             Console.WriteLine("g. Exit");
-            Console.WriteLine("h. Test tools (For us - not for release)");
-            Console.WriteLine();
+            Console.WriteLine("h. Test tools (For us - not for release) \n");
             Console.BackgroundColor = ConsoleColor.Blue;
             Console.Write("Your Choice:");
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.Write(" ");
-            String choice = Console.ReadLine();
-            Console.WriteLine();
+            Console.BackgroundColor = ConsoleColor.Black; Console.Write(" ");
+            String choice = Console.ReadLine(); Console.WriteLine();
 
             agent(choice, chatRoom);
         }
 
-        //this agent will take the user wherever he wants to go//
+        //this agent will take the user wherever he wants to go depends on his 'choice'//
         public static void agent(String choice, Chatroom chatRoom)
         {
             switch (choice)
@@ -62,13 +57,11 @@ namespace ISE182_PROJECT_G8.presentationLayer
                 case "g":
                     Chat_EventHandler.Exit(chatRoom);
                     break;
-                case "h":
+                case "h": //test functions - not for release//
                     Chat_EventHandler.test(chatRoom);
                     break;
             }
         }
-
-
     }
 }
 

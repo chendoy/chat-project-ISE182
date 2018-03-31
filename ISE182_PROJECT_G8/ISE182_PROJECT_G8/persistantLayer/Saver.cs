@@ -9,6 +9,12 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace ISE182_PROJECT_G8.persistantLayer
 {
+
+    /* 
+     * this class of static methods handles persisting and reloading serializable objects such as 'User' and 'Message' to RAM
+     * and from filesystem in order to maintain quick access of the chat system to its database
+     */
+
     static class Saver
     {
         public static string UsersFilename = @"C:\chat_database\users.bin";
@@ -32,7 +38,7 @@ namespace ISE182_PROJECT_G8.persistantLayer
                 Filestream.Close();
                 return loadedUsers;
             }
-            return null; //todo: implement an error here or something//
+            return new List<User>(); //todo: implement an error here or something//
         }
 
         public static void saveMessages(List<Message> MessagesToSave)

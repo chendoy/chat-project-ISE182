@@ -103,7 +103,6 @@ namespace ISE182_PROJECT_G8.CommunicationLayer
                     return res;
                 }
             }
-
             private static CommunicationMessage getMessage(JToken jToken)
             {
                 return new CommunicationMessage(

@@ -8,13 +8,13 @@ namespace ISE182_PROJECT_G8.logicLayer
 {
     public static class UserHandler
     {
-        public static void log_inOrOff()
+        public static Boolean existIn(User user, List<User> userList)
         {
-            Console.WriteLine("Enter User Name:");
-            String nickname = Console.ReadLine();
-            User newUser = new User(nickname);    //todo: check if it doesn't already exist//
-           
+            var loggedin = (from user_in_list in userList
+                            where user_in_list.getNickname().Equals(user.nickname)
+                            select user_in_list).FirstOrDefault();
 
+            return loggedin != null;
         }
     }
 }
