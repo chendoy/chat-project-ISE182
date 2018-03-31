@@ -13,7 +13,7 @@ What is left to do? (update this on the go)
 
 - cheking 150 characters of message before sending
 
-- implementation of the logger (log4net or something similar. Guy posted in the forum he might be giving instructions to this)
+- implementation of the logger (https://moodle2.bgu.ac.il/moodle/mod/forum/discuss.php?d=253650)
 
 
 ***Please write in whatsapp before you start coding something so we will know***
