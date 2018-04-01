@@ -14,6 +14,8 @@ What is left to do? (update this on the go)
 
 - implementation of the logger (https://moodle2.bgu.ac.il/moodle/mod/forum/discuss.php?d=253650)
 
+- adding option to "go back" on each menu (like I did on "register")
+
 
 ***Please write in whatsapp before you start coding something so we will know***
 
