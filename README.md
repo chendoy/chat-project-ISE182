@@ -16,6 +16,8 @@ What is left to do? (update this on the go)
 
 - adding option to "go back" on each menu (like I did on "register")
 
+- updating the LLD & HLD
+
 
 ***Please write in whatsapp before you start coding something so we will know***
 
