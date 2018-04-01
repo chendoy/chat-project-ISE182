@@ -1,4 +1,4 @@
-# ISE 182 BGU project - group 8
+# ISE 182 BGU Project - Group #8
 
 "todo" comments in the code means uncompleted feature we need to implement.
 
