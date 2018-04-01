@@ -17,7 +17,7 @@ namespace ISE182_PROJECT_G8.persistantLayer
 
     static class Saver
     {
-        public static string UsersFilename = @"C:\chat_database\users.bin";
+        public static string UsersFilename = @"C:\chat_database\Users.bin";
         public static string MessagesFilename = @"C:\chat_database\Messages.bin";
 
         public static void saveUsers(List<User> usersToSave)

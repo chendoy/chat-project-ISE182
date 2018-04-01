@@ -11,12 +11,22 @@ namespace ISE182_PROJECT_G8.logicLayer
     public class User
     {
         public String nickname;
+        private int groupID;
         public int status;  //0 - logged off, 1 - logged-in//
 
-        public User(String nickname)
+        public User(String nickname, int groupID)
         {
-            this.nickname = nickname;
-            this.status = 0; 
+            if (UserHandler.isValid(nickname, groupID))
+            {
+                this.nickname = nickname;
+                this.status = 0;
+                this.groupID = groupID;
+            }
+            else
+            {
+                Console.WriteLine("Error: nickname or Group ID is not valid"); //todo: implement an error here//
+            }
+
         }
 
         public String getNickname()
@@ -24,9 +34,14 @@ namespace ISE182_PROJECT_G8.logicLayer
             return this.nickname;
         }
 
+        public int getGroupID()
+        {
+            return this.groupID;
+        }
+
         public String toString()
         {
-            return this.nickname;
+            return this.nickname+"["+this.getGroupID()+"]";
         }
 
         public void loginOrOff() //flips the user login status - log-in if it was off and vice versa//

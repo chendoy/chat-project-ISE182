@@ -32,8 +32,10 @@ namespace ISE182_PROJECT_G8.logicLayer
             {
                 String nickname = Console.ReadLine();
                 if (nickname != "x")
-                { 
-                User newUser = new User(nickname);
+                {
+                Console.WriteLine("Group id: ");
+                int groupID = Convert.ToInt32(Console.ReadLine());
+                    User newUser = new User(nickname, groupID);
                 bool alreadyExist = UserHandler.existIn(newUser, this.userList);
 
                 if (!alreadyExist)
@@ -43,7 +45,7 @@ namespace ISE182_PROJECT_G8.logicLayer
                 }
                 else
                 {
-                    Console.WriteLine("User name already exiast, please pick another user name or 'x' to cancel");
+                    Console.WriteLine("User name already exist, please pick another user name or 'x' to cancel");
                     goto Notfound;
                 }
               }
@@ -146,7 +148,10 @@ namespace ISE182_PROJECT_G8.logicLayer
 
         public void displayAllMsg()
         {
-            foreach(Message msg in this.messageList)
+            Console.Write("Enter user name for filtering: ");
+            String nickname=Console.ReadLine();
+            var messages = (from msg in messageList where msg.getUserName().Equals(nickname) select msg);
+            foreach(Message msg in messages)
             {
                 Console.WriteLine(msg.toString());
             }
