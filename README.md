@@ -16,6 +16,8 @@ What is left to do? (update this on the go)
 
 - adding option to "go back" on each menu (like I did on "register")
 
+- now there are printings (WriteLine) from the logic layer ("Rigesteration was successful.." etc). We need to decide whether ALL printings should be from the presentation layer and there move all those printings there.
+
 - updating the LLD & HLD
 
 *Please write in whatsapp before you start coding something so we will know*
