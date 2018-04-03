@@ -157,7 +157,7 @@ namespace ISE182_PROJECT_G8.logicLayer
                 }
                 else
                 {
-                    present_handler.output("Message is to long so it did not sent");
+                    present_handler.output("Message length limit exceeded - max. 150 characters! ");
                 }
             }
         }
