@@ -34,7 +34,7 @@ namespace ISE182_PROJECT_G8.logicLayer
                 String nickname = Console.ReadLine();
                 if (nickname != "x")
                 {
-                Console.WriteLine("Group id: ");
+                    present_handler.output("Group id: ");
                 int groupID = Convert.ToInt32(Console.ReadLine());
                     User newUser = new User(nickname, groupID);
                 bool alreadyExist = UserHandler.existIn(newUser, this.userList);
@@ -42,11 +42,11 @@ namespace ISE182_PROJECT_G8.logicLayer
                 if (!alreadyExist)
                 {
                     this.userList.Add(newUser);
-                    Console.WriteLine("Registration was Scuccessfull, Welcome to ISE_182 chat!");
+                        present_handler.output("Registration was Scuccessfull, Welcome to ISE_182 chat!");
                 }
                 else
                 {
-                    Console.WriteLine("User name already exist, please pick another user name or 'x' to cancel");
+                        present_handler.output("User name already exist, please pick another user name or 'x' to cancel");
                     goto Notfound;
                 }
               }
@@ -55,8 +55,8 @@ namespace ISE182_PROJECT_G8.logicLayer
 
         public void log_in()
         {
-            Console.Write("User name:");
-            String nickname = Console.ReadLine();
+            present_handler.output("User name:");
+            String nickname = present_handler.get();
 
             //linq query to find existing user in 'userList'//
 
@@ -69,7 +69,7 @@ namespace ISE182_PROJECT_G8.logicLayer
                 this.loggedInUser.loginOrOff(); //changes the 'User' object status//
             }
             else
-                Console.WriteLine("Error: no user found!"); //todo: implement an error//
+                present_handler.output("Error: no user found!"); //todo: implement an error//
         }
 
         public User getLoggedInUser() 
@@ -105,8 +105,8 @@ namespace ISE182_PROJECT_G8.logicLayer
             User logged_in_user=getLoggedInUser();
             if (logged_in_user != null) //a user is already logged-in//
             {
-                Console.WriteLine(logged_in_user.getNickname() + " is currently logged-in, do you want to change user? Y/N");
-                String choice = Console.ReadLine();
+                present_handler.output(logged_in_user.getNickname() + " is currently logged-in, do you want to change user? Y/N");
+                String choice = present_handler.get();
                 switch (choice)
                 {
                     case "Y":
@@ -164,12 +164,12 @@ namespace ISE182_PROJECT_G8.logicLayer
 
         public void displayAllMsg()
         {
-            Console.Write("Enter user name for filtering: ");
-            String nickname=Console.ReadLine();
+            present_handler.output("Enter user name for filtering: ");
+            String nickname= present_handler.get();
             var messages = (from msg in messageList where msg.getUserName().Equals(nickname) select msg);
             foreach(Message msg in messages)
             {
-                Console.WriteLine(msg.toString());
+                present_handler.output(msg.toString());
             }
             
         }
@@ -179,7 +179,7 @@ namespace ISE182_PROJECT_G8.logicLayer
         {
             for(int i=0;this.messageList.ElementAtOrDefault(i)!=null & i<20;i++)
             {
-                Console.WriteLine(this.messageList.ElementAt(i).toString());
+                present_handler.output(this.messageList.ElementAt(i).toString());
             }
         }
 
@@ -198,8 +198,8 @@ namespace ISE182_PROJECT_G8.logicLayer
             //prints the messages//
             foreach (Message msgItem in msgRetreived)
             {
-                Console.WriteLine(msgItem.ToString());
-                Console.WriteLine("");
+                present_handler.output(msgItem.ToString());
+                present_handler.output("");
             }
         }
 
@@ -207,7 +207,7 @@ namespace ISE182_PROJECT_G8.logicLayer
         {
             foreach (User user in userList)
             {
-                Console.WriteLine(user.toString());
+                present_handler.output(user.toString());
             }
             Console.ReadKey();
         }
@@ -219,7 +219,6 @@ namespace ISE182_PROJECT_G8.logicLayer
             {
                 return false;
             }
-
             return true;
         }
 
