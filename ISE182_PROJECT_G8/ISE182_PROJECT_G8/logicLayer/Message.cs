@@ -43,6 +43,10 @@ namespace ISE182_PROJECT_G8.logicLayer
         {
             return "Guid: " + this.Id  +"\n"+"Time: " +this.Date  +"\n"+ "User: "+ this.UserName + "[" + this.GroupID + "]" + "\n" +"Message: "+ this.MessageContent+"\n";
         }
+        public Guid getGuid()
+        {
+            return this.Id;
+        }
     
     }
 }

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ISE182_PROJECT_G8.presentationLayer;
+
 
 namespace ISE182_PROJECT_G8.logicLayer
 {
@@ -39,7 +41,7 @@ namespace ISE182_PROJECT_G8.logicLayer
         //makes the chat ready for the next user input//
         public static void chat_ready(Chatroom chatroom)
         {
-            Console.WriteLine("What would you like to do next?");
+            present_handler.output("What would you like to do next?");
             String choice = Console.ReadLine();
             presentationLayer.GUI.agent(choice, chatroom);
         }
@@ -82,7 +84,7 @@ namespace ISE182_PROJECT_G8.logicLayer
             * */
         public static void test(Chatroom chatRoom)
         {
-            Console.WriteLine("Choose a test function:");
+            present_handler.output("Choose a test function:");
             string choice = Console.ReadLine();
             switch(choice)
             {
@@ -96,9 +98,9 @@ namespace ISE182_PROJECT_G8.logicLayer
                 case "c":
                     User loggedIn = chatRoom.getLoggedInUser();
                     if (loggedIn != null)
-                        Console.WriteLine("logged in: " + loggedIn.getNickname());
+                        present_handler.output("logged in: " + loggedIn.getNickname());
                     else
-                        Console.WriteLine("No logged in User");
+                        present_handler.output("No logged in User");
                     Chat_EventHandler.chat_ready(chatRoom);
                     break;
             }
