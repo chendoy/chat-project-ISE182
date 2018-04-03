@@ -1,4 +1,5 @@
 ﻿using ISE182_PROJECT_G8.CommunicationLayer;
+using ISE182_PROJECT_G8.presentationLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -138,11 +139,26 @@ namespace ISE182_PROJECT_G8.logicLayer
         {
             User loggedInUser = getLoggedInUser();
             if (loggedInUser == null)
-                Console.WriteLine("No logged in user found, login first!");
+            {
+                String msg = "No logged in user found, login first!";
+                presentationLayer.present_handler.output(msg);
+
+            }
+
             else
             {
-                Message sentMsg = loggedInUser.send(this._url, _group); //asks the logged in user instance to send the message//
-                this.messageList.Add(sentMsg); //adds the sent message to the chat's message list (RAM)//
+                present_handler.output("Please enter your message:");
+                String sentMsg = present_handler.get();
+                Boolean IsOk = checkmsg(sentMsg);
+                if (IsOk)
+                {
+                    Message message = loggedInUser.send(this._url, _group, sentMsg); //asks the logged in user instance to send the message//
+                    this.messageList.Add(message); //adds the sent message to the chat's message list (RAM)//
+                }
+                else
+                {
+                    present_handler.output("Message is to long so it did not sent");
+                }
             }
         }
 
@@ -194,6 +210,17 @@ namespace ISE182_PROJECT_G8.logicLayer
                 Console.WriteLine(user.toString());
             }
             Console.ReadKey();
+        }
+        // Checks the message length
+        private static Boolean checkmsg(String message)
+        {
+            int length = message.Length;
+            if (length > 150)
+            {
+                return false;
+            }
+
+            return true;
         }
 
     }

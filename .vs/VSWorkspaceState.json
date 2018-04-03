@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "\\ISE182_PROJECT_G8",
+    "\\ISE182_PROJECT_G8\\ISE182_PROJECT_G8",
+    "\\ISE182_PROJECT_G8\\ISE182_PROJECT_G8\\logicLayer",
+    "\\ISE182_PROJECT_G8\\ISE182_PROJECT_G8\\persistantLayer",
+    "\\ISE182_PROJECT_G8\\ISE182_PROJECT_G8\\presentationLayer",
+    "\\ISE182_PROJECT_G8\\packages\\Newtonsoft.Json.11.0.1"
+  ],
+  "SelectedNode": "\\ISE182_PROJECT_G8\\ISE182_PROJECT_G8\\presentationLayer\\presentation_handler.cs",
+  "PreviewInSolutionExplorer": false
+}
