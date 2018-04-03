@@ -6,8 +6,6 @@ What is left to do? (update this on the go)
 
 - handling error/exceptions
 
-- working with handlers of objects instead of objects themselves
-
 - sorting of messages
 
 - implementation of the logger (https://moodle2.bgu.ac.il/moodle/mod/forum/discuss.php?d=253650)
