@@ -73,6 +73,7 @@
     </Compile>
     <Compile Include="logicLayer\Chatroom.cs" />
     <Compile Include="logicLayer\Chat_EventHandler.cs" />
+    <Compile Include="logicLayer\MessageHandler.cs" />
     <Compile Include="logicLayer\RunChat.cs" />
     <Compile Include="logicLayer\UserHandler.cs" />
     <Compile Include="logicLayer\ICheckable.cs" />

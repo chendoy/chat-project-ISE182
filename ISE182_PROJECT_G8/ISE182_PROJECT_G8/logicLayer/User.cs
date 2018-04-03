@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ISE182_PROJECT_G8.CommunicationLayer;
+using ISE182_PROJECT_G8.presentationLayer;
 
 namespace ISE182_PROJECT_G8.logicLayer
 {
@@ -24,7 +25,7 @@ namespace ISE182_PROJECT_G8.logicLayer
             }
             else
             {
-                Console.WriteLine("Error: nickname or Group ID is not valid"); //todo: implement an error here//
+                present_handler.output("Error: nickname or Group ID is not valid"); //todo: implement an error here//
             }
 
         }
@@ -48,10 +49,10 @@ namespace ISE182_PROJECT_G8.logicLayer
         {
             if (status == 0)
 
-            { status = 1; Console.WriteLine(this.nickname + " Logged-in Successfully"); }
+            { status = 1; present_handler.output(this.nickname + " Logged-in Successfully"); }
 
             else
-            { status = 0; Console.WriteLine(this.nickname + " Logged-off Successfully"); }
+            { status = 0; present_handler.output(this.nickname + " Logged-off Successfully"); }
         }
 
         public void log_out(Chatroom chatRoom)
