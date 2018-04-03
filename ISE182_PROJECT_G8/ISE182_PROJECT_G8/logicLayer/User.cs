@@ -60,11 +60,9 @@ namespace ISE182_PROJECT_G8.logicLayer
             this.loginOrOff();
         }
 
-        public Message send(String url, String _group)
+        public Message send(String url, String _group, String message)
         {
-            Console.Write("Please Enter Your Message: ");
-            String content = Console.ReadLine();
-            return new Message (Communication.Instance.Send(url, _group, this.nickname, content));
+            return new Message (Communication.Instance.Send(url, _group, this.nickname, message));
         }
     }
 }
