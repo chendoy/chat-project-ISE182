@@ -28,7 +28,7 @@ namespace ISE182_PROJECT_G8.logicLayer
 
         public void Register()
         {
-            Console.WriteLine("Enter User Name to Register or 'x' to cancel:");
+            present_handler.output("Enter User Name to Register or 'x' to cancel:");
             Notfound: //will be used in goto statement//
             {
                 String nickname = Console.ReadLine();
@@ -131,6 +131,7 @@ namespace ISE182_PROJECT_G8.logicLayer
         {
             if (getLoggedInUser() != null)
             {
+                this.loggedInUser.loginOrOff();
                 this.loggedInUser = null;
             }
         }
@@ -157,15 +158,17 @@ namespace ISE182_PROJECT_G8.logicLayer
                 }
                 else
                 {
-                    present_handler.output("Message is to long so it did not sent");
+                    present_handler.output("Message length limit exceeded - max. 150 characters! ");
                 }
             }
         }
 
         public void displayAllMsg()
         {
+            
             present_handler.output("Enter user name for filtering: ");
             String nickname= present_handler.get();
+            present_handler.output("******************************");
             var messages = (from msg in messageList where msg.getUserName().Equals(nickname) select msg);
             foreach(Message msg in messages)
             {
@@ -185,6 +188,7 @@ namespace ISE182_PROJECT_G8.logicLayer
 
         public void retreive()
         {
+            //retreives the messages from the server//
             List<IMessage> imsgRetreived = Communication.Instance.GetTenMessages(this._url); //asks communication layer to retreive messages//
 
             //generates a list of type: 'Messege' from list of type: 'IMessege'//
@@ -193,14 +197,10 @@ namespace ISE182_PROJECT_G8.logicLayer
                 msgRetreived.Add(new Message(imsg));
 
             //adds the retreived messages as a whole to the chat's messages list//
-            messageList.AddRange(msgRetreived);
-            
-            //prints the messages//
-            foreach (Message msgItem in msgRetreived)
-            {
-                present_handler.output(msgItem.ToString());
-                present_handler.output("");
-            }
+            MessageHandler.addUniqueByGuid(this.messageList, msgRetreived);
+            //***ADD SORT BY TIME STAMP HERE***//
+            present_handler.output("Messages retreived successfuly");
+      
         }
 
         public void printAllUsers() //***test function****//
