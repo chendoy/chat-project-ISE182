@@ -39,5 +39,16 @@ namespace ISE182_PROJECT_G8.logicLayer
             */
             return sorted;
         }
+
+        // Checks the message length
+        public static Boolean isValid(String message)
+        {
+            int length = message.Length;
+            if (length > 150)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }

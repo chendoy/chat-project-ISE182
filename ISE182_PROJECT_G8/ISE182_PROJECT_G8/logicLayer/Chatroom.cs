@@ -126,32 +126,14 @@ namespace ISE182_PROJECT_G8.logicLayer
             }
         }
 
-        public void send()
+        public void Send(string msg)
         {
             User loggedInUser = getLoggedInUser();
-            if (loggedInUser == null)
-            {
-                String msg = "No logged in user found, login first!";
-                presentationLayer.present_handler.output(msg);
 
-            }
-
-            else
-            {
-                present_handler.output("Please enter your message:");
-                String sentMsg = present_handler.get();
-                Boolean IsOk = checkmsg(sentMsg);
-                if (IsOk)
-                {
-                    Message message = loggedInUser.send(this._url, _group, sentMsg); //asks the logged in user instance to send the message//
-                    this.messageList.Add(message); //adds the sent message to the chat's message list (RAM)//
-                }
-                else
-                {
-                    present_handler.output("Message length limit exceeded - max. 150 characters! ");
-                }
-            }
+            Message message = loggedInUser.send(this._url, _group, msg); //asks the logged in user instance to send the message//
+            this.messageList.Add(message); //adds the sent message to the chat's message list (RAM)//
         }
+        
 
         public void displayAllMsg()
         {
@@ -200,16 +182,6 @@ namespace ISE182_PROJECT_G8.logicLayer
                 present_handler.output(user.toString());
             }
             Console.ReadKey();
-        }
-        // Checks the message length
-        private static Boolean checkmsg(String message)
-        {
-            int length = message.Length;
-            if (length > 150)
-            {
-                return false;
-            }
-            return true;
         }
 
     }

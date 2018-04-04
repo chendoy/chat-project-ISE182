@@ -33,9 +33,9 @@ namespace ISE182_PROJECT_G8.presentationLayer
                         goto Choice;
                         break;
                     case "b":
-                        if (GUI_EventHandler.Login(chatroom))
+                        if(!GUI_EventHandler.Login(chatroom))
                         {
-                            DisplayUserGUI(chatroom);
+                            goto Choice;
                         }
                         break;
                     case "c":
@@ -48,10 +48,51 @@ namespace ISE182_PROJECT_G8.presentationLayer
             }
         }
 
-        public static void DisplayUserGUI(Chatroom chatroom)
+        public static void DisplayUserGUI(Chatroom chatroom, string nickname)
         {
-            Console.WriteLine("USerGUI");
-            Console.ReadKey();
+            Console.Clear();
+            Console.BackgroundColor = ConsoleColor.Blue; //UI tweak//
+            Console.WriteLine(String.Format("Welcome back {0}, please choose one of the options: \n", nickname));
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.WriteLine("a. Write (and send) a new message (max. Length 150 characters)");
+            Console.WriteLine("b. Retrieve last 10 messages from server");
+            Console.WriteLine("c. Display last 20 retrieved messages");
+            Console.WriteLine("d. Display all retrieved messages (by certain user)");
+            Console.WriteLine("e. Logout");
+            Console.WriteLine("f. Change user");
+            Console.WriteLine("g. Exit");
+
+            Console.Write("Your Choice:");
+            Console.BackgroundColor = ConsoleColor.Black; Console.Write(" ");
+            String choice = Console.ReadLine(); Console.WriteLine();
+
+            switch (choice)
+            {
+                case "a":
+                    GUI_EventHandler.SendMessage(chatroom);
+                    break;
+                case "b":
+                    Chat_EventHandler.retreiveMessages(chatroom);
+                    break;
+                case "c":
+                    Chat_EventHandler.displayNmessages(chatroom);
+                    break;
+                case "d":
+                    Chat_EventHandler.displayAllMsg(chatroom);
+                    break;
+                case "e":
+                    
+                    break;
+                case "f":
+                    Chat_EventHandler.loginOut(chatroom);
+                    break;
+                case "g":
+                    GUI_EventHandler.Exit(chatroom);
+                    break;
+                case "h": //test functions - not for release//
+                    Chat_EventHandler.test(chatroom);
+                    break;
+            }
         }
         //public static void displayGui(Chatroom chatRoom)
         //{
@@ -99,7 +140,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
                     Chat_EventHandler.displayAllMsg(chatRoom);
                     break;
                 case "f":
-                    Chat_EventHandler.send(chatRoom);
+                    //Chat_EventHandler.send(chatRoom);
                     break; 
                 case "g":
                     Chat_EventHandler.Exit(chatRoom);
@@ -110,13 +151,6 @@ namespace ISE182_PROJECT_G8.presentationLayer
             }
         }
 
-        //makes the chat ready for the next user input//
-        private static void ChatReadyVisitor(Chatroom chatroom)
-        {
-            Console.WriteLine("What would you like to do next?");
-            String choice = Console.ReadLine();
-            VisitorAgent(choice, chatroom);
-        }
     }
 }
 

@@ -49,10 +49,15 @@ namespace ISE182_PROJECT_G8.logicLayer
             presentationLayer.GUI.agent(choice, chatroom);
         }
 
-        public static void send(Chatroom chatRoom)
+        public static bool Send(Chatroom chatRoom, string msg)
         {
-             chatRoom.send();
-             Chat_EventHandler.chat_ready(chatRoom);
+            if (!MessageHandler.isValid(msg))
+            {
+                return false;
+            }
+
+            chatRoom.Send(msg);
+            return true;
         }
 
         public static void loginOut(Chatroom chatRoom)

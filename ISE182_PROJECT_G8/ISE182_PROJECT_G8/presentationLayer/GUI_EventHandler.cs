@@ -54,6 +54,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
             {
                 Console.WriteLine(nickname + " Logged -in Successfully");
                 System.Threading.Thread.Sleep(1000);
+                GUI.DisplayUserGUI(chatroom, nickname);
             }
             else
             {
@@ -66,6 +67,34 @@ namespace ISE182_PROJECT_G8.presentationLayer
         public static void ExitVisitor(Chatroom chatroom)
         {
             Chat_EventHandler.ExitVisitor(chatroom);
+            Console.Write("Thank you for using ISE_182 chat!");
+
+            //moving dot while "Thank You" message is shown//
+
+            Console.Write(".");
+            System.Threading.Thread.Sleep(1000);
+            Console.Write(".");
+            System.Threading.Thread.Sleep(1000);
+            Console.Write(".");
+            System.Threading.Thread.Sleep(1000);
+        }
+
+        public static void SendMessage(Chatroom chatroom)
+        {
+            Console.WriteLine("Please enter your message:");
+            string msg = Console.ReadLine();
+
+            if (!Chat_EventHandler.Send(chatroom, msg))
+            {
+                Console.WriteLine("Message length limit exceeded - max. 150 characters!");
+            }
+        }
+
+
+
+        public static void Exit(Chatroom chatroom)
+        {
+            Chat_EventHandler.Exit(chatroom);
             Console.Write("Thank you for using ISE_182 chat!");
 
             //moving dot while "Thank You" message is shown//
