@@ -18,3 +18,13 @@ C:\Users\user\Source\Repos\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\ob
 C:\Users\user\Source\Repos\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8.csproj.CopyComplete
 C:\Users\user\Source\Repos\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8.exe
 C:\Users\user\Source\Repos\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8.pdb
+C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8.csprojResolveAssemblyReference.cache
+C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8.csproj.CoreCompileInputs.cache
+C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8.exe
+C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8.pdb
+C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\bin\Debug\ISE182_PROJECT_G8.exe.config
+C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\bin\Debug\ISE182_PROJECT_G8.exe
+C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\bin\Debug\ISE182_PROJECT_G8.pdb
+C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8.csproj.CopyComplete

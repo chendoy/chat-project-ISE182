@@ -21,7 +21,7 @@ namespace ISE182_PROJECT_G8.logicLayer
         public static void Main(String[] args)
         {
             Chatroom chatRoom = systemInit();    //initiates the chatroom, loads persistant data to RAM, etc..//
-            GUI.displayGui(chatRoom);
+            GUI.DisplayVisitorGUI(chatRoom);
 
         }
     }

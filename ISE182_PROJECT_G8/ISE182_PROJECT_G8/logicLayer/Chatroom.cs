@@ -14,50 +14,35 @@ namespace ISE182_PROJECT_G8.logicLayer
         public static int _nMessagesRetreive = 10; //magic number//
         public static int _nMessagesDisplay = 20;  //magic number//
         public String _url = "http://localhost/"; //localhost means non BGU environment, for BGU: http://ise172.ise.bgu.ac.il //
-        private int port=80;
-        private User loggedInUser; 
+        private int port = 80;
+        private User loggedInUser;
         private List<User> userList;  //in RAM, retreived from persistant layer//
         private List<Message> messageList; //in RAM, retreived from persistant layer//
 
         public Chatroom()
         {
-            this.loggedInUser=null;
+            this.loggedInUser = null;
             this.messageList = new List<Message>();
             this.userList = new List<User>();
         }
 
-        public void Register()
+        public bool Register(String nickname, int groupID)
         {
-            present_handler.output("Enter User Name to Register or 'x' to cancel:");
-            Notfound: //will be used in goto statement//
-            {
-                String nickname = Console.ReadLine();
-                if (nickname != "x")
-                {
-                    present_handler.output("Group id: ");
-                int groupID = Convert.ToInt32(Console.ReadLine());
-                    User newUser = new User(nickname, groupID);
-                bool alreadyExist = UserHandler.existIn(newUser, this.userList);
+            User newUser = new User(nickname, groupID); // If not valid - need to improve 
+            bool alreadyExist = UserHandler.existIn(newUser, this.userList);
 
-                if (!alreadyExist)
-                {
-                    this.userList.Add(newUser);
-                        present_handler.output("Registration was Scuccessfull, Welcome to ISE_182 chat!");
-                }
-                else
-                {
-                        present_handler.output("User name already exist, please pick another user name or 'x' to cancel");
-                    goto Notfound;
-                }
-              }
+            if (!alreadyExist)
+            {
+                this.userList.Add(newUser);
+                return true;
             }
+
+            return false;
         }
 
-        public void log_in()
-        {
-            present_handler.output("User name:");
-            String nickname = present_handler.get();
 
+        public bool Login(string nickname)
+        {
             //linq query to find existing user in 'userList'//
 
             var loggedin = (from user in userList
@@ -67,18 +52,21 @@ namespace ISE182_PROJECT_G8.logicLayer
             {
                 this.loggedInUser = loggedin; //changes the 'Chat' object status//
                 this.loggedInUser.loginOrOff(); //changes the 'User' object status//
+                return true;
             }
             else
-                present_handler.output("Error: no user found!"); //todo: implement an error//
+            {
+                return false; //todo: implement an error//
+            }
         }
 
-        public User getLoggedInUser() 
-        {     
+        public User getLoggedInUser()
+        {
             return this.loggedInUser;
         }
-     
+
         // next 4 static methods are related to persistant layer: save/load users/messages//
-        
+
         //1//
         public void saveUsers()
         {
@@ -97,12 +85,12 @@ namespace ISE182_PROJECT_G8.logicLayer
         //4//
         public void loadMessages()
         {
-                this.messageList = persistantLayer.Saver.LoadMessages();
+            this.messageList = persistantLayer.Saver.LoadMessages();
         }
 
         public void loginOut()
         {
-            User logged_in_user=getLoggedInUser();
+            User logged_in_user = getLoggedInUser();
             if (logged_in_user != null) //a user is already logged-in//
             {
                 present_handler.output(logged_in_user.getNickname() + " is currently logged-in, do you want to change user? Y/N");
@@ -125,6 +113,8 @@ namespace ISE182_PROJECT_G8.logicLayer
                 log_in();
 
         }
+
+        public void log_in() { /*old*/}
 
 
         public void logUserOut()
@@ -165,22 +155,22 @@ namespace ISE182_PROJECT_G8.logicLayer
 
         public void displayAllMsg()
         {
-            
+
             present_handler.output("Enter user name for filtering: ");
-            String nickname= present_handler.get();
+            String nickname = present_handler.get();
             present_handler.output("******************************");
             var messages = (from msg in messageList where msg.getUserName().Equals(nickname) select msg);
-            foreach(Message msg in messages)
+            foreach (Message msg in messages)
             {
                 present_handler.output(msg.toString());
             }
-            
+
         }
 
         //displaying specific number off messages//
         public void displayNmessages()
         {
-            for(int i=0;this.messageList.ElementAtOrDefault(i)!=null & i<20;i++)
+            for (int i = 0; this.messageList.ElementAtOrDefault(i) != null & i < 20; i++)
             {
                 present_handler.output(this.messageList.ElementAt(i).toString());
             }
@@ -200,7 +190,7 @@ namespace ISE182_PROJECT_G8.logicLayer
             MessageHandler.addUniqueByGuid(this.messageList, msgRetreived);
             //***ADD SORT BY TIME STAMP HERE***//
             present_handler.output("Messages retreived successfuly");
-      
+
         }
 
         public void printAllUsers() //***test function****//

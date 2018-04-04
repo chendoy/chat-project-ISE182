@@ -14,28 +14,31 @@ namespace ISE182_PROJECT_G8.logicLayer
 
     class Chat_EventHandler
     {
-        public static void Register(Chatroom chatRoom)
+        public static bool? Register(Chatroom chatRoom, String nickname, int groupID)
         {
-            chatRoom.Register();
-            Chat_EventHandler.chat_ready(chatRoom);
+            if (!UserHandler.isValid(nickname, groupID))
+            {
+                return null;
+            }
+                
+            return chatRoom.Register(nickname, groupID);
         }
 
+        public static bool Login(Chatroom chatRoom, String nickname)
+        {
+            return chatRoom.Login(nickname);
+        }
 
-        public static void Exit(Chatroom chatRoom)
+        public static void ExitVisitor(Chatroom chatRoom)
         {
             chatRoom.saveUsers(); //persisting registered users data//
             chatRoom.saveMessages(); //persisting received messages data//
+        }
+
+        public static void Exit(Chatroom chatRoom)
+        {
             chatRoom.logUserOut(); //log the current user out//
-            Console.Write("Thank you for using ISE_182 chat!");
-
-            //moving dot while "Thank You" message is shown//
-
-            Console.Write(".");
-            System.Threading.Thread.Sleep(1000);
-            Console.Write(".");
-            System.Threading.Thread.Sleep(1000);
-            Console.Write(".");
-            System.Threading.Thread.Sleep(1000);
+            ExitVisitor(chatRoom);
         }
 
         //makes the chat ready for the next user input//
