@@ -21,6 +21,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
             Console.WriteLine("c. Exit");
             Choice:
             {
+                Console.BackgroundColor = ConsoleColor.Blue;
                 Console.Write("Your Choice:");
                 Console.BackgroundColor = ConsoleColor.Black; Console.Write(" ");
                 String choice = Console.ReadLine(); Console.WriteLine();
@@ -62,36 +63,47 @@ namespace ISE182_PROJECT_G8.presentationLayer
             Console.WriteLine("f. Change user");
             Console.WriteLine("g. Exit");
 
-            Console.Write("Your Choice:");
-            Console.BackgroundColor = ConsoleColor.Black; Console.Write(" ");
-            String choice = Console.ReadLine(); Console.WriteLine();
-
-            switch (choice)
+            ChoiceUser:
             {
-                case "a":
-                    GUI_EventHandler.SendMessage(chatroom);
-                    break;
-                case "b":
-                    Chat_EventHandler.retreiveMessages(chatroom);
-                    break;
-                case "c":
-                    Chat_EventHandler.displayNmessages(chatroom);
-                    break;
-                case "d":
-                    Chat_EventHandler.displayAllMsg(chatroom);
-                    break;
-                case "e":
-                    
-                    break;
-                case "f":
-                    Chat_EventHandler.loginOut(chatroom);
-                    break;
-                case "g":
-                    GUI_EventHandler.Exit(chatroom);
-                    break;
-                case "h": //test functions - not for release//
-                    Chat_EventHandler.test(chatroom);
-                    break;
+                Console.BackgroundColor = ConsoleColor.Blue;
+                Console.Write("Your Choice:");
+                Console.BackgroundColor = ConsoleColor.Black; Console.Write(" ");
+                String choice = Console.ReadLine(); Console.WriteLine();
+
+                switch (choice)
+                {
+                    case "a":
+                        GUI_EventHandler.SendMessage(chatroom);
+                        Console.WriteLine("What would you like to do next?");
+                        goto ChoiceUser;
+                        break;
+                    case "b":
+                        GUI_EventHandler.RetreiveMessages(chatroom);
+                        Console.WriteLine("What would you like to do next?");
+                        goto ChoiceUser;
+                        break;
+                    case "c":
+                        GUI_EventHandler.Display20messages(chatroom);
+                        Console.WriteLine("What would you like to do next?");
+                        goto ChoiceUser;
+                        break;
+                    case "d":
+                        Chat_EventHandler.displayAllMsg(chatroom);
+                        break;
+                    case "e":
+
+                        break;
+                    case "f":
+                        Chat_EventHandler.loginOut(chatroom);
+                        break;
+                    case "g":
+                        GUI_EventHandler.Exit(chatroom);
+                        break;
+                    case "h": //test functions - not for release//
+                        Chat_EventHandler.test(chatroom);
+                        break;
+                }
+
             }
         }
         //public static void displayGui(Chatroom chatRoom)
@@ -131,10 +143,10 @@ namespace ISE182_PROJECT_G8.presentationLayer
                     Chat_EventHandler.loginOut(chatRoom);
                     break;
                 case "c":
-                    Chat_EventHandler.retreiveMessages(chatRoom);
+                    //Chat_EventHandler.retreiveMessages(chatRoom);
                     break;
                 case "d":
-                    Chat_EventHandler.displayNmessages(chatRoom);
+                    //Chat_EventHandler.displayNmessages(chatRoom);
                     break;
                 case "e":
                     Chat_EventHandler.displayAllMsg(chatRoom);

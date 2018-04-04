@@ -150,15 +150,18 @@ namespace ISE182_PROJECT_G8.logicLayer
         }
 
         //displaying specific number off messages//
-        public void displayNmessages()
+        public string DisplayNmessages(int n)
         {
-            for (int i = 0; this.messageList.ElementAtOrDefault(i) != null & i < 20; i++)
+            StringBuilder stringBuilder = new StringBuilder();
+            for (int i = 0; this.messageList.ElementAtOrDefault(i) != null & i < n; i++)
             {
-                present_handler.output(this.messageList.ElementAt(i).toString());
+                stringBuilder.AppendLine(this.messageList.ElementAt(i).toString());
             }
+
+            return stringBuilder.ToString();
         }
 
-        public void retreive()
+        public void RetreiveMessages()
         {
             //retreives the messages from the server//
             List<IMessage> imsgRetreived = Communication.Instance.GetTenMessages(this._url); //asks communication layer to retreive messages//
@@ -171,8 +174,6 @@ namespace ISE182_PROJECT_G8.logicLayer
             //adds the retreived messages as a whole to the chat's messages list//
             MessageHandler.addUniqueByGuid(this.messageList, msgRetreived);
             //***ADD SORT BY TIME STAMP HERE***//
-            present_handler.output("Messages retreived successfuly");
-
         }
 
         public void printAllUsers() //***test function****//

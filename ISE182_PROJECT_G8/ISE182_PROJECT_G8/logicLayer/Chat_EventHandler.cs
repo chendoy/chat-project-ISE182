@@ -60,6 +60,17 @@ namespace ISE182_PROJECT_G8.logicLayer
             return true;
         }
 
+        public static void RetreiveMessages(Chatroom chatRoom)
+        {
+            chatRoom.RetreiveMessages();
+        }
+
+        //displaying s specific number (n) of retreived messages//
+        public static string DisplayNmessages(Chatroom chatRoom, int n)
+        {
+            return chatRoom.DisplayNmessages(n);
+        }
+
         public static void loginOut(Chatroom chatRoom)
         {
             chatRoom.loginOut();
@@ -72,18 +83,9 @@ namespace ISE182_PROJECT_G8.logicLayer
             Chat_EventHandler.chat_ready(chatRoom);
         }
 
-        //displaying s specific number (n) of retreived messages//
-        public static void displayNmessages(Chatroom chatRoom)
-        {
-            chatRoom.displayNmessages();
-            Chat_EventHandler.chat_ready(chatRoom);
-        }
+        
 
-        public static void retreiveMessages(Chatroom chatRoom)
-        {
-            chatRoom.retreive();
-            Chat_EventHandler.chat_ready(chatRoom);
-        }
+
 
         /*test functions:
             * a: prints all regiestered users//

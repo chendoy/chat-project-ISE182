@@ -90,7 +90,24 @@ namespace ISE182_PROJECT_G8.presentationLayer
             }
         }
 
+        public static void RetreiveMessages(Chatroom chatroom)
+        {
+            try
+            {
+                Chat_EventHandler.RetreiveMessages(chatroom);
+                Console.WriteLine("Messages retreived successfuly!");
+            }
+            catch
+            {
+                Console.WriteLine("Error: Something went wrong");
+            }
+        }
 
+        public static void Display20messages(Chatroom chatroom)
+        {
+            string messages = Chat_EventHandler.DisplayNmessages(chatroom, 20);
+            Console.WriteLine(messages);
+        }
 
         public static void Exit(Chatroom chatroom)
         {
