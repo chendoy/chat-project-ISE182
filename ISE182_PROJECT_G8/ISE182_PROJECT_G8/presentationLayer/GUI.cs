@@ -88,7 +88,9 @@ namespace ISE182_PROJECT_G8.presentationLayer
                         goto ChoiceUser;
                         break;
                     case "d":
-                        Chat_EventHandler.displayAllMsg(chatroom);
+                        GUI_EventHandler.DisplayMessagesByUser(chatroom);
+                        Console.WriteLine("What would you like to do next?");
+                        goto ChoiceUser;
                         break;
                     case "e":
 

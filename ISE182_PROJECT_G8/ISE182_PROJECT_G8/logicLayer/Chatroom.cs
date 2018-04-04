@@ -135,18 +135,15 @@ namespace ISE182_PROJECT_G8.logicLayer
         }
         
 
-        public void displayAllMsg()
+        public string DisplayMessagesByUser(string nickname)
         {
-
-            present_handler.output("Enter user name for filtering: ");
-            String nickname = present_handler.get();
-            present_handler.output("******************************");
+            StringBuilder stringBuilder = new StringBuilder();
             var messages = (from msg in messageList where msg.getUserName().Equals(nickname) select msg);
             foreach (Message msg in messages)
             {
-                present_handler.output(msg.toString());
+                stringBuilder.AppendLine(msg.toString());
             }
-
+            return stringBuilder.ToString();
         }
 
         //displaying specific number off messages//

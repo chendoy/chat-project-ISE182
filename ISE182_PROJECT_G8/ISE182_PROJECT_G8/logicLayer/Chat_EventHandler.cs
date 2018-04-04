@@ -77,10 +77,9 @@ namespace ISE182_PROJECT_G8.logicLayer
             Chat_EventHandler.chat_ready(chatRoom);
         }
 
-        public static void displayAllMsg(Chatroom chatRoom)
+        public static string DisplayMessagesByUser(Chatroom chatRoom, string nickname)
         {
-            chatRoom.displayAllMsg();
-            Chat_EventHandler.chat_ready(chatRoom);
+            return chatRoom.DisplayMessagesByUser(nickname);
         }
 
         

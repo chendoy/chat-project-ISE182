@@ -109,6 +109,15 @@ namespace ISE182_PROJECT_G8.presentationLayer
             Console.WriteLine(messages);
         }
 
+        public static void DisplayMessagesByUser(Chatroom chatroom)
+        {
+            Console.WriteLine("Enter user name for filtering: ");
+            string nickname = Console.ReadLine();
+            String msgs = Chat_EventHandler.DisplayMessagesByUser(chatroom, nickname);
+
+            Console.WriteLine(msgs);
+        }
+
         public static void Exit(Chatroom chatroom)
         {
             Chat_EventHandler.Exit(chatroom);
