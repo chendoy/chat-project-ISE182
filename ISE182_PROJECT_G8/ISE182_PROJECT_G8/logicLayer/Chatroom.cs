@@ -88,42 +88,13 @@ namespace ISE182_PROJECT_G8.logicLayer
             this.messageList = persistantLayer.Saver.LoadMessages();
         }
 
-        public void loginOut()
+        // Assume there is logged in user
+        public string LogOut()
         {
-            User logged_in_user = getLoggedInUser();
-            if (logged_in_user != null) //a user is already logged-in//
-            {
-                present_handler.output(logged_in_user.getNickname() + " is currently logged-in, do you want to change user? Y/N");
-                String choice = present_handler.get();
-                switch (choice)
-                {
-                    case "Y":
-                    case "y":
-                        loggedInUser.loginOrOff(); //changes the user state: logged in-->logged off//
-                        logUserOut(); //log the user from the chatroom//
-                        log_in(); //initiates new log in to chatroom//
-                        break;
-                    case "N":
-                    case "n":
-                        //does nothing (at the moment/)//
-                        break;
-                }
-            }
-            else //no user is logged-in to the chat//
-                log_in();
-
-        }
-
-        public void log_in() { /*old*/}
-
-
-        public void logUserOut()
-        {
-            if (getLoggedInUser() != null)
-            {
-                this.loggedInUser.loginOrOff();
-                this.loggedInUser = null;
-            }
+            this.loggedInUser.loginOrOff();
+            string nickname = loggedInUser.getNickname();
+            this.loggedInUser = null;
+            return nickname;
         }
 
         public void Send(string msg)

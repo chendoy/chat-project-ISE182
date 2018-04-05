@@ -118,6 +118,15 @@ namespace ISE182_PROJECT_G8.presentationLayer
             Console.WriteLine(msgs);
         }
 
+        public static void Logout(Chatroom chatroom)
+        {
+            string nickname = Chat_EventHandler.Logout(chatroom);
+
+            Console.WriteLine(nickname + " Logged-off Successfully");
+            System.Threading.Thread.Sleep(1000);
+            GUI.DisplayVisitorGUI(chatroom);
+        }
+
         public static void Exit(Chatroom chatroom)
         {
             Chat_EventHandler.Exit(chatroom);

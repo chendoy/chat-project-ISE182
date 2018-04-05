@@ -37,16 +37,8 @@ namespace ISE182_PROJECT_G8.logicLayer
 
         public static void Exit(Chatroom chatRoom)
         {
-            chatRoom.logUserOut(); //log the current user out//
+            chatRoom.LogOut(); //log the current user out//
             ExitVisitor(chatRoom);
-        }
-
-        //makes the chat ready for the next user input//
-        public static void chat_ready(Chatroom chatroom)
-        {
-            present_handler.output("What would you like to do next?");
-            String choice = Console.ReadLine();
-            presentationLayer.GUI.agent(choice, chatroom);
         }
 
         public static bool Send(Chatroom chatRoom, string msg)
@@ -71,15 +63,14 @@ namespace ISE182_PROJECT_G8.logicLayer
             return chatRoom.DisplayNmessages(n);
         }
 
-        public static void loginOut(Chatroom chatRoom)
-        {
-            chatRoom.loginOut();
-            Chat_EventHandler.chat_ready(chatRoom);
-        }
-
         public static string DisplayMessagesByUser(Chatroom chatRoom, string nickname)
         {
             return chatRoom.DisplayMessagesByUser(nickname);
+        }
+
+        public static string Logout(Chatroom chatroom)
+        {
+            return chatroom.LogOut();
         }
 
         
@@ -99,7 +90,7 @@ namespace ISE182_PROJECT_G8.logicLayer
             {
                 case "a":
                     chatRoom.printAllUsers();
-                    Chat_EventHandler.chat_ready(chatRoom);
+                    //Chat_EventHandler./chat_ready(chatRoom);
                     break;
                 /*case "b":
                     chatRoom.clearUserList();
@@ -110,7 +101,7 @@ namespace ISE182_PROJECT_G8.logicLayer
                         present_handler.output("logged in: " + loggedIn.getNickname());
                     else
                         present_handler.output("No logged in User");
-                    Chat_EventHandler.chat_ready(chatRoom);
+                    //Chat_EventHandler.chat_ready(chatRoom);
                     break;
             }
         }

@@ -56,11 +56,11 @@ namespace ISE182_PROJECT_G8.logicLayer
             { status = 0; }//present_handler.output(this.nickname + " Logged-off Successfully"); }
         }
 
-        public void log_out(Chatroom chatRoom)
-        {
-            chatRoom.logUserOut();
-            this.loginOrOff();
-        }
+        //public void log_out(Chatroom chatRoom)
+        //{
+        //    chatRoom.logUserOut();
+        //    this.loginOrOff();
+        //}
 
         public Message send(String url, String _group, String message)
         {
