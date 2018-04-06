@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ISE182_PROJECT_G8.presentationLayer;
+using ISE182_PROJECT_G8.persistantLayer;
 
 
 namespace ISE182_PROJECT_G8.logicLayer
@@ -23,10 +24,22 @@ namespace ISE182_PROJECT_G8.logicLayer
                 
             return chatRoom.Register(nickname, groupID);
         }
-
+        
         public static bool Login(Chatroom chatRoom, String nickname)
         {
-            return chatRoom.Login(nickname);
+            bool logged = chatRoom.Login(nickname);
+            //if (logged)
+            //{
+            //    logger.Info(nickname + " logged in");
+            //    //Logger.Instance.Info(nickname + " logged in");
+            //}
+            //else
+            //{
+            //    logger.Error(nickname + " failed to log in");
+            //    //Logger.Instance.Error(nickname + " failed to log in");
+            //}
+
+            return logged;
         }
 
         public static void ExitVisitor(Chatroom chatRoom)
