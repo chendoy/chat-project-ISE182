@@ -10,7 +10,6 @@ namespace ISE182_PROJECT_G8.logicLayer
 {
     public class Chatroom
     {
-        public static String _group = "8";
         public static int _nMessagesRetreive = 10; //magic number//
         public static int _nMessagesDisplay = 20;  //magic number//
         public String _url = "http://localhost/"; //localhost means non BGU environment, for BGU: http://ise172.ise.bgu.ac.il //
@@ -101,7 +100,7 @@ namespace ISE182_PROJECT_G8.logicLayer
         {
             User loggedInUser = getLoggedInUser();
 
-            Message message = loggedInUser.send(this._url, _group, msg); //asks the logged in user instance to send the message//
+            Message message = loggedInUser.Send(this._url, msg); //asks the logged in user instance to send the message//
             this.messageList.Add(message); //adds the sent message to the chat's message list (RAM)//
         }
         

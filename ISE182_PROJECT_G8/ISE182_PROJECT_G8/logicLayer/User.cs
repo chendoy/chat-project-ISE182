@@ -62,9 +62,9 @@ namespace ISE182_PROJECT_G8.logicLayer
         //    this.loginOrOff();
         //}
 
-        public Message send(String url, String _group, String message)
+        public Message Send(String url, String message)
         {
-            return new Message (Communication.Instance.Send(url, _group, this.nickname, message));
+            return new Message (Communication.Instance.Send(url, this.groupID.ToString(), this.nickname, message));
         }
     }
 }
