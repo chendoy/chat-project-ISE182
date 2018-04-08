@@ -7,7 +7,7 @@ What is left to do? (update this on the go)
 
 - sorting of messages - need to test on bgu server (sundy)
 
-- implementation of the logger - in progress, log.txt not created (chen)
+- [V] implementation of the logger - in progress, log.txt not created (chen) 
 
 - adding option to "go back" on each menu (like I did on "register") (sundy)
 
