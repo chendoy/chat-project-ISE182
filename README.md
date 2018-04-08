@@ -1,26 +1,25 @@
 # ISE 182 BGU Project - Group #8
 
-"todo" comments in the code means uncompleted feature we need to implement.
 
 What is left to do? (update this on the go)
 
-- handling error/exceptions
+- handling error/exceptions - wrong key/user name doesn't exist/server not reachable... (sundy+naor)
 
-- sorting of messages - need to test on bgu server
+- sorting of messages - need to test on bgu server (sundy)
 
-- implementation of the logger (https://moodle2.bgu.ac.il/moodle/mod/forum/discuss.php?d=253650) - in progress, log.txt not created
+- implementation of the logger - in progress, log.txt not created (chen)
 
-- adding option to "go back" on each menu (like I did on "register"), need consider if still needed and where
+- adding option to "go back" on each menu (like I did on "register") (sundy)
 
-- 'switch user' option in User menu if needed
+- more elegant use of Chatroom instance (naor)
 
-- more elegant use of Chatroom instance
+- reviewing the access modifiers in the code (private/public/protected) (chen)
 
-- make sure PL and BL are completely divided
+- make sure PL and BL are completely divided (chen)
 
-- make sure saving location is exist, maybe use of relative path
+- make sure saving location is exist, maybe use of relative path (naor)
 
-- updating the LLD & HLD
+- updating the LLD & HLD (sundy)
 
 *Please write in whatsapp before you start coding something so we will know*
 
