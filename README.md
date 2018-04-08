@@ -27,7 +27,10 @@ What is left to do? (update this on the go)
 RunChat-->GUI-->GUI_EventHandler-->Chat_EventHandler-->Chatroom-->anything else depends on the user's choice
 RunChat: initiate startup
 GUI: Responsible for the menus
+
 GUI_EventHandler: Responsible for processing the user choice
+
 Chat_EventHandler: Responsible for the initial processing of the input
+
 Chatroom: Responsible for the final processing of the user input
 
