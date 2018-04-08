@@ -6,21 +6,29 @@ What is left to do? (update this on the go)
 
 - handling error/exceptions
 
-- working with handlers of objects instead of objects themselves
+- sorting of messages - need to test on bgu server
 
-- sorting of messages
+- implementation of the logger (https://moodle2.bgu.ac.il/moodle/mod/forum/discuss.php?d=253650) - in progress, log.txt not created
 
-- checking 150 characters of message before sending
+- adding option to "go back" on each menu (like I did on "register"), need consider if still needed and where
 
-- implementation of the logger (https://moodle2.bgu.ac.il/moodle/mod/forum/discuss.php?d=253650)
+- 'switch user' option in User menu if needed
 
-- adding option to "go back" on each menu (like I did on "register")
+- more elegant use of Chatroom instance
 
-- now there are printings (WriteLine) from the logic layer ("Rigesteration was successful.." etc). We need to decide whether ALL printings should be from the presentation layer and there move all those printings there.
+- make sure PL and BL are completely divided
+
+- make sure saving location is exist, maybe use of relative path
 
 - updating the LLD & HLD
 
 *Please write in whatsapp before you start coding something so we will know*
 
 # Basic guideline for the code:
-RunChat-->GUI-->Chat_EventHandler-->Chatroom-->anything else depends on the user's choice
+RunChat-->GUI-->GUI_EventHandler-->Chat_EventHandler-->Chatroom-->anything else depends on the user's choice
+RunChat: initiate startup
+GUI: Responsible for the menus
+GUI_EventHandler: Responsible for processing the user choice
+Chat_EventHandler: Responsible for the initial processing of the input
+Chatroom: Responsible for the final processing of the user input
+

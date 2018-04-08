@@ -4,78 +4,93 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ISE182_PROJECT_G8.presentationLayer;
+using ISE182_PROJECT_G8.persistantLayer;
 
 
 namespace ISE182_PROJECT_G8.logicLayer
 {
     /* 
-     * Class of static methods that define the behaviour of ISE_182 (group #8) chat//
+     * Class of static methods that defines the behaviour of ISE_182 (group #8) chat//
      */
 
     class Chat_EventHandler
     {
-        public static void Register(Chatroom chatRoom)
+        public static bool? Register(Chatroom chatRoom, String nickname, int groupID)
         {
-            chatRoom.Register();
-            Chat_EventHandler.chat_ready(chatRoom);
+            if (!UserHandler.isValid(nickname, groupID))
+            {
+                return null;
+            }
+                
+            return chatRoom.Register(nickname, groupID);
+        }
+        
+        public static bool Login(Chatroom chatRoom, String nickname)
+        {
+            bool logged = chatRoom.Login(nickname);
+            if (logged)
+            {
+                Logger.Instance.Info("User: "+nickname + " logged in");
+            }
+            else
+            {
+                Logger.Instance.Error(nickname + " failed to log in");
+            }
+            return logged;
         }
 
-
-        public static void Exit(Chatroom chatRoom)
+        public static void ExitVisitor(Chatroom chatRoom)
         {
             chatRoom.saveUsers(); //persisting registered users data//
             chatRoom.saveMessages(); //persisting received messages data//
-            chatRoom.logUserOut(); //log the current user out//
-            Console.Write("Thank you for using ISE_182 chat!");
-
-            //moving dot while "Thank You" message is shown//
-
-            Console.Write(".");
-            System.Threading.Thread.Sleep(1000);
-            Console.Write(".");
-            System.Threading.Thread.Sleep(1000);
-            Console.Write(".");
-            System.Threading.Thread.Sleep(1000);
+            Logger.Instance.Info("System exits [visitor]");
         }
 
-        //makes the chat ready for the next user input//
-        public static void chat_ready(Chatroom chatroom)
+        public static void Exit(Chatroom chatRoom)
         {
-            present_handler.output("What would you like to do next?");
-            String choice = Console.ReadLine();
-            presentationLayer.GUI.agent(choice, chatroom);
+            chatRoom.LogOut(); //log the current user out//
+            ExitVisitor(chatRoom);
+            Logger.Instance.Info("System exits [User]");
         }
 
-        public static void send(Chatroom chatRoom)
+        public static bool Send(Chatroom chatRoom, string msg)
         {
-             chatRoom.send();
-             Chat_EventHandler.chat_ready(chatRoom);
+            if (!MessageHandler.isValid(msg))
+            {
+                Logger.Instance.Error("Message was not valid");
+                return false;
+            }
+
+            chatRoom.Send(msg);
+            Logger.Instance.Info("Message was sent successfully");
+            return true;
         }
 
-        public static void loginOut(Chatroom chatRoom)
+        public static void RetreiveMessages(Chatroom chatRoom)
         {
-            chatRoom.loginOut();
-            Chat_EventHandler.chat_ready(chatRoom);
-        }
-
-        public static void displayAllMsg(Chatroom chatRoom)
-        {
-            chatRoom.displayAllMsg();
-            Chat_EventHandler.chat_ready(chatRoom);
+            chatRoom.RetreiveMessages();
+            Logger.Instance.Info("Messages was retreived successfully");
         }
 
         //displaying s specific number (n) of retreived messages//
-        public static void displayNmessages(Chatroom chatRoom)
+        public static string DisplayNmessages(Chatroom chatRoom, int n)
         {
-            chatRoom.displayNmessages();
-            Chat_EventHandler.chat_ready(chatRoom);
+            return chatRoom.DisplayNmessages(n);
         }
 
-        public static void retreiveMessages(Chatroom chatRoom)
+        public static string DisplayMessagesByUser(Chatroom chatRoom, string nickname)
         {
-            chatRoom.retreive();
-            Chat_EventHandler.chat_ready(chatRoom);
+            return chatRoom.DisplayMessagesByUser(nickname);
         }
+
+        public static string Logout(Chatroom chatroom)
+        {
+            return chatroom.LogOut();
+        }
+
+        
+
+
 
         /*test functions:
             * a: prints all regiestered users//
@@ -90,7 +105,7 @@ namespace ISE182_PROJECT_G8.logicLayer
             {
                 case "a":
                     chatRoom.printAllUsers();
-                    Chat_EventHandler.chat_ready(chatRoom);
+                    //Chat_EventHandler./chat_ready(chatRoom);
                     break;
                 /*case "b":
                     chatRoom.clearUserList();
@@ -101,7 +116,7 @@ namespace ISE182_PROJECT_G8.logicLayer
                         present_handler.output("logged in: " + loggedIn.getNickname());
                     else
                         present_handler.output("No logged in User");
-                    Chat_EventHandler.chat_ready(chatRoom);
+                    //Chat_EventHandler.chat_ready(chatRoom);
                     break;
             }
         }

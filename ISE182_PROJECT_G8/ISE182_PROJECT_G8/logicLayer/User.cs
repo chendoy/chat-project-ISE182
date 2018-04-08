@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ISE182_PROJECT_G8.CommunicationLayer;
 using ISE182_PROJECT_G8.presentationLayer;
+using ISE182_PROJECT_G8.persistantLayer;
 
 namespace ISE182_PROJECT_G8.logicLayer
 {
@@ -25,7 +26,8 @@ namespace ISE182_PROJECT_G8.logicLayer
             }
             else
             {
-                present_handler.output("Error: nickname or Group ID is not valid"); //todo: implement an error here//
+                Logger.Instance.Error("Failed to create User: "+nickname+" of group "+ groupID+" already exist");
+                present_handler.output("Error: nickname or Group ID is not valid");
             }
 
         }
@@ -49,21 +51,25 @@ namespace ISE182_PROJECT_G8.logicLayer
         {
             if (status == 0)
 
-            { status = 1; present_handler.output(this.nickname + " Logged-in Successfully"); }
+            { status = 1;  present_handler.output(this.nickname + " Logged-in Successfully");
+                Logger.Instance.Info("User "+nickname+ " Logged-in Successfully");
+            }
 
             else
-            { status = 0; present_handler.output(this.nickname + " Logged-off Successfully"); }
+            { status = 0;  present_handler.output(this.nickname + " Logged-off Successfully");
+                Logger.Instance.Info("User " + nickname + " Logged-off Successfully");
+            }
         }
 
-        public void log_out(Chatroom chatRoom)
-        {
-            chatRoom.logUserOut();
-            this.loginOrOff();
-        }
+        //public void log_out(Chatroom chatRoom)
+        //{
+        //    chatRoom.logUserOut();
+        //    this.loginOrOff();
+        //}
 
-        public Message send(String url, String _group, String message)
+        public Message Send(String url, String message)
         {
-            return new Message (Communication.Instance.Send(url, _group, this.nickname, message));
+            return new Message (Communication.Instance.Send(url, this.groupID.ToString(), this.nickname, message));
         }
     }
 }

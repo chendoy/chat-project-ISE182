@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ISE182_PROJECT_G8.logicLayer;
+using ISE182_PROJECT_G8.persistantLayer;
 using ISE182_PROJECT_G8.presentationLayer;
 
 namespace ISE182_PROJECT_G8.logicLayer
@@ -15,13 +16,15 @@ namespace ISE182_PROJECT_G8.logicLayer
             Chatroom chatRoom = new Chatroom(); //initiates a new Chatroom object//
             chatRoom.loadUsers(); //loades persistant users data to RAM//
             chatRoom.loadMessages(); //loades persistant messages data to RAM//
-            //todo: logger//
+            log4net.Config.XmlConfigurator.Configure(); //configures the logger//
+            Logger.Instance.Info("System initialization was completed, starting GUI...");
             return chatRoom;
         }
         public static void Main(String[] args)
         {
-            Chatroom chatRoom = systemInit();    //initiates the chatroom, loads persistant data to RAM, etc..//
-            GUI.displayGui(chatRoom);
+            Logger.Instance.Info("starting system initialization");
+            Chatroom chatRoom = systemInit();    //initiates the chatroom, logger, loads persistant data to RAM, etc..//
+            GUI.DisplayVisitorGUI(chatRoom);
 
         }
     }
