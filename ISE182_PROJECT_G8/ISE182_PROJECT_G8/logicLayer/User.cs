@@ -50,22 +50,15 @@ namespace ISE182_PROJECT_G8.logicLayer
         public void loginOrOff() //flips the user login status - log-in if it was off and vice versa//
         {
             if (status == 0)
-
-            { status = 1; 
-                Logger.Instance.Info("User "+nickname+ " Logged-in Successfully");
+            {
+                status = 1;
             }
-
             else
-            { status = 0;  
-                Logger.Instance.Info("User " + nickname + " Logged-off Successfully");
+            {
+                status = 0;
             }
         }
 
-        //public void log_out(Chatroom chatRoom)
-        //{
-        //    chatRoom.logUserOut();
-        //    this.loginOrOff();
-        //}
 
         public Message Send(String url, String message)
         {
