@@ -10,21 +10,45 @@ using System.Threading.Tasks;
 
 namespace ISE182_PROJECT_G8.logicLayer
 {
-    public class Chatroom
+    public sealed class Chatroom
     {
         public static int _nMessagesRetreive = 10; //magic number//
         public static int _nMessagesDisplay = 20;  //magic number//
-        public String _url = "http://localhost/http://ise172.ise.bgu.ac.il"; //"http://ise172.ise.bgu.ac.il";//
+        public String _url = "http://ise172.ise.bgu.ac.il";//"http://localhost/"; //localhost means non BGU environment, for BGU: http://ise172.ise.bgu.ac.il //
         private int port = 80;
         private User loggedInUser;
         private List<User> userList;  //in RAM, retreived from persistant layer//
         private List<Message> messageList; //in RAM, retreived from persistant layer//
+        private Saver saver;
 
-        public Chatroom()
+        private static Chatroom instance = null;
+        private static readonly object padlock = new object();
+
+        //private constructor for singleton
+        private Chatroom()
         {
             this.loggedInUser = null;
-            this.messageList = new List<Message>();
-            this.userList = new List<User>();
+            saver = Saver.Instance;
+            LoadMessages();
+            LoadUsers();
+        }
+
+        public static Chatroom Instance
+        {
+            get
+            {   //only if there is no instance lock object, otherwise return instance
+                if (instance == null)
+                {
+                    lock (padlock) // senario: n threads in here,
+                    {              //locking the first and others going to sleep till the first get new Instance
+                        if (instance == null)  // rest n-1 threads no need new instance because its not null anymore.
+                        {
+                            instance = new Chatroom();
+                        }
+                    }
+                }
+                return instance;
+            }
         }
 
         public bool Register(String nickname, int groupID)
@@ -69,27 +93,27 @@ namespace ISE182_PROJECT_G8.logicLayer
             return this.loggedInUser;
         }
 
-        // next 4 static methods are related to persistant layer: save/load users/messages//
+        // next 4 methods are related to persistant layer: save/load users/messages//
 
         //1//
-        public void saveUsers()
+        public void SaveUsers()
         {
-            persistantLayer.Saver.saveUsers(this.userList);
+            saver.SaveUsers(this.userList);
         }
         //2//
-        public void loadUsers()
+        public void LoadUsers()
         {
-            this.userList = persistantLayer.Saver.LoadUsers();
+            this.userList = saver.LoadUsers();
         }
         //3//
-        public void saveMessages()
+        public void SaveMessages()
         {
-            persistantLayer.Saver.saveMessages(this.messageList);
+            saver.SaveMessages(this.messageList);
         }
         //4//
-        public void loadMessages()
+        public void LoadMessages()
         {
-            this.messageList = persistantLayer.Saver.LoadMessages();
+            this.messageList = saver.LoadMessages();
         }
 
         // Assume there is logged in user
@@ -109,6 +133,7 @@ namespace ISE182_PROJECT_G8.logicLayer
             Message message = loggedInUser.Send(this._url, msg); //asks the logged in user instance to send the message//
             Logger.Instance.Info("Chatroom: asks "+this.loggedInUser.getNickname()+" to send message");
             this.messageList.Add(message); //adds the sent message to the chat's message list (RAM)//
+            this.messageList = MessageHandler.sortbytime(this.messageList);
         }
         
 
@@ -128,7 +153,8 @@ namespace ISE182_PROJECT_G8.logicLayer
         public string DisplayNmessages(int n)
         {
             StringBuilder stringBuilder = new StringBuilder();
-            for (int i = 0; this.messageList.ElementAtOrDefault(i) != null & i < n; i++)
+            int startIndex = Math.Max(0,this.messageList.Count - n);
+            for (int i = startIndex; this.messageList.ElementAtOrDefault(i) != null & i < this.messageList.Count; i++)
             {
                 stringBuilder.AppendLine(this.messageList.ElementAt(i).toString());
             }
