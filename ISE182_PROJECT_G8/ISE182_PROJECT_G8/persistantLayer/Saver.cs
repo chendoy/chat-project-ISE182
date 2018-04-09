@@ -15,12 +15,42 @@ namespace ISE182_PROJECT_G8.persistantLayer
      * and from filesystem in order to maintain quick access of the chat system to its database
      */
 
-    static class Saver
+    public sealed class Saver
     {
-        public static string UsersFilename = @"C:\chat_database\Users.bin";
-        public static string MessagesFilename = @"C:\chat_database\Messages.bin";
+        private static string directoryPath = @"StoredData";
+        private static string UsersFilename = Path.Combine(directoryPath, "Users.bin");
+        private static string MessagesFilename = Path.Combine(directoryPath, "Messages.bin");
 
-        public static void saveUsers(List<User> usersToSave)
+        private static Saver instance = null;
+        private static readonly object padlock = new object();
+
+        private Saver()
+        {
+            if (!Directory.Exists(directoryPath))
+            {
+                Directory.CreateDirectory(directoryPath);
+            }
+        }
+
+        public static Saver Instance
+        {
+            get
+            {   //only if there is no instance lock object, otherwise return instance
+                if (instance == null)
+                {
+                    lock (padlock) // senario: n threads in here,
+                    {              //locking the first and others going to sleep till the first get new Instance
+                        if (instance == null)  // rest n-1 threads no need new instance because its not null anymore.
+                        {
+                            instance = new Saver();
+                        }
+                    }
+                }
+                return instance;
+            }
+        }
+
+        public void SaveUsers(List<User> usersToSave)
         {
             Stream Filestream = File.Create(UsersFilename);
             BinaryFormatter serializer = new BinaryFormatter();
@@ -29,7 +59,7 @@ namespace ISE182_PROJECT_G8.persistantLayer
             Logger.Instance.Info("Users data was persisted successfully");
         }
 
-        public static List<User> LoadUsers()
+        public List<User> LoadUsers()
         {
             if (File.Exists(UsersFilename))
             {
@@ -43,7 +73,7 @@ namespace ISE182_PROJECT_G8.persistantLayer
             return new List<User>(); //todo: implement an error here or something//
         }
 
-        public static void saveMessages(List<Message> MessagesToSave)
+        public void SaveMessages(List<Message> MessagesToSave)
         {
             Stream Filestream = File.Create(MessagesFilename);
             BinaryFormatter serializer = new BinaryFormatter();
@@ -52,7 +82,7 @@ namespace ISE182_PROJECT_G8.persistantLayer
             Logger.Instance.Info("Messages data was persisted successfully");
         }
 
-        public static List<Message> LoadMessages()
+        public List<Message> LoadMessages()
         {
             if (File.Exists(MessagesFilename))
             {
