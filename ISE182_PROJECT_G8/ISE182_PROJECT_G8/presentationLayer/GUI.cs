@@ -60,7 +60,6 @@ namespace ISE182_PROJECT_G8.presentationLayer
             Console.WriteLine("c. Display last 20 retrieved messages");
             Console.WriteLine("d. Display all retrieved messages (by certain user)");
             Console.WriteLine("e. Logout");
-            //Console.WriteLine("f. Change user");
             Console.WriteLine("f. Exit");
 
             ChoiceUser:
@@ -106,6 +105,20 @@ namespace ISE182_PROJECT_G8.presentationLayer
                         goto ChoiceUser;
                 }
             }
+        }
+
+        public static void DisplayInfo(string title, string info)
+        {
+            Console.Clear();
+            Console.BackgroundColor = ConsoleColor.Green; //UI tweak//
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.WriteLine(String.Format("Displaying {0}:\n", title));
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.White;
+
+            Console.WriteLine("\n" + info);
+            Console.Write("\n Press any key to go back to menu...");
+            Console.ReadKey(true);
         }
     }
 }

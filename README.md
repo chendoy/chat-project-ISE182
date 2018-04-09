@@ -17,7 +17,7 @@ What is left to do? (update this on the go)
 
 - make sure PL and BL are completely divided (chen)
 
-- make sure saving location is exist, maybe use of relative path (naor)
+- [V] make sure saving location is exist, maybe use of relative path (naor)
 
 - updating the LLD & HLD (sundy)
 

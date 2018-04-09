@@ -31,7 +31,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
                     {
                         if (succeeded.Value)
                         {
-                            Console.WriteLine("Registration was Scuccessfull, Welcome to ISE_182 chat!");
+                            Console.WriteLine("Registration was Successfull, Welcome to ISE_182 chat!");
                         }
                         else
                         {
@@ -106,7 +106,8 @@ namespace ISE182_PROJECT_G8.presentationLayer
         public static void Display20messages()
         {
             string messages = Chat_EventHandler.DisplayNmessages(20);
-            Console.WriteLine(messages);
+            GUI.DisplayInfo("last 20 messages", messages);
+            GUI.DisplayUserGUI(Chatroom.Instance.getLoggedInUser().getNickname());
         }
 
         public static void DisplayMessagesByUser()
@@ -115,7 +116,8 @@ namespace ISE182_PROJECT_G8.presentationLayer
             string nickname = Console.ReadLine();
             String msgs = Chat_EventHandler.DisplayMessagesByUser(nickname);
 
-            Console.WriteLine(msgs);
+            GUI.DisplayInfo("messages of " + nickname, msgs);
+            GUI.DisplayUserGUI(Chatroom.Instance.getLoggedInUser().getNickname());
         }
 
         public static void Logout()
