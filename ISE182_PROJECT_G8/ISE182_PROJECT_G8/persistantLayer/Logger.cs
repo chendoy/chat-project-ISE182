@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ISE182_PROJECT_G8.persistantLayer
 {
-    public sealed class Logger  // singleTon
+    public sealed class Logger  // singleton design pattern
     {
         private static Logger instance = null;
         private static readonly object padlock = new object();

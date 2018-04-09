@@ -10,7 +10,7 @@ using ISE182_PROJECT_G8.persistantLayer;
 namespace ISE182_PROJECT_G8.logicLayer
 {
     /* 
-     * Class of static methods that define the behaviour of ISE_182 (group #8) chat//
+     * Class of static methods that defines the behaviour of ISE_182 (group #8) chat//
      */
 
     class Chat_EventHandler
@@ -30,13 +30,12 @@ namespace ISE182_PROJECT_G8.logicLayer
             bool logged = chatRoom.Login(nickname);
             if (logged)
             {
-                Logger.Instance.Info(nickname + " logged in");
+                Logger.Instance.Info("User: "+nickname + " logged in");
             }
             else
             {
                 Logger.Instance.Error(nickname + " failed to log in");
             }
-
             return logged;
         }
 
@@ -44,28 +43,33 @@ namespace ISE182_PROJECT_G8.logicLayer
         {
             chatRoom.saveUsers(); //persisting registered users data//
             chatRoom.saveMessages(); //persisting received messages data//
+            Logger.Instance.Info("System exits [visitor]");
         }
 
         public static void Exit(Chatroom chatRoom)
         {
             chatRoom.LogOut(); //log the current user out//
             ExitVisitor(chatRoom);
+            Logger.Instance.Info("System exits [User]");
         }
 
         public static bool Send(Chatroom chatRoom, string msg)
         {
             if (!MessageHandler.isValid(msg))
             {
+                Logger.Instance.Error("Message was not valid");
                 return false;
             }
 
             chatRoom.Send(msg);
+            Logger.Instance.Info("Message was sent successfully");
             return true;
         }
 
         public static void RetreiveMessages(Chatroom chatRoom)
         {
             chatRoom.RetreiveMessages();
+            Logger.Instance.Info("Messages was retreived successfully");
         }
 
         //displaying s specific number (n) of retreived messages//

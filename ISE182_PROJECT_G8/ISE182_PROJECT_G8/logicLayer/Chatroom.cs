@@ -1,5 +1,7 @@
-﻿using ISE182_PROJECT_G8.CommunicationLayer;
+﻿
+using ISE182_PROJECT_G8.CommunicationLayer;
 using ISE182_PROJECT_G8.presentationLayer;
+using ISE182_PROJECT_G8.persistantLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,9 +35,10 @@ namespace ISE182_PROJECT_G8.logicLayer
             if (!alreadyExist)
             {
                 this.userList.Add(newUser);
+                Logger.Instance.Info("User: "+nickname+ " registered successfully");
                 return true;
             }
-
+            Logger.Instance.Info("User: " + nickname + " failed to register - already exists");
             return false;
         }
 
@@ -50,12 +53,14 @@ namespace ISE182_PROJECT_G8.logicLayer
             if (loggedin != null)
             {
                 this.loggedInUser = loggedin; //changes the 'Chat' object status//
+                Logger.Instance.Info("User: "+nickname+" is now logged in to the chat");
                 this.loggedInUser.loginOrOff(); //changes the 'User' object status//
                 return true;
             }
             else
             {
-                return false; //todo: implement an error//
+                Logger.Instance.Error("Failed to log "+nickname+" in - doesn't exist");
+                return false; 
             }
         }
 
@@ -93,6 +98,7 @@ namespace ISE182_PROJECT_G8.logicLayer
             this.loggedInUser.loginOrOff();
             string nickname = loggedInUser.getNickname();
             this.loggedInUser = null;
+            Logger.Instance.Info("Chatroom: user "+nickname+" logged-of");
             return nickname;
         }
 
@@ -101,6 +107,7 @@ namespace ISE182_PROJECT_G8.logicLayer
             User loggedInUser = getLoggedInUser();
 
             Message message = loggedInUser.Send(this._url, msg); //asks the logged in user instance to send the message//
+            Logger.Instance.Info("Chatroom: asks "+this.loggedInUser.getNickname()+" to send message");
             this.messageList.Add(message); //adds the sent message to the chat's message list (RAM)//
             this.messageList = MessageHandler.sortbytime(this.messageList);
         }
@@ -114,6 +121,7 @@ namespace ISE182_PROJECT_G8.logicLayer
             {
                 stringBuilder.AppendLine(msg.toString());
             }
+            Logger.Instance.Info("Chatroom: messages by user "+nickname+" was built");
             return stringBuilder.ToString();
         }
 
@@ -126,7 +134,7 @@ namespace ISE182_PROJECT_G8.logicLayer
             {
                 stringBuilder.AppendLine(this.messageList.ElementAt(i).toString());
             }
-
+            Logger.Instance.Info("Chatroom: "+n+" messages "+"list generetad");
             return stringBuilder.ToString();
         }
 

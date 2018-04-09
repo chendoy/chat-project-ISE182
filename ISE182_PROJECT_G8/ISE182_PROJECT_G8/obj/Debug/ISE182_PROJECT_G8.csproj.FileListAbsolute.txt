@@ -31,3 +31,6 @@ C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJE
 C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\bin\Debug\log4net.config
 C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\bin\Debug\log4net.dll
 C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\bin\Debug\log4net.xml
+C:\Users\חן\source\repos\ISE182_PROJECT_G8\ISE182_PROJECT_G8\ISE182_PROJECT_G8\bin\Debug\log4net.config
+C:\Users\חן\source\repos\ISE182_PROJECT_G8\ISE182_PROJECT_G8\ISE182_PROJECT_G8\bin\Debug\log4net.dll
+C:\Users\חן\source\repos\ISE182_PROJECT_G8\ISE182_PROJECT_G8\ISE182_PROJECT_G8\bin\Debug\log4net.xml

@@ -1,0 +1,24 @@
+2018-04-08 22:29:22,060 [1] INFO  ISE182_PROJECT_G8.persistantLayer.Logger [(null)] - Users data was loaded successfully
+2018-04-08 22:29:22,086 [1] INFO  ISE182_PROJECT_G8.persistantLayer.Logger [(null)] - Messages data was loaded successfully
+2018-04-08 22:29:22,123 [1] INFO  ISE182_PROJECT_G8.persistantLayer.Logger [(null)] - System initialization was completed, starting GUI...
+2018-04-08 22:29:30,054 [1] INFO  ISE182_PROJECT_G8.persistantLayer.Logger [(null)] - User: chendoy4 registered successfully
+2018-04-08 22:29:37,794 [1] INFO  ISE182_PROJECT_G8.persistantLayer.Logger [(null)] - User: chendoy4 is now logged in to the chat
+2018-04-08 22:29:37,794 [1] INFO  ISE182_PROJECT_G8.persistantLayer.Logger [(null)] - User chendoy4 Logged-in Successfully
+2018-04-08 22:29:37,795 [1] INFO  ISE182_PROJECT_G8.persistantLayer.Logger [(null)] - User: chendoy4 logged in
+2018-04-08 22:29:54,532 [1] INFO  ISE182_PROJECT_G8.persistantLayer.Logger [(null)] - Chatroom: asks chendoy4 to send message
+2018-04-08 22:29:54,532 [1] INFO  ISE182_PROJECT_G8.persistantLayer.Logger [(null)] - Message was sent successfully
+2018-04-08 22:30:11,733 [1] INFO  ISE182_PROJECT_G8.persistantLayer.Logger [(null)] - Messages was retreived successfully
+2018-04-08 22:30:14,111 [1] INFO  ISE182_PROJECT_G8.persistantLayer.Logger [(null)] - Chatroom: 20 messages list generetad
+2018-04-08 22:30:19,853 [1] INFO  ISE182_PROJECT_G8.persistantLayer.Logger [(null)] - Chatroom: messages by user chendoy4 was built
+2018-04-08 22:30:26,712 [1] INFO  ISE182_PROJECT_G8.persistantLayer.Logger [(null)] - User chendoy4 Logged-off Successfully
+2018-04-08 22:30:26,713 [1] INFO  ISE182_PROJECT_G8.persistantLayer.Logger [(null)] - Chatroom: user chendoy4 logged-of
+2018-04-08 22:30:30,866 [1] INFO  ISE182_PROJECT_G8.persistantLayer.Logger [(null)] - Users data was persisted successfully
+2018-04-08 22:30:30,867 [1] INFO  ISE182_PROJECT_G8.persistantLayer.Logger [(null)] - Messages data was persisted successfully
+2018-04-08 22:30:30,867 [1] INFO  ISE182_PROJECT_G8.persistantLayer.Logger [(null)] - System exits [visitor]
+2018-04-08 22:31:54,501 [1] INFO  ISE182_PROJECT_G8.persistantLayer.Logger [(null)] - starting system initialization
+2018-04-08 22:31:54,525 [1] INFO  ISE182_PROJECT_G8.persistantLayer.Logger [(null)] - Users data was loaded successfully
+2018-04-08 22:31:54,528 [1] INFO  ISE182_PROJECT_G8.persistantLayer.Logger [(null)] - Messages data was loaded successfully
+2018-04-08 22:31:54,590 [1] INFO  ISE182_PROJECT_G8.persistantLayer.Logger [(null)] - System initialization was completed, starting GUI...
+2018-04-08 22:31:55,671 [1] INFO  ISE182_PROJECT_G8.persistantLayer.Logger [(null)] - Users data was persisted successfully
+2018-04-08 22:31:55,672 [1] INFO  ISE182_PROJECT_G8.persistantLayer.Logger [(null)] - Messages data was persisted successfully
+2018-04-08 22:31:55,672 [1] INFO  ISE182_PROJECT_G8.persistantLayer.Logger [(null)] - System exits [visitor]

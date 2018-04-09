@@ -24,19 +24,7 @@ namespace ISE182_PROJECT_G8.logicLayer
         public static List<Message> sortbytime(List<Message> list)
         {
             List<Message> sorted = new List<Message>();
-            //int size = 0;
-            // we need to check if this is works if not there is the old method from java course
             sorted = list.OrderBy(o => o.getTime()).ToList();
-            /*
-            foreach (Message msg in list)
-            {
-                size = size + 1;
-            }
-            for (int i = 0; i < size; i++)
-            {
-
-            }
-            */
             return sorted;
         }
 
