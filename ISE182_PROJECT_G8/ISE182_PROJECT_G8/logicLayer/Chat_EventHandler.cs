@@ -48,9 +48,10 @@ namespace ISE182_PROJECT_G8.logicLayer
 
         public static void Exit(Chatroom chatRoom)
         {
+            string nickname = chatRoom.getLoggedInUser().getNickname();
             chatRoom.LogOut(); //log the current user out//
             ExitVisitor(chatRoom);
-            Logger.Instance.Info("System exits [User]");
+            Logger.Instance.Info(String.Format("System exits [{0}]", nickname));
         }
 
         public static bool Send(Chatroom chatRoom, string msg)

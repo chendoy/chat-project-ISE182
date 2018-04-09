@@ -51,12 +51,12 @@ namespace ISE182_PROJECT_G8.logicLayer
         {
             if (status == 0)
 
-            { status = 1;  present_handler.output(this.nickname + " Logged-in Successfully");
+            { status = 1; 
                 Logger.Instance.Info("User "+nickname+ " Logged-in Successfully");
             }
 
             else
-            { status = 0;  present_handler.output(this.nickname + " Logged-off Successfully");
+            { status = 0;  
                 Logger.Instance.Info("User " + nickname + " Logged-off Successfully");
             }
         }
