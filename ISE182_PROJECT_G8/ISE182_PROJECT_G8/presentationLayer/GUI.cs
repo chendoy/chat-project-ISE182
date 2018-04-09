@@ -101,6 +101,9 @@ namespace ISE182_PROJECT_G8.presentationLayer
                     case "h": //test functions - not for release//
                         Chat_EventHandler.test(chatroom);
                         break;
+                    default:
+                        Console.WriteLine("Invalid input, try again");
+                        goto ChoiceUser;
                 }
             }
         }
