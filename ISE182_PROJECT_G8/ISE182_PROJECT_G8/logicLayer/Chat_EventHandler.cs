@@ -15,46 +15,38 @@ namespace ISE182_PROJECT_G8.logicLayer
 
     class Chat_EventHandler
     {
-        public static bool? Register(Chatroom chatRoom, String nickname, int groupID)
+        private static Chatroom chatroom = Chatroom.Instance;
+        public static bool? Register(String nickname, int groupID)
         {
             if (!UserHandler.isValid(nickname, groupID))
             {
                 return null;
             }
                 
-            return chatRoom.Register(nickname, groupID);
+            return chatroom.Register(nickname, groupID);
         }
         
-        public static bool Login(Chatroom chatRoom, String nickname)
+        public static bool Login(String nickname)
         {
-            bool logged = chatRoom.Login(nickname);
-            if (logged)
-            {
-                Logger.Instance.Info("User: "+nickname + " logged in");
-            }
-            else
-            {
-                Logger.Instance.Error(nickname + " failed to log in");
-            }
-            return logged;
+            return chatroom.Login(nickname);
         }
 
-        public static void ExitVisitor(Chatroom chatRoom)
+        public static void ExitVisitor()
         {
-            chatRoom.saveUsers(); //persisting registered users data//
-            chatRoom.saveMessages(); //persisting received messages data//
+            chatroom.saveUsers(); //persisting registered users data//
+            chatroom.saveMessages(); //persisting received messages data//
             Logger.Instance.Info("System exits [visitor]");
         }
 
-        public static void Exit(Chatroom chatRoom)
+        public static void Exit()
         {
-            string nickname = chatRoom.getLoggedInUser().getNickname();
-            chatRoom.LogOut(); //log the current user out//
-            ExitVisitor(chatRoom);
+            string nickname = chatroom.getLoggedInUser().getNickname();
+            chatroom.LogOut(); //log the current user out//
+            ExitVisitor();
             Logger.Instance.Info(String.Format("System exits [{0}]", nickname));
         }
 
-        public static bool Send(Chatroom chatRoom, string msg)
+        public static bool Send(string msg)
         {
             if (!MessageHandler.isValid(msg))
             {
@@ -62,29 +54,29 @@ namespace ISE182_PROJECT_G8.logicLayer
                 return false;
             }
 
-            chatRoom.Send(msg);
+            chatroom.Send(msg);
             Logger.Instance.Info("Message was sent successfully");
             return true;
         }
 
-        public static void RetreiveMessages(Chatroom chatRoom)
+        public static void RetreiveMessages()
         {
-            chatRoom.RetreiveMessages();
+            chatroom.RetreiveMessages();
             Logger.Instance.Info("Messages was retreived successfully");
         }
 
         //displaying s specific number (n) of retreived messages//
-        public static string DisplayNmessages(Chatroom chatRoom, int n)
+        public static string DisplayNmessages(int n)
         {
-            return chatRoom.DisplayNmessages(n);
+            return chatroom.DisplayNmessages(n);
         }
 
-        public static string DisplayMessagesByUser(Chatroom chatRoom, string nickname)
+        public static string DisplayMessagesByUser(string nickname)
         {
-            return chatRoom.DisplayMessagesByUser(nickname);
+            return chatroom.DisplayMessagesByUser(nickname);
         }
 
-        public static string Logout(Chatroom chatroom)
+        public static string Logout()
         {
             return chatroom.LogOut();
         }
@@ -98,26 +90,26 @@ namespace ISE182_PROJECT_G8.logicLayer
             * b: clears all registered users
             * c: prints the currently logged in user, if exists
             * */
-        public static void test(Chatroom chatRoom)
+        public static void test()
         {
             present_handler.output("Choose a test function:");
             string choice = Console.ReadLine();
             switch(choice)
             {
                 case "a":
-                    chatRoom.printAllUsers();
-                    //Chat_EventHandler./chat_ready(chatRoom);
+                    chatroom.printAllUsers();
+                    //Chat_EventHandler./chat_ready(chatroom);
                     break;
                 /*case "b":
-                    chatRoom.clearUserList();
+                    chatroom.clearUserList();
                     break;*/
                 case "c":
-                    User loggedIn = chatRoom.getLoggedInUser();
+                    User loggedIn = chatroom.getLoggedInUser();
                     if (loggedIn != null)
                         present_handler.output("logged in: " + loggedIn.getNickname());
                     else
                         present_handler.output("No logged in User");
-                    //Chat_EventHandler.chat_ready(chatRoom);
+                    //Chat_EventHandler.chat_ready(chatroom);
                     break;
             }
         }

@@ -11,20 +11,19 @@ namespace ISE182_PROJECT_G8.logicLayer
 {
     class RunChat
     {
-        private static Chatroom systemInit()
+        private static void systemInit()
         {
-            Chatroom chatRoom = new Chatroom(); //initiates a new Chatroom object//
+            Chatroom chatRoom = Chatroom.Instance; //initiates a new Chatroom object//
             chatRoom.loadUsers(); //loades persistant users data to RAM//
             chatRoom.loadMessages(); //loades persistant messages data to RAM//
             log4net.Config.XmlConfigurator.Configure(); //configures the logger//
             Logger.Instance.Info("System initialization was completed, starting GUI...");
-            return chatRoom;
         }
         public static void Main(String[] args)
         {
             Logger.Instance.Info("starting system initialization");
-            Chatroom chatRoom = systemInit();    //initiates the chatroom, logger, loads persistant data to RAM, etc..//
-            GUI.DisplayVisitorGUI(chatRoom);
+            systemInit();    //initiates the chatroom, logger, loads persistant data to RAM, etc..//
+            GUI.DisplayVisitorGUI();
 
         }
     }
