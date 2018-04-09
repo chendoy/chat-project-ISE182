@@ -11,7 +11,7 @@ What is left to do? (update this on the go)
 
 - adding option to "go back" on each menu (like I did on "register") (sundy)
 
-- more elegant use of Chatroom instance (naor) - Done
+- [V] more elegant use of Chatroom instance (naor)
 
 - reviewing the access modifiers in the code (private/public/protected) (chen)
 
