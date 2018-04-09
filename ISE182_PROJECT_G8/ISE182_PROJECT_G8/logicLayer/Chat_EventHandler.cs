@@ -28,16 +28,14 @@ namespace ISE182_PROJECT_G8.logicLayer
         public static bool Login(Chatroom chatRoom, String nickname)
         {
             bool logged = chatRoom.Login(nickname);
-            //if (logged)
-            //{
-            //    logger.Info(nickname + " logged in");
-            //    //Logger.Instance.Info(nickname + " logged in");
-            //}
-            //else
-            //{
-            //    logger.Error(nickname + " failed to log in");
-            //    //Logger.Instance.Error(nickname + " failed to log in");
-            //}
+            if (logged)
+            {
+                Logger.Instance.Info(nickname + " logged in");
+            }
+            else
+            {
+                Logger.Instance.Error(nickname + " failed to log in");
+            }
 
             return logged;
         }

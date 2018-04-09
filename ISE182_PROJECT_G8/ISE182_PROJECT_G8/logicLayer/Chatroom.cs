@@ -12,7 +12,7 @@ namespace ISE182_PROJECT_G8.logicLayer
     {
         public static int _nMessagesRetreive = 10; //magic number//
         public static int _nMessagesDisplay = 20;  //magic number//
-        public String _url = "http://localhost/"; //localhost means non BGU environment, for BGU: http://ise172.ise.bgu.ac.il //
+        public String _url = "http://ise172.ise.bgu.ac.il";//"http://localhost/"; //localhost means non BGU environment, for BGU: http://ise172.ise.bgu.ac.il //
         private int port = 80;
         private User loggedInUser;
         private List<User> userList;  //in RAM, retreived from persistant layer//
@@ -102,6 +102,7 @@ namespace ISE182_PROJECT_G8.logicLayer
 
             Message message = loggedInUser.Send(this._url, msg); //asks the logged in user instance to send the message//
             this.messageList.Add(message); //adds the sent message to the chat's message list (RAM)//
+            this.messageList = MessageHandler.sortbytime(this.messageList);
         }
         
 
@@ -120,7 +121,8 @@ namespace ISE182_PROJECT_G8.logicLayer
         public string DisplayNmessages(int n)
         {
             StringBuilder stringBuilder = new StringBuilder();
-            for (int i = 0; this.messageList.ElementAtOrDefault(i) != null & i < n; i++)
+            int startIndex = Math.Max(0,this.messageList.Count - n);
+            for (int i = startIndex; this.messageList.ElementAtOrDefault(i) != null & i < this.messageList.Count; i++)
             {
                 stringBuilder.AppendLine(this.messageList.ElementAt(i).toString());
             }
@@ -140,7 +142,7 @@ namespace ISE182_PROJECT_G8.logicLayer
 
             //adds the retreived messages as a whole to the chat's messages list//
             MessageHandler.addUniqueByGuid(this.messageList, msgRetreived);
-            //***ADD SORT BY TIME STAMP HERE***//
+            this.messageList = MessageHandler.sortbytime(this.messageList);
         }
 
         public void printAllUsers() //***test function****//
