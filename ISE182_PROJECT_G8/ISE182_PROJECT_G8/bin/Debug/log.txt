@@ -22,3 +22,14 @@
 2018-04-08 22:31:55,671 [1] INFO  ISE182_PROJECT_G8.persistantLayer.Logger [(null)] - Users data was persisted successfully
 2018-04-08 22:31:55,672 [1] INFO  ISE182_PROJECT_G8.persistantLayer.Logger [(null)] - Messages data was persisted successfully
 2018-04-08 22:31:55,672 [1] INFO  ISE182_PROJECT_G8.persistantLayer.Logger [(null)] - System exits [visitor]
+2018-04-09 16:52:01,922 [1] INFO  ISE182_PROJECT_G8.persistantLayer.Logger [(null)] - starting system initialization
+2018-04-09 16:52:01,950 [1] INFO  ISE182_PROJECT_G8.persistantLayer.Logger [(null)] - Users data was loaded successfully
+2018-04-09 16:52:01,951 [1] INFO  ISE182_PROJECT_G8.persistantLayer.Logger [(null)] - Messages data was loaded successfully
+2018-04-09 16:52:01,970 [1] INFO  ISE182_PROJECT_G8.persistantLayer.Logger [(null)] - System initialization was completed, starting GUI...
+2018-04-09 16:52:11,894 [1] INFO  ISE182_PROJECT_G8.persistantLayer.Logger [(null)] - Users data was persisted successfully
+2018-04-09 16:52:11,896 [1] INFO  ISE182_PROJECT_G8.persistantLayer.Logger [(null)] - Messages data was persisted successfully
+2018-04-09 16:52:11,896 [1] INFO  ISE182_PROJECT_G8.persistantLayer.Logger [(null)] - System exits [visitor]
+2018-04-09 16:56:39,388 [1] INFO  ISE182_PROJECT_G8.persistantLayer.Logger [(null)] - starting system initialization
+2018-04-09 16:56:39,424 [1] INFO  ISE182_PROJECT_G8.persistantLayer.Logger [(null)] - Users data was loaded successfully
+2018-04-09 16:56:39,428 [1] INFO  ISE182_PROJECT_G8.persistantLayer.Logger [(null)] - Messages data was loaded successfully
+2018-04-09 16:56:39,447 [1] INFO  ISE182_PROJECT_G8.persistantLayer.Logger [(null)] - System initialization was completed, starting GUI...
