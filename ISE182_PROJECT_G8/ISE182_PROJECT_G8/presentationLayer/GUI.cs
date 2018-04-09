@@ -10,7 +10,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
 {
     class GUI
     {
-        public static void DisplayVisitorGUI(Chatroom chatroom)
+        public static void DisplayVisitorGUI()
         {
             Console.Clear();
             Console.BackgroundColor = ConsoleColor.Blue; //UI tweak//
@@ -29,18 +29,18 @@ namespace ISE182_PROJECT_G8.presentationLayer
                 switch (choice)
                 {
                     case "a":
-                        GUI_EventHandler.Register(chatroom);
+                        GUI_EventHandler.Register();
                         Console.WriteLine("What would you like to do next?");
                         goto Choice;
                         break;
                     case "b":
-                        if (!GUI_EventHandler.Login(chatroom))
+                        if (!GUI_EventHandler.Login())
                         {
                             goto Choice;
                         }
                         break;
                     case "c":
-                        GUI_EventHandler.ExitVisitor(chatroom);
+                        GUI_EventHandler.ExitVisitor();
                         break;
                     default:
                         Console.WriteLine("Invalid input, try again");
@@ -49,7 +49,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
             }
         }
 
-        public static void DisplayUserGUI(Chatroom chatroom, string nickname)
+        public static void DisplayUserGUI(string nickname)
         {
             Console.Clear();
             Console.BackgroundColor = ConsoleColor.Blue; //UI tweak//
@@ -73,33 +73,33 @@ namespace ISE182_PROJECT_G8.presentationLayer
                 switch (choice)
                 {
                     case "a":
-                        GUI_EventHandler.SendMessage(chatroom);
+                        GUI_EventHandler.SendMessage();
                         Console.WriteLine("What would you like to do next?");
                         goto ChoiceUser;
                         break;
                     case "b":
-                        GUI_EventHandler.RetreiveMessages(chatroom);
+                        GUI_EventHandler.RetreiveMessages();
                         Console.WriteLine("What would you like to do next?");
                         goto ChoiceUser;
                         break;
                     case "c":
-                        GUI_EventHandler.Display20messages(chatroom);
+                        GUI_EventHandler.Display20messages();
                         Console.WriteLine("What would you like to do next?");
                         goto ChoiceUser;
                         break;
                     case "d":
-                        GUI_EventHandler.DisplayMessagesByUser(chatroom);
+                        GUI_EventHandler.DisplayMessagesByUser();
                         Console.WriteLine("What would you like to do next?");
                         goto ChoiceUser;
                         break;
                     case "e":
-                        GUI_EventHandler.Logout(chatroom);
+                        GUI_EventHandler.Logout();
                         break;
                     case "f":
-                        GUI_EventHandler.Exit(chatroom);
+                        GUI_EventHandler.Exit();
                         break;
                     case "h": //test functions - not for release//
-                        Chat_EventHandler.test(chatroom);
+                        Chat_EventHandler.test();
                         break;
                     default:
                         Console.WriteLine("Invalid input, try again");

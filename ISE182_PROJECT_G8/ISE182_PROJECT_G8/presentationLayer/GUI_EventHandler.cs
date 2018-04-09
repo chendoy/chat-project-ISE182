@@ -9,7 +9,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
 {
     public class GUI_EventHandler
     {
-        public static void Register(Chatroom chatroom)
+        public static void Register()
         {
             Console.WriteLine("Enter User Name to Register or 'x' to cancel: ");
             Notfound: //will be used in goto statement//
@@ -20,7 +20,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
                     present_handler.output("Group id: ");
                     int groupID = Convert.ToInt32(Console.ReadLine()); // Error if not integer
 
-                    bool? succeeded = Chat_EventHandler.Register(chatroom, nickname, groupID);
+                    bool? succeeded = Chat_EventHandler.Register(nickname, groupID);
                     if (!succeeded.HasValue)
                     {
                         Console.WriteLine("Error: nickname or Group ID is not valid");
@@ -44,17 +44,17 @@ namespace ISE182_PROJECT_G8.presentationLayer
             }
         }
 
-        public static bool Login(Chatroom chatroom)
+        public static bool Login()
         {
             Console.WriteLine("User name: ");
             string nickname = Console.ReadLine();
 
-            bool logged = Chat_EventHandler.Login(chatroom, nickname);
+            bool logged = Chat_EventHandler.Login(nickname);
             if (logged)
             {
                 Console.WriteLine(nickname + " Logged -in Successfully");
                 System.Threading.Thread.Sleep(1000);
-                GUI.DisplayUserGUI(chatroom, nickname);
+                GUI.DisplayUserGUI(nickname);
             }
             else
             {
@@ -64,9 +64,9 @@ namespace ISE182_PROJECT_G8.presentationLayer
             return logged;
         }
 
-        public static void ExitVisitor(Chatroom chatroom)
+        public static void ExitVisitor()
         {
-            Chat_EventHandler.ExitVisitor(chatroom);
+            Chat_EventHandler.ExitVisitor();
             Console.Write("Thank you for using ISE_182 chat!");
 
             //moving dot while "Thank You" message is shown//
@@ -79,22 +79,22 @@ namespace ISE182_PROJECT_G8.presentationLayer
             System.Threading.Thread.Sleep(1000);
         }
 
-        public static void SendMessage(Chatroom chatroom)
+        public static void SendMessage()
         {
             Console.WriteLine("Please enter your message:");
             string msg = Console.ReadLine();
 
-            if (!Chat_EventHandler.Send(chatroom, msg))
+            if (!Chat_EventHandler.Send(msg))
             {
                 Console.WriteLine("Message length limit exceeded - max. 150 characters!");
             }
         }
 
-        public static void RetreiveMessages(Chatroom chatroom)
+        public static void RetreiveMessages()
         {
             try
             {
-                Chat_EventHandler.RetreiveMessages(chatroom);
+                Chat_EventHandler.RetreiveMessages();
                 Console.WriteLine("Messages retreived successfuly!");
             }
             catch
@@ -103,33 +103,33 @@ namespace ISE182_PROJECT_G8.presentationLayer
             }
         }
 
-        public static void Display20messages(Chatroom chatroom)
+        public static void Display20messages()
         {
-            string messages = Chat_EventHandler.DisplayNmessages(chatroom, 20);
+            string messages = Chat_EventHandler.DisplayNmessages(20);
             Console.WriteLine(messages);
         }
 
-        public static void DisplayMessagesByUser(Chatroom chatroom)
+        public static void DisplayMessagesByUser()
         {
             Console.WriteLine("Enter user name for filtering: ");
             string nickname = Console.ReadLine();
-            String msgs = Chat_EventHandler.DisplayMessagesByUser(chatroom, nickname);
+            String msgs = Chat_EventHandler.DisplayMessagesByUser(nickname);
 
             Console.WriteLine(msgs);
         }
 
-        public static void Logout(Chatroom chatroom)
+        public static void Logout()
         {
-            string nickname = Chat_EventHandler.Logout(chatroom);
+            string nickname = Chat_EventHandler.Logout();
 
             Console.WriteLine(nickname + " Logged-off Successfully");
             System.Threading.Thread.Sleep(1000);
-            GUI.DisplayVisitorGUI(chatroom);
+            GUI.DisplayVisitorGUI();
         }
 
-        public static void Exit(Chatroom chatroom)
+        public static void Exit()
         {
-            Chat_EventHandler.Exit(chatroom);
+            Chat_EventHandler.Exit();
             Console.Write("Thank you for using ISE_182 chat!");
 
             //moving dot while "Thank You" message is shown//
