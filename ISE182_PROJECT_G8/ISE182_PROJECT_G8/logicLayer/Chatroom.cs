@@ -14,7 +14,7 @@ namespace ISE182_PROJECT_G8.logicLayer
     {
         public static int _nMessagesRetreive = 10; //magic number//
         public static int _nMessagesDisplay = 20;  //magic number//
-        public String _url = "http://ise172.ise.bgu.ac.il";//"http://localhost/"; //localhost means non BGU environment, for BGU: http://ise172.ise.bgu.ac.il //
+        public String _url = "http://localhost/";// "http://ise172.ise.bgu.ac.il";//; //localhost means non BGU environment, for BGU: http://ise172.ise.bgu.ac.il //
         private int port = 80;
         private User loggedInUser;
         private List<User> userList;  //in RAM, retreived from persistant layer//
@@ -59,6 +59,7 @@ namespace ISE182_PROJECT_G8.logicLayer
             if (!alreadyExist)
             {
                 this.userList.Add(newUser);
+                SaveUsers(); //persisting registered users data//
                 Logger.Instance.Info("User: "+nickname+ " registered successfully");
                 return true;
             }
@@ -133,6 +134,7 @@ namespace ISE182_PROJECT_G8.logicLayer
             Message message = loggedInUser.Send(this._url, msg); //asks the logged in user instance to send the message//
             Logger.Instance.Info("Chatroom: asks "+this.loggedInUser.getNickname()+" to send message");
             this.messageList.Add(message); //adds the sent message to the chat's message list (RAM)//
+            SaveMessages(); //persisting received messages data//
             this.messageList = MessageHandler.sortbytime(this.messageList);
         }
         
@@ -174,6 +176,7 @@ namespace ISE182_PROJECT_G8.logicLayer
 
             //adds the retreived messages as a whole to the chat's messages list//
             MessageHandler.addUniqueByGuid(this.messageList, msgRetreived);
+            SaveMessages(); //persisting received messages data//
             this.messageList = MessageHandler.sortbytime(this.messageList);
         }
 
