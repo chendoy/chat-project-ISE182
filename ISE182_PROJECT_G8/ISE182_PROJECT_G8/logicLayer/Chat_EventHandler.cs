@@ -33,8 +33,8 @@ namespace ISE182_PROJECT_G8.logicLayer
 
         public static void ExitVisitor()
         {
-            chatroom.saveUsers(); //persisting registered users data//
-            chatroom.saveMessages(); //persisting received messages data//
+            chatroom.SaveUsers(); //persisting registered users data//
+            chatroom.SaveMessages(); //persisting received messages data//
             Logger.Instance.Info("System exits [visitor]");
         }
 
