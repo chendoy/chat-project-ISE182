@@ -76,7 +76,7 @@ namespace ISE182_PROJECT_G8.logicLayer
             return chatroom.DisplayMessagesByUser(nickname);
         }
 
-        public static string Logout(Chatroom chatroom)
+        public static string Logout()
         {
             return chatroom.LogOut();
         }
