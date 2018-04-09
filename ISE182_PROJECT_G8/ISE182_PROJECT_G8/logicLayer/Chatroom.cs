@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ISE182_PROJECT_G8.logicLayer
 {
-    public class Chatroom
+    public sealed class Chatroom
     {
         public static int _nMessagesRetreive = 10; //magic number//
         public static int _nMessagesDisplay = 20;  //magic number//
@@ -19,6 +19,7 @@ namespace ISE182_PROJECT_G8.logicLayer
         private User loggedInUser;
         private List<User> userList;  //in RAM, retreived from persistant layer//
         private List<Message> messageList; //in RAM, retreived from persistant layer//
+        private Saver saver;
 
         private static Chatroom instance = null;
         private static readonly object padlock = new object();
@@ -27,8 +28,9 @@ namespace ISE182_PROJECT_G8.logicLayer
         private Chatroom()
         {
             this.loggedInUser = null;
-            this.messageList = new List<Message>();
-            this.userList = new List<User>();
+            saver = Saver.Instance;
+            LoadMessages();
+            LoadUsers();
         }
 
         public static Chatroom Instance
@@ -91,27 +93,27 @@ namespace ISE182_PROJECT_G8.logicLayer
             return this.loggedInUser;
         }
 
-        // next 4 static methods are related to persistant layer: save/load users/messages//
+        // next 4 methods are related to persistant layer: save/load users/messages//
 
         //1//
-        public void saveUsers()
+        public void SaveUsers()
         {
-            persistantLayer.Saver.saveUsers(this.userList);
+            saver.SaveUsers(this.userList);
         }
         //2//
-        public void loadUsers()
+        public void LoadUsers()
         {
-            this.userList = persistantLayer.Saver.LoadUsers();
+            this.userList = saver.LoadUsers();
         }
         //3//
-        public void saveMessages()
+        public void SaveMessages()
         {
-            persistantLayer.Saver.saveMessages(this.messageList);
+            saver.SaveMessages(this.messageList);
         }
         //4//
-        public void loadMessages()
+        public void LoadMessages()
         {
-            this.messageList = persistantLayer.Saver.LoadMessages();
+            this.messageList = saver.LoadMessages();
         }
 
         // Assume there is logged in user
