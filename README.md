@@ -9,7 +9,7 @@ What is left to do? (update this on the go)
 
 - [V] implementation of the logger - in progress, log.txt not created (chen) - Done
 
-- adding option to "go back" on each menu (like I did on "register") (sundy)
+- adding option to "go back" on each menu (like I did on "register") (sundy) - Done
 
 - [V] more elegant use of Chatroom instance (naor) - Done
 
