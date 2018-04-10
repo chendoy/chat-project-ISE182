@@ -83,13 +83,11 @@ namespace ISE182_PROJECT_G8.presentationLayer
                         break;
                     case "c":
                         GUI_EventHandler.Display20messages();
-                        Console.WriteLine("What would you like to do next?");
-                        goto ChoiceUser;
+                        DisplayUserGUI(nickname);
                         break;
                     case "d":
                         GUI_EventHandler.DisplayMessagesByUser();
-                        Console.WriteLine("What would you like to do next?");
-                        goto ChoiceUser;
+                        DisplayUserGUI(nickname);
                         break;
                     case "e":
                         Console.WriteLine("Are you sure you want to logout y/n?");
