@@ -92,10 +92,29 @@ namespace ISE182_PROJECT_G8.presentationLayer
                         goto ChoiceUser;
                         break;
                     case "e":
-                        GUI_EventHandler.Logout();
+                        Console.WriteLine("Are you sure you want to logout y/n?");
+                        String choise = Console.ReadLine();
+                        if (choise == "y")
+                        {
+                            GUI_EventHandler.Logout();
+                        }
+                        else
+                        {
+                            goto ChoiceUser;
+                        }
                         break;
                     case "f":
-                        GUI_EventHandler.Exit();
+                        Console.WriteLine("Are you sure you want to exit y/n?");
+                        choise = Console.ReadLine();
+                        if (choise == "y")
+                        {
+                            GUI_EventHandler.Exit();
+                        }
+                        else
+                        {
+                            goto ChoiceUser;
+                        }
+                        
                         break;
                     case "h": //test functions - not for release//
                         Chat_EventHandler.test();

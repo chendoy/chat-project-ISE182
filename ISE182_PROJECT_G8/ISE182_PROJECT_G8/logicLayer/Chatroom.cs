@@ -14,7 +14,7 @@ namespace ISE182_PROJECT_G8.logicLayer
     {
         public static int _nMessagesRetreive = 10; //magic number//
         public static int _nMessagesDisplay = 20;  //magic number//
-        public String _url = "http://localhost/";// "http://ise172.ise.bgu.ac.il";//
+        public String _url = "http://ise172.ise.bgu.ac.il";// "http://ise172.ise.bgu.ac.il";//
         private int port = 80;
         private User loggedInUser;
         private List<User> userList;  //in RAM, retreived from persistant layer//
