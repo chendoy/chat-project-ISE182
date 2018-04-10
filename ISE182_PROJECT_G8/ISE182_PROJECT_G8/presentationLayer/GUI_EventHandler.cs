@@ -17,7 +17,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
                 String nickname = Console.ReadLine();
                 if (nickname != "x")
                 {
-                    present_handler.output("Group id: ");
+                    Console.WriteLine("Group id: ");
                     int groupID = Convert.ToInt32(Console.ReadLine()); // Error if not integer
 
                     bool? succeeded = Chat_EventHandler.Register(nickname, groupID);
