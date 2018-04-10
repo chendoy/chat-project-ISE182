@@ -112,7 +112,6 @@ namespace ISE182_PROJECT_G8.presentationLayer
         {
             string messages = Chat_EventHandler.DisplayNmessages(20);
             GUI.DisplayInfo("last 20 messages", messages);
-            GUI.DisplayUserGUI(Chatroom.Instance.getLoggedInUser().getNickname());
         }
 
         public static void DisplayMessagesByUser()
@@ -124,9 +123,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
                 String msgs = Chat_EventHandler.DisplayMessagesByUser(nickname);
 
                 GUI.DisplayInfo("messages of " + nickname, msgs);
-                GUI.DisplayUserGUI(Chatroom.Instance.getLoggedInUser().getNickname());
-            }
-            
+            } 
         }
 
         public static void Logout()
