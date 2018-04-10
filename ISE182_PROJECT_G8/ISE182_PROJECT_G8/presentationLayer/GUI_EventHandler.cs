@@ -81,12 +81,12 @@ namespace ISE182_PROJECT_G8.presentationLayer
 
         public static void SendMessage()
         {
-            Console.WriteLine("Are you sure you want to send a message? press 'n' for no and any other key for yes");
-            string choise = Console.ReadLine();
-            if(choise != "n")
+            Console.WriteLine("Please enter your message or press x to exit:");
+            string msg = Console.ReadLine();
+            if(msg != "x")
             {
-                Console.WriteLine("Please enter your message:");
-                string msg = Console.ReadLine();
+                //Console.WriteLine("Please enter your message:");
+                //string msg = Console.ReadLine();
                 if (!Chat_EventHandler.Send(msg))
                 {
                 Console.WriteLine("Message length limit exceeded - max. 150 characters!");
