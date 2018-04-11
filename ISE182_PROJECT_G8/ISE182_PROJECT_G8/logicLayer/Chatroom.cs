@@ -106,17 +106,24 @@ namespace ISE182_PROJECT_G8.logicLayer
             return nickname;
         }
 
-        public void Send(string msg)
+        public bool Send(string msg)
         {
             User loggedInUser = getLoggedInUser();
-
-            Message message = loggedInUser.Send(this._url, msg); //asks the logged in user instance to send the message//
-            Logger.Instance.Info("Chatroom: asks "+this.loggedInUser.getNickname()+" to send message");
-            this.messageList.Add(message); //adds the sent message to the chat's message list (RAM)//
-            saver.SaveMessages(this.messageList); //persisting received messages data//
-            this.messageList = MessageHandler.sortbytime(this.messageList);
+            try
+            {
+                Message message = loggedInUser.Send(this._url, msg); //asks the logged in user instance to send the message//
+                Logger.Instance.Info("Chatroom: asks " + this.loggedInUser.getNickname() + " to send message");
+                this.messageList.Add(message); //adds the sent message to the chat's message list (RAM)//
+                saver.SaveMessages(this.messageList); //persisting received messages data//
+                this.messageList = MessageHandler.sortbytime(this.messageList);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Logger.Instance.Fatal(String.Format("Could not reach the server: {0}", _url));
+                return false;
+            }
         }
-        
 
         public string DisplayMessagesByUser(string nickname)
         {

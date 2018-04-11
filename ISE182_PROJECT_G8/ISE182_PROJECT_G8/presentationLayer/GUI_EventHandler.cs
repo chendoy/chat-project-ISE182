@@ -18,27 +18,37 @@ namespace ISE182_PROJECT_G8.presentationLayer
                 if (nickname != "x")
                 {
                     Console.WriteLine("Group id: ");
-                    int groupID = Convert.ToInt32(Console.ReadLine()); // Error if not integer
+                    string groupTxt = Console.ReadLine();
+                    int groupID;
+                    if (int.TryParse(groupTxt, out groupID))
+                    {
 
-                    bool? succeeded = Chat_EventHandler.Register(nickname, groupID);
-                    if (!succeeded.HasValue)
-                    {
-                        Console.WriteLine("Error: nickname or Group ID is not valid");
-                        Console.WriteLine("Please pick another user name or 'x' to cancel");
-                        goto Notfound;
-                    }
-                    else
-                    {
-                        if (succeeded.Value)
+                        bool? succeeded = Chat_EventHandler.Register(nickname, groupID);
+                        if (!succeeded.HasValue)
                         {
-                            Console.WriteLine("Registration was Successfull, Welcome to ISE_182 chat!");
-                        }
-                        else
-                        {
-                            Console.WriteLine("Error: User name already exist.");
+                            Console.WriteLine("Error: nickname or Group ID is not valid");
                             Console.WriteLine("Please pick another user name or 'x' to cancel");
                             goto Notfound;
                         }
+                        else
+                        {
+                            if (succeeded.Value)
+                            {
+                                Console.WriteLine("Registration was Successfull, Welcome to ISE_182 chat!");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Error: User name already exist.");
+                                Console.WriteLine("Please pick another user name or 'x' to cancel");
+                                goto Notfound;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Error: Group ID is not a number");
+                        Console.WriteLine("Please pick user name again or 'x' to cancel");
+                        goto Notfound;
                     }
                 }
             }

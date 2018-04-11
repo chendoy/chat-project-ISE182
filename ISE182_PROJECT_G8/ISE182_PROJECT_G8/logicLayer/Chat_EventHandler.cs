@@ -52,9 +52,14 @@ namespace ISE182_PROJECT_G8.logicLayer
                 return false;
             }
 
-            chatroom.Send(msg);
-            Logger.Instance.Info("Message was sent successfully");
-            return true;
+            bool sent = chatroom.Send(msg);
+            if (sent)
+            {
+                Logger.Instance.Info("Message was sent successfully");
+                return true;
+            }
+
+            return false;
         }
 
         public static void RetreiveMessages()
