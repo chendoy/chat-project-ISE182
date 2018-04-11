@@ -133,6 +133,10 @@ namespace ISE182_PROJECT_G8.presentationLayer
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.White;
 
+            if (String.IsNullOrWhiteSpace(info))
+            {
+                info = "There's nothing to show..";
+            }
             Console.WriteLine("\n" + info);
             Console.Write("\n Press any key to go back to menu...");
             Console.ReadKey(true);
