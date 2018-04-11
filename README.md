@@ -3,8 +3,6 @@
 
 What is left to do? (update this on the go)
 
-- handling error/exceptions - wrong key/user name doesn't exist/server not reachable... (sundy+naor)
-
 - [V] sorting of messages - need to test on bgu server (sundy) - Done.
 
 - [V] implementation of the logger - in progress, log.txt not created (chen) - Done
@@ -18,6 +16,8 @@ What is left to do? (update this on the go)
 - [V] make sure PL and BL are completely divided (chen)
 
 - [V] make sure saving location is exist, maybe use of relative path (naor)
+
+- handling error/exceptions - wrong key/user name doesn't exist/server not reachable... (sundy+naor)
 
 - updating the LLD & HLD (sundy)
 
