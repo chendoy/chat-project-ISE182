@@ -13,9 +13,9 @@ What is left to do? (update this on the go)
 
 - [V] more elegant use of Chatroom instance (naor) - Done
 
-- reviewing the access modifiers in the code (private/public/protected) (chen)
+- [V] reviewing the access modifiers in the code (private/public/protected) (chen)
 
-- make sure PL and BL are completely divided (chen)
+- [V] make sure PL and BL are completely divided (chen)
 
 - [V] make sure saving location is exist, maybe use of relative path (naor)
 
