@@ -17,9 +17,9 @@ What is left to do? (update this on the go)
 
 - [V] make sure saving location is exist, maybe use of relative path (naor)
 
-- handling error/exceptions - wrong key/user name doesn't exist/server not reachable... (sundy+naor)
+- [V[ updating the LLD & HLD (sundy) - Done
 
-- updating the LLD & HLD (sundy) - Done
+- handling error/exceptions - wrong key/user name doesn't exist/server not reachable... (sundy+naor)
 
 *Please write in whatsapp before you start coding something so we will know*
 
