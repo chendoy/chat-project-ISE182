@@ -19,7 +19,7 @@ What is left to do? (update this on the go)
 
 - handling error/exceptions - wrong key/user name doesn't exist/server not reachable... (sundy+naor)
 
-- updating the LLD & HLD (sundy)
+- updating the LLD & HLD (sundy) - Done
 
 *Please write in whatsapp before you start coding something so we will know*
 
