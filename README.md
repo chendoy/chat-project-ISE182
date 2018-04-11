@@ -5,11 +5,11 @@ What is left to do? (update this on the go)
 
 - handling error/exceptions - wrong key/user name doesn't exist/server not reachable... (sundy+naor)
 
-- sorting of messages - need to test on bgu server (sundy) - Done.
+- [V] sorting of messages - need to test on bgu server (sundy) - Done.
 
 - [V] implementation of the logger - in progress, log.txt not created (chen) - Done
 
-- adding option to "go back" on each menu (like I did on "register") (sundy) - Done
+- [V] adding option to "go back" on each menu (like I did on "register") (sundy) - Done
 
 - [V] more elegant use of Chatroom instance (naor) - Done
 
