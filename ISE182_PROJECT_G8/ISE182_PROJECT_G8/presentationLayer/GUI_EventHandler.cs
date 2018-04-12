@@ -93,18 +93,25 @@ namespace ISE182_PROJECT_G8.presentationLayer
         {
             Console.WriteLine("Please enter your message or press x to exit:");
             string msg = Console.ReadLine();
-            if (msg != "x")
+            if (String.IsNullOrWhiteSpace(msg))
             {
-                bool? succeeded = Chat_EventHandler.Send(msg);
-                if (!succeeded.HasValue)
+                Console.WriteLine("Cannot send empty message");
+            }
+            else
+            {
+                if (msg != "x")
                 {
-                    Console.WriteLine("Message length limit exceeded - max. 150 characters!");
-                }
-                else
-                {
-                    if(!succeeded.Value)
+                    bool? succeeded = Chat_EventHandler.Send(msg);
+                    if (!succeeded.HasValue)
                     {
-                        Console.WriteLine("Server did not respond, please check your internet connection..");
+                        Console.WriteLine("Message length limit exceeded - max. 150 characters!");
+                    }
+                    else
+                    {
+                        if (!succeeded.Value)
+                        {
+                            Console.WriteLine("Server did not respond, please check your internet connection..");
+                        }
                     }
                 }
             }
