@@ -58,17 +58,19 @@ namespace ISE182_PROJECT_G8.presentationLayer
         {
             Console.WriteLine("User name: ");
             string nickname = Console.ReadLine();
+            Console.WriteLine("Group ID: ");
+           int groupId = Convert.ToInt32(Console.ReadLine());
 
-            bool logged = Chat_EventHandler.Login(nickname);
+            bool logged = Chat_EventHandler.Login(nickname,groupId);
             if (logged)
             {
-                Console.WriteLine(nickname + " Logged -in Successfully");
+                Console.WriteLine(nickname +"["+ groupId+"]" +" Logged-in Successfully");
                 System.Threading.Thread.Sleep(1000);
                 GUI.DisplayUserGUI(nickname);
             }
             else
             {
-                Console.WriteLine("Error: user not exist.");
+                Console.WriteLine("Error: user does not exist!");
             }
 
             return logged;
@@ -141,9 +143,18 @@ namespace ISE182_PROJECT_G8.presentationLayer
             string nickname = Console.ReadLine();
             if (nickname != "x")
             {
-                String msgs = Chat_EventHandler.DisplayMessagesByUser(nickname);
-
-                GUI.DisplayInfo("messages of " + nickname, msgs);
+                Console.WriteLine("Enter group ID (-1 to abort): ");
+                int groupId = Convert.ToInt32(Console.ReadLine());
+                if (groupId >= 1 & groupId <= 40 && groupId != -1)
+                {
+                    String msgs = Chat_EventHandler.DisplayMessagesByUser(nickname, groupId);
+                    GUI.DisplayInfo("messages of " + nickname + "[" + groupId + "]", msgs);
+                }
+                else //there was a problem with the group id//
+                {
+                    Console.WriteLine("group ID is -1 or is not valid, aborting...");
+                    System.Threading.Thread.Sleep(2000);
+                }
             } 
         }
 

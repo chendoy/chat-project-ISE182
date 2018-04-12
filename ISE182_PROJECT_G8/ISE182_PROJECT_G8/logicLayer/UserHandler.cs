@@ -8,6 +8,7 @@ namespace ISE182_PROJECT_G8.logicLayer
 {
     public static class UserHandler
     {
+        //returns true if 'user' exists in 'userList' using a linq query//
         public static Boolean existIn(User user, List<User> userList)
         {
             var loggedin = (from user_in_list in userList

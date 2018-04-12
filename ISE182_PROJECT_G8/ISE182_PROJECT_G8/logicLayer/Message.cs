@@ -17,6 +17,7 @@ namespace ISE182_PROJECT_G8.logicLayer
         private string MessageContent { get; }
         private string GroupID { get; }
 
+        //IMessage to Message constructor//
         public Message (IMessage msg)
         {
             this.Id = msg.Id;
@@ -25,6 +26,8 @@ namespace ISE182_PROJECT_G8.logicLayer
             this.MessageContent = msg.MessageContent;
             this.GroupID = msg.GroupID;
         }
+
+        //getters and setters://
 
         public String getUserName()
         {
@@ -46,6 +49,10 @@ namespace ISE182_PROJECT_G8.logicLayer
         public Guid getGuid()
         {
             return this.Id;
+        }
+        public int getGroupId()
+        {
+            return Convert.ToInt32(this.GroupID);
         }
     
     }

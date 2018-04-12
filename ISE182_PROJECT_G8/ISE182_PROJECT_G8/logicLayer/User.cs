@@ -21,7 +21,7 @@ namespace ISE182_PROJECT_G8.logicLayer
             if (UserHandler.isValid(nickname, groupID))
             {
                 this.nickname = nickname;
-                this.status = 0;
+                this.status = 0; //fresh user is initially logged-off// 
                 this.groupID = groupID;
             }
             else
@@ -49,14 +49,8 @@ namespace ISE182_PROJECT_G8.logicLayer
 
         public void loginOrOff() //flips the user login status - log-in if it was off and vice versa//
         {
-            if (status == 0)
-            {
-                status = 1;
-            }
-            else
-            {
-                status = 0;
-            }
+            if (status == 0) status = 1;
+            else             status = 0;
         }
 
 

@@ -19,13 +19,15 @@ What is left to do? (update this on the go)
 
 - [V[ updating the LLD & HLD (sundy) - Done
 
-- handling error/exceptions - wrong key/user name doesn't exist/server not reachable... (sundy+naor)
+- [V] handling error/exceptions - wrong key/user name doesn't exist/server not reachable... (sundy+naor)
 
 *Please write in whatsapp before you start coding something so we will know*
 
 # Basic guideline for the code:
 RunChat-->GUI-->GUI_EventHandler-->Chat_EventHandler-->Chatroom-->anything else depends on the user's choice
+
 RunChat: initiate startup
+
 GUI: Responsible for the menus
 
 GUI_EventHandler: Responsible for processing the user choice

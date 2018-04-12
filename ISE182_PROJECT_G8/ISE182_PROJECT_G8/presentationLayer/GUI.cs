@@ -112,10 +112,6 @@ namespace ISE182_PROJECT_G8.presentationLayer
                         {
                             goto ChoiceUser;
                         }
-                        
-                        break;
-                    case "h": //test functions - not for release//
-                        Chat_EventHandler.test();
                         break;
                     default:
                         Console.WriteLine("Invalid input, try again");

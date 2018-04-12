@@ -18,7 +18,7 @@ namespace ISE182_PROJECT_G8.logicLayer
         private static Chatroom chatroom = Chatroom.Instance;
         public static bool? Register(String nickname, int groupID)
         {
-            if (!UserHandler.isValid(nickname, groupID))
+            if (!UserHandler.isValid(nickname, groupID)) //detailes of registration was not valid - will not register// 
             {
                 Logger.Instance.Error("Register info was not valid");
                 return null;
@@ -27,9 +27,9 @@ namespace ISE182_PROJECT_G8.logicLayer
             return chatroom.Register(nickname, groupID);
         }
         
-        public static bool Login(String nickname)
+        public static bool Login(String nickname, int groupId)
         {
-            return chatroom.Login(nickname);
+            return chatroom.Login(nickname, groupId);
         }
 
         public static void ExitVisitor()
@@ -40,7 +40,7 @@ namespace ISE182_PROJECT_G8.logicLayer
         public static void Exit()
         {
             string nickname = chatroom.getLoggedInUser().getNickname();
-            chatroom.LogOut(); //log the current user out//
+            chatroom.LogOut(); //changes the chatroom's state//
             ExitVisitor();
             Logger.Instance.Info(String.Format("System exits [{0}]", nickname));
         }
@@ -67,47 +67,15 @@ namespace ISE182_PROJECT_G8.logicLayer
             return chatroom.DisplayNmessages(n);
         }
 
-        public static string DisplayMessagesByUser(string nickname)
+        public static string DisplayMessagesByUser(string nickname, int groupId)
         {
-            return chatroom.DisplayMessagesByUser(nickname);
+            return chatroom.DisplayMessagesByUser(nickname, groupId);
         }
 
         public static string Logout()
         {
-            return chatroom.LogOut();
+            return chatroom.LogOut(); //changes the chatroom's state//
         }
 
-        
-
-
-
-        /*test functions:
-            * a: prints all regiestered users//
-            * b: clears all registered users
-            * c: prints the currently logged in user, if exists
-            * */
-        public static void test()
-        {
-            present_handler.output("Choose a test function:");
-            string choice = Console.ReadLine();
-            switch(choice)
-            {
-                case "a":
-                    chatroom.printAllUsers();
-                    //Chat_EventHandler./chat_ready(chatroom);
-                    break;
-                /*case "b":
-                    chatroom.clearUserList();
-                    break;*/
-                case "c":
-                    User loggedIn = chatroom.getLoggedInUser();
-                    if (loggedIn != null)
-                        present_handler.output("logged in: " + loggedIn.getNickname());
-                    else
-                        present_handler.output("No logged in User");
-                    //Chat_EventHandler.chat_ready(chatroom);
-                    break;
-            }
-        }
     }
 }

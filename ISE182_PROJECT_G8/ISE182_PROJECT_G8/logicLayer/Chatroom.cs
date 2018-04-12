@@ -27,8 +27,8 @@ namespace ISE182_PROJECT_G8.logicLayer
         {
             this.loggedInUser = null;
             saver = Saver.Instance;
-            this.messageList = saver.LoadMessages();
-            this.userList = saver.LoadUsers();
+            this.messageList = saver.LoadMessages(); //un-persisting messages data to RAM//
+            this.userList = saver.LoadUsers(); //un-persisting users data to RAM//
         }
 
         public static Chatroom Instance
@@ -66,12 +66,11 @@ namespace ISE182_PROJECT_G8.logicLayer
         }
 
 
-        public bool Login(string nickname)
+        public bool Login(string nickname, int groupId)
         {
             //linq query to find existing user in 'userList'//
-
             var loggedin = (from user in userList
-                            where user.getNickname().Equals(nickname)
+                            where user.getNickname().Equals(nickname) & user.getGroupID()==groupId
                             select user).FirstOrDefault();
             if (loggedin != null)
             {
@@ -82,7 +81,7 @@ namespace ISE182_PROJECT_G8.logicLayer
             }
             else
             {
-                Logger.Instance.Error("Failed to log "+nickname+" in - doesn't exist");
+                Logger.Instance.Error("User: "+ nickname +" failed to log-in - doesn't exist");
                 return false; 
             }
         }
@@ -91,8 +90,6 @@ namespace ISE182_PROJECT_G8.logicLayer
         {
             return this.loggedInUser;
         }
-
-        // next 4 methods are related to persistant layer: save/load users/messages//
 
         // Assume there is logged in user
         public string LogOut()
@@ -124,28 +121,28 @@ namespace ISE182_PROJECT_G8.logicLayer
             }
         }
 
-        public string DisplayMessagesByUser(string nickname)
+        public string DisplayMessagesByUser(string nickname, int groupId)
         {
             StringBuilder stringBuilder = new StringBuilder();
-            var messages = (from msg in messageList where msg.getUserName().Equals(nickname) select msg);
+
+            //linq query//
+            var messages = (from msg in messageList where msg.getUserName().Equals(nickname) & msg.getGroupId()==groupId select msg);
+
+            //appending the messages to a list//
             foreach (Message msg in messages)
-            {
                 stringBuilder.AppendLine(msg.toString());
-            }
             Logger.Instance.Info("Chatroom: messages by user "+nickname+" was built");
             return stringBuilder.ToString();
         }
 
-        //displaying specific number off messages//
+        //displaying specific number of messages//
         public string DisplayNmessages(int n)
         {
             StringBuilder stringBuilder = new StringBuilder();
             int startIndex = Math.Max(0,this.messageList.Count - n);
             for (int i = startIndex; this.messageList.ElementAtOrDefault(i) != null & i < this.messageList.Count; i++)
-            {
                 stringBuilder.AppendLine(this.messageList.ElementAt(i).toString());
-            }
-            Logger.Instance.Info("Chatroom: "+n+" messages "+"list generetad");
+            Logger.Instance.Info("Chatroom: "+n+" messages list was generetad");
             return stringBuilder.ToString();
         }
 
@@ -174,15 +171,5 @@ namespace ISE182_PROJECT_G8.logicLayer
                 return false;
             }
         }
-
-        public void printAllUsers() //***test function****//
-        {
-            foreach (User user in userList)
-            {
-                present_handler.output(user.toString());
-            }
-            Console.ReadKey();
-        }
-
     }
 }

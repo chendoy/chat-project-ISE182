@@ -14,7 +14,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
                 String content = Console.ReadLine();
                 return content;
             }
-            // This function print to the screen
+            // This function prints to the screen
             public static void output(String s)
             {
                 Console.WriteLine(s);

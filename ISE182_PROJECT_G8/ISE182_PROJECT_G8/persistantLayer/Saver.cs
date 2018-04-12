@@ -70,7 +70,7 @@ namespace ISE182_PROJECT_G8.persistantLayer
                 Logger.Instance.Info("Users data was loaded successfully");
                 return loadedUsers;
             }
-            return new List<User>();
+            return new List<User>(); //the file doesn't exist - return an empty list//
         }
 
         public void SaveMessages(List<Message> MessagesToSave)
@@ -93,7 +93,7 @@ namespace ISE182_PROJECT_G8.persistantLayer
                 Logger.Instance.Info("Messages data was loaded successfully");
                 return loadedMessages;
             }
-            return new List<Message>(); 
+            return new List<Message>();  //the file doesn't exist - return an empty list//
 
 
         }

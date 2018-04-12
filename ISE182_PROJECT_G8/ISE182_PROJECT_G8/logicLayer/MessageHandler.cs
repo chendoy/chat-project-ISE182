@@ -8,6 +8,7 @@ namespace ISE182_PROJECT_G8.logicLayer
 {
     class MessageHandler
     {
+        //adds messages from 'toAddList' to 'mainList' if it has unique GUID among the 'mainList' messages//
         public static void addUniqueByGuid(List<Message> mainList, List<Message> toAddList)
         {
             foreach (Message message in toAddList)
@@ -20,7 +21,7 @@ namespace ISE182_PROJECT_G8.logicLayer
                     mainList.Add(message);
             }
         }
-
+        //sorting by timestamp//
         public static List<Message> sortbytime(List<Message> list)
         {
             List<Message> sorted = new List<Message>();
@@ -28,7 +29,7 @@ namespace ISE182_PROJECT_G8.logicLayer
             return sorted;
         }
 
-        // Checks the message length
+        // Checks the message length for 150 length max limit//
         public static Boolean isValid(String message)
         {
             int length = message.Length;

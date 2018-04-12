@@ -13,7 +13,7 @@ namespace ISE182_PROJECT_G8.logicLayer
     {
         private static void SystemInit()
         {
-            Chatroom chatRoom = Chatroom.Instance; //initiates a new Chatroom object//
+            Chatroom chatRoom = Chatroom.Instance; //initiates a new Chatroom singleton instance//
             log4net.Config.XmlConfigurator.Configure(); //configures the logger//
             Logger.Instance.Info("System initialization was completed, starting GUI...");
         }
