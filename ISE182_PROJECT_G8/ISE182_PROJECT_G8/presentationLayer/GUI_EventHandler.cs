@@ -10,6 +10,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
     public class GUI_EventHandler
     {
         private static int _nMessagesDisplay = 20;  //magic number//
+
         public static void Register()
         {
             Console.WriteLine("Enter User Name to Register or 'x' to cancel: ");

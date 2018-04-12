@@ -39,8 +39,13 @@ namespace ISE182_PROJECT_G8.logicLayer
 
         public static void Exit()
         {
+<<<<<<< HEAD
             string nickname = chatroom.getLoggedInUser().getNickname();
             chatroom.LogOut(); //changes the chatroom's state//
+=======
+            string nickname = chatroom.GetLoggedInUser().getNickname();
+            chatroom.LogOut(); //log the current user out//
+>>>>>>> a99ad0b74778e0971b9e6715fced7e90695e3ae6
             ExitVisitor();
             Logger.Instance.Info(String.Format("System exits [{0}]", nickname));
         }
@@ -77,5 +82,40 @@ namespace ISE182_PROJECT_G8.logicLayer
             return chatroom.LogOut(); //changes the chatroom's state//
         }
 
+<<<<<<< HEAD
+=======
+        
+
+
+
+        /*test functions:
+            * a: prints all regiestered users//
+            * b: clears all registered users
+            * c: prints the currently logged in user, if exists
+            * */
+        public static void test()
+        {
+            present_handler.output("Choose a test function:");
+            string choice = Console.ReadLine();
+            switch(choice)
+            {
+                case "a":
+                    chatroom.printAllUsers();
+                    //Chat_EventHandler./chat_ready(chatroom);
+                    break;
+                /*case "b":
+                    chatroom.clearUserList();
+                    break;*/
+                case "c":
+                    User loggedIn = chatroom.GetLoggedInUser();
+                    if (loggedIn != null)
+                        present_handler.output("logged in: " + loggedIn.getNickname());
+                    else
+                        present_handler.output("No logged in User");
+                    //Chat_EventHandler.chat_ready(chatroom);
+                    break;
+            }
+        }
+>>>>>>> a99ad0b74778e0971b9e6715fced7e90695e3ae6
     }
 }

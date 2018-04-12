@@ -86,7 +86,7 @@ namespace ISE182_PROJECT_G8.logicLayer
             }
         }
 
-        public User getLoggedInUser()
+        public User GetLoggedInUser()
         {
             return this.loggedInUser;
         }
@@ -103,7 +103,7 @@ namespace ISE182_PROJECT_G8.logicLayer
 
         public bool Send(string msg)
         {
-            User loggedInUser = getLoggedInUser();
+            User loggedInUser = GetLoggedInUser();
             try
             {
                 Message message = loggedInUser.Send(this._url, msg); //asks the logged in user instance to send the message//
