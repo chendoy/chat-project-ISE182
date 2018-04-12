@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ISE182_PROJECT_G8.logicLayer
 {
+    /* This class handle all the processes which
+     * need to done on users purely
+     */
     public static class UserHandler
     {
         //returns true if 'user' exists in 'userList' using a linq query//

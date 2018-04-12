@@ -10,12 +10,16 @@ using ISE182_PROJECT_G8.persistantLayer;
 namespace ISE182_PROJECT_G8.logicLayer
 {
     /* 
-     * Class of static methods that defines the behaviour of ISE_182 (group #8) chat//
+     * Class of static methods that defines the behaviour of ISE_182 (group #8) chat
+     * This class will make initial processing of the input 
+     * and send it to Chatroom for further processing
      */
 
     class Chat_EventHandler
     {
         private static Chatroom chatroom = Chatroom.Instance;
+
+
         public static bool? Register(String nickname, int groupID)
         {
             if (!UserHandler.isValid(nickname, groupID)) //detailes of registration was not valid - will not register// 

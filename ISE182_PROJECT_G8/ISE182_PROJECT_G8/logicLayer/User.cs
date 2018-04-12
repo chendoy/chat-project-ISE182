@@ -9,6 +9,8 @@ using ISE182_PROJECT_G8.persistantLayer;
 
 namespace ISE182_PROJECT_G8.logicLayer
 {
+    /* This class stores a user info
+     */
     [Serializable]
     public class User
     {

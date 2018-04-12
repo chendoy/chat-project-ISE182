@@ -8,6 +8,8 @@ using ISE182_PROJECT_G8.CommunicationLayer;
 
 namespace ISE182_PROJECT_G8.logicLayer
 {
+    /* This class stores a message info
+     */
     [Serializable]
     public class Message
     {

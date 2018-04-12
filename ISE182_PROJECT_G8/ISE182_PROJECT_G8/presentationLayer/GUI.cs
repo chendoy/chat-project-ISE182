@@ -8,8 +8,14 @@ using ISE182_PROJECT_G8.logicLayer;
 
 namespace ISE182_PROJECT_G8.presentationLayer
 {
+    /*This class will handle the GUI
+     * This class will show the user the menu
+     * get the user choice and forward it to GUI_EventHandler
+     * for further processing
+     */
     class GUI
     {
+        // Showing the visitor menu
         public static void DisplayVisitorGUI()
         {
             Console.Clear();
@@ -48,6 +54,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
             }
         }
 
+        // Showing the logged in user menu
         public static void DisplayUserGUI(string nickname)
         {
             Console.Clear();
@@ -117,6 +124,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
             }
         }
 
+        // Showing information window such as messages
         public static void DisplayInfo(string title, string info)
         {
             Console.Clear();

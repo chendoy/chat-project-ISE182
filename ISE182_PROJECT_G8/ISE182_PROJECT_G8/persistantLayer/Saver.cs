@@ -15,7 +15,7 @@ namespace ISE182_PROJECT_G8.persistantLayer
      * and from filesystem in order to maintain quick access of the chat system to its database
      */
 
-    public sealed class Saver
+    public sealed class Saver // singleton design pattern
     {
         private static string directoryPath = @"StoredData";
         private static string UsersFilename = Path.Combine(directoryPath, "Users.bin");

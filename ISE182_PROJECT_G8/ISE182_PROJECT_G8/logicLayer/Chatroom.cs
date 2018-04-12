@@ -10,7 +10,12 @@ using System.Threading.Tasks;
 
 namespace ISE182_PROJECT_G8.logicLayer
 {
-    public sealed class Chatroom
+    /* This is the main Logic Layer class
+     * This class will get the inputs and process them
+     * This class will return the result of the process to 
+     * the one who called it
+     */
+    public sealed class Chatroom // singleton design pattern
     {
         private String _url = "http://ise172.ise.bgu.ac.il";//
         private int port = 80;

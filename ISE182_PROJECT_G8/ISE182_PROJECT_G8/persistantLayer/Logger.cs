@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace ISE182_PROJECT_G8.persistantLayer
 {
+    /* This class will handle the log process
+     */
     public sealed class Logger  // singleton design pattern
     {
         private static Logger instance = null;

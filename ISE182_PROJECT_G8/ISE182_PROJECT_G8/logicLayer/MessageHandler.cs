@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ISE182_PROJECT_G8.logicLayer
 {
+    /* This class handle all the processes which
+     * need to done on messages purely
+     */
     class MessageHandler
     {
         //adds messages from 'toAddList' to 'mainList' if it has unique GUID among the 'mainList' messages//

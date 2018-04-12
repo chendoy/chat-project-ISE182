@@ -7,10 +7,15 @@ using System.Threading.Tasks;
 
 namespace ISE182_PROJECT_G8.presentationLayer
 {
+    /* This class handle the requests from the user within the PL
+     * This class will get the input and send them to BL 
+     * for further processing 
+     */
     public class GUI_EventHandler
     {
         private static int _nMessagesDisplay = 20;  //magic number//
 
+        // Handle register request
         public static void Register()
         {
             Console.Write("Enter User Name to Register or 'x' to cancel: ");
@@ -47,6 +52,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
             }
         }
 
+        // Handle login request, get the info and send to BL
         public static bool Login()
         {
             Console.WriteLine("Enter user name for login or 'x' to cancel: ");
@@ -74,7 +80,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
             return false;
         }
 
-
+        // handle exiting the application for visitor
         public static void ExitVisitor()
         {
             Chat_EventHandler.ExitVisitor();
@@ -90,6 +96,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
             System.Threading.Thread.Sleep(1000);
         }
 
+        // Handle send message request
         public static void SendMessage()
         {
             Console.WriteLine("Please enter your message or enter 'x' to exit:");
@@ -118,6 +125,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
             }
         }
 
+        // Retriving messages from the server
         public static void RetreiveMessages()
         {
             if (Chat_EventHandler.RetreiveMessages())
@@ -130,12 +138,14 @@ namespace ISE182_PROJECT_G8.presentationLayer
             }
         }
 
+        // Display last messages, cap is _nMessagesDisplay
         public static void DisplayMessages()
         {
             string messages = Chat_EventHandler.DisplayNmessages(_nMessagesDisplay);
             GUI.DisplayInfo(String.Format("last {0} messages", _nMessagesDisplay), messages);
         }
 
+        // Display Messages By input user information
         public static void DisplayMessagesByUser()
         {
             Console.WriteLine("Enter user name for filtering or 'x' to cancel: ");
@@ -150,6 +160,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
             }
         }
 
+        // Logout the user from the application and return him to visitor menu
         public static void Logout()
         {
             string nickname = Chat_EventHandler.Logout();
@@ -158,6 +169,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
             GUI.DisplayVisitorGUI();
         }
 
+        // handle exiting the application for loggedin user
         public static void Exit()
         {
             Chat_EventHandler.Exit();
@@ -173,6 +185,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
 
         }
 
+        // Get Group ID from the user, validate it. return false if the user want to abort
         private static bool InputGroupID(out int groupID)
         {
             Console.WriteLine("Group id (-1 to abort): ");
