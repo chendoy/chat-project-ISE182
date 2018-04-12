@@ -9,6 +9,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
 {
     public class GUI_EventHandler
     {
+        private static int _nMessagesDisplay = 20;  //magic number//
         public static void Register()
         {
             Console.WriteLine("Enter User Name to Register or 'x' to cancel: ");
@@ -121,10 +122,10 @@ namespace ISE182_PROJECT_G8.presentationLayer
             }
         }
 
-        public static void Display20messages()
+        public static void DisplayMessages()
         {
-            string messages = Chat_EventHandler.DisplayNmessages(20);
-            GUI.DisplayInfo("last 20 messages", messages);
+            string messages = Chat_EventHandler.DisplayNmessages(_nMessagesDisplay);
+            GUI.DisplayInfo(String.Format("last {0} messages",_nMessagesDisplay), messages);
         }
 
         public static void DisplayMessagesByUser()

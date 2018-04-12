@@ -82,7 +82,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
                         goto ChoiceUser;
                         break;
                     case "c":
-                        GUI_EventHandler.Display20messages();
+                        GUI_EventHandler.DisplayMessages();
                         DisplayUserGUI(nickname);
                         break;
                     case "d":
