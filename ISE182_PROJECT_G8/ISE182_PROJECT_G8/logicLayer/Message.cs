@@ -11,11 +11,11 @@ namespace ISE182_PROJECT_G8.logicLayer
     [Serializable]
     public class Message
     {
-        Guid Id { get; }
-        string UserName { get; }
-        DateTime Date { get; }
-        string MessageContent { get; }
-        string GroupID { get; }
+        private Guid Id { get; }
+        private string UserName { get; }
+        private DateTime Date { get; }
+        private string MessageContent { get; }
+        private string GroupID { get; }
 
         public Message (IMessage msg)
         {

@@ -12,9 +12,9 @@ namespace ISE182_PROJECT_G8.logicLayer
     [Serializable]
     public class User
     {
-        public String nickname;
+        private String nickname;
         private int groupID;
-        public int status;  //0 - logged off, 1 - logged-in//
+        private int status;  //0 - logged off, 1 - logged-in//
 
         public User(String nickname, int groupID)
         {
