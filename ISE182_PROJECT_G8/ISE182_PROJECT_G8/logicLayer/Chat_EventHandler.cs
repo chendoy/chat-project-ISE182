@@ -39,7 +39,7 @@ namespace ISE182_PROJECT_G8.logicLayer
 
         public static void Exit()
         {
-            string nickname = chatroom.getLoggedInUser().getNickname();
+            string nickname = chatroom.GetLoggedInUser().getNickname();
             chatroom.LogOut(); //log the current user out//
             ExitVisitor();
             Logger.Instance.Info(String.Format("System exits [{0}]", nickname));
@@ -100,7 +100,7 @@ namespace ISE182_PROJECT_G8.logicLayer
                     chatroom.clearUserList();
                     break;*/
                 case "c":
-                    User loggedIn = chatroom.getLoggedInUser();
+                    User loggedIn = chatroom.GetLoggedInUser();
                     if (loggedIn != null)
                         present_handler.output("logged in: " + loggedIn.getNickname());
                     else
