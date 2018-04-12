@@ -20,6 +20,7 @@ namespace ISE182_PROJECT_G8.logicLayer
         {
             if (!UserHandler.isValid(nickname, groupID))
             {
+                Logger.Instance.Error("Register info was not valid");
                 return null;
             }
                 
@@ -44,28 +45,20 @@ namespace ISE182_PROJECT_G8.logicLayer
             Logger.Instance.Info(String.Format("System exits [{0}]", nickname));
         }
 
-        public static bool Send(string msg)
+        public static bool? Send(string msg)
         {
             if (!MessageHandler.isValid(msg))
             {
                 Logger.Instance.Error("Message was not valid");
-                return false;
+                return null;
             }
 
-            bool sent = chatroom.Send(msg);
-            if (sent)
-            {
-                Logger.Instance.Info("Message was sent successfully");
-                return true;
-            }
-
-            return false;
+            return chatroom.Send(msg);
         }
 
-        public static void RetreiveMessages()
+        public static bool RetreiveMessages()
         {
-            chatroom.RetreiveMessages();
-            Logger.Instance.Info("Messages was retreived successfully");
+            return chatroom.RetreiveMessages();
         }
 
         //displaying s specific number (n) of retreived messages//

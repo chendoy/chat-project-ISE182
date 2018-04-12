@@ -19,8 +19,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
                 {
                     Console.WriteLine("Group id: ");
                     string groupTxt = Console.ReadLine();
-                    int groupID;
-                    if (int.TryParse(groupTxt, out groupID))
+                    if (int.TryParse(groupTxt, out int groupID))
                     {
 
                         bool? succeeded = Chat_EventHandler.Register(nickname, groupID);
@@ -93,28 +92,32 @@ namespace ISE182_PROJECT_G8.presentationLayer
         {
             Console.WriteLine("Please enter your message or press x to exit:");
             string msg = Console.ReadLine();
-            if(msg != "x")
+            if (msg != "x")
             {
-                //Console.WriteLine("Please enter your message:");
-                //string msg = Console.ReadLine();
-                if (!Chat_EventHandler.Send(msg))
+                bool? succeeded = Chat_EventHandler.Send(msg);
+                if (!succeeded.HasValue)
                 {
-                Console.WriteLine("Message length limit exceeded - max. 150 characters!");
+                    Console.WriteLine("Message length limit exceeded - max. 150 characters!");
+                }
+                else
+                {
+                    if(!succeeded.Value)
+                    {
+                        Console.WriteLine("Server did not respond, please check your internet connection..");
+                    }
                 }
             }
-
         }
 
         public static void RetreiveMessages()
         {
-            try
+            if (Chat_EventHandler.RetreiveMessages())
             {
-                Chat_EventHandler.RetreiveMessages();
                 Console.WriteLine("Messages retreived successfuly!");
             }
-            catch
+            else
             {
-                Console.WriteLine("Error: Something went wrong");
+                Console.WriteLine("Server did not respond, please check your internet connection..");
             }
         }
 

@@ -116,9 +116,10 @@ namespace ISE182_PROJECT_G8.logicLayer
                 this.messageList.Add(message); //adds the sent message to the chat's message list (RAM)//
                 saver.SaveMessages(this.messageList); //persisting received messages data//
                 this.messageList = MessageHandler.sortbytime(this.messageList);
+                Logger.Instance.Info("Message was sent successfully");
                 return true;
             }
-            catch (Exception ex)
+            catch
             {
                 Logger.Instance.Fatal(String.Format("Could not reach the server: {0}", _url));
                 return false;
@@ -150,20 +151,30 @@ namespace ISE182_PROJECT_G8.logicLayer
             return stringBuilder.ToString();
         }
 
-        public void RetreiveMessages()
+        public bool RetreiveMessages()
         {
-            //retreives the messages from the server//
-            List<IMessage> imsgRetreived = Communication.Instance.GetTenMessages(this._url); //asks communication layer to retreive messages//
+            try
+            {
+                //retreives the messages from the server//
+                List<IMessage> imsgRetreived = Communication.Instance.GetTenMessages(this._url); //asks communication layer to retreive messages//
 
-            //generates a list of type: 'Messege' from list of type: 'IMessege'//
-            List<Message> msgRetreived = new List<Message>();
-            foreach (IMessage imsg in imsgRetreived)
-                msgRetreived.Add(new Message(imsg));
+                //generates a list of type: 'Messege' from list of type: 'IMessege'//
+                List<Message> msgRetreived = new List<Message>();
+                foreach (IMessage imsg in imsgRetreived)
+                    msgRetreived.Add(new Message(imsg));
 
-            //adds the retreived messages as a whole to the chat's messages list//
-            MessageHandler.addUniqueByGuid(this.messageList, msgRetreived);
-            saver.SaveMessages(this.messageList); //persisting received messages data//
-            this.messageList = MessageHandler.sortbytime(this.messageList);
+                //adds the retreived messages as a whole to the chat's messages list//
+                MessageHandler.addUniqueByGuid(this.messageList, msgRetreived);
+                saver.SaveMessages(this.messageList); //persisting received messages data//
+                this.messageList = MessageHandler.sortbytime(this.messageList);
+                Logger.Instance.Info("Messages retreived from server");
+                return true;
+            }
+            catch
+            {
+                Logger.Instance.Fatal(String.Format("Could not reach the server: {0}", _url));
+                return false;
+            }
         }
 
         public void printAllUsers() //***test function****//
