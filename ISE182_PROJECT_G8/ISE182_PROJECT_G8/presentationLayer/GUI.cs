@@ -32,7 +32,6 @@ namespace ISE182_PROJECT_G8.presentationLayer
                         GUI_EventHandler.Register();
                         Console.WriteLine("What would you like to do next?");
                         goto Choice;
-                        break;
                     case "b":
                         if (!GUI_EventHandler.Login())
                         {
@@ -75,12 +74,10 @@ namespace ISE182_PROJECT_G8.presentationLayer
                         GUI_EventHandler.SendMessage();
                         Console.WriteLine("What would you like to do next?");
                         goto ChoiceUser;
-                        break;
                     case "b":
                         GUI_EventHandler.RetreiveMessages();
                         Console.WriteLine("What would you like to do next?");
                         goto ChoiceUser;
-                        break;
                     case "c":
                         GUI_EventHandler.DisplayMessages();
                         DisplayUserGUI(nickname);

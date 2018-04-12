@@ -13,15 +13,13 @@ namespace ISE182_PROJECT_G8.presentationLayer
 
         public static void Register()
         {
-            Console.WriteLine("Enter User Name to Register or 'x' to cancel: ");
+            Console.Write("Enter User Name to Register or 'x' to cancel: ");
             Notfound: //will be used in goto statement//
             {
                 String nickname = Console.ReadLine();
                 if (nickname != "x")
                 {
-                    Console.WriteLine("Group id: ");
-                    string groupTxt = Console.ReadLine();
-                    if (int.TryParse(groupTxt, out int groupID))
+                    if (InputGroupID(out int groupID))
                     {
 
                         bool? succeeded = Chat_EventHandler.Register(nickname, groupID);
@@ -45,37 +43,37 @@ namespace ISE182_PROJECT_G8.presentationLayer
                             }
                         }
                     }
-                    else
-                    {
-                        Console.WriteLine("Error: Group ID is not a number");
-                        Console.WriteLine("Please pick user name again or 'x' to cancel");
-                        goto Notfound;
-                    }
                 }
             }
         }
 
         public static bool Login()
         {
-            Console.WriteLine("User name: ");
+            Console.WriteLine("Enter user name for login or 'x' to cancel: ");
             string nickname = Console.ReadLine();
-            Console.WriteLine("Group ID: ");
-           int groupId = Convert.ToInt32(Console.ReadLine());
-
-            bool logged = Chat_EventHandler.Login(nickname,groupId);
-            if (logged)
+            if (nickname != "x")
             {
-                Console.WriteLine(nickname +"["+ groupId+"]" +" Logged-in Successfully");
-                System.Threading.Thread.Sleep(1000);
-                GUI.DisplayUserGUI(nickname);
-            }
-            else
-            {
-                Console.WriteLine("Error: user does not exist!");
+                if (InputGroupID(out int groupID))
+                {
+                    bool logged = Chat_EventHandler.Login(nickname, groupID);
+                    if (logged)
+                    {
+                        Console.WriteLine(nickname + "[" + groupID + "]" + " Logged-in Successfully");
+                        System.Threading.Thread.Sleep(1000);
+                        GUI.DisplayUserGUI(nickname);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Error: user does not exist!");
+                    }
+
+                    return logged;
+                }
             }
 
-            return logged;
+            return false;
         }
+
 
         public static void ExitVisitor()
         {
@@ -94,7 +92,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
 
         public static void SendMessage()
         {
-            Console.WriteLine("Please enter your message or press x to exit:");
+            Console.WriteLine("Please enter your message or enter 'x' to exit:");
             string msg = Console.ReadLine();
             if (String.IsNullOrWhiteSpace(msg))
             {
@@ -135,7 +133,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
         public static void DisplayMessages()
         {
             string messages = Chat_EventHandler.DisplayNmessages(_nMessagesDisplay);
-            GUI.DisplayInfo(String.Format("last {0} messages",_nMessagesDisplay), messages);
+            GUI.DisplayInfo(String.Format("last {0} messages", _nMessagesDisplay), messages);
         }
 
         public static void DisplayMessagesByUser()
@@ -144,19 +142,12 @@ namespace ISE182_PROJECT_G8.presentationLayer
             string nickname = Console.ReadLine();
             if (nickname != "x")
             {
-                Console.WriteLine("Enter group ID (-1 to abort): ");
-                int groupId = Convert.ToInt32(Console.ReadLine());
-                if (groupId >= 1 & groupId <= 40 && groupId != -1)
+                if (InputGroupID(out int groupID))
                 {
-                    String msgs = Chat_EventHandler.DisplayMessagesByUser(nickname, groupId);
-                    GUI.DisplayInfo("messages of " + nickname + "[" + groupId + "]", msgs);
+                    String msgs = Chat_EventHandler.DisplayMessagesByUser(nickname, groupID);
+                    GUI.DisplayInfo("messages of " + nickname + "[" + groupID + "]", msgs);
                 }
-                else //there was a problem with the group id//
-                {
-                    Console.WriteLine("group ID is -1 or is not valid, aborting...");
-                    System.Threading.Thread.Sleep(2000);
-                }
-            } 
+            }
         }
 
         public static void Logout()
@@ -181,5 +172,39 @@ namespace ISE182_PROJECT_G8.presentationLayer
             System.Threading.Thread.Sleep(1000);
 
         }
+
+        private static bool InputGroupID(out int groupID)
+        {
+            Console.WriteLine("Group id (-1 to abort): ");
+            string groupTxt = Console.ReadLine();
+            if (int.TryParse(groupTxt, out groupID))
+            {
+                if (groupID == -1)
+                {
+                    Console.WriteLine("Group ID is -1, aborting...");
+                    System.Threading.Thread.Sleep(1000);
+                    return false;
+                }
+                else
+                {
+                    if (groupID < 1 | groupID > 40)
+                    {
+                        Console.WriteLine("Group ID must be between 1 to 40\nPlease try again..");
+                        return InputGroupID(out groupID);
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("Warning: Group ID is not a number");
+                Console.WriteLine("Please try again..");
+                return InputGroupID(out groupID);
+            }
+        }
     }
 }
+
