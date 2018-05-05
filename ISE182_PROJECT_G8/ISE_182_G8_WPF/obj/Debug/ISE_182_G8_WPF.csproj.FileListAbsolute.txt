@@ -1,0 +1,6 @@
+C:\Users\חן\source\repos\ISE182_PROJECT_G8\ISE182_PROJECT_G8\ISE_182_G8_WPF\obj\Debug\ISE_182_G8_WPF.csprojResolveAssemblyReference.cache
+C:\Users\חן\source\repos\ISE182_PROJECT_G8\ISE182_PROJECT_G8\ISE_182_G8_WPF\obj\Debug\Login.g.cs
+C:\Users\חן\source\repos\ISE182_PROJECT_G8\ISE182_PROJECT_G8\ISE_182_G8_WPF\obj\Debug\App.g.cs
+C:\Users\חן\source\repos\ISE182_PROJECT_G8\ISE182_PROJECT_G8\ISE_182_G8_WPF\obj\Debug\ISE_182_G8_WPF_Content.g.cs
+C:\Users\חן\source\repos\ISE182_PROJECT_G8\ISE182_PROJECT_G8\ISE_182_G8_WPF\obj\Debug\ISE_182_G8_WPF_MarkupCompile.cache
+C:\Users\חן\source\repos\ISE182_PROJECT_G8\ISE182_PROJECT_G8\ISE_182_G8_WPF\obj\Debug\ISE_182_G8_WPF_MarkupCompile.lref
