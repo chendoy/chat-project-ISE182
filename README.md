@@ -2,6 +2,9 @@
 
 # Milestone 2#
 
+05/05/18, chen:
+The project is now a windows application instead of a console application. The login screen is relatively done.
+
 - Chen:
 
 - add more logging titles (warning, criticial, info..)
