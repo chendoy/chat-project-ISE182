@@ -521,3 +521,7 @@
 2018-05-05 19:35:31,288 [1] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Messages data was loaded successfully
 2018-05-05 19:35:31,290 [1] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
 2018-05-05 19:35:31,309 [1] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - System initialization was completed, starting GUI...
+2018-05-05 23:05:41,257 [1] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - starting system initialization
+2018-05-05 23:05:41,268 [1] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Messages data was loaded successfully
+2018-05-05 23:05:41,269 [1] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-05 23:05:41,283 [1] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - System initialization was completed, starting GUI...

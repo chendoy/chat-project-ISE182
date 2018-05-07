@@ -6,11 +6,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ISE182_PROJECT_G8"
              mc:Ignorable="d" Height="627.805" Width="476.219">
-    <Grid RenderTransformOrigin="0.5,0.5" Margin="320,0,-0.4,-79">
+    <Grid RenderTransformOrigin="0.5,0.5" Margin="314,1,-0.4,-78.6">
         <Grid.RowDefinitions>
-            <RowDefinition Height="334*"/>
-            <RowDefinition Height="101*"/>
-            <RowDefinition Height="242*"/>
+            <RowDefinition Height="21*"/>
+            <RowDefinition Height="67*"/>
+            <RowDefinition Height="304*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="126*"/>
+            <RowDefinition Height="159*"/>
         </Grid.RowDefinitions>
         <Grid.RenderTransform>
             <TransformGroup>
@@ -21,45 +24,61 @@
             </TransformGroup>
         </Grid.RenderTransform>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="271*"/>
-            <ColumnDefinition Width="112*"/>
-            <ColumnDefinition Width="12*"/>
-            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="58*"/>
+            <ColumnDefinition Width="44*"/>
+            <ColumnDefinition Width="42*"/>
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button Name="login_btn" Content="" HorizontalAlignment="Left" Margin="-167,59.322,0,0" VerticalAlignment="Top" Width="148" Height="38" Click="Button_Click" Grid.Row="2"/>
-        <TextBox HorizontalAlignment="Left"  Background="Transparent" Height="38" Margin="-118,126,0,0" TextWrapping="Wrap" Text="Enter User Name" VerticalAlignment="Top" Width="209" RenderTransformOrigin="0.5,0.5">
-            <TextBox.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.029"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBox.RenderTransform>
-        </TextBox>
-        <TextBox HorizontalAlignment="Left"  Background="Transparent" Height="38" Margin="-117,194,0,0" TextWrapping="Wrap" Text="Enter Group ID" VerticalAlignment="Top" Width="209" RenderTransformOrigin="0.5,0.5">
-            <TextBox.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.029"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBox.RenderTransform>
-        </TextBox>
-        <TextBlock  FontFamily="Century Gothic" FontWeight="UltraBold" FontSize="22" FontStretch="UltraExpanded" HorizontalAlignment="Left" Margin="-262,126,0,0" TextWrapping="Wrap" Text="User Name:" VerticalAlignment="Top" Height="26" Width="126" RenderTransformOrigin="0.5,0.5">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.157"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBlock.RenderTransform>
+        <Button Name="login_btn" Content="" HorizontalAlignment="Left" Margin="-167,59,0,0" VerticalAlignment="Top" Width="148" Height="38" Click="Button_Click" Grid.Row="4"/>
+        <CheckBox Content="Remember Me?" HorizontalAlignment="Left" Margin="-146,18,0,0" Grid.Row="4" VerticalAlignment="Top" Checked="CheckBox_Checked" Height="17" Width="122"/>
+        <Button Content="Register" HorizontalAlignment="Left" Margin="-128,30.6,0,0" Grid.Row="5" VerticalAlignment="Top" Width="75" Click="Button_Click_1" Height="19"/>
+
+
+        <TextBox  FontFamily="Century Gothic" HorizontalContentAlignment="Center" FontSize="30" Background="Transparent" Padding="6,3,0,0" Width="244"  VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="username_textbox" Margin="-202,131,0,115.2" Height="57" Grid.Row="2"/>
+        <TextBlock FontSize="30" TextAlignment="Center" IsHitTestVisible="False" Text="Enter User Name" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="-203,132,0,125" Foreground="DarkGray" Height="47" Width="227" Grid.Row="2">
+
+            <TextBlock.Style>
+
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+
+
+
+
+                        <DataTrigger Binding="{Binding Text, ElementName=username_textbox}" Value="">
+                            <Setter Property="Visibility" Value="Visible"/>
+
+                        </DataTrigger>
+
+                    </Style.Triggers>
+
+                </Style>
+            </TextBlock.Style>
         </TextBlock>
-        <TextBlock  FontFamily="Century Gothic"  FontWeight="UltraBold" FontSize="22" FontStretch="UltraExpanded" HorizontalAlignment="Left" Margin="-250,200,0,0" TextWrapping="Wrap" Text="Group ID:" VerticalAlignment="Top" Height="27" Width="106"/>
-        <CheckBox Content="Remember Me?" HorizontalAlignment="Left" Margin="-141,17.322,0,0" Grid.Row="2" VerticalAlignment="Top" Checked="CheckBox_Checked" Height="17" Width="169"/>
-        <Button Content="Register" HorizontalAlignment="Left" Margin="-128,122.322,0,0" Grid.Row="2" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <TextBox FontFamily="Century Gothic" HorizontalContentAlignment="Center" FontSize="30" Background="Transparent" Padding="6,3,0,0" Width="119"  VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="groupID_textbox" Margin="-146,215,0,33" Height="56" Grid.Row="2"/>
+        <TextBlock FontSize="30" TextAlignment="Center" IsHitTestVisible="False" Text=" Group" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-136,215,0,42" Foreground="DarkGray" Height="47" Width="100" Grid.Row="2">
+            <TextBlock.Style>
+
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Text, ElementName=groupID_textbox}" Value="">
+                            <Setter Property="Visibility" Value="Visible"/>
+
+                        </DataTrigger>
+
+                    </Style.Triggers>
+
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="-156,0.6,0,0" Grid.Row="5" TextWrapping="Wrap" Text="Don't have an account?" VerticalAlignment="Top" Width="141" Height="16"/>
+        <Image Source="unknown_user.gif" HorizontalAlignment="Left" Height="145" Margin="-156,19.2,0,0" VerticalAlignment="Top" Width="151" Grid.Row="1" Grid.RowSpan="2" RenderTransformOrigin="-0.226,0.526"/>
+        <TextBlock Name="registered_status" HorizontalAlignment="Left" Margin="-167,0,0,86" Grid.Row="5" TextWrapping="Wrap" Visibility="Hidden" VerticalAlignment="Bottom" Width="157" Height="16"><Run Text="User registered successfully!"/><LineBreak/><Run/></TextBlock>
+        <TextBlock Name="incorrect_register" HorizontalAlignment="Left" Margin="-176,0,0,86" Grid.Row="5" TextWrapping="Wrap" Visibility="Hidden" VerticalAlignment="Bottom" Width="194" Height="16"><Run Text="Incorrect input...please try again"/><LineBreak/><Run/></TextBlock>
+
 
 
     </Grid>

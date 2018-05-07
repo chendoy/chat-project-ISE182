@@ -1,0 +1,19 @@
+﻿<Window x:Class="ISE182_PROJECT_G8.chat_window"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ISE182_PROJECT_G8"
+             mc:Ignorable="d" 
+             d:DesignHeight="482.927" d:DesignWidth="814.268">
+    <Grid Margin="0,0,-0.4,0.6">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="38*"/>
+            <ColumnDefinition Width="109*"/>
+            <ColumnDefinition Width="122*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox HorizontalAlignment="Left" Height="52" Margin="83,353,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="382" Grid.ColumnSpan="3"/>
+        <Button Content="Send" Grid.Column="1" HorizontalAlignment="Left" Margin="195.6,300,0,0" VerticalAlignment="Top" Width="75" Height="20"/>
+
+    </Grid>
+</Window>

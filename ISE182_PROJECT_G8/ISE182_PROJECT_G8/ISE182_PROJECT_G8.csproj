@@ -70,8 +70,8 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Chat_Panel.xaml.cs">
-      <DependentUpon>Chat_Panel.xaml</DependentUpon>
+    <Compile Include="chat_window.xaml.cs">
+      <DependentUpon>chat_window.xaml</DependentUpon>
     </Compile>
     <Compile Include="communicationLayer\Communication.cs" />
     <Compile Include="communicationLayer\IMessage.cs" />
@@ -104,11 +104,16 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="bin\Debug\content\" />
     <Folder Include="bin\Release\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\ISE182_PROJECT_G8.exe" />
     <Content Include="bin\Debug\ISE182_PROJECT_G8.pdb" />
+    <Content Include="chat_background.jpg" />
+    <Content Include="unknown_user.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
@@ -123,7 +128,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Chat_Panel.xaml">
+    <Page Include="chat_window.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

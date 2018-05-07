@@ -58,3 +58,12 @@ C:\Users\חן\Desktop\ISE182_project-master\ISE182_project-master\ISE182_PROJECT
 C:\Users\חן\Desktop\ISE182_project-master\ISE182_project-master\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8.csproj.CopyComplete
 C:\Users\חן\Desktop\ISE182_project-master\ISE182_project-master\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\Chat_Panel.g.cs
 C:\Users\חן\Desktop\ISE182_project-master\ISE182_project-master\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\Chat_Panel.baml
+C:\Users\חן\source\repos\ISE182_PROJECT_G8\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\Login.g.cs
+C:\Users\חן\source\repos\ISE182_PROJECT_G8\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8_Content.g.cs
+C:\Users\חן\source\repos\ISE182_PROJECT_G8\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8_MarkupCompile.cache
+C:\Users\חן\source\repos\ISE182_PROJECT_G8\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8_MarkupCompile.lref
+C:\Users\חן\source\repos\ISE182_PROJECT_G8\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\Login.baml
+C:\Users\חן\source\repos\ISE182_PROJECT_G8\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8.g.resources
+C:\Users\חן\source\repos\ISE182_PROJECT_G8\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\chat_window.g.cs
+C:\Users\חן\source\repos\ISE182_PROJECT_G8\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\chat_window.baml
+C:\Users\חן\source\repos\ISE182_PROJECT_G8\ISE182_PROJECT_G8\ISE182_PROJECT_G8\bin\Debug\unknown_user.gif

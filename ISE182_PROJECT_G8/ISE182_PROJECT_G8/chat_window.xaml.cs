@@ -16,13 +16,24 @@ using System.Windows.Shapes;
 namespace ISE182_PROJECT_G8
 {
     /// <summary>
-    /// Interaction logic for Chat_Panel.xaml
+    /// Interaction logic for chat_window.xaml
     /// </summary>
-    public partial class Chat_Panel : Window
+    public partial class chat_window : Window
     {
-        public Chat_Panel()
+        public chat_window()
         {
             InitializeComponent();
+
+            Uri iconUri = new Uri("StoredData\\chat_icon.ico", UriKind.RelativeOrAbsolute);
+            this.Icon = BitmapFrame.Create(iconUri);
+            ImageBrush myBrush = new ImageBrush();
+            myBrush.ImageSource =
+                 new BitmapImage(new Uri("StoredData\\chat_background.jpg", UriKind.Relative));
+            this.Background = myBrush;
         }
+
+
     }
+
+
 }
