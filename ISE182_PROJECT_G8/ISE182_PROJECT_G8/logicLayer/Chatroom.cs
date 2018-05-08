@@ -17,12 +17,13 @@ namespace ISE182_PROJECT_G8.logicLayer
      */
     public sealed class Chatroom // singleton design pattern
     {
-        private String _url = "http://ise172.ise.bgu.ac.il";//
+        private String _url = "http://ise172.ise.bgu.ac.il";
         private int port = 80;
         private User loggedInUser;
         private List<User> userList;  //in RAM, retreived from persistant layer//
         private List<Message> messageList; //in RAM, retreived from persistant layer//
         private Saver saver;
+        private User rememberedUser;
 
         private static Chatroom instance = null;
         private static readonly object padlock = new object();
@@ -34,6 +35,9 @@ namespace ISE182_PROJECT_G8.logicLayer
             saver = Saver.Instance;
             this.messageList = saver.LoadMessages(); //un-persisting messages data to RAM//
             this.userList = saver.LoadUsers(); //un-persisting users data to RAM//
+            this.rememberedUser = saver.LoadRememberMe();
+            if (rememberedUser.getGroupID() == -1)
+                rememberedUser = null;
         }
 
         public static Chatroom Instance
@@ -176,5 +180,7 @@ namespace ISE182_PROJECT_G8.logicLayer
                 return false;
             }
         }
+        public User getRememberedUser() { return this.rememberedUser; }
+        public Saver getSaver() { return this.saver; }
     }
 }

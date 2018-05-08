@@ -6,7 +6,11 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ISE182_PROJECT_G8"
              mc:Ignorable="d" Height="627.805" Width="476.219">
+    <Window.Background>
+        <ImageBrush ImageSource="login_wallpaper.png"></ImageBrush>
+    </Window.Background>
     <Grid RenderTransformOrigin="0.5,0.5" Margin="314,1,-0.4,-78.6">
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="21*"/>
             <RowDefinition Height="67*"/>
@@ -30,8 +34,10 @@
             <ColumnDefinition Width="6*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+        
+        
         <Button Name="login_btn" Content="" HorizontalAlignment="Left" Margin="-167,59,0,0" VerticalAlignment="Top" Width="148" Height="38" Click="Button_Click" Grid.Row="4"/>
-        <CheckBox Content="Remember Me?" HorizontalAlignment="Left" Margin="-146,18,0,0" Grid.Row="4" VerticalAlignment="Top" Checked="CheckBox_Checked" Height="17" Width="122"/>
+        <CheckBox Name="remember_checkbox" Content="Remember Me?" HorizontalAlignment="Left" Margin="-146,18,0,0" Grid.Row="4" VerticalAlignment="Top" Checked="CheckBox_Checked" Height="17" Width="122"/>
         <Button Content="Register" HorizontalAlignment="Left" Margin="-128,30.6,0,0" Grid.Row="5" VerticalAlignment="Top" Width="75" Click="Button_Click_1" Height="19"/>
 
 
@@ -70,6 +76,7 @@
                         </DataTrigger>
 
                     </Style.Triggers>
+                    
 
                 </Style>
             </TextBlock.Style>
@@ -80,6 +87,7 @@
         <TextBlock Name="incorrect_register" HorizontalAlignment="Left" Margin="-176,0,0,86" Grid.Row="5" TextWrapping="Wrap" Visibility="Hidden" VerticalAlignment="Bottom" Width="194" Height="16"><Run Text="Incorrect input...please try again"/><LineBreak/><Run/></TextBlock>
 
 
+       
 
     </Grid>
 </Window>

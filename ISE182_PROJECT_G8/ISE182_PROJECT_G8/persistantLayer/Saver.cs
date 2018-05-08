@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ISE182_PROJECT_G8.logicLayer;
 using System.IO;
+using ISE182_PROJECT_G8.logicLayer;
 using System.Runtime.Serialization.Formatters.Binary;
 
 namespace ISE182_PROJECT_G8.persistantLayer
@@ -20,6 +21,7 @@ namespace ISE182_PROJECT_G8.persistantLayer
         private static string directoryPath = @"StoredData";
         private static string UsersFilename = Path.Combine(directoryPath, "Users.bin");
         private static string MessagesFilename = Path.Combine(directoryPath, "Messages.bin");
+        private static string RememberMeFilename = Path.Combine(directoryPath, "RememberMe.bin");
 
         private static Saver instance = null;
         private static readonly object padlock = new object();
@@ -49,6 +51,7 @@ namespace ISE182_PROJECT_G8.persistantLayer
                 return instance;
             }
         }
+
 
         public void SaveUsers(List<User> usersToSave)
         {
@@ -96,6 +99,29 @@ namespace ISE182_PROJECT_G8.persistantLayer
             return new List<Message>();  //the file doesn't exist - return an empty list//
 
 
+        }
+
+        public void SaveRememberMe(User user)
+        {
+            Stream Filestream = File.Create(RememberMeFilename);
+            BinaryFormatter serializer = new BinaryFormatter();
+            serializer.Serialize(Filestream, user);
+            Filestream.Close();
+            Logger.Instance.Info("Remember me loaded successfully");
+        }
+
+        public User LoadRememberMe()
+        {
+            if (File.Exists(RememberMeFilename))
+            {
+                Stream Filestream = File.OpenRead(RememberMeFilename);
+                BinaryFormatter deserializer = new BinaryFormatter();
+                User rememberMeUser = ((User)deserializer.Deserialize(Filestream));
+                Filestream.Close();
+                Logger.Instance.Info("Users data was loaded successfully");
+                return rememberMeUser;
+            }
+            return new User("",-1); //the file doesn't exist - return a dummy user//
         }
     }
 

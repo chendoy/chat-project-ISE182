@@ -12,8 +12,15 @@
             <ColumnDefinition Width="109*"/>
             <ColumnDefinition Width="122*"/>
         </Grid.ColumnDefinitions>
-        <TextBox HorizontalAlignment="Left" Height="52" Margin="83,353,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="382" Grid.ColumnSpan="3"/>
-        <Button Content="Send" Grid.Column="1" HorizontalAlignment="Left" Margin="195.6,300,0,0" VerticalAlignment="Top" Width="75" Height="20"/>
+        <TextBox HorizontalAlignment="Left" Height="52" Margin="9.6,353,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="382" Grid.ColumnSpan="2" Grid.Column="1"/>
+        <Button Content="Send" Grid.Column="2" HorizontalAlignment="Left" Margin="136.4,385,0,0" VerticalAlignment="Top" Width="75" Height="20"/>
+        <ListView Grid.Column="1" HorizontalAlignment="Left" Height="220" Margin="92.6,58,0,0" VerticalAlignment="Top" Width="512" Grid.ColumnSpan="2">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
 
     </Grid>
 </Window>

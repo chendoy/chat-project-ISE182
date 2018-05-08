@@ -2,17 +2,21 @@
 
 # Milestone 2#
 
-- Chen:
+# Chen:
 
-- add more logging titles (warning, criticial, info..)
+- [V] move to WPF
+- [V] implement login screen
+- [V] add more logging titles to logger (warning, criticial, info..)
+- implement "remember me" feature on login screen
+- get rid of the try catch in login.xaml.cs
+- write 3 unit tests
+- 3 unit tests
+
+# Naor:
 
 - 3 unit tests
 
-- Naor:
-
-- 3 unit tests
-
-- Sandy:
+# Sandy:
 
 - 3 unit tests
 
