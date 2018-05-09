@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ISE182_PROJECT_G8.logicLayer;
 
 namespace ISE182_PROJECT_G8
 {
@@ -30,10 +31,21 @@ namespace ISE182_PROJECT_G8
             myBrush.ImageSource =
                  new BitmapImage(new Uri("StoredData\\chat_background.jpg", UriKind.Relative));
             this.Background = myBrush;
+            chat_panel.ItemsSource = Chatroom.Instance.getMessageList();
+            send_button.IsDefault = true;
+
+        }
+
+        private void Button_Click3(object sender, RoutedEventArgs e)
+        {
+            string content = send_textbox.Text;
+            if ((bool)Chat_EventHandler.Send(content))
+            {
+
+            }
+
         }
 
 
     }
-
-
 }

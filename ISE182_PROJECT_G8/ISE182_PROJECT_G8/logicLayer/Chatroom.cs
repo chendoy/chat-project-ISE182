@@ -17,7 +17,7 @@ namespace ISE182_PROJECT_G8.logicLayer
      */
     public sealed class Chatroom // singleton design pattern
     {
-        private String _url = "http://ise172.ise.bgu.ac.il";
+        private String _url ="http://localhost/"; //"http://ise172.ise.bgu.ac.il"
         private int port = 80;
         private User loggedInUser;
         private List<User> userList;  //in RAM, retreived from persistant layer//
@@ -100,6 +100,11 @@ namespace ISE182_PROJECT_G8.logicLayer
             return this.loggedInUser;
         }
 
+        public List<Message> getMessageList()
+        {
+            return this.messageList;
+        }
+
         // Assume there is logged in user
         public string LogOut()
         {
@@ -139,7 +144,7 @@ namespace ISE182_PROJECT_G8.logicLayer
 
             //appending the messages to a list//
             foreach (Message msg in messages)
-                stringBuilder.AppendLine(msg.toString());
+                stringBuilder.AppendLine(msg.ToString());
             Logger.Instance.Info("Chatroom: messages by user "+nickname+" was built");
             return stringBuilder.ToString();
         }
@@ -150,7 +155,7 @@ namespace ISE182_PROJECT_G8.logicLayer
             StringBuilder stringBuilder = new StringBuilder();
             int startIndex = Math.Max(0,this.messageList.Count - n);
             for (int i = startIndex; this.messageList.ElementAtOrDefault(i) != null & i < this.messageList.Count; i++)
-                stringBuilder.AppendLine(this.messageList.ElementAt(i).toString());
+                stringBuilder.AppendLine(this.messageList.ElementAt(i).ToString());
             Logger.Instance.Info("Chatroom: "+n+" messages list was generetad");
             return stringBuilder.ToString();
         }

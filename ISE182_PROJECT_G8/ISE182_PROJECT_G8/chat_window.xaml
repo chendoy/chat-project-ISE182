@@ -4,23 +4,50 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ISE182_PROJECT_G8"
-             mc:Ignorable="d" 
-             d:DesignHeight="482.927" d:DesignWidth="814.268">
-    <Grid Margin="0,0,-0.4,0.6">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="38*"/>
-            <ColumnDefinition Width="109*"/>
-            <ColumnDefinition Width="122*"/>
-        </Grid.ColumnDefinitions>
-        <TextBox HorizontalAlignment="Left" Height="52" Margin="9.6,353,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="382" Grid.ColumnSpan="2" Grid.Column="1"/>
-        <Button Content="Send" Grid.Column="2" HorizontalAlignment="Left" Margin="136.4,385,0,0" VerticalAlignment="Top" Width="75" Height="20"/>
-        <ListView Grid.Column="1" HorizontalAlignment="Left" Height="220" Margin="92.6,58,0,0" VerticalAlignment="Top" Width="512" Grid.ColumnSpan="2">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
-        </ListView>
+             mc:Ignorable="d" Height="600" Width="1066">
+    <Grid Margin="11,-3,16.6,-5.6" RenderTransformOrigin="0.044,0.08" Height="879" VerticalAlignment="Top">
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform Angle="0.156"/>
+                <TranslateTransform X="0.981" Y="-1.797"/>
+            </TransformGroup>
+        </Grid.RenderTransform>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="0*"/>
+        </Grid.RowDefinitions>
+
+
+
+        <ListBox Margin="348,16,0,455.2" Name="chat_panel" RenderTransformOrigin="0.453,0.719" HorizontalAlignment="Left" Width="681">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding}" />
+                        
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBox  FontFamily="Century Gothic" HorizontalContentAlignment="Left" FontSize="25" Background="Transparent" Padding="6,3,0,0" Width="543"  VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="send_textbox" Margin="348,466,0,352.2" Height="61"/>
+        <TextBlock FontSize="25" TextAlignment="Left" IsHitTestVisible="False" Text=" Type your message here" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="68,769,0,20.8" Foreground="DarkGray" Height="47" Width="353">
+            <TextBlock.Style>
+
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Text, ElementName=groupID_textbox}" Value="">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+
+
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+        <Button  Click="Button_Click3" Name="send_button" Content="Send" HorizontalAlignment="Left" Margin="903,466,0,0" VerticalAlignment="Top" Width="121" Height="61"/>
 
     </Grid>
 </Window>

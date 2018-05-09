@@ -10,6 +10,7 @@ namespace ISE182_PROJECT_G8.logicLayer
 {
     /* This class stores a message info
      */
+
     [Serializable]
     public class Message
     {
@@ -44,9 +45,10 @@ namespace ISE182_PROJECT_G8.logicLayer
             return this.Date;
         }
 
-        public String toString()
-        {
-            return "Guid: " + this.Id  +"\n"+"Time: " +this.Date  +"\n"+ "User: "+ this.UserName + "[" + this.GroupID + "]" + "\n" +"Message: "+ this.MessageContent+"\n";
+        override
+        public String ToString()
+            {
+            return "Guid: " + this.Id  +"\n"+"Time: " +this.Date  +"\n"+ this.UserName + "[" + this.GroupID + "]: "+ this.MessageContent+"\n";
         }
         public Guid getGuid()
         {

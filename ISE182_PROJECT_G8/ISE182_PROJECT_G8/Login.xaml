@@ -37,13 +37,12 @@
         
         
         <Button Name="login_btn" Content="" HorizontalAlignment="Left" Margin="-167,59,0,0" VerticalAlignment="Top" Width="148" Height="38" Click="Button_Click" Grid.Row="4"/>
-        <CheckBox Name="remember_checkbox" Content="Remember Me?" HorizontalAlignment="Left" Margin="-146,18,0,0" Grid.Row="4" VerticalAlignment="Top" Checked="CheckBox_Checked" Height="17" Width="122"/>
+        <CheckBox Name="remember_checkbox" Content="Remember Me?" HorizontalAlignment="Left" Margin="-146,26.8,0,0" Grid.Row="4" VerticalAlignment="Top" Checked="CheckBox_Checked" Height="17" Width="122"/>
         <Button Content="Register" HorizontalAlignment="Left" Margin="-128,30.6,0,0" Grid.Row="5" VerticalAlignment="Top" Width="75" Click="Button_Click_1" Height="19"/>
 
 
         <TextBox  FontFamily="Century Gothic" HorizontalContentAlignment="Center" FontSize="30" Background="Transparent" Padding="6,3,0,0" Width="244"  VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="username_textbox" Margin="-202,131,0,115.2" Height="57" Grid.Row="2"/>
-        <TextBlock FontSize="30" TextAlignment="Center" IsHitTestVisible="False" Text="Enter User Name" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="-203,132,0,125" Foreground="DarkGray" Height="47" Width="227" Grid.Row="2">
-
+        <TextBlock FontSize="30" TextAlignment="Center" IsHitTestVisible="False" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="-203,132,0,125" Foreground="DarkGray" Height="47" Width="227" Grid.Row="2">
             <TextBlock.Style>
 
                 <Style TargetType="{x:Type TextBlock}">
@@ -61,8 +60,9 @@
                     </Style.Triggers>
 
                 </Style>
-            </TextBlock.Style>
-        </TextBlock>
+            </TextBlock.Style><Run Text="Enter User Name"/><InlineUIContainer>
+                <TextBlock TextWrapping="Wrap" Text="TextBlock"/>
+            </InlineUIContainer></TextBlock>
         <TextBox FontFamily="Century Gothic" HorizontalContentAlignment="Center" FontSize="30" Background="Transparent" Padding="6,3,0,0" Width="119"  VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="groupID_textbox" Margin="-146,215,0,33" Height="56" Grid.Row="2"/>
         <TextBlock FontSize="30" TextAlignment="Center" IsHitTestVisible="False" Text=" Group" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-136,215,0,42" Foreground="DarkGray" Height="47" Width="100" Grid.Row="2">
             <TextBlock.Style>

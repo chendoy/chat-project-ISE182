@@ -11,6 +11,9 @@ namespace ISE182_PROJECT_G8.logicLayer
      */
     class MessageHandler
     {
+
+        private static readonly int _maxLength = 150;
+
         //adds messages from 'toAddList' to 'mainList' if it has unique GUID among the 'mainList' messages//
         public static void addUniqueByGuid(List<Message> mainList, List<Message> toAddList)
         {
@@ -36,7 +39,7 @@ namespace ISE182_PROJECT_G8.logicLayer
         public static Boolean isValid(String message)
         {
             int length = message.Length;
-            if (length > 150)
+            if (length > _maxLength)
             {
                 return false;
             }

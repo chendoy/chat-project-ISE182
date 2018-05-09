@@ -110,7 +110,9 @@
   <ItemGroup>
     <Content Include="bin\Debug\ISE182_PROJECT_G8.exe" />
     <Content Include="bin\Debug\ISE182_PROJECT_G8.pdb" />
-    <Content Include="chat_background.jpg" />
+    <Resource Include="chat_background.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="login_wallpaper.png" />
     <Content Include="unknown_user.gif">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
