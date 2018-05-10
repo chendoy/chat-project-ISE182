@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ISE182_PROJECT_G8.CommunicationLayer;
-using ISE182_PROJECT_G8.presentationLayer;
+//using ISE182_PROJECT_G8.presentationLayer;
 using ISE182_PROJECT_G8.persistantLayer;
 
 namespace ISE182_PROJECT_G8.logicLayer
@@ -29,7 +29,7 @@ namespace ISE182_PROJECT_G8.logicLayer
             else
             {
                 Logger.Instance.Error("Failed to create User: "+nickname+" of group "+ groupID+" already exist");
-                present_handler.output("Error: nickname or Group ID is not valid");
+              
             }
 
         }

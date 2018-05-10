@@ -24,7 +24,7 @@ namespace ISE182_PROJECT_G8.logicLayer
         public static Boolean isValid(String nickname, int groupID)
         {
             Boolean nicknameVaild = (nickname.Length > 0) && (!nickname.Contains(" "));
-            Boolean groupIDValid = groupID >= 1 & groupID <= 40;
+            Boolean groupIDValid = groupID >= 1;
 
             return groupIDValid & nicknameVaild;
         }

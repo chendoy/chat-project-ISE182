@@ -1,6 +1,6 @@
 ﻿
 using ISE182_PROJECT_G8.CommunicationLayer;
-using ISE182_PROJECT_G8.presentationLayer;
+//using ISE182_PROJECT_G8.presentationLayer;
 using ISE182_PROJECT_G8.persistantLayer;
 using System;
 using System.Collections.Generic;
@@ -15,7 +15,7 @@ namespace ISE182_PROJECT_G8.logicLayer
      * This class will return the result of the process to 
      * the one who called it
      */
-    public sealed class Chatroom // singleton design pattern
+    public class Chatroom // singleton design pattern
     {
         private String _url ="http://localhost/"; //"http://ise172.ise.bgu.ac.il"
         private int port = 80;
@@ -25,11 +25,8 @@ namespace ISE182_PROJECT_G8.logicLayer
         private Saver saver;
         private User rememberedUser;
 
-        private static Chatroom instance = null;
-        private static readonly object padlock = new object();
-
-        //private constructor for singleton
-        private Chatroom()
+        //public constructor for chatroom
+        public Chatroom()
         {
             this.loggedInUser = null;
             saver = Saver.Instance;
@@ -40,38 +37,28 @@ namespace ISE182_PROJECT_G8.logicLayer
                 rememberedUser = null;
         }
 
-        public static Chatroom Instance
-        {
-            get
-            {   //only if there is no instance lock object, otherwise return instance
-                if (instance == null)
-                {
-                    lock (padlock) // senario: n threads in here,
-                    {              //locking the first and others going to sleep till the first get new Instance
-                        if (instance == null)  // rest n-1 threads no need new instance because its not null anymore.
-                        {
-                            instance = new Chatroom();
-                        }
-                    }
-                }
-                return instance;
-            }
-        }
-
         public bool Register(String nickname, int groupID)
         {
-            User newUser = new User(nickname, groupID); // If not valid - need to improve 
-            bool alreadyExist = UserHandler.existIn(newUser, this.userList);
-
-            if (!alreadyExist)
+            if (!UserHandler.isValid(nickname, groupID)) //details of registration was not valid - will not register// 
             {
-                this.userList.Add(newUser);
-                saver.SaveUsers(this.userList); //persisting registered users data//
-                Logger.Instance.Info("User: "+nickname+ " registered successfully");
-                return true;
+                Logger.Instance.Error("Register info was not valid");
+                return false;
             }
-            Logger.Instance.Info("User: " + nickname + " failed to register - already exists");
-            return false;
+            else
+            {
+                User newUser = new User(nickname, groupID); // If not valid - need to improve 
+                bool alreadyExist = UserHandler.existIn(newUser, this.userList);
+
+                if (!alreadyExist)
+                {
+                    this.userList.Add(newUser);
+                    saver.SaveUsers(this.userList); //persisting registered users data//
+                    Logger.Instance.Info("User: " + nickname + " registered successfully");
+                    return true;
+                }
+                Logger.Instance.Warn("User: " + nickname + " failed to register - already exists");
+                return false;
+            }
         }
 
 
@@ -111,27 +98,35 @@ namespace ISE182_PROJECT_G8.logicLayer
             this.loggedInUser.loginOrOff();
             string nickname = loggedInUser.getNickname();
             this.loggedInUser = null;
-            Logger.Instance.Info("Chatroom: user "+nickname+" logged-of");
+            Logger.Instance.Info("Chatroom: user "+nickname+" logged-out");
             return nickname;
         }
 
         public bool Send(string msg)
         {
-            User loggedInUser = GetLoggedInUser();
-            try
+            if (!MessageHandler.isValid(msg))
             {
-                Message message = loggedInUser.Send(this._url, msg); //asks the logged in user instance to send the message//
-                Logger.Instance.Info("Chatroom: asks " + this.loggedInUser.getNickname() + " to send message");
-                this.messageList.Add(message); //adds the sent message to the chat's message list (RAM)//
-                saver.SaveMessages(this.messageList); //persisting received messages data//
-                this.messageList = MessageHandler.sortbytime(this.messageList);
-                Logger.Instance.Info("Message was sent successfully");
-                return true;
-            }
-            catch
-            {
-                Logger.Instance.Fatal(String.Format("Could not reach the server: {0}", _url));
+                Logger.Instance.Error("Message was not valid");
                 return false;
+            }
+            else
+            {
+                User loggedInUser = GetLoggedInUser();
+                try
+                {
+                    Message message = loggedInUser.Send(this._url, msg); //asks the logged in user instance to send the message//
+                    Logger.Instance.Info("Chatroom: asks " + this.loggedInUser.getNickname() + " to send message");
+                    this.messageList.Add(message); //adds the sent message to the chat's message list (RAM)//
+                    saver.SaveMessages(this.messageList); //persisting received messages data//
+                    this.messageList = MessageHandler.sortbytime(this.messageList);
+                    Logger.Instance.Info("Message was sent successfully");
+                    return true;
+                }
+                catch
+                {
+                    Logger.Instance.Fatal(String.Format("Could not reach the server: {0}", _url));
+                    return false;
+                }
             }
         }
 
@@ -187,5 +182,11 @@ namespace ISE182_PROJECT_G8.logicLayer
         }
         public User getRememberedUser() { return this.rememberedUser; }
         public Saver getSaver() { return this.saver; }
+
+        public void clearUsersList() { this.userList.Clear(); }
+        
     }
-}
+    }
+   
+
+

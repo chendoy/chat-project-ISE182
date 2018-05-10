@@ -1,0 +1,781 @@
+2018-05-10 15:47:11,985 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 15:47:11,995 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 15:47:11,997 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was persisted successfully
+2018-05-10 15:47:11,998 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User:  registered successfully
+2018-05-10 15:49:27,473 [17] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 15:49:27,473 [17] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 15:49:27,473 [17] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User: Chen of group -1 already exist
+2018-05-10 15:49:45,190 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 15:49:45,201 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 15:49:45,201 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User: Chen of group -1 already exist
+2018-05-10 15:50:35,896 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 15:50:35,907 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 15:50:59,708 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 15:50:59,718 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 15:51:34,287 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 15:51:34,297 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 15:53:43,018 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 15:53:43,028 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 15:54:08,295 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 15:54:08,307 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 15:55:31,157 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 15:55:31,168 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 15:58:19,189 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 15:58:19,199 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:01:29,977 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:01:29,988 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:02:04,200 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:02:04,211 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:02:04,211 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:02:51,636 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:02:51,647 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:02:51,647 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:07:51,006 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:07:51,017 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:07:51,017 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:11:25,647 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:11:25,657 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:11:25,657 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:11:25,657 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:11:25,657 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:11:25,657 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:11:25,657 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:11:25,657 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:12:26,682 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:12:26,692 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:12:26,693 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:12:26,693 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:12:26,693 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:12:26,693 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:12:26,693 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:12:26,693 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:12:26,693 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:12:26,693 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:12:50,235 [13] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:12:50,248 [13] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:12:50,248 [13] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:12:50,248 [13] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:12:50,248 [13] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:12:50,248 [13] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:12:50,248 [13] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:12:50,248 [13] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:12:50,249 [13] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:12:50,249 [13] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:13:22,972 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:13:22,982 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:13:22,983 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:13:22,983 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:13:22,983 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:13:22,983 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:13:22,983 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:13:22,983 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:13:22,983 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:13:22,983 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:13:31,889 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:13:31,899 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:13:31,900 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:13:31,900 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:13:31,900 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:13:31,900 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:13:31,900 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:13:31,900 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:13:31,900 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:13:31,900 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:13:39,829 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:13:39,839 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:13:39,840 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:13:39,840 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:13:39,840 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:13:39,840 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:13:39,840 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:13:39,840 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:13:39,840 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:13:39,840 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:19:11,907 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:19:11,917 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:19:11,917 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:19:11,917 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:19:11,917 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:19:11,917 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:19:11,917 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:19:11,917 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:19:11,917 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:19:11,917 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:19:27,687 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:19:27,699 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:19:27,699 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:19:27,699 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:19:27,699 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:19:27,699 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:19:27,699 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:19:27,699 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:19:27,699 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:19:27,699 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:19:54,945 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:19:54,957 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:19:54,957 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:19:54,957 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:19:54,957 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:19:54,957 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:19:54,957 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:19:54,957 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:19:54,957 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:19:54,957 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:02,104 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:20:02,114 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:20:02,115 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:02,115 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:02,115 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:02,115 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:02,115 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:02,115 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:02,115 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:17,504 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:20:17,514 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:20:17,514 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:17,514 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:17,514 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:17,514 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:17,514 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:17,514 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:17,515 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:23,394 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:20:23,405 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:20:23,405 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:23,405 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:23,405 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:23,405 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:23,405 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:23,405 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:23,405 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:27,418 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:20:27,428 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:20:27,429 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:27,429 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:27,429 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:27,429 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:27,429 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:27,429 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:27,429 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:31,623 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:20:31,637 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:20:31,637 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:31,637 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:31,637 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:31,637 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:31,637 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:31,637 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:31,637 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:36,639 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:20:36,650 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:20:36,650 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:36,650 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:36,650 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:36,650 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:36,650 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:36,650 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:42,335 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:20:42,346 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:20:42,346 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:42,346 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:42,346 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:42,346 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:42,346 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:42,346 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:50,803 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:20:50,813 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:20:50,813 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:50,813 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:50,813 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:50,813 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:50,813 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:50,813 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:50,813 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:50,813 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:56,802 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:20:56,812 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:20:56,812 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:56,812 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:56,812 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:56,812 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:56,812 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:56,812 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:56,813 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:20:56,813 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:12,821 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:21:12,831 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:21:12,831 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:12,831 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:12,831 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:12,831 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:12,831 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:12,831 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:12,831 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:12,831 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:18,345 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:21:18,356 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:21:18,356 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:18,356 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:18,356 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:18,356 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:18,356 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:18,356 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:18,356 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:18,356 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:23,871 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:21:23,881 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:21:23,881 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:23,881 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:23,881 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:23,881 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:23,881 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:23,881 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:23,881 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:23,881 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:30,114 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:21:30,127 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:21:30,127 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:30,127 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:30,127 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:30,127 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:30,127 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:30,127 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:30,127 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:30,127 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:34,855 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:21:34,865 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:21:34,866 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:34,866 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:34,866 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:34,866 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:34,866 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:34,866 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:34,866 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:34,866 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:40,198 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:21:40,208 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:21:40,209 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:40,209 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:40,209 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:40,209 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:40,209 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:40,209 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:40,209 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:40,209 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:46,609 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:21:46,623 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:21:46,623 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:46,623 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:46,623 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:46,623 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:46,623 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:46,623 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:46,623 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:46,623 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:52,563 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:21:52,573 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:21:52,574 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:52,574 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:52,574 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:52,574 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:52,574 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:52,574 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:52,574 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:21:52,574 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:24:43,227 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:24:43,238 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:24:43,239 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:24:43,239 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:24:43,239 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:24:43,239 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:24:43,239 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:24:43,239 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:24:43,239 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:24:43,239 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:25:12,165 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:25:12,176 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:25:12,176 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:25:12,176 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:25:12,176 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:25:12,176 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:25:12,176 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:25:12,176 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:25:12,176 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:25:12,176 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:25:19,936 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:25:19,946 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:25:19,946 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:25:19,946 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:25:19,946 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:25:19,946 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:25:19,946 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:25:19,946 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:25:19,946 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:25:19,947 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:28:23,724 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:28:23,734 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:28:23,734 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:28:23,734 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:28:23,734 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:28:23,734 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:28:23,734 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:28:23,734 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:28:23,734 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:28:23,734 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:28:35,732 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:28:35,743 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:28:35,743 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:28:35,743 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:28:35,743 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:28:35,743 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:28:35,743 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:28:35,743 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:28:35,743 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:28:35,743 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:28:54,211 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:28:54,222 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:28:54,222 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:28:54,222 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:28:54,222 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:28:54,222 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:28:54,222 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:28:54,222 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:28:54,222 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:28:54,222 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:32:40,100 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:32:40,111 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:32:40,111 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:32:40,111 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:32:40,111 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:32:40,111 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:32:40,111 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:32:40,111 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:32:40,111 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:32:40,111 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:34:39,079 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:34:39,090 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:34:39,091 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:34:39,091 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:34:39,091 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:34:39,091 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:34:39,091 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:34:39,091 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:34:39,091 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:34:39,091 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:40:23,326 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:40:23,336 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:40:23,336 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:40:23,337 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:40:23,337 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:40:23,337 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:40:23,337 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:40:23,337 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:40:23,337 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:40:23,337 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:42:43,453 [12] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:42:43,464 [12] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:42:43,464 [12] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:42:43,464 [12] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:42:43,464 [12] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:42:43,464 [12] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:42:43,464 [12] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:42:43,464 [12] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:42:43,464 [12] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:42:43,464 [12] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:43:11,589 [12] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:43:11,600 [12] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:43:11,601 [12] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:43:11,601 [12] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:43:11,601 [12] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:43:11,601 [12] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:43:11,601 [12] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:43:11,601 [12] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:43:11,601 [12] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:43:11,601 [12] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:45:30,550 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:45:30,560 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:45:30,560 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:45:30,561 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:45:30,561 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:45:30,561 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:45:30,561 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:45:30,561 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:45:30,561 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:45:30,561 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:46:02,118 [12] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:46:02,129 [12] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:46:02,130 [12] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:46:02,130 [12] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:46:02,130 [12] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:46:02,130 [12] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:46:02,130 [12] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:46:02,130 [12] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:46:02,130 [12] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:46:02,130 [12] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:47:38,361 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:47:38,372 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:47:38,372 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:47:38,372 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:47:38,372 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:47:38,372 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:47:38,372 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:47:38,372 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:47:38,372 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:47:38,372 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:48:44,033 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:48:44,044 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:48:44,044 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:48:44,044 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:48:44,044 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:48:44,044 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:48:44,044 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:48:44,044 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:48:44,044 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:48:44,044 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:48:54,804 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:48:54,815 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:48:54,815 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:48:54,815 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:48:54,815 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:48:54,815 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:48:54,815 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:48:54,815 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:48:54,815 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:48:54,815 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:51:55,853 [13] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:51:55,864 [13] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:51:55,865 [13] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:51:55,865 [13] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:51:55,865 [13] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:51:55,865 [13] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:51:55,865 [13] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:51:55,865 [13] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:51:55,865 [13] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:51:55,865 [13] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:59:34,720 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:59:34,731 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:59:34,732 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:59:34,732 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:59:34,732 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:59:34,732 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:59:34,732 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:59:34,732 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:59:34,732 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:59:34,732 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:59:34,742 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:59:34,742 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:59:49,975 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:59:49,985 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 20:59:49,985 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:59:49,986 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:59:49,986 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:59:49,986 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:59:49,986 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:59:49,986 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:59:49,986 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:59:49,986 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 20:59:49,995 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 20:59:49,995 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 21:00:48,712 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 21:00:48,722 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 21:00:48,723 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:00:48,723 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:00:48,723 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:00:48,723 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:00:48,723 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:00:48,723 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:00:48,723 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:00:48,723 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:00:48,733 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 21:00:48,733 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 21:00:52,145 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 21:00:52,156 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 21:00:52,156 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:00:52,156 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:00:52,156 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:00:52,156 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:00:52,156 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:00:52,156 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:00:52,156 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:00:52,156 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:00:52,166 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 21:00:52,166 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 21:02:42,327 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 21:02:42,338 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 21:02:42,339 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:02:42,339 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:02:42,339 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:02:42,339 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:02:42,339 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:02:42,339 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:02:42,339 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:02:42,339 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:02:42,348 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 21:02:42,348 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 21:03:10,047 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 21:03:10,058 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 21:03:10,058 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:03:10,058 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:03:10,058 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:03:10,058 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:03:10,058 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:03:10,058 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:03:10,058 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:03:10,058 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:03:10,068 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 21:03:10,068 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 21:03:14,487 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 21:03:14,498 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 21:03:14,498 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:03:14,498 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:03:14,498 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:03:14,498 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:03:14,498 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:03:14,498 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:03:14,498 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:03:14,498 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:03:14,508 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 21:03:14,508 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 21:03:19,113 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 21:03:19,124 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 21:03:19,124 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:03:19,124 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:03:19,124 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:03:19,124 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:03:19,124 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:03:19,124 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:03:19,124 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:03:19,124 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:03:19,134 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 21:03:19,134 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 21:04:02,244 [13] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 21:04:13,959 [13] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 21:12:00,329 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 21:12:00,341 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 21:12:00,342 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:12:00,342 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:12:00,342 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:12:00,342 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:12:00,342 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:12:00,342 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:12:00,342 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:12:00,342 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:12:00,356 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 21:12:00,356 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 21:12:19,903 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 21:12:19,912 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 21:12:19,914 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:12:19,914 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:12:19,914 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:12:19,914 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:12:19,914 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:12:19,914 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:12:19,914 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:12:19,914 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:12:19,923 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 21:12:19,923 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 21:13:28,549 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 21:13:28,559 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 21:13:28,559 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:13:28,559 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:13:28,559 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:13:28,559 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:13:28,559 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:13:28,559 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:13:28,559 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:13:28,559 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:13:47,634 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 21:13:47,645 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 21:13:47,645 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:13:47,645 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:13:47,645 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:13:47,645 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:13:47,645 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:13:47,645 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:13:47,645 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:13:47,645 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:13:47,647 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was persisted successfully
+2018-05-10 21:13:47,647 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: bruce_wayne registered successfully
+2018-05-10 21:14:41,049 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 21:14:41,060 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 21:14:41,061 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:14:41,061 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:14:41,061 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:14:41,061 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:14:41,061 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:14:41,061 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:14:41,061 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:14:41,061 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:14:41,062 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was persisted successfully
+2018-05-10 21:14:41,063 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: bruce_wayne registered successfully
+2018-05-10 21:14:41,063 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was persisted successfully
+2018-05-10 21:14:41,063 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: peter_parker8 registered successfully
+2018-05-10 21:14:41,064 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was persisted successfully
+2018-05-10 21:14:41,064 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: clark_kent registered successfully
+2018-05-10 21:15:00,445 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 21:15:00,456 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 21:15:00,456 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:15:00,456 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:15:00,456 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:15:00,456 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:15:00,456 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:15:00,456 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:15:00,456 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:15:00,456 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:15:00,458 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was persisted successfully
+2018-05-10 21:15:00,458 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: bruce_wayne registered successfully
+2018-05-10 21:15:00,459 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was persisted successfully
+2018-05-10 21:15:00,459 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: peter_parker8 registered successfully
+2018-05-10 21:15:00,459 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was persisted successfully
+2018-05-10 21:15:00,460 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: clark_kent registered successfully
+2018-05-10 21:15:00,470 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 21:15:00,470 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 21:15:00,470 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was persisted successfully
+2018-05-10 21:15:00,470 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: Chen registered successfully
+2018-05-10 21:15:00,471 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: Chen is now logged in to the chat
+2018-05-10 21:15:00,471 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Message was not valid
+2018-05-10 21:15:01,864 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Chatroom: asks Chen to send message
+2018-05-10 21:15:01,865 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Messages data was persisted successfully
+2018-05-10 21:15:01,868 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Message was sent successfully
+2018-05-10 21:15:20,371 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Messages data was loaded successfully
+2018-05-10 21:15:20,382 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 21:15:20,383 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 21:15:20,383 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:15:20,384 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:15:20,384 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:15:20,384 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:15:20,384 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:15:20,384 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:15:20,384 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:15:20,384 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:15:20,386 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was persisted successfully
+2018-05-10 21:15:20,386 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: bruce_wayne registered successfully
+2018-05-10 21:15:20,386 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was persisted successfully
+2018-05-10 21:15:20,386 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: peter_parker8 registered successfully
+2018-05-10 21:15:20,387 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was persisted successfully
+2018-05-10 21:15:20,387 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: clark_kent registered successfully
+2018-05-10 21:15:20,397 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Messages data was loaded successfully
+2018-05-10 21:15:20,397 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 21:15:20,397 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 21:15:20,398 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was persisted successfully
+2018-05-10 21:15:20,398 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: Chen registered successfully
+2018-05-10 21:15:20,398 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - User: Chen failed to log-in - doesn't exist
+2018-05-10 21:15:20,398 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Message was not valid
+2018-05-10 21:15:20,399 [16] FATAL ISE182_PROJECT_G8.persistantLayer.Logger - Could not reach the server: http://localhost/
+2018-05-10 21:15:20,399 [16] FATAL ISE182_PROJECT_G8.persistantLayer.Logger - Could not reach the server: http://localhost/
+2018-05-10 21:19:24,493 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Messages data was loaded successfully
+2018-05-10 21:19:24,504 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 21:19:24,505 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 21:19:24,505 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:19:24,505 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:19:24,505 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:19:24,505 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:19:24,505 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:19:24,505 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:19:24,505 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:19:24,505 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:19:24,507 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was persisted successfully
+2018-05-10 21:19:24,507 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: bruce_wayne registered successfully
+2018-05-10 21:19:24,508 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was persisted successfully
+2018-05-10 21:19:24,508 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: peter_parker8 registered successfully
+2018-05-10 21:19:24,509 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was persisted successfully
+2018-05-10 21:19:24,509 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: clark_kent registered successfully
+2018-05-10 21:19:24,519 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Messages data was loaded successfully
+2018-05-10 21:19:24,519 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 21:19:24,519 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 21:19:24,520 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was persisted successfully
+2018-05-10 21:19:24,520 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: Chen registered successfully
+2018-05-10 21:19:24,520 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - User: Chen failed to log-in - doesn't exist
+2018-05-10 21:19:24,521 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Message was not valid
+2018-05-10 21:19:24,521 [16] FATAL ISE182_PROJECT_G8.persistantLayer.Logger - Could not reach the server: http://localhost/
+2018-05-10 21:19:24,522 [16] FATAL ISE182_PROJECT_G8.persistantLayer.Logger - Could not reach the server: http://localhost/
+2018-05-10 21:21:55,417 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Messages data was loaded successfully
+2018-05-10 21:21:55,428 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 21:21:55,429 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 21:21:55,429 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:21:55,429 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:21:55,429 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:21:55,429 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:21:55,429 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:21:55,429 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:21:55,429 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:21:55,429 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:21:55,431 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was persisted successfully
+2018-05-10 21:21:55,431 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: bruce_wayne registered successfully
+2018-05-10 21:21:55,432 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was persisted successfully
+2018-05-10 21:21:55,432 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: peter_parker8 registered successfully
+2018-05-10 21:21:55,433 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was persisted successfully
+2018-05-10 21:21:55,433 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: clark_kent registered successfully
+2018-05-10 21:21:55,444 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Messages data was loaded successfully
+2018-05-10 21:21:55,445 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 21:21:55,445 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 21:21:55,445 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was persisted successfully
+2018-05-10 21:21:55,445 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: Chen registered successfully
+2018-05-10 21:21:55,446 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - User: Chen failed to log-in - doesn't exist
+2018-05-10 21:21:55,446 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Message was not valid
+2018-05-10 21:21:55,446 [16] FATAL ISE182_PROJECT_G8.persistantLayer.Logger - Could not reach the server: http://localhost/
+2018-05-10 21:21:55,447 [16] FATAL ISE182_PROJECT_G8.persistantLayer.Logger - Could not reach the server: http://localhost/
+2018-05-10 21:21:55,447 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Message was not valid
+2018-05-10 21:24:44,264 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Messages data was loaded successfully
+2018-05-10 21:24:44,275 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 21:24:44,276 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 21:24:44,276 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:24:44,276 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:24:44,276 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:24:44,276 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:24:44,276 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:24:44,276 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:24:44,276 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:24:44,276 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:24:44,278 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was persisted successfully
+2018-05-10 21:24:44,278 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: bruce_wayne registered successfully
+2018-05-10 21:24:44,279 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was persisted successfully
+2018-05-10 21:24:44,279 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: peter_parker8 registered successfully
+2018-05-10 21:24:44,279 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was persisted successfully
+2018-05-10 21:24:44,279 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: clark_kent registered successfully
+2018-05-10 21:24:44,289 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Messages data was loaded successfully
+2018-05-10 21:24:44,290 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 21:24:44,290 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 21:24:44,290 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was persisted successfully
+2018-05-10 21:24:44,290 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: Chen registered successfully
+2018-05-10 21:24:44,291 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - User: Chen failed to log-in - doesn't exist
+2018-05-10 21:24:44,291 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Message was not valid
+2018-05-10 21:24:44,291 [16] FATAL ISE182_PROJECT_G8.persistantLayer.Logger - Could not reach the server: http://localhost/
+2018-05-10 21:24:44,291 [16] FATAL ISE182_PROJECT_G8.persistantLayer.Logger - Could not reach the server: http://localhost/
+2018-05-10 21:24:44,291 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Message was not valid
+2018-05-10 21:24:44,292 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Messages data was loaded successfully
+2018-05-10 21:24:44,292 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 21:24:44,293 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 21:24:44,293 [16] FATAL ISE182_PROJECT_G8.persistantLayer.Logger - Could not reach the server: http://localhost/
+2018-05-10 21:28:41,360 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Messages data was loaded successfully
+2018-05-10 21:28:41,371 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 21:28:41,372 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 21:28:41,372 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:28:41,372 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:28:41,372 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:28:41,372 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:28:41,372 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:28:41,372 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:28:41,372 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:28:41,372 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-05-10 21:28:41,374 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was persisted successfully
+2018-05-10 21:28:41,374 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: bruce_wayne registered successfully
+2018-05-10 21:28:41,375 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was persisted successfully
+2018-05-10 21:28:41,375 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: peter_parker8 registered successfully
+2018-05-10 21:28:41,376 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was persisted successfully
+2018-05-10 21:28:41,376 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: clark_kent registered successfully
+2018-05-10 21:28:41,388 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Messages data was loaded successfully
+2018-05-10 21:28:41,388 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 21:28:41,388 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 21:28:41,389 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was persisted successfully
+2018-05-10 21:28:41,389 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: Chen registered successfully
+2018-05-10 21:28:41,389 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - User: Chen failed to log-in - doesn't exist
+2018-05-10 21:28:41,390 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Message was not valid
+2018-05-10 21:28:41,390 [16] FATAL ISE182_PROJECT_G8.persistantLayer.Logger - Could not reach the server: http://localhost/
+2018-05-10 21:28:41,391 [16] FATAL ISE182_PROJECT_G8.persistantLayer.Logger - Could not reach the server: http://localhost/
+2018-05-10 21:28:41,391 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Message was not valid
+2018-05-10 21:28:41,392 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Messages data was loaded successfully
+2018-05-10 21:28:41,392 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-05-10 21:28:41,392 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-05-10 21:28:41,392 [16] FATAL ISE182_PROJECT_G8.persistantLayer.Logger - Could not reach the server: http://localhost/
+2018-05-10 21:28:41,392 [16] FATAL ISE182_PROJECT_G8.persistantLayer.Logger - Could not reach the server: http://localhost/

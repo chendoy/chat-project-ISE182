@@ -39,7 +39,7 @@ namespace ISE182_PROJECT_G8.logicLayer
         public static Boolean isValid(String message)
         {
             int length = message.Length;
-            if (length > _maxLength)
+            if (String.IsNullOrWhiteSpace(message) || message.Length==0 ||  length > _maxLength)
             {
                 return false;
             }
