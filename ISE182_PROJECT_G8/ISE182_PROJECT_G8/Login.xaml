@@ -66,9 +66,9 @@
         </Grid.ColumnDefinitions>
 
 
-        <Button Click="Button_Click" Name="login_btn" Style="{StaticResource MyButtonStyle}" Margin="-167,55.8,65,16.8" Grid.Row="4" />
-        <Button Click="Button_Click1" Name="register_btn" Style="{StaticResource MyButtonStyle}" Margin="-126,27.2,110,107" Grid.Row="5" />
-        <CheckBox Name="remember_checkbox" Content="Remember Me?" HorizontalAlignment="Left" Margin="-146,26.8,0,0" Grid.Row="4" VerticalAlignment="Top" Checked="CheckBox_Checked" Height="17" Width="122"/>
+        <Button Click="Login_Button_Click" Name="login_btn" Style="{StaticResource MyButtonStyle}" Margin="-167,55.8,65,16.8" Grid.Row="4" />
+        <Button Click="Register_Button_Click" Name="register_btn" Style="{StaticResource MyButtonStyle}" Margin="-126,27.2,110,107" Grid.Row="5" />
+        <CheckBox Name="remember_checkbox" Content="Remember Me?" HorizontalAlignment="Left" Margin="-146,26.8,0,0" Grid.Row="4" VerticalAlignment="Top" Checked="Remember_Me_Checked" Height="17" Width="122"/>
 
 
         <TextBox  FontFamily="Century Gothic" HorizontalContentAlignment="Center" FontSize="30" Background="Transparent" Padding="6,3,0,0" Width="244"  VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="username_textbox" Margin="-202,131,0,115.2" Height="57" Grid.Row="2"/>
@@ -78,9 +78,6 @@
                 <Style TargetType="{x:Type TextBlock}">
                     <Setter Property="Visibility" Value="Collapsed"/>
                     <Style.Triggers>
-
-
-
 
                         <DataTrigger Binding="{Binding Text, ElementName=username_textbox}" Value="">
                             <Setter Property="Visibility" Value="Visible"/>
@@ -106,9 +103,8 @@
                         </DataTrigger>
 
                     </Style.Triggers>
-
-
                 </Style>
+                
             </TextBlock.Style>
         </TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="-156,0.6,0,0" Grid.Row="5" TextWrapping="Wrap" Text="Don't have an account?" VerticalAlignment="Top" Width="141" Height="16"/>

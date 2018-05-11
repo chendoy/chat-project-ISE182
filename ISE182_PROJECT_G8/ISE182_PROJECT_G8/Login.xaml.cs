@@ -21,20 +21,16 @@ namespace ISE182_PROJECT_G8
             System.Globalization.CultureInfo.DefaultThreadCurrentUICulture = System.Globalization.CultureInfo.GetCultureInfo("en-US"); //used to display .net errors messages in english (my windows is in hebrew)//
             InitializeComponent();
             this.ResizeMode = ResizeMode.NoResize;
-            username_textbox.Text = loadRememberedUser().getNickname();
-            groupID_textbox.Text = loadRememberedUser().getGroupID().ToString();
-            if (groupID_textbox.Text == "0") groupID_textbox.Text = "";
-            Uri iconUri = new Uri("StoredData\\chat_icon.ico", UriKind.RelativeOrAbsolute);
-            this.Icon = BitmapFrame.Create(iconUri);
-            var brush = new ImageBrush();
-            brush.ImageSource = new BitmapImage(new Uri("StoredData\\login_btn.jpg", UriKind.Relative));
-            login_btn.Background = brush;
-            var brush2 = new ImageBrush();
-            brush2.ImageSource = new BitmapImage(new Uri("StoredData\\register_btn.jpg", UriKind.Relative));
-            register_btn.Background = brush2;
-            login_btn.IsDefault = true;
+             
+            setRememberedUser();
+            setChatIcon();
+            paintLoginButton();
+            paintRegisterButton();
+
+
+
         }
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Login_Button_Click(object sender, RoutedEventArgs e)
         {
             string username = username_textbox.Text;
             int groupID = Int32.Parse(groupID_textbox.Text);
@@ -47,7 +43,7 @@ namespace ISE182_PROJECT_G8
                 }
                 else //wasn't ticked - save a "dummy" user
                 {
-                    chatroom.getSaver().SaveRememberMe(new User("", -1));
+                    chatroom.getSaver().SaveRememberMe(new User("", 0));
                 }
 
                 chat_window chat_window = new chat_window(chatroom);
@@ -62,12 +58,12 @@ namespace ISE182_PROJECT_G8
             }
         }
 
-        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        private void Remember_Me_Checked(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void Button_Click1(object sender, RoutedEventArgs e)
+        private void Register_Button_Click(object sender, RoutedEventArgs e)
         {
 
             try
@@ -89,7 +85,35 @@ namespace ISE182_PROJECT_G8
         {
             return chatroom.getRememberedUser();
         }
+
+
+        #region Login window appearance methods
+        private void paintLoginButton()
+        {
+            var brush = new ImageBrush();
+            brush.ImageSource = new BitmapImage(new Uri("StoredData\\login_btn.jpg", UriKind.Relative));
+            login_btn.Background = brush;
+        }
+        private void paintRegisterButton()
+        {
+            var brush = new ImageBrush();
+            brush.ImageSource = new BitmapImage(new Uri("StoredData\\register_btn.jpg", UriKind.Relative));
+            register_btn.Background = brush;
+            login_btn.IsDefault = true;
+        }
+        private void setChatIcon()
+        {
+            Uri iconUri = new Uri("StoredData\\chat_icon.ico", UriKind.RelativeOrAbsolute);
+            this.Icon = BitmapFrame.Create(iconUri);
+        }
+        private void setRememberedUser()
+        {
+            username_textbox.Text = loadRememberedUser().getNickname();
+            groupID_textbox.Text = loadRememberedUser().getGroupID().ToString();
+            if (groupID_textbox.Text == "0") groupID_textbox.Text = "";
+        }
+        #endregion Login window appearance
     }
 
- 
-    }
+
+}
