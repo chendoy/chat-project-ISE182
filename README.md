@@ -4,10 +4,16 @@
 
 Left to do:
 
-- timers
-- make the chat panel scroll automatically when a new message is sent
+- timer for reciving
+- make the chat panel scroll automatically when a new message is sent (Only if at bottom?)
 - enable binding of the chat panel and the list (list needs to be updated when a new message is sent)
-- sorting and filtering in chat window
+- binding in login window (MVVM)
+- binding in chat window (MVVM)
+- Adding sort and filter options in chatroom window
+- Add hello 'username' in chatroom
+- Logic - sorting and filtering
+- Create a primitive message object for PL that the BL will send
+- Check chat appearance improvement (bubble chat?)
 - unit tests
 
 # Chen:
