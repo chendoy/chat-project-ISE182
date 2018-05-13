@@ -14,7 +14,9 @@ Left to do:
 - Logic - sorting and filtering
 - Create a primitive message object for PL that the BL will send
 - Check chat appearance improvement (bubble chat?)
+- Popup messages like invalid username, register succfully
 - unit tests
+- Update LLD & HLD
 
 # Chen:
 
