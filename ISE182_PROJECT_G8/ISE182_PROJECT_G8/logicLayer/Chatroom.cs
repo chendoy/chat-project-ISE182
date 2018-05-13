@@ -15,7 +15,7 @@ namespace ISE182_PROJECT_G8.logicLayer
      * This class will return the result of the process to 
      * the one who called it
      */
-    public class Chatroom // singleton design pattern
+    public class Chatroom
     {
         private String _url ="http://localhost/"; //"http://ise172.ise.bgu.ac.il"
         private int port = 80;
