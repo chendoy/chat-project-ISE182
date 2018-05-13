@@ -29,10 +29,13 @@ namespace ISE182_PROJECT_G8
             InitializeComponent();
             this.ResizeMode = ResizeMode.NoResize;
             send_textbox.Focus();
+            /*
             paintSendButton();
             paintLogoutButton();
-            chat_panel.ItemsSource = chatroom.getMessageList();
             setChatIcon();
+            */
+            chat_panel.ItemsSource = chatroom.getMessageList();
+            
             send_button.IsDefault = true;
         }
 
@@ -74,7 +77,7 @@ namespace ISE182_PROJECT_G8
         }
         private void setChatIcon()
         {
-            Uri iconUri = new Uri("presentationLayer\\Images\\chat_icon.ico", UriKind.RelativeOrAbsolute);
+            Uri iconUri = new Uri("..\\..\\presentationLayer\\Images\\chat_icon.ico", UriKind.RelativeOrAbsolute);
             this.Icon = BitmapFrame.Create(iconUri);
             ImageBrush myBrush = new ImageBrush();
         }

@@ -5,7 +5,7 @@
              Title="Group 8 Chat"  
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ISE182_PROJECT_G8"
-             mc:Ignorable="d" Height="600" Width="1070.8">
+             mc:Ignorable="d" Height="600" Width="1070.8" Icon="Images/chat_icon.ico">
     <Window.Resources>
         <!-- This style is used for buttons, to remove the WPF default 'animated' mouse over effect -->
         <Style x:Key="MyButtonStyle2" TargetType="Button">
@@ -88,8 +88,16 @@
                 </Style>
             </TextBlock.Style>
         </TextBlock>
-        <Button Click="Send_Button_Click" Name="send_button" Style="{StaticResource MyButtonStyle2}" Margin="989,488,-107.2,-539" Grid.Row="4" />
-        <Button Click="Logout_Button_Click" Name="logout_button" Style="{StaticResource MyButtonStyle2}" Margin="100,535,851.8,-563" Grid.Row="4" />
+        <Button Click="Send_Button_Click" Name="send_button" Style="{StaticResource MyButtonStyle2}" Margin="989,488,-107.2,-539" Grid.Row="4" >
+            <Button.Background>
+                <ImageBrush ImageSource="Images/send_btn.jpg"/>
+            </Button.Background>
+        </Button>
+        <Button Click="Logout_Button_Click" Name="logout_button" Style="{StaticResource MyButtonStyle2}" Margin="100,535,851.8,-563" Grid.Row="4" >
+            <Button.Background>
+                <ImageBrush ImageSource="Images/logout_btn.jpg"/>
+            </Button.Background>
+        </Button>
         <TextBlock FontSize="40" HorizontalAlignment="Left" Margin="133,46,0,-184" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Height="138" Width="275"><Run Text="Sort and filter buttons"/></TextBlock>
 
     </Grid>

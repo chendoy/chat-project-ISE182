@@ -23,10 +23,10 @@ namespace ISE182_PROJECT_G8.logicLayer
         public static void Main(String[] args)
         {
            Logger.Instance.Info("starting system initialization");
-            Chatroom chatroom=SystemInit();    //initiates the chatroom, logger, loads persistant data to RAM, etc..//
+           Chatroom chatroom=SystemInit();    //initiates the chatroom, logger, loads persistant data to RAM, etc..//
            Application app = new Application();
            Window CurrentWindow = new Login(chatroom);
-            app.Run(CurrentWindow);
+           app.Run(CurrentWindow);
         }
     }
 }
