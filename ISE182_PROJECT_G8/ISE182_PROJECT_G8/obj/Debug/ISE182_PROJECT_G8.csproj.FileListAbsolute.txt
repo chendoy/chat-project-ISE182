@@ -18,25 +18,12 @@ C:\Users\user\Source\Repos\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\ob
 C:\Users\user\Source\Repos\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8.csproj.CopyComplete
 C:\Users\user\Source\Repos\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8.exe
 C:\Users\user\Source\Repos\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8.pdb
-C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8.csproj.CoreCompileInputs.cache
-C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8.exe
-C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8.pdb
-C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\bin\Debug\ISE182_PROJECT_G8.exe.config
-C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\bin\Debug\ISE182_PROJECT_G8.exe
-C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\bin\Debug\ISE182_PROJECT_G8.pdb
-C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\bin\Debug\Newtonsoft.Json.dll
-C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\bin\Debug\Newtonsoft.Json.xml
-C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8.csproj.CopyComplete
-C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\bin\Debug\log4net.config
-C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\bin\Debug\log4net.dll
-C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\bin\Debug\log4net.xml
 C:\Users\חן\source\repos\ISE182_PROJECT_G8\ISE182_PROJECT_G8\ISE182_PROJECT_G8\bin\Debug\log4net.config
 C:\Users\חן\source\repos\ISE182_PROJECT_G8\ISE182_PROJECT_G8\ISE182_PROJECT_G8\bin\Debug\log4net.dll
 C:\Users\חן\source\repos\ISE182_PROJECT_G8\ISE182_PROJECT_G8\ISE182_PROJECT_G8\bin\Debug\log4net.xml
 C:\Users\user\Source\Repos\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\bin\Debug\log4net.config
 C:\Users\user\Source\Repos\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\bin\Debug\log4net.dll
 C:\Users\user\Source\Repos\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\bin\Debug\log4net.xml
-C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8.csprojResolveAssemblyReference.cache
 C:\Users\חן\Desktop\ISE182_project-master\ISE182_project-master\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8.csprojResolveAssemblyReference.cache
 C:\Users\חן\Desktop\ISE182_project-master\ISE182_project-master\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8.csproj.CoreCompileInputs.cache
 C:\Users\חן\Desktop\ISE182_project-master\ISE182_project-master\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8.exe
@@ -66,3 +53,23 @@ C:\Users\חן\source\repos\ISE182_PROJECT_G8\ISE182_PROJECT_G8\ISE182_PROJECT_G8
 C:\Users\חן\source\repos\ISE182_PROJECT_G8\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8.g.resources
 C:\Users\חן\source\repos\ISE182_PROJECT_G8\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\chat_window.g.cs
 C:\Users\חן\source\repos\ISE182_PROJECT_G8\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\chat_window.baml
+C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\bin\Debug\log4net.config
+C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\bin\Debug\ISE182_PROJECT_G8.exe.config
+C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\bin\Debug\ISE182_PROJECT_G8.exe
+C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\bin\Debug\ISE182_PROJECT_G8.pdb
+C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\bin\Debug\log4net.dll
+C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\bin\Debug\log4net.xml
+C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\presentationLayer\chat_window.g.cs
+C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\presentationLayer\Login.g.cs
+C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8_Content.g.cs
+C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8_MarkupCompile.cache
+C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8_MarkupCompile.lref
+C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\presentationLayer\chat_window.baml
+C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\presentationLayer\Login.baml
+C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8.g.resources
+C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8.csproj.CoreCompileInputs.cache
+C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8.csproj.CopyComplete
+C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8.exe
+C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8.pdb

@@ -62,19 +62,19 @@ namespace ISE182_PROJECT_G8
         private void paintSendButton()
         {
             var brush = new ImageBrush();
-            brush.ImageSource = new BitmapImage(new Uri("StoredData\\send_btn.jpg", UriKind.Relative));
+            brush.ImageSource = new BitmapImage(new Uri("presentationLayer\\Images\\send_btn.jpg", UriKind.Relative));
             send_button.Background = brush;
 
         }
         private void paintLogoutButton()
         {
             var brush2 = new ImageBrush();
-            brush2.ImageSource = new BitmapImage(new Uri("StoredData\\logout_btn.jpg", UriKind.Relative));
+            brush2.ImageSource = new BitmapImage(new Uri("presentationLayer\\Images\\logout_btn.jpg", UriKind.Relative));
             logout_button.Background = brush2;
         }
         private void setChatIcon()
         {
-            Uri iconUri = new Uri("StoredData\\chat_icon.ico", UriKind.RelativeOrAbsolute);
+            Uri iconUri = new Uri("presentationLayer\\Images\\chat_icon.ico", UriKind.RelativeOrAbsolute);
             this.Icon = BitmapFrame.Create(iconUri);
             ImageBrush myBrush = new ImageBrush();
         }

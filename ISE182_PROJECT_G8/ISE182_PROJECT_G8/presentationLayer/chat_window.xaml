@@ -33,7 +33,7 @@
         </Style>
     </Window.Resources>
     <Window.Background>
-        <ImageBrush ImageSource="chat_background.jpg"></ImageBrush>
+        <ImageBrush ImageSource="Images/chat_background.jpg"></ImageBrush>
     </Window.Background>
     <Grid Margin="-96,-3,123.2,-0.6" RenderTransformOrigin="0.044,0.08" Height="0" VerticalAlignment="Top">
 

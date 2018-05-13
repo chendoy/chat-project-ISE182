@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ISE182_PROJECT_G8"
-             mc:Ignorable="d" Height="627.805" Width="476.219">
+             mc:Ignorable="d" Height="627.805" Width="476.219" Icon="{DynamicResource ChatIcon}">
     <Window.Resources>
         <!-- This style is used for buttons, to remove the WPF default 'animated' mouse over effect -->
         <Style x:Key="MyButtonStyle" TargetType="Button">
@@ -31,13 +31,19 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <BitmapImage x:Key="LoginWallpaper" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="..\presentationLayer\Images\login_wallpaper.png"/>
+        <BitmapImage x:Key="ChatIcon" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="..\presentationLayer\Images\chat_icon.ico"/>
+        <BitmapImage x:Key="Login_Wallpaper" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="..\presentationLayer\Images\login_wallpaper.png"/>
+        <BitmapImage x:Key="Login_Button" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="..\presentationLayer\Images\login_btn.jpg"/>
+        <BitmapImage x:Key="Register_Button" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="..\presentationLayer\Images\register_btn.jpg"/>
+        <BitmapImage x:Key="Login_Logo" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="..\presentationLayer\Images\unknown_user.gif"/>
 
 
     </Window.Resources>
 
 
     <Window.Background>
-        <ImageBrush ImageSource="login_wallpaper.png"></ImageBrush>
+        <ImageBrush ImageSource="{DynamicResource Login_Wallpaper}"></ImageBrush>
     </Window.Background>
     <Grid RenderTransformOrigin="0.5,0.5" Margin="314,1,-0.4,-78.6">
 
@@ -66,8 +72,16 @@
         </Grid.ColumnDefinitions>
 
 
-        <Button Click="Login_Button_Click" Name="login_btn" Style="{StaticResource MyButtonStyle}" Margin="-167,55.8,65,16.8" Grid.Row="4" />
-        <Button Click="Register_Button_Click" Name="register_btn" Style="{StaticResource MyButtonStyle}" Margin="-126,27.2,110,107" Grid.Row="5" />
+        <Button Click="Login_Button_Click" Name="login_btn" Style="{StaticResource MyButtonStyle}" Margin="-167,55.8,65,16.8" Grid.Row="4" >
+            <Button.Background>
+                <ImageBrush ImageSource="{DynamicResource Login_Button}"/>
+            </Button.Background>
+        </Button>
+        <Button Click="Register_Button_Click" Name="register_btn" Style="{StaticResource MyButtonStyle}" Margin="-126,27.2,110,107" Grid.Row="5" >
+            <Button.Background>
+                <ImageBrush ImageSource="{DynamicResource Register_Button}"/>
+            </Button.Background>
+        </Button>
         <CheckBox Name="remember_checkbox" Content="Remember Me?" HorizontalAlignment="Left" Margin="-146,26.8,0,0" Grid.Row="4" VerticalAlignment="Top" Checked="Remember_Me_Checked" Height="17" Width="122"/>
 
 
@@ -104,13 +118,17 @@
 
                     </Style.Triggers>
                 </Style>
-                
+
             </TextBlock.Style>
         </TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="-156,0.6,0,0" Grid.Row="5" TextWrapping="Wrap" Text="Don't have an account?" VerticalAlignment="Top" Width="141" Height="16"/>
 
         <TextBlock Name="message_notify"  TextAlignment="Center" HorizontalAlignment="Center" Margin="-170,0,68,83" Grid.Row="5" TextWrapping="Wrap" Visibility="Visible" VerticalAlignment="Bottom" Width="162" Height="16"><Run /><LineBreak/><Run/></TextBlock>
-        <Image Source="unknown_user.gif" HorizontalAlignment="Left" Height="200" Margin="-172,20.2,0,0" VerticalAlignment="Top" Width="198" Grid.Row="1" RenderTransformOrigin="-0.226,0.526" Grid.RowSpan="2"/>
+        <Image Source="/presentationLayer/Images/unknown_user.gif" HorizontalAlignment="Left" Height="200" Margin="-172,20.2,0,0" VerticalAlignment="Top" Width="198" Grid.Row="1" RenderTransformOrigin="-0.226,0.526" Grid.RowSpan="2">
+            <Image.OpacityMask>
+                <ImageBrush ImageSource="{DynamicResource Login_Logo}"/>
+            </Image.OpacityMask>
+        </Image>
 
 
 
