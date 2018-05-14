@@ -64,7 +64,7 @@
         </Grid.ColumnDefinitions>
 
 
-        <Button Click="Login_Button_Click" Name="login_btn" Style="{StaticResource MyButtonStyle}" Margin="-167,55.8,65,16.8" Grid.Row="4" >
+        <Button Click="Login_Button_Click" Name="login_btn" Style="{StaticResource MyButtonStyle}" Margin="-167,55.8,65,16.8" Grid.Row="4" IsDefault="True" >
             <Button.Background>
                 <ImageBrush ImageSource="..\presentationLayer\Images\login_btn.jpg"/>
             </Button.Background>
@@ -74,7 +74,7 @@
                 <ImageBrush ImageSource="..\presentationLayer\Images\register_btn.jpg"/>
             </Button.Background>
         </Button>
-        <CheckBox Name="remember_checkbox" Content="Remember Me?" HorizontalAlignment="Left" Margin="-146,26.8,0,0" Grid.Row="4" VerticalAlignment="Top" Checked="Remember_Me_Checked" Height="17" Width="122"/>
+        <CheckBox IsChecked="{Binding RememberMe}" Content="Remember Me?" HorizontalAlignment="Left" Margin="-146,26.8,0,0" Grid.Row="4" VerticalAlignment="Top" Checked="Remember_Me_Checked" Height="17" Width="122"/>
 
 
         <TextBox Text="{Binding Username}" FontFamily="Century Gothic" HorizontalContentAlignment="Center" FontSize="30" Background="Transparent" Padding="6,3,0,0" Width="244"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-202,131,0,115.2" Height="57" Grid.Row="2"/>
@@ -115,7 +115,6 @@
         </TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="-156,0.6,0,0" Grid.Row="5" TextWrapping="Wrap" Text="Don't have an account?" VerticalAlignment="Top" Width="141" Height="16"/>
 
-        <TextBlock TextAlignment="Center" HorizontalAlignment="Center" Margin="-170,0,68,83" Grid.Row="5" TextWrapping="Wrap" Visibility="Visible" VerticalAlignment="Bottom" Width="162" Height="16"><Run /><LineBreak/><Run/></TextBlock>
         <Image Source="/presentationLayer/Images/unknown_user.gif" HorizontalAlignment="Left" Height="200" Margin="-172,20.2,0,0" VerticalAlignment="Top" Width="198" Grid.Row="1" RenderTransformOrigin="-0.226,0.526" Grid.RowSpan="2">
             <Image.OpacityMask>
                 <ImageBrush ImageSource="..\presentationLayer\Images\unknown_user.gif"/>

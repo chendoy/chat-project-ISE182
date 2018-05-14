@@ -63,5 +63,19 @@ namespace ISE182_PROJECT_G8.presentationLayer
                 OnPropertyChanged("ErrorMessage");
             }
         }
+
+        private bool rememberMe;
+        public bool RememberMe
+        {
+            get
+            {
+                return rememberMe;
+            }
+            set
+            {
+                rememberMe = value;
+                OnPropertyChanged("RememberMe");
+            }
+        }
     }
 }

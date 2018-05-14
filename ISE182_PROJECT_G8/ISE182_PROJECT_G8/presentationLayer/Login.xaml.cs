@@ -24,12 +24,8 @@ namespace ISE182_PROJECT_G8.presentationLayer
             this.ResizeMode = ResizeMode.NoResize;
             loginObserver = new LoginObserver();
             this.DataContext = loginObserver;
-             /*
-            setRememberedUser();
-            setChatIcon();
-            paintLoginButton();
-            paintRegisterButton();
-            */
+
+            LoadRememberedUser();
 
 
         }
@@ -39,7 +35,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
             int groupID = Int32.Parse(loginObserver.GroupID);
             if ((bool)chatroom.Login(username, groupID)) {
 
-                if (remember_checkbox.IsChecked.GetValueOrDefault()) //"remember me was ticked - save the user//
+                if (loginObserver.RememberMe) //"remember me was ticked - save the user//
                 {
                     chatroom.getSaver().SaveRememberMe(new User(username, groupID));
 
@@ -84,40 +80,14 @@ namespace ISE182_PROJECT_G8.presentationLayer
             }
         }
 
-        private User loadRememberedUser()
+        private void LoadRememberedUser()
         {
-            return chatroom.getRememberedUser();
-        }
-
-        
-        #region Login window appearance methods
-        
-        private void paintLoginButton()
-        {
-            var brush = new ImageBrush();
-            brush.ImageSource = new BitmapImage(new Uri("\\Images\\login_btn.jpg", UriKind.Relative));
-            login_btn.Background = brush;
-        }
-        private void paintRegisterButton()
-        {
-            var brush = new ImageBrush();
-            brush.ImageSource = new BitmapImage(new Uri("\\Images\\register_btn.jpg", UriKind.Relative));
-            register_btn.Background = brush;
-            login_btn.IsDefault = true;
-        }
-        private void setChatIcon()
-        {
-            Uri iconUri = new Uri("\\presentationLayer\\Images\\chat_icon.ico", UriKind.RelativeOrAbsolute);
-            this.Icon = BitmapFrame.Create(iconUri);
-        }
-        private void setRememberedUser()
-        {
-            loginObserver.Username = loadRememberedUser().getNickname();
-            loginObserver.GroupID = loadRememberedUser().getGroupID().ToString();
+            User user = chatroom.getRememberedUser();
+            loginObserver.Username = user.getNickname();
+            loginObserver.GroupID = user.getGroupID().ToString();
             if (loginObserver.GroupID == "0") loginObserver.GroupID = "";
         }
-        
-        #endregion Login window appearance
+
     }
 
 
