@@ -73,3 +73,4 @@ C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJE
 C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8.csproj.CopyComplete
 C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8.exe
 C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8.pdb
+C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8.csprojResolveAssemblyReference.cache
