@@ -115,12 +115,13 @@
         </TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="-156,0.6,0,0" Grid.Row="5" TextWrapping="Wrap" Text="Don't have an account?" VerticalAlignment="Top" Width="141" Height="16"/>
 
-        <TextBlock Name="message_notify"  TextAlignment="Center" HorizontalAlignment="Center" Margin="-170,0,68,83" Grid.Row="5" TextWrapping="Wrap" Visibility="Visible" VerticalAlignment="Bottom" Width="162" Height="16"><Run /><LineBreak/><Run/></TextBlock>
+        <TextBlock TextAlignment="Center" HorizontalAlignment="Center" Margin="-170,0,68,83" Grid.Row="5" TextWrapping="Wrap" Visibility="Visible" VerticalAlignment="Bottom" Width="162" Height="16"><Run /><LineBreak/><Run/></TextBlock>
         <Image Source="/presentationLayer/Images/unknown_user.gif" HorizontalAlignment="Left" Height="200" Margin="-172,20.2,0,0" VerticalAlignment="Top" Width="198" Grid.Row="1" RenderTransformOrigin="-0.226,0.526" Grid.RowSpan="2">
             <Image.OpacityMask>
                 <ImageBrush ImageSource="..\presentationLayer\Images\unknown_user.gif"/>
             </Image.OpacityMask>
         </Image>
+        <Label Content="{Binding ErrorMessage}" HorizontalAlignment="Left" Margin="-202,103,0,0" Grid.Row="2" VerticalAlignment="Top" Width="166" Foreground="Red" FontSize="16"/>
 
 
 

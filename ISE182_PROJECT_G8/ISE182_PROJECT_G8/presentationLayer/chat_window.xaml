@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              Title="Group 8 Chat"  
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:ISE182_PROJECT_G8"
+             xmlns:local="clr-namespace:ISE182_PROJECT_G8.presentationLayer"
              mc:Ignorable="d" Height="600" Width="1070.8" Icon="Images/chat_icon.ico">
     <Window.Resources>
         <!-- This style is used for buttons, to remove the WPF default 'animated' mouse over effect -->

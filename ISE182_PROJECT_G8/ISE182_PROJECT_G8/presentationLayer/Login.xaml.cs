@@ -56,8 +56,8 @@ namespace ISE182_PROJECT_G8.presentationLayer
             }
             else
             {
-                message_notify.Visibility = Visibility.Visible;
-                message_notify.Text = "User not found";
+                //message_notify.Visibility = Visibility.Visible;
+                loginObserver.ErrorMessage = "User not found";
             }
         }
 
@@ -73,14 +73,14 @@ namespace ISE182_PROJECT_G8.presentationLayer
             {
                 if ((bool)chatroom.Register(loginObserver.Username, Int32.Parse(loginObserver.GroupID)))
                 {
-                   message_notify.Visibility = Visibility.Visible;
-                    message_notify.Text = "User registered successfully!";
+                   //message_notify.Visibility = Visibility.Visible;
+                   loginObserver.ErrorMessage = "User registered successfully!";
                 }
             }
             catch
             {
-                message_notify.Visibility = Visibility.Visible;
-                message_notify.Text = "Incorrect input...please try again";
+                //message_notify.Visibility = Visibility.Visible;
+                loginObserver.ErrorMessage = "Incorrect input...please try again";
             }
         }
 
