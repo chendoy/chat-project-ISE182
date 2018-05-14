@@ -10,6 +10,11 @@ namespace ISE182_PROJECT_G8.presentationLayer
 {
     public class LoginObserver : INotifyPropertyChanged
     {
+        public LoginObserver()
+        {
+
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         public void OnPropertyChanged([CallerMemberName] string propertyName = null)

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ISE182_PROJECT_G8.logicLayer;
 using ISE182_PROJECT_G8.persistantLayer;
-//using ISE182_PROJECT_G8.presentationLayer;
+using ISE182_PROJECT_G8.presentationLayer;
 using System.Windows;
 
 namespace ISE182_PROJECT_G8.logicLayer

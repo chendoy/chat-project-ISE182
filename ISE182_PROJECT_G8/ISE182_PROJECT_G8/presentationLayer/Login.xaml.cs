@@ -5,7 +5,7 @@ using System.Windows.Media.Imaging;
 using System.IO;
 using ISE182_PROJECT_G8.logicLayer;
 
-namespace ISE182_PROJECT_G8
+namespace ISE182_PROJECT_G8.presentationLayer
 {
     /// <summary>
     /// Interaction logic for Login.xaml
@@ -14,6 +14,7 @@ namespace ISE182_PROJECT_G8
     {
 
         private Chatroom chatroom;
+        private LoginObserver loginObserver;
 
         public Login(Chatroom chatroom)
         {
@@ -21,6 +22,8 @@ namespace ISE182_PROJECT_G8
             System.Globalization.CultureInfo.DefaultThreadCurrentUICulture = System.Globalization.CultureInfo.GetCultureInfo("en-US"); //used to display .net errors messages in english (my windows is in hebrew)//
             InitializeComponent();
             this.ResizeMode = ResizeMode.NoResize;
+            loginObserver = new LoginObserver();
+            this.DataContext = loginObserver;
              /*
             setRememberedUser();
             setChatIcon();
@@ -32,8 +35,8 @@ namespace ISE182_PROJECT_G8
         }
         private void Login_Button_Click(object sender, RoutedEventArgs e)
         {
-            string username = username_textbox.Text;
-            int groupID = Int32.Parse(groupID_textbox.Text);
+            string username = loginObserver.Username;
+            int groupID = Int32.Parse(loginObserver.GroupID);
             if ((bool)chatroom.Login(username, groupID)) {
 
                 if (remember_checkbox.IsChecked.GetValueOrDefault()) //"remember me was ticked - save the user//
@@ -68,7 +71,7 @@ namespace ISE182_PROJECT_G8
 
             try
             {
-                if ((bool)chatroom.Register(username_textbox.Text, Int32.Parse(groupID_textbox.Text)))
+                if ((bool)chatroom.Register(loginObserver.Username, Int32.Parse(loginObserver.GroupID)))
                 {
                    message_notify.Visibility = Visibility.Visible;
                     message_notify.Text = "User registered successfully!";
@@ -109,9 +112,9 @@ namespace ISE182_PROJECT_G8
         }
         private void setRememberedUser()
         {
-            username_textbox.Text = loadRememberedUser().getNickname();
-            groupID_textbox.Text = loadRememberedUser().getGroupID().ToString();
-            if (groupID_textbox.Text == "0") groupID_textbox.Text = "";
+            loginObserver.Username = loadRememberedUser().getNickname();
+            loginObserver.GroupID = loadRememberedUser().getGroupID().ToString();
+            if (loginObserver.GroupID == "0") loginObserver.GroupID = "";
         }
         
         #endregion Login window appearance

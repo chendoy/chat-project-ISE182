@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ISE182_PROJECT_G8.logicLayer;
 
-namespace ISE182_PROJECT_G8
+namespace ISE182_PROJECT_G8.presentationLayer
 {
     /// <summary>
     /// Interaction logic for chat_window.xaml
