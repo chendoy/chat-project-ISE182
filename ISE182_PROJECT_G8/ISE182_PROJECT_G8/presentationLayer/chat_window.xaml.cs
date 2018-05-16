@@ -22,29 +22,28 @@ namespace ISE182_PROJECT_G8.presentationLayer
     public partial class chat_window : Window
     {
 
-        public Chatroom chatroom;
+        private Chatroom chatroom;
+        private ChatroomObserver chatroomObserver;
+
         public chat_window(Chatroom chatroom)
         {
             this.chatroom = chatroom;
             InitializeComponent();
             this.ResizeMode = ResizeMode.NoResize;
-            send_textbox.Focus();
-            /*
-            paintSendButton();
-            paintLogoutButton();
-            setChatIcon();
-            */
-            chat_panel.ItemsSource = chatroom.getMessageList();
-            
+            //send_textbox.Focus();
+            chatroomObserver = new ChatroomObserver();
+            this.DataContext = chatroomObserver;
             send_button.IsDefault = true;
+            chatroomObserver.UpdateMessageList(chatroom.getMessageList());
         }
 
         private void Send_Button_Click(object sender, RoutedEventArgs e)
         {
-            string content = send_textbox.Text;
+            string content = chatroomObserver.Message;
             if ((bool)chatroom.Send(content))
             {
-                send_textbox.Clear();
+                chatroomObserver.Message = "";
+                chatroomObserver.UpdateMessageList(chatroom.getMessageList());
             }
         }
         private void Logout_Button_Click(object sender, RoutedEventArgs e)
@@ -60,29 +59,6 @@ namespace ISE182_PROJECT_G8.presentationLayer
         {
 
         }
-
-        #region Chat window appearance methods
-        private void paintSendButton()
-        {
-            var brush = new ImageBrush();
-            brush.ImageSource = new BitmapImage(new Uri("presentationLayer\\Images\\send_btn.jpg", UriKind.Relative));
-            send_button.Background = brush;
-
-        }
-        private void paintLogoutButton()
-        {
-            var brush2 = new ImageBrush();
-            brush2.ImageSource = new BitmapImage(new Uri("presentationLayer\\Images\\logout_btn.jpg", UriKind.Relative));
-            logout_button.Background = brush2;
-        }
-        private void setChatIcon()
-        {
-            Uri iconUri = new Uri("..\\..\\presentationLayer\\Images\\chat_icon.ico", UriKind.RelativeOrAbsolute);
-            this.Icon = BitmapFrame.Create(iconUri);
-            ImageBrush myBrush = new ImageBrush();
-        }
-
-        #endregion Chat window appearance
 
     }
 }

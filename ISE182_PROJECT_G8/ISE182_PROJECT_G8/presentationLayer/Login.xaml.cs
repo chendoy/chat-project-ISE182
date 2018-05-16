@@ -22,11 +22,11 @@ namespace ISE182_PROJECT_G8.presentationLayer
             System.Globalization.CultureInfo.DefaultThreadCurrentUICulture = System.Globalization.CultureInfo.GetCultureInfo("en-US"); //used to display .net errors messages in english (my windows is in hebrew)//
             InitializeComponent();
             this.ResizeMode = ResizeMode.NoResize;
+
             loginObserver = new LoginObserver();
             this.DataContext = loginObserver;
 
             LoadRememberedUser();
-
 
         }
         private void Login_Button_Click(object sender, RoutedEventArgs e)
@@ -82,23 +82,17 @@ namespace ISE182_PROJECT_G8.presentationLayer
 
         private void LoadRememberedUser()
         {
-            User user = chatroom.getRememberedUser();
-            loginObserver.Username = user.getNickname();
+            User user =  chatroom.getRememberedUser();
+            if (user != null)
             loginObserver.GroupID = user.getGroupID().ToString();
             if (loginObserver.GroupID == "0") loginObserver.GroupID = "";
+            {
+                loginObserver.Username = user.getNickname();
+                loginObserver.GroupID = user.getGroupID().ToString();
+                if (loginObserver.GroupID == "0") loginObserver.GroupID = "";
+            }
         }
 
-        private void TextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
-        {
-            if (String.IsNullOrEmpty(loginObserver.Username))
-            {
-                loginObserver.UsernameVisibility = Visibility.Visible;
-            }
-            else
-            {
-                loginObserver.UsernameVisibility = Visibility.Hidden;
-            }
-        }
     }
 
 

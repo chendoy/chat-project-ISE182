@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ISE182_PROJECT_G8.presentationLayer"
-             mc:Ignorable="d" Height="627.805" Width="476.219" Icon="..\presentationLayer\Images\chat_icon.ico">
+             mc:Ignorable="d" Height="628" Width="476" Icon="..\presentationLayer\Images\chat_icon.ico">
     <Window.Resources>
         <!-- This style is used for buttons, to remove the WPF default 'animated' mouse over effect -->
         <Style x:Key="MyButtonStyle" TargetType="Button">
