@@ -22,15 +22,11 @@ namespace ISE182_PROJECT_G8.presentationLayer
             System.Globalization.CultureInfo.DefaultThreadCurrentUICulture = System.Globalization.CultureInfo.GetCultureInfo("en-US"); //used to display .net errors messages in english (my windows is in hebrew)//
             InitializeComponent();
             this.ResizeMode = ResizeMode.NoResize;
+
             loginObserver = new LoginObserver();
             this.DataContext = loginObserver;
-             /*
-            setRememberedUser();
-            setChatIcon();
-            paintLoginButton();
-            paintRegisterButton();
-            */
 
+            LoadRememberedUser();
 
         }
         private void Login_Button_Click(object sender, RoutedEventArgs e)
@@ -84,40 +80,17 @@ namespace ISE182_PROJECT_G8.presentationLayer
             }
         }
 
-        private User loadRememberedUser()
+        private void LoadRememberedUser()
         {
-            return chatroom.getRememberedUser();
+            User user =  chatroom.getRememberedUser();
+            if (user != null)
+            {
+                loginObserver.Username = user.getNickname();
+                loginObserver.GroupID = user.getGroupID().ToString();
+                if (loginObserver.GroupID == "0") loginObserver.GroupID = "";
+            }
         }
 
-        
-        #region Login window appearance methods
-        
-        private void paintLoginButton()
-        {
-            var brush = new ImageBrush();
-            brush.ImageSource = new BitmapImage(new Uri("\\Images\\login_btn.jpg", UriKind.Relative));
-            login_btn.Background = brush;
-        }
-        private void paintRegisterButton()
-        {
-            var brush = new ImageBrush();
-            brush.ImageSource = new BitmapImage(new Uri("\\Images\\register_btn.jpg", UriKind.Relative));
-            register_btn.Background = brush;
-            login_btn.IsDefault = true;
-        }
-        private void setChatIcon()
-        {
-            Uri iconUri = new Uri("\\presentationLayer\\Images\\chat_icon.ico", UriKind.RelativeOrAbsolute);
-            this.Icon = BitmapFrame.Create(iconUri);
-        }
-        private void setRememberedUser()
-        {
-            loginObserver.Username = loadRememberedUser().getNickname();
-            loginObserver.GroupID = loadRememberedUser().getGroupID().ToString();
-            if (loginObserver.GroupID == "0") loginObserver.GroupID = "";
-        }
-        
-        #endregion Login window appearance
     }
 
 
