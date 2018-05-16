@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace ISE182_PROJECT_G8.presentationLayer
 {
@@ -33,6 +34,20 @@ namespace ISE182_PROJECT_G8.presentationLayer
             {
                 username = value;
                 OnPropertyChanged("Username");
+            }
+        }
+
+        private Visibility usernameVisibility;
+        public Visibility UsernameVisibility
+        {
+            get
+            {
+                return usernameVisibility;
+            }
+            set
+            {
+                usernameVisibility = value;
+                OnPropertyChanged("UsernameVisibility");
             }
         }
 

@@ -4,7 +4,7 @@
              Title="Group 8 Chat"  
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:ISE182_PROJECT_G8"
+             xmlns:local="clr-namespace:ISE182_PROJECT_G8.presentationLayer"
              mc:Ignorable="d" Height="627.805" Width="476.219" Icon="..\presentationLayer\Images\chat_icon.ico">
     <Window.Resources>
         <!-- This style is used for buttons, to remove the WPF default 'animated' mouse over effect -->
@@ -74,30 +74,14 @@
                 <ImageBrush ImageSource="..\presentationLayer\Images\register_btn.jpg"/>
             </Button.Background>
         </Button>
-        <CheckBox IsChecked="{Binding RememberMe}" Content="Remember Me?" HorizontalAlignment="Left" Margin="-146,26.8,0,0" Grid.Row="4" VerticalAlignment="Top" Checked="Remember_Me_Checked" Height="17" Width="122"/>
 
 
-        <TextBox Text="{Binding Username}" FontFamily="Century Gothic" HorizontalContentAlignment="Center" FontSize="30" Background="Transparent" Padding="6,3,0,0" Width="244"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-202,131,0,115.2" Height="57" Grid.Row="2"/>
-        <TextBlock FontSize="30" TextAlignment="Center" IsHitTestVisible="False" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="-203,132,0,125" Foreground="DarkGray" Height="47" Width="227" Grid.Row="2">
-            <TextBlock.Style>
-
-                <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Visibility" Value="Collapsed"/>
-                    <Style.Triggers>
-
-                        <DataTrigger Binding="{Binding Username}" Value="">
-                            <Setter Property="Visibility" Value="Visible"/>
-
-                        </DataTrigger>
-
-                    </Style.Triggers>
-
-                </Style>
-            </TextBlock.Style><Run/><InlineUIContainer>
+        <TextBox Text="{Binding Username}" FontFamily="Century Gothic" HorizontalContentAlignment="Center" FontSize="30" Background="Transparent" Padding="6,3,0,0" Width="244"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-202,131,0,115.2" Height="57" Grid.Row="2" TextChanged="TextBox_TextChanged"/>
+        <TextBlock FontSize="30" TextAlignment="Center" IsHitTestVisible="False" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="-203,132,0,125" Foreground="DarkGray" Height="47" Width="227" Grid.Row="2" Visibility="{Binding UsernameVisibility}"><Run/><InlineUIContainer>
                 <TextBlock TextWrapping="Wrap" Text="Username"/>
             </InlineUIContainer></TextBlock>
         <TextBox Text="{Binding GroupID}" FontFamily="Century Gothic" HorizontalContentAlignment="Center" FontSize="30" Background="Transparent" Padding="6,3,0,0" Width="119"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-146,215,0,33" Height="56" Grid.Row="2"/>
-        <TextBlock FontSize="30" TextAlignment="Center" IsHitTestVisible="False" Text=" Group" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-136,215,0,42" Foreground="DarkGray" Height="47" Width="100" Grid.Row="2">
+        <TextBlock FontSize="30" TextAlignment="Center" IsHitTestVisible="False" Text=" Group" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-136,215,0,42" Foreground="DarkGray" Height="47" Width="100" Grid.Row="2" Visibility="Visible">
             <TextBlock.Style>
 
                 <Style TargetType="{x:Type TextBlock}">
@@ -114,6 +98,7 @@
             </TextBlock.Style>
         </TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="-156,0.6,0,0" Grid.Row="5" TextWrapping="Wrap" Text="Don't have an account?" VerticalAlignment="Top" Width="141" Height="16"/>
+        <CheckBox IsChecked="{Binding RememberMe}" Content="Remember Me?" HorizontalAlignment="Left" Margin="-146,26.8,0,0" Grid.Row="4" VerticalAlignment="Top" Checked="Remember_Me_Checked" Height="17" Width="122"/>
 
         <Image Source="/presentationLayer/Images/unknown_user.gif" HorizontalAlignment="Left" Height="200" Margin="-172,20.2,0,0" VerticalAlignment="Top" Width="198" Grid.Row="1" RenderTransformOrigin="-0.226,0.526" Grid.RowSpan="2">
             <Image.OpacityMask>

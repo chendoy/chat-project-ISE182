@@ -88,6 +88,17 @@ namespace ISE182_PROJECT_G8.presentationLayer
             if (loginObserver.GroupID == "0") loginObserver.GroupID = "";
         }
 
+        private void TextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            if (String.IsNullOrEmpty(loginObserver.Username))
+            {
+                loginObserver.UsernameVisibility = Visibility.Visible;
+            }
+            else
+            {
+                loginObserver.UsernameVisibility = Visibility.Hidden;
+            }
+        }
     }
 
 
