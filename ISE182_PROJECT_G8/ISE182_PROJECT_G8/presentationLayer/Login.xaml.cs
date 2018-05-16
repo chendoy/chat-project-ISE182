@@ -84,8 +84,6 @@ namespace ISE182_PROJECT_G8.presentationLayer
         {
             User user =  chatroom.getRememberedUser();
             if (user != null)
-            loginObserver.GroupID = user.getGroupID().ToString();
-            if (loginObserver.GroupID == "0") loginObserver.GroupID = "";
             {
                 loginObserver.Username = user.getNickname();
                 loginObserver.GroupID = user.getGroupID().ToString();

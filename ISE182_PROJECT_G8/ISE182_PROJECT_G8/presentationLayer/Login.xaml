@@ -76,7 +76,7 @@
         </Button>
 
 
-        <TextBox Text="{Binding Username}" FontFamily="Century Gothic" HorizontalContentAlignment="Center" FontSize="30" Background="Transparent" Padding="6,3,0,0" Width="244"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-202,131,0,115.2" Height="57" Grid.Row="2" TextChanged="TextBox_TextChanged"/>
+        <TextBox Text="{Binding Username}" FontFamily="Century Gothic" HorizontalContentAlignment="Center" FontSize="30" Background="Transparent" Padding="6,3,0,0" Width="244"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-202,131,0,115.2" Height="57" Grid.Row="2"/>
         <TextBlock FontSize="30" TextAlignment="Center" IsHitTestVisible="False" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="-203,132,0,125" Foreground="DarkGray" Height="47" Width="227" Grid.Row="2" Visibility="{Binding UsernameVisibility}"><Run/><InlineUIContainer>
                 <TextBlock TextWrapping="Wrap" Text="Username"/>
             </InlineUIContainer></TextBlock>
