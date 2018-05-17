@@ -77,5 +77,6 @@ namespace ISE182_PROJECT_G8.presentationLayer
                 OnPropertyChanged("RememberMe");
             }
         }
+
     }
 }

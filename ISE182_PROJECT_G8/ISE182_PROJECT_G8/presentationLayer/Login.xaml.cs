@@ -4,6 +4,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.IO;
 using ISE182_PROJECT_G8.logicLayer;
+using System.Text.RegularExpressions;
+using System.Windows.Input;
 
 namespace ISE182_PROJECT_G8.presentationLayer
 {
@@ -52,8 +54,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
             }
             else
             {
-                //message_notify.Visibility = Visibility.Visible;
-                loginObserver.ErrorMessage = "User not found";
+                loginObserver.ErrorMessage = "User not found, Please try again or register";
             }
         }
 
@@ -69,13 +70,11 @@ namespace ISE182_PROJECT_G8.presentationLayer
             {
                 if ((bool)chatroom.Register(loginObserver.Username, Int32.Parse(loginObserver.GroupID)))
                 {
-                   //message_notify.Visibility = Visibility.Visible;
                    loginObserver.ErrorMessage = "User registered successfully!";
                 }
             }
             catch
             {
-                //message_notify.Visibility = Visibility.Visible;
                 loginObserver.ErrorMessage = "Incorrect input...please try again";
             }
         }
@@ -93,6 +92,12 @@ namespace ISE182_PROJECT_G8.presentationLayer
                     loginObserver.GroupID = "";
                 }
             }
+        }
+
+        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
         }
 
     }
