@@ -34,7 +34,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
             chatroomObserver = new ChatroomObserver();
             this.DataContext = chatroomObserver;
             send_button.IsDefault = true;
-            chatroomObserver.UpdateMessageList(chatroom.getMessageList());
+            UpdateMessageList();
         }
 
         private void Send_Button_Click(object sender, RoutedEventArgs e)
@@ -43,7 +43,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
             if ((bool)chatroom.Send(content))
             {
                 chatroomObserver.Message = "";
-                chatroomObserver.UpdateMessageList(chatroom.getMessageList());
+                UpdateMessageList();
             }
         }
         private void Logout_Button_Click(object sender, RoutedEventArgs e)
@@ -58,6 +58,16 @@ namespace ISE182_PROJECT_G8.presentationLayer
         private void chat_panel_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        public void UpdateMessageList()
+        {
+            List<Message> list = chatroom.getMessageList();
+            chatroomObserver.Messages.Clear();
+            foreach (Message message in list)
+            {
+                chatroomObserver.Messages.Add(message.ToString());
+            }
         }
 
     }

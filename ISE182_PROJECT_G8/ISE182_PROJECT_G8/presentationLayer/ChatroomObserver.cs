@@ -15,8 +15,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
     {
         public ChatroomObserver()
         {
-            messages = new ObservableCollection<string>();
-            //messages.CollectionChanged += Messages_CollectionChanged;
+            Messages.CollectionChanged += Messages_CollectionChanged;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -54,17 +53,19 @@ namespace ISE182_PROJECT_G8.presentationLayer
         //    }
         //}
 
-        private ObservableCollection<string> messages;
+        //private ObservableCollection<string> messages;
 
-        public void UpdateMessageList(List<Message> list)
-        {
-            //messages.Clear();
-            foreach (Message message in list)
-            {
-                messages.Add(message.ToString());
-            }
-            OnPropertyChanged("Messages");
-        }
+        //public void UpdateMessageList(List<Message> list)
+        //{
+        //    //messages.Clear();
+        //    foreach (Message message in list)
+        //    {
+        //        messages.Add(message.ToString());
+        //    }
+        //    OnPropertyChanged("Messages");
+        //}
+
+        public ObservableCollection<string> Messages { get; } = new ObservableCollection<string>();
 
         private void Messages_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
