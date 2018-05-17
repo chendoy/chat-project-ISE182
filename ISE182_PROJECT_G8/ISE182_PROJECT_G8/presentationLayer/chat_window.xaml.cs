@@ -53,12 +53,6 @@ namespace ISE182_PROJECT_G8.presentationLayer
             Login login_window = new Login(chatroom);
             login_window.Show();
             this.Close();
-
-        }
-
-        private void chat_panel_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
         }
 
         public void UpdateMessageList()
