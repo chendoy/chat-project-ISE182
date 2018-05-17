@@ -87,7 +87,11 @@ namespace ISE182_PROJECT_G8.presentationLayer
             {
                 loginObserver.Username = user.getNickname();
                 loginObserver.GroupID = user.getGroupID().ToString();
-                if (loginObserver.GroupID == "0") loginObserver.GroupID = "";
+                if (loginObserver.GroupID == "0")
+                {
+                    loginObserver.Username = "";
+                    loginObserver.GroupID = "";
+                }
             }
         }
 

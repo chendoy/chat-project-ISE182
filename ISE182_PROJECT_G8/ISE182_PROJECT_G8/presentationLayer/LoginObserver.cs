@@ -13,7 +13,6 @@ namespace ISE182_PROJECT_G8.presentationLayer
     {
         public LoginObserver()
         {
-
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -34,20 +33,6 @@ namespace ISE182_PROJECT_G8.presentationLayer
             {
                 username = value;
                 OnPropertyChanged("Username");
-            }
-        }
-
-        private Visibility usernameVisibility;
-        public Visibility UsernameVisibility
-        {
-            get
-            {
-                return usernameVisibility;
-            }
-            set
-            {
-                usernameVisibility = value;
-                OnPropertyChanged("UsernameVisibility");
             }
         }
 
