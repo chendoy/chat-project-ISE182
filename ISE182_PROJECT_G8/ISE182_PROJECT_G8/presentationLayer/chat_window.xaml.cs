@@ -34,6 +34,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
             chatroomObserver = new ChatroomObserver();
             this.DataContext = chatroomObserver;
             send_button.IsDefault = true;
+            chatroom.RetreiveMessages(); // Need to do timer
             UpdateMessageList();
         }
 
@@ -70,5 +71,12 @@ namespace ISE182_PROJECT_G8.presentationLayer
             }
         }
 
+        private void TextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                Send_Button_Click(sender, e);
+            }
+        }
     }
 }

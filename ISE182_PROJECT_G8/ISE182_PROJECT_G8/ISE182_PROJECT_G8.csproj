@@ -82,6 +82,7 @@
     <Compile Include="logicLayer\RunChat.cs" />
     <Compile Include="logicLayer\UserHandler.cs" />
     <Compile Include="logicLayer\Message.cs" />
+    <Compile Include="presentationLayer\ListBox.cs" />
     <Compile Include="presentationLayer\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>

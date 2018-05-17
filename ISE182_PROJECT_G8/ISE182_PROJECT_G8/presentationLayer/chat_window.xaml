@@ -5,6 +5,7 @@
              Title="Group 8 Chat"  
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ISE182_PROJECT_G8.presentationLayer"
+             xmlns:w="clr-namespace:System.Windows.Workarounds"
              mc:Ignorable="d" Height="600" Width="1070.8" Icon="Images/chat_icon.ico">
     <Window.Resources>
         <!-- This style is used for buttons, to remove the WPF default 'animated' mouse over effect -->
@@ -52,7 +53,7 @@
 
 
 
-        <ListBox ItemsSource="{Binding Messages}"  ScrollViewer.CanContentScroll="True" Margin="464,4,-106,-441" RenderTransformOrigin="10.453,0.719" HorizontalAlignment="Left" Width="674" Grid.RowSpan="2" SelectionChanged="chat_panel_SelectionChanged">
+        <ListBox ItemsSource="{Binding Messages}" ScrollViewer.CanContentScroll="True" Margin="464,4,-106,-441" RenderTransformOrigin="10.453,0.719" HorizontalAlignment="Left" Width="674" Grid.RowSpan="2" SelectionChanged="chat_panel_SelectionChanged">
             <ListBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -72,7 +73,7 @@
 
         </ListBox>
 
-        <TextBox Text="{Binding Message}" FontFamily="Century Gothic" HorizontalContentAlignment="Left" FontSize="25" Background="Transparent" Padding="6,3,0,0" Width="507"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="467,480,0,-547" Height="67" Grid.RowSpan="2"/>
+        <TextBox Text="{Binding Message}" FontFamily="Century Gothic" HorizontalContentAlignment="Left" FontSize="25" Background="Transparent" Padding="6,3,0,0" Width="507"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="467,480,0,-547" Height="67" Grid.RowSpan="2" KeyDown="TextBox_KeyDown"/>
         <TextBlock FontSize="25" TextAlignment="Left" IsHitTestVisible="False" Text=" Type your message here" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="68,351,0,-398" Foreground="DarkGray" Height="47" Width="353" Grid.RowSpan="2">
             <TextBlock.Style>
 
