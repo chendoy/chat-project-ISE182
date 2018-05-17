@@ -69,10 +69,10 @@
             </Image.OpacityMask>
         </Image>
 
-        <TextBlock Text ="Username" FontSize="30" TextAlignment="Center" IsHitTestVisible="False" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="-203,132,0,125" Foreground="DarkGray" Height="47" Width="227" Grid.Row="2" Opacity="0.75">
-            <TextBlock.Style>
+        <Label Content ="Username" FontSize="30" HorizontalContentAlignment="Center" IsHitTestVisible="False" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="-203,132,0,125" Foreground="DarkGray" Height="47" Width="227" Grid.Row="2" Opacity="0.75">
+            <Label.Style>
 
-                    <Style TargetType="{x:Type TextBlock}">
+                    <Style TargetType="{x:Type Label}">
                         <Setter Property="Visibility" Value="Hidden"/>
                         <Style.Triggers>
                         <DataTrigger Binding="{Binding Path=Username}" Value="">
@@ -82,19 +82,19 @@
                     </Style.Triggers>
                     </Style>
 
-                </TextBlock.Style>
-        </TextBlock>
-        <TextBox FontFamily="Century Gothic" HorizontalContentAlignment="Center" FontSize="30" Background="Transparent" Padding="6,3,0,0" Width="244"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-202,131,0,115.2" Height="57" Grid.Row="2">
+            </Label.Style>
+        </Label>
+        <TextBox FontFamily="Century Gothic" HorizontalContentAlignment="Center" FontSize="30" Background="Transparent" Padding="6,3,0,0" Width="244"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-202,131,0,115.2" Height="57" Grid.Row="2" BorderThickness="2" BorderBrush="#FFA7BBFA">
             <TextBox.Text>
                 <Binding Path="Username" UpdateSourceTrigger="PropertyChanged"/>
             </TextBox.Text>
         </TextBox>
 
 
-        <TextBlock Text="Group" FontSize="30" TextAlignment="Center" IsHitTestVisible="False" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-136,215,0,42" Foreground="DarkGray" Height="47" Width="100" Grid.Row="2" Opacity="0.75">
-            <TextBlock.Style>
+        <Label Content="Group" FontSize="30" HorizontalContentAlignment="Center" IsHitTestVisible="False" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-136,215,0,42" Foreground="DarkGray" Height="47" Width="100" Grid.Row="2" Opacity="0.75">
+            <Label.Style>
 
-                <Style TargetType="{x:Type TextBlock}">
+                <Style TargetType="{x:Type Label}">
                     <Setter Property="Visibility" Value="Hidden"/>
                     <Style.Triggers>
                         <DataTrigger Binding="{Binding Path=GroupID}" Value="">
@@ -105,9 +105,9 @@
                     </Style.Triggers>
                 </Style>
 
-            </TextBlock.Style>
-        </TextBlock>
-        <TextBox PreviewTextInput="NumberValidationTextBox" FontFamily="Century Gothic" HorizontalContentAlignment="Center" FontSize="30" Background="Transparent" Padding="6,3,0,0" Width="119"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-146,215,0,33" Height="56" Grid.Row="2">
+            </Label.Style>
+        </Label>
+        <TextBox PreviewTextInput="NumberValidationTextBox" FontFamily="Century Gothic" HorizontalContentAlignment="Center" FontSize="30" Background="Transparent" Padding="6,3,0,0" Width="119"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-146,215,0,33" Height="56" Grid.Row="2" BorderBrush="#FFA7BBFA" BorderThickness="2,2,2,1">
             <TextBox.Text>
                 <Binding Path="GroupID" UpdateSourceTrigger="PropertyChanged"/>
             </TextBox.Text>

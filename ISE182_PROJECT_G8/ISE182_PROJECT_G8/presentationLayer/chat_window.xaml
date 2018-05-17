@@ -36,7 +36,7 @@
     <Window.Background>
         <ImageBrush ImageSource="Images/chat_background.jpg"></ImageBrush>
     </Window.Background>
-    <Grid Margin="-96,-3,123.2,-0.6" RenderTransformOrigin="0.044,0.08" Height="0" VerticalAlignment="Top">
+    <Grid Margin="-96,-3,123.2,-0.6" RenderTransformOrigin="0.044,0.08" Height="0" VerticalAlignment="Top" ScrollViewer.CanContentScroll="True">
 
         <Grid.RenderTransform>
             <TransformGroup>
@@ -73,7 +73,7 @@
 
         </ListBox>
 
-        <TextBox FontFamily="Century Gothic" HorizontalContentAlignment="Left" FontSize="25" Background="Transparent" Padding="6,3,0,0" Width="507"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="467,480,0,-547" Height="67" Grid.RowSpan="2" KeyDown="TextBox_KeyDown">
+        <TextBox MaxLength="150" FontFamily="Century Gothic" HorizontalContentAlignment="Left" FontSize="16" Background="Transparent" Padding="6,3,0,0" Width="507"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="467,480,0,-547" Height="67" Grid.RowSpan="2" KeyDown="TextBox_KeyDown" TextWrapping="Wrap">
             <TextBox.Text>
                 <Binding Path="Message" UpdateSourceTrigger="PropertyChanged"/>
             </TextBox.Text>
