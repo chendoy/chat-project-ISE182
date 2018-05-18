@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 using ISE182_PROJECT_G8.logicLayer;
 
 namespace ISE182_PROJECT_G8.presentationLayer
@@ -24,6 +25,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
 
         private Chatroom chatroom;
         private ChatroomObserver chatroomObserver;
+        DispatcherTimer dispatcherTimer = new DispatcherTimer();  // member 
 
         public chat_window(Chatroom chatroom)
         {
@@ -34,8 +36,14 @@ namespace ISE182_PROJECT_G8.presentationLayer
             chatroomObserver = new ChatroomObserver();
             this.DataContext = chatroomObserver;
             send_button.IsDefault = true;
-            chatroom.RetreiveMessages(); // Need to do timer
+            //chatroom.RetreiveMessages(); // Need to do timer
             UpdateMessageList();
+
+            dispatcherTimer.Tick += dispatcherTimer_Tick;   
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 2);  
+            dispatcherTimer.Start();  
+
+
         }
 
         private void Send_Button_Click(object sender, RoutedEventArgs e)
@@ -71,6 +79,14 @@ namespace ISE182_PROJECT_G8.presentationLayer
             {
                 Send_Button_Click(sender, e);
             }
+        }
+
+        private void dispatcherTimer_Tick(object sender, EventArgs e)
+
+        {
+            chatroom.RetreiveMessages();
+            UpdateMessageList();
+
         }
     }
 }

@@ -79,7 +79,7 @@
     <Compile Include="communicationLayer\IMessage.cs" />
     <Compile Include="logicLayer\Chatroom.cs" />
     <Compile Include="logicLayer\MessageHandler.cs" />
-    <Compile Include="logicLayer\RunChat.cs" />
+    <Compile Include="presentationLayer\RunChat.cs" />
     <Compile Include="logicLayer\UserHandler.cs" />
     <Compile Include="logicLayer\Message.cs" />
     <Compile Include="presentationLayer\ListBox.cs" />
