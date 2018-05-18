@@ -29,7 +29,8 @@ Left to do:
 - [V] enable binding of the chat panel and the list (list needs to be updated when a new message is sent)
 - [V] group ID accept only integers
 - [V] message limit via PL 
-- make the chat panel scroll automatically when a new message is sent (Only if at bottom?)
+- [V] check timzone
+- [V] make the chat panel scroll automatically when a new message is sent (Only if at bottom?)
 - Adding sort and filter options in chatroom window
 - 2 unit tests
 
@@ -40,7 +41,6 @@ Left to do:
 
 - 2 unit tests
 - Logic - sorting and filtering
-- check timzone
 - Add hello 'username' in chatroom
 
 *Please write in whatsapp before you start coding something so we will know*

@@ -91,6 +91,10 @@ namespace ISE182_PROJECT_G8.presentationLayer
                     loginObserver.Username = "";
                     loginObserver.GroupID = "";
                 }
+                else
+                {
+                    loginObserver.RememberMe = true;
+                }
             }
         }
 
