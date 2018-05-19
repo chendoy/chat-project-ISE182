@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ISE182_PROJECT_G8.persistantLayer;
 
 namespace ISE182_PROJECT_G8.logicLayer
 {
@@ -32,6 +33,7 @@ namespace ISE182_PROJECT_G8.logicLayer
         {
             List<Message> sorted = new List<Message>();
             sorted = list.OrderBy(o => o.getTime()).ToList();
+            Logger.Instance.Info("Messages sorted successfully");
             return sorted;
         }
 
@@ -41,6 +43,7 @@ namespace ISE182_PROJECT_G8.logicLayer
             int length = message.Length;
             if (String.IsNullOrWhiteSpace(message) || message.Length==0 ||  length > _maxLength)
             {
+                Logger.Instance.Error("Message content validation returned: Not Valid");
                 return false;
             }
             return true;

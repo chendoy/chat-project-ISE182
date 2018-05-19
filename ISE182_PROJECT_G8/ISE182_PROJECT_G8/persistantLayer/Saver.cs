@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using ISE182_PROJECT_G8.logicLayer;
 using System.IO;
-using ISE182_PROJECT_G8.logicLayer;
 using System.Runtime.Serialization.Formatters.Binary;
 
 namespace ISE182_PROJECT_G8.persistantLayer
@@ -107,7 +106,7 @@ namespace ISE182_PROJECT_G8.persistantLayer
             BinaryFormatter serializer = new BinaryFormatter();
             serializer.Serialize(Filestream, user);
             Filestream.Close();
-            Logger.Instance.Info("Remember me loaded successfully");
+            Logger.Instance.Info("Remember me user loaded successfully");
         }
 
         public User LoadRememberMe()
@@ -118,7 +117,7 @@ namespace ISE182_PROJECT_G8.persistantLayer
                 BinaryFormatter deserializer = new BinaryFormatter();
                 User rememberMeUser = ((User)deserializer.Deserialize(Filestream));
                 Filestream.Close();
-                Logger.Instance.Info("Users data was loaded successfully");
+                Logger.Instance.Info("Remember me data was loaded successfully");
                 return rememberMeUser;
             }
             return new User("",-1); //the file doesn't exist - return a dummy user//

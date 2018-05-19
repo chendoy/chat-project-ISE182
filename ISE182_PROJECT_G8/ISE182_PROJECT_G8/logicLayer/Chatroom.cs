@@ -33,8 +33,8 @@ namespace ISE182_PROJECT_G8.logicLayer
             this.messageList = saver.LoadMessages(); //un-persisting messages data to RAM//
             this.userList = saver.LoadUsers(); //un-persisting users data to RAM//
             this.rememberedUser = saver.LoadRememberMe();
-            if (rememberedUser.getGroupID() == -1)
-                rememberedUser = null;
+            //if (rememberedUser.getGroupID() == -1)
+                //rememberedUser = null;
         }
 
         public bool Register(String nickname, int groupID)
@@ -171,7 +171,7 @@ namespace ISE182_PROJECT_G8.logicLayer
                 MessageHandler.addUniqueByGuid(this.messageList, msgRetreived);
                 saver.SaveMessages(this.messageList); //persisting received messages data//
                 this.messageList = MessageHandler.sortbytime(this.messageList);
-                Logger.Instance.Info("Messages retreived from server");
+                Logger.Instance.Info("Messages retreived successfully from server");
                 return true;
             }
             catch
@@ -180,7 +180,9 @@ namespace ISE182_PROJECT_G8.logicLayer
                 return false;
             }
         }
-        public User getRememberedUser() { return this.rememberedUser; }
+        public User getRememberedUser() {
+            this.rememberedUser = Saver.Instance.LoadRememberMe();
+            return this.rememberedUser; }
         public Saver getSaver() { return this.saver; }
 
         public void clearUsersList() { this.userList.Clear(); }
