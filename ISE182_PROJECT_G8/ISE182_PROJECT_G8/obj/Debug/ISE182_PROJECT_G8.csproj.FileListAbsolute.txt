@@ -76,3 +76,12 @@ C:\Users\חן\source\repos\ISE182_PROJECT_G8\ISE182_PROJECT_G8\ISE182_PROJECT_G8
 C:\Users\חן\source\repos\ISE182_PROJECT_G8\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\חן\source\repos\ISE182_PROJECT_G8\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\presentationLayer\chat_window.baml
 C:\Users\חן\source\repos\ISE182_PROJECT_G8\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\presentationLayer\Login.baml
+C:\Users\user\Source\Repos\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\presentationLayer\chat_window.g.cs
+C:\Users\user\Source\Repos\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\presentationLayer\Login.g.cs
+C:\Users\user\Source\Repos\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8_Content.g.cs
+C:\Users\user\Source\Repos\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\user\Source\Repos\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8_MarkupCompile.cache
+C:\Users\user\Source\Repos\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8_MarkupCompile.lref
+C:\Users\user\Source\Repos\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\presentationLayer\chat_window.baml
+C:\Users\user\Source\Repos\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\presentationLayer\Login.baml
+C:\Users\user\Source\Repos\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8.g.resources
