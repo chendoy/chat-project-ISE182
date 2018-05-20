@@ -20,12 +20,14 @@ namespace ISE182_PROJECT_G8.logicLayer
         private string MessageContent { get; }
         private string GroupID { get; }
 
+        private static TimeZoneInfo timezone = TimeZoneInfo.Local;
+
         //IMessage to Message constructor//
-        public Message (IMessage msg)
+        public Message(IMessage msg)
         {
             this.Id = msg.Id;
             this.UserName = msg.UserName;
-            this.Date = msg.Date;
+            this.Date = TimeZoneInfo.ConvertTimeFromUtc(msg.Date, timezone);
             this.MessageContent = msg.MessageContent;
             this.GroupID = msg.GroupID;
         }
