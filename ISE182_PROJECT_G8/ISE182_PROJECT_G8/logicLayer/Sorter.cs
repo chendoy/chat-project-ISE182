@@ -14,5 +14,9 @@ namespace ISE182_PROJECT_G8.logicLayer
             this.list = list;
         }
         abstract public List<Message> Sort(List<Message> messages);
+        public List<Message> getlist()
+        {
+            return list;
+        }
     }
 }
