@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ISE182_PROJECT_G8.CommunicationLayer;
-//using ISE182_PROJECT_G8.presentationLayer;
+using ISE182_PROJECT_G8.presentationLayer;
 using ISE182_PROJECT_G8.persistantLayer;
 
 namespace ISE182_PROJECT_G8.logicLayer
@@ -25,6 +25,7 @@ namespace ISE182_PROJECT_G8.logicLayer
                 this.nickname = nickname;
                 this.status = 0; //fresh user is initially logged-off// 
                 this.groupID = groupID;
+                Logger.Instance.Info("User: " + nickname + " of group " + groupID + " created successfully");
             }
             else
             {
@@ -58,6 +59,7 @@ namespace ISE182_PROJECT_G8.logicLayer
 
         public Message Send(String url, String message)
         {
+            Logger.Instance.Info("Message was sent successfully by communication module");
             return new Message (Communication.Instance.Send(url, this.groupID.ToString(), this.nickname, message));
         }
     }

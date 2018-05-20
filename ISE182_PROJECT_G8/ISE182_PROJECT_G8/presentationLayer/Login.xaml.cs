@@ -6,6 +6,7 @@ using System.IO;
 using ISE182_PROJECT_G8.logicLayer;
 using System.Text.RegularExpressions;
 using System.Windows.Input;
+using ISE182_PROJECT_G8.persistantLayer;
 
 namespace ISE182_PROJECT_G8.presentationLayer
 {
@@ -21,39 +22,47 @@ namespace ISE182_PROJECT_G8.presentationLayer
         public Login(Chatroom chatroom)
         {
             this.chatroom = chatroom;
-            System.Globalization.CultureInfo.DefaultThreadCurrentUICulture = System.Globalization.CultureInfo.GetCultureInfo("en-US"); //used to display .net errors messages in english (my windows is in hebrew)//
+            System.Globalization.CultureInfo.DefaultThreadCurrentUICulture = System.Globalization.CultureInfo.GetCultureInfo("en-US"); //used to display .net error messages in english (my windows is in hebrew)//
             InitializeComponent();
             this.ResizeMode = ResizeMode.NoResize;
-
+            Logger.Instance.Info("log-in window started successfully");
             loginObserver = new LoginObserver();
             this.DataContext = loginObserver;
-
             LoadRememberedUser();
 
         }
         private void Login_Button_Click(object sender, RoutedEventArgs e)
         {
-            string username = loginObserver.Username;
-            int groupID = Int32.Parse(loginObserver.GroupID);
-            if ((bool)chatroom.Login(username, groupID)) {
+            try
+            {
+               string username = loginObserver.Username;
+               int groupID = Int32.Parse(loginObserver.GroupID);
+                if((bool)chatroom.Login(username, groupID)) {
 
-                if (loginObserver.RememberMe) //"remember me was ticked - save the user//
-                {
-                    chatroom.getSaver().SaveRememberMe(new User(username, groupID));
+                    if (loginObserver.RememberMe) //remember me was ticked - save the user//
+                    {
+                        chatroom.getSaver().SaveRememberMe(new User(username, groupID));
 
+                    }
+                    else //wasn't ticked - save a "dummy" user
+                    {
+                        chatroom.getSaver().SaveRememberMe(new User("", -1));
+                    }
+                    Logger.Instance.Info("User: " + username + " logged-in successfully, starting chat window");
+                    chat_window chat_window = new chat_window(chatroom);
+                    chat_window.Show();
+                    this.Close();
                 }
-                else //wasn't ticked - save a "dummy" user
+                else
                 {
-                    chatroom.getSaver().SaveRememberMe(new User("", 0));
+                    loginObserver.ErrorMessage = "User not found, Please try again or register";
+                    Logger.Instance.Error("User not found when trying to log-in");
                 }
-
-                chat_window chat_window = new chat_window(chatroom);
-                chat_window.Show();
-                this.Close();
 
             }
-            else
+            catch
             {
+                Logger.Instance.Error("User not found when trying to log-in");
                 loginObserver.ErrorMessage = "User not found, Please try again or register";
             }
         }
@@ -70,11 +79,13 @@ namespace ISE182_PROJECT_G8.presentationLayer
             {
                 if ((bool)chatroom.Register(loginObserver.Username, Int32.Parse(loginObserver.GroupID)))
                 {
-                   loginObserver.ErrorMessage = "User registered successfully!";
+                    Logger.Instance.Info("User registered successfully");
+                    loginObserver.ErrorMessage = "User registered successfully!";
                 }
             }
             catch
             {
+                Logger.Instance.Error("Incorrect input was entered while trying to register");
                 loginObserver.ErrorMessage = "Incorrect input...please try again";
             }
         }
@@ -88,7 +99,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
                 loginObserver.GroupID = user.getGroupID().ToString();
                 if (loginObserver.GroupID == "0")
                 {
-                    loginObserver.Username = "";
+                    loginObserver.Username="";
                     loginObserver.GroupID = "";
                 }
                 else
@@ -102,6 +113,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
         {
             Regex regex = new Regex("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
+            Logger.Instance.Info("Group if textBox content validated successfully");
         }
 
     }
