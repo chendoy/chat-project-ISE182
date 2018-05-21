@@ -117,7 +117,6 @@
         <CheckBox Content="" HorizontalAlignment="Left" Height="100" Margin="205,375,0,-475" Grid.RowSpan="2" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="139,375,0,-391" Grid.RowSpan="2" TextWrapping="Wrap" Text="NickName:" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Height="16" Margin="230,375,0,-391" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <RadioButton Content="Clear" HorizontalAlignment="Left" Height="100" Margin="133,183,0,-283" Grid.RowSpan="2" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

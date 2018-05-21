@@ -15,7 +15,7 @@ namespace ISE182_PROJECT_G8.logicLayer
             this.list = list;
             isAsc = Asc;
         }
-        abstract public List<Message> Sort(List<Message> messages);
+        abstract public List<Message> Sort();
         public List<Message> getlist()
         {
             return list;
@@ -24,12 +24,20 @@ namespace ISE182_PROJECT_G8.logicLayer
         {
             return isAsc;
         }
+        public void SetAsc(Boolean B)
+        {
+            this.isAsc = B;
+        }
+        public void setlist(List<Message> newlist)
+        {
+            this.list = newlist;
+        }
         public class SortByTime : Sorter
         {
             public SortByTime(List<Message> list,Boolean isA) : base(list,isA) { }
 
 
-            public override List<Message> Sort(List<Message> messages)
+            public override List<Message> Sort()
             {
                 List<Message> sorted = new List<Message>();
                 if(getisAsc())
@@ -49,7 +57,7 @@ namespace ISE182_PROJECT_G8.logicLayer
             public SortByNickname(List<Message> list, Boolean isA) : base(list, isA) { }
 
 
-            public override List<Message> Sort(List<Message> messages)
+            public override List<Message> Sort()
             {
                 List<Message> sorted = new List<Message>();
                 if (getisAsc())
@@ -71,7 +79,7 @@ namespace ISE182_PROJECT_G8.logicLayer
             public SortByAll(List<Message> list, Boolean isA) : base(list, isA) { }
 
 
-            public override List<Message> Sort(List<Message> messages)
+            public override List<Message> Sort()
             {
                 List<Message> sorted = new List<Message>();
                 if (getisAsc())

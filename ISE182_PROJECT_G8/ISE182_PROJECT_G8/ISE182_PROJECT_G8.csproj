@@ -72,6 +72,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="logicLayer\Filter.cs" />
     <Compile Include="logicLayer\Sorter.cs" />
     <Compile Include="presentationLayer\chat_window.xaml.cs">
       <DependentUpon>chat_window.xaml</DependentUpon>
