@@ -45,8 +45,8 @@ namespace ISE182_PROJECT_G8.presentationLayer
 
             //DispatcherTimer init//
             dispatcherTimer.Tick += dispatcherTimer_Tick;   
-            dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 2);  
-            //dispatcherTimer.Start();  
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 2);
+            dispatcherTimer.Start();
 
 
         }
