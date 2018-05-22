@@ -13,11 +13,19 @@ namespace ISE182_PROJECT_G8.presentationLayer
 {
     public class ChatroomObserver : INotifyPropertyChanged
     {
+        private Boolean asc = true;
         public ChatroomObserver()
         {
             Messages.CollectionChanged += Messages_CollectionChanged;
         }
-
+        public Boolean getasc()
+        {
+            return asc;
+        }
+        public void setasc(Boolean nasc)
+        {
+            asc = nasc;
+        }
         public event PropertyChangedEventHandler PropertyChanged;
 
         public void OnPropertyChanged([CallerMemberName] string propertyName = null)
@@ -96,6 +104,84 @@ namespace ISE182_PROJECT_G8.presentationLayer
                 OnPropertyChanged("Name");
             }
         }
+        private Boolean bytime;
+        public Boolean ByTime
+        {
+            get
+            {
+                return bytime;
+            }
+            set
+            {
+                bytime = value;
+                OnPropertyChanged("ByTime");
+            }
+        }
+        private Boolean byname;
+        public Boolean ByName
+        {
+            get
+            {
+                return byname;
+            }
+            set
+            {
+                byname = value;
+                OnPropertyChanged("ByName");
+            }
+        }
+        private Boolean byall;
+        public Boolean ByAll
+        {
+            get
+            {
+                return byall;
+            }
+            set
+            {
+                byall = value;
+                OnPropertyChanged("ByAll");
+            }
+        }
+        private Boolean asctype;
+        public Boolean AscType
+        {
+            get
+            {
+                return asctype;
+            }
+            set
+            {
+                asctype = value;
+                OnPropertyChanged("AscType");
+            }
+        }
+        private Boolean dsctype;
+        public Boolean DscType
+        {
+            get
+            {
+                return dsctype;
+            }
+            set
+            {
+                dsctype = value;
+                OnPropertyChanged("DscType");
+            }
+        }
+        //private string name;
+        //public string Name
+        //{
+        //    get
+        //    {
+        //        return name;
+        //    }
+        //    set
+        //    {
+        //        name = value;
+        //        OnPropertyChanged("Name");
+        //    }
+        //}
 
         public ObservableCollection<Message> Messages { get; } = new ObservableCollection<Message>();
 

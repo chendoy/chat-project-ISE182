@@ -98,29 +98,65 @@ namespace ISE182_PROJECT_G8.presentationLayer
 
         }
 
-        private void RadioButton_Checked_1(object sender, RoutedEventArgs e)
+        private void Sorter(object sender, RoutedEventArgs e,String)
         {
+            ObservableCollection<Message> list = chatroomObserver.Messages;
+            if (chatroomObserver.ByAll)
+            {
+                //Sort by all radio button clicked
+                if (chatroomObserver.getasc())
+                {
+                    Sorter byall = new SortByAll(list, true);
+                    ObservableCollection<Message> nlist = byall.Sort();
+                }
+                else
+                {
+                    Sorter byall = new SortByAll(list, false);
+                    ObservableCollection<Message> nlist = byall.Sort();
+                }
+
+            }
+            //Srot by name radio button clicked
+            else if(chatroomObserver.ByName)
+            {
+                if (chatroomObserver.getasc())
+                {
+                    Sorter byname = new SortByNickname(list, true);
+                    ObservableCollection<Message> nlist = byname.Sort();
+                }
+                else
+                {
+                    Sorter byname = new SortByNickname(list, false);
+                    ObservableCollection<Message> nlist = byname.Sort();
+                }
+            }
+            // Else sort by time
+            else
+            {
+                if (chatroomObserver.getasc())
+                {
+                    Sorter bytime = new SortByTime(list, true);
+                    ObservableCollection<Message> nlist = bytime.Sort();
+                }
+                else
+                {
+                    Sorter bytime = new SortByTime(list, false);
+                    ObservableCollection<Message> nlist = bytime.Sort();
+                }
+            }
 
         }
-
-        private void RadioButton_Checked_2(object sender, RoutedEventArgs e)
+        //Set the asc value
+        private void type(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void RadioButton_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void CheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void CheckBox_Checked_1(object sender, RoutedEventArgs e)
-        {
-
+            if(chatroomObserver.AscType)
+            {
+                chatroomObserver.setasc(true);
+            }
+            if(chatroomObserver.DscType)
+            {
+                chatroomObserver.setasc(false);
+            }
         }
 
         private void Filter(object sender, TextChangedEventArgs e)
