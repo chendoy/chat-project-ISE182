@@ -16,7 +16,7 @@ Left to do:
 - [V] add more logging titles to logger (warning, criticial, info..)
 - [V] Remember me overriden when reenter without checking the checkbox
 - [V] user not found - try again or register
-- Update LLD & HLD
+- [V] Update LLD & HLD
 
 # Naor:
 
@@ -28,16 +28,14 @@ Left to do:
 - [V] message limit via PL 
 - [V] check timzone
 - [V] make the chat panel scroll automatically when a new message is sent (Only if at bottom?)
-- Adding sort and filter options in chatroom window
-- 2 unit tests
-- Create a primitive message object for PL that the BL will send
-- Check chat appearance improvement (bubble chat?)
+- [V] Adding sort and filter options in chatroom window
+- [V] 2 unit tests
+- [V] Create a primitive message object for PL that the BL will send
 
 # Sandy:
 
-- 2 unit tests
-- Logic - sorting and filtering
-- Add hello 'username' in chatroom
+- [V] 2 unit tests
+- [V] Logic - sorting and filtering
 
 *Please write in whatsapp before you start coding something so we will know*
 
