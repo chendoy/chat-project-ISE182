@@ -111,7 +111,7 @@
         <RadioButton Content="Ascending" IsChecked="{Binding AscType}" GroupName="sortorder" HorizontalAlignment="Left" Height="15" Margin="139,251,0,-266" Grid.RowSpan="2" VerticalAlignment="Top" Checked="Sorter"/>
         <RadioButton Content="Descending" GroupName="sortorder" IsChecked="{Binding DscType}" HorizontalAlignment="Left" Height="17" Margin="139,271,0,-288" Grid.RowSpan="2" VerticalAlignment="Top" Checked="Sorter"/>
         <TextBlock HorizontalAlignment="Left" FontSize="40" Margin="133,288,0,-375" Grid.RowSpan="2" TextWrapping="Wrap" Text="Filter by" VerticalAlignment="Top" Height="87" Width="151"/>
-        <TextBox PreviewTextInput="NumberValidationTextBox"  HorizontalAlignment="Left" Height="16" Margin="230,347,0,-363" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Filter">
+        <TextBox PreviewTextInput="NumberValidationTextBox"  HorizontalAlignment="Left" Height="16" Margin="230,347,0,-363" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Filter" IsEnabledChanged="TextBox_IsEnabledChanged_1">
             <TextBox.Text>
                 <Binding Path="GroupID" UpdateSourceTrigger="PropertyChanged"/>
             </TextBox.Text>
@@ -154,7 +154,7 @@
             </CheckBox.Style>
         </CheckBox>
         <TextBlock HorizontalAlignment="Left" Margin="139,375,0,-391" Grid.RowSpan="2" TextWrapping="Wrap" Text="NickName:" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="16" Margin="230,375,0,-391" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Filter">
+        <TextBox HorizontalAlignment="Left" Height="16" Margin="230,375,0,-391" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Filter" IsEnabledChanged="TextBox_IsEnabledChanged">
             <TextBox.Text>
                 <Binding Path="Name" UpdateSourceTrigger="PropertyChanged"/>
             </TextBox.Text>

@@ -29,14 +29,6 @@ namespace ISE182_PROJECT_G8.logicLayer
                     mainList.Add(message);
             }
         }
-        ////sorting by timestamp//
-        //public static List<Message> sortbytime(ObservableCollection<Message> list)
-        //{
-        //    List<Message> sorted = new List<Message>();
-        //    sorted = list.OrderBy(o => o.getTime()).ToList();
-        //    Logger.Instance.Info("Messages sorted successfully");
-        //    return sorted;
-        //}
 
         // Checks the message length for 150 length max limit//
         public static Boolean isValid(String message)

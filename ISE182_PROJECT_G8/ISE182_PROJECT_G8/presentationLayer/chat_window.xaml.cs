@@ -177,5 +177,23 @@ namespace ISE182_PROJECT_G8.presentationLayer
             e.Handled = regex.IsMatch(e.Text);
             Logger.Instance.Info("Group if textBox content validated successfully");
         }
+
+        private void TextBox_IsEnabledChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if (!((TextBox)sender).IsEnabled)
+            {
+                chatroomObserver.Name = "";
+            }
+        }
+
+        private void TextBox_IsEnabledChanged_1(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if (!((TextBox)sender).IsEnabled)
+            {
+                chatroomObserver.GroupID = "";
+            }
+
+            Filter(sender, null);
+        }
     }
 }
