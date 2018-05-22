@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace ISE182_PROJECT_G8.logicLayer
 {
     [Serializable]
@@ -17,7 +18,7 @@ namespace ISE182_PROJECT_G8.logicLayer
         {
             if (UserHandler.isValid(nickname, groupID))
             {
-                this.nickname = nickname; 
+                this.nickname = nickname;
                 this.groupID = groupID;
                 Logger.Instance.Info("User: " + nickname + " of group " + groupID + " created successfully");
             }

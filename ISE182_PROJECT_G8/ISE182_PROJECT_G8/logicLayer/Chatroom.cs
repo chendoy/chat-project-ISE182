@@ -17,7 +17,7 @@ namespace ISE182_PROJECT_G8.logicLayer
      */
     public class Chatroom
     {
-        private String _url = "http://ise172.ise.bgu.ac.il"; // "http://localhost/"; //  
+        public String _url = "http://ise172.ise.bgu.ac.il"; // "http://localhost/"; //  
         private int port = 80;
         private User loggedInUser;
         private List<User> userList;  //in RAM, retreived from persistant layer//
@@ -180,12 +180,20 @@ namespace ISE182_PROJECT_G8.logicLayer
                 return false;
             }
         }
-        public UserPL GetRememberedUser() {
+        public UserPL GetRememberedUser()
+        {
             this.rememberedUser = Saver.Instance.LoadRememberMe();
-            return this.rememberedUser; }
-        public Saver getSaver() { return this.saver; }
+            return this.rememberedUser;
+        }
+        public Saver getSaver()
+        {
+            return this.saver;
+        }
 
-        public void clearUsersList() { this.userList.Clear(); }
+        public void clearUsersList()
+        {
+            this.userList.Clear();
+        }
 
         public void saveRememberedUser(User userToBeRemembered)
         {
