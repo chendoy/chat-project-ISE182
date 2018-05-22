@@ -103,15 +103,15 @@
                 <ImageBrush ImageSource="Images/logout_btn.jpg"/>
             </Button.Background>
         </Button>
-        <TextBlock FontSize="40" HorizontalAlignment="Left" Margin="133,46,0,-109" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Height="63" Width="275" Text="Sort by"/>
-        <RadioButton Content="Time stemp" IsChecked="{Binding ByTime}" GroupName="sortby" FontSize="14" HorizontalAlignment="Left" Height="17" Margin="133,114,0,-131" Grid.RowSpan="2" VerticalAlignment="Top" Checked="Sorter"/>
-        <RadioButton Content="Nickname"  GroupName="sortby"  IsChecked="{Binding ByName}" HorizontalAlignment="Left" Height="15" Margin="133,136,0,-151" Grid.RowSpan="2" VerticalAlignment="Top" Checked="Sorter"/>
-        <RadioButton Content="ID, Nickname ,Time stamp"  GroupName="sortby" IsChecked="{Binding ByAll}" HorizontalAlignment="Left" Height="17" Margin="133,156,0,-173" Grid.RowSpan="2" VerticalAlignment="Top" Checked="Sorter"/>
-        <TextBlock HorizontalAlignment="Left" FontSize="40" Margin="133,198,0,-251" Grid.RowSpan="2" TextWrapping="Wrap" Text="Sort order" VerticalAlignment="Top" Height="53" Width="193"/>
-        <RadioButton Content="Ascending" IsChecked="{Binding AscType}" GroupName="sortorder" HorizontalAlignment="Left" Height="15" Margin="139,251,0,-266" Grid.RowSpan="2" VerticalAlignment="Top" Checked="Sorter"/>
-        <RadioButton Content="Descending" GroupName="sortorder" IsChecked="{Binding DscType}" HorizontalAlignment="Left" Height="17" Margin="139,271,0,-288" Grid.RowSpan="2" VerticalAlignment="Top" Checked="Sorter"/>
-        <TextBlock HorizontalAlignment="Left" FontSize="40" Margin="133,288,0,-375" Grid.RowSpan="2" TextWrapping="Wrap" Text="Filter by" VerticalAlignment="Top" Height="87" Width="151"/>
-        <TextBox PreviewTextInput="NumberValidationTextBox"  HorizontalAlignment="Left" Height="16" Margin="230,347,0,-363" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Filter" IsEnabledChanged="TextBox_IsEnabledChanged_1">
+        <TextBlock FontSize="40" HorizontalAlignment="Left" Margin="133,31,0,-94" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Height="63" Width="275" Text="Sort by"/>
+        <RadioButton Content="Time stamp" IsChecked="{Binding ByTime}" GroupName="sortby" FontSize="14" HorizontalAlignment="Left" Height="17" Margin="133,99,0,-116" Grid.RowSpan="2" VerticalAlignment="Top" Checked="Sorter"/>
+        <RadioButton Content="Nickname"  GroupName="sortby"  IsChecked="{Binding ByName}" HorizontalAlignment="Left" Height="15" Margin="133,121,0,-136" Grid.RowSpan="2" VerticalAlignment="Top" Checked="Sorter"/>
+        <RadioButton Content="GroupID, Nickname ,Time stamp"  GroupName="sortby" IsChecked="{Binding ByAll}" HorizontalAlignment="Left" Height="17" Margin="133,141,0,-158" Grid.RowSpan="2" VerticalAlignment="Top" Checked="Sorter"/>
+        <TextBlock HorizontalAlignment="Left" FontSize="40" Margin="133,190,0,-243" Grid.RowSpan="2" TextWrapping="Wrap" Text="Sort order" VerticalAlignment="Top" Height="53" Width="193"/>
+        <RadioButton Content="Ascending" IsChecked="{Binding AscType}" GroupName="sortorder" HorizontalAlignment="Left" Height="15" Margin="139,243,0,-258" Grid.RowSpan="2" VerticalAlignment="Top" Checked="Sorter"/>
+        <RadioButton Content="Descending" GroupName="sortorder" IsChecked="{Binding DscType}" HorizontalAlignment="Left" Height="17" Margin="139,263,0,-280" Grid.RowSpan="2" VerticalAlignment="Top" Checked="Sorter"/>
+        <TextBlock HorizontalAlignment="Left" FontSize="40" Margin="133,308,0,-395" Grid.RowSpan="2" TextWrapping="Wrap" Text="Filter by" VerticalAlignment="Top" Height="87" Width="151"/>
+        <TextBox PreviewTextInput="NumberValidationTextBox"  HorizontalAlignment="Left" Height="16" Margin="230,367,0,-383" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Filter" IsEnabledChanged="TextBox_IsEnabledChanged_1">
             <TextBox.Text>
                 <Binding Path="GroupID" UpdateSourceTrigger="PropertyChanged"/>
             </TextBox.Text>
@@ -130,9 +130,9 @@
                 </Style>
             </TextBox.Style>
         </TextBox>
-        <TextBlock HorizontalAlignment="Left" Margin="139,346,0,-370" Grid.RowSpan="2" TextWrapping="Wrap" Text="GrouID:" VerticalAlignment="Top" Height="24"/>
-        <CheckBox x:Name="groupid" IsChecked="{Binding GidEnable}" Height="16" Margin="205,347,805.8,-363" Grid.RowSpan="2" VerticalAlignment="Top"/>
-        <CheckBox x:Name="nickname" Content="" IsChecked="{Binding NicknameEnable}" HorizontalAlignment="Left" Height="23" Margin="205,375,0,-398" Grid.RowSpan="2" VerticalAlignment="Top">
+        <TextBlock HorizontalAlignment="Left" Margin="139,366,0,-390" Grid.RowSpan="2" TextWrapping="Wrap" Text="GroupID:" VerticalAlignment="Top" Height="24"/>
+        <CheckBox IsChecked="{Binding GidEnable}" Height="16" Margin="205,367,805.8,-383" Grid.RowSpan="2" VerticalAlignment="Top"/>
+        <CheckBox Content="" IsChecked="{Binding NicknameEnable}" HorizontalAlignment="Left" Height="23" Margin="205,395,0,-418" Grid.RowSpan="2" VerticalAlignment="Top">
             <CheckBox.Style>
                 <Style TargetType="{x:Type CheckBox}">
                     <Setter Property="IsEnabled" Value="False"/>
@@ -153,8 +153,8 @@
                 </Style>
             </CheckBox.Style>
         </CheckBox>
-        <TextBlock HorizontalAlignment="Left" Margin="139,375,0,-391" Grid.RowSpan="2" TextWrapping="Wrap" Text="NickName:" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="16" Margin="230,375,0,-391" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Filter" IsEnabledChanged="TextBox_IsEnabledChanged">
+        <TextBlock HorizontalAlignment="Left" Margin="139,395,0,-411" Grid.RowSpan="2" TextWrapping="Wrap" Text="Nickname:" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="16" Margin="230,395,0,-411" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Filter" IsEnabledChanged="TextBox_IsEnabledChanged">
             <TextBox.Text>
                 <Binding Path="Name" UpdateSourceTrigger="PropertyChanged"/>
             </TextBox.Text>
