@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,65 +8,74 @@ using System.Threading.Tasks;
 namespace ISE182_PROJECT_G8.logicLayer
 {
     // Responsible for filtering
-    abstract class Filter
+    public abstract class Filter
     {
-        private List<Message> list;
-        public Filter (List<Message> list)
+        private ObservableCollection<Message> list;
+        int gid;
+        public Filter(ObservableCollection<Message> list, int id)
         {
             this.list = list;
+            this.gid = id;
         }
-        abstract public List<Message> filter();
-        public List<Message> getlist()
+        abstract public ObservableCollection<Message> filter();
+        public ObservableCollection<Message> getlist()
         {
             return list;
         }
-        public void setlist(List<Message> newlist)
+        public void setgid(int id)
+        {
+            this.gid = id;
+        }
+        public int getgid()
+        {
+            return gid;
+        }
+        public void setlist(ObservableCollection<Message> newlist)
         {
             this.list = newlist;
         }
-        public class FilterByGroupID : Filter
-        {
-            private int gid;
-            public FilterByGroupID(List<Message> list, Boolean isA,int id) : base(list) {
-                this.gid = id;
-            }
-            public int getid()
-            {
-                return this.gid;
-            }
-            public void setid(int newid)
-            {
-                this.gid = newid;
-            }
-            public override List<Message> filter()
-            {
-                List<Message> sorted = new List<Message>();
-                sorted = (from msg in getlist() where msg.getGroupId()==getid() select msg).ToList();
-                return sorted;
-            }
+    }
+    public class FilterByGroupID : Filter
+    {
+        public FilterByGroupID(ObservableCollection<Message> list, int id) : base(list, id) {
         }
-        public class FilterByNickname : Filter
+        public override ObservableCollection<Message> filter()
         {
-            private String nickname;
-            public FilterByNickname(List<Message> list, Boolean isA, String name) : base(list)
+            ObservableCollection<Message> sorted = new ObservableCollection<Message>();
+            List<Message> list = new List<Message>(getlist());
+            list = (from msg in list where msg.getGroupId()==getgid() select msg).ToList();
+            foreach (Message message in list)
             {
-                this.nickname = name;
+                sorted.Add(message);
             }
-            public String getnickname()
+            return sorted;
+        }
+    }
+    public class FilterByNickname : Filter
+    {
+        private String nickname;
+        public FilterByNickname(ObservableCollection<Message> list, String name, int id) : base(list,id)
+        {
+            this.nickname = name;
+        }
+        public String getnickname()
+        {
+            return nickname;
+        }
+        public void setnickname(String name)
+        {
+            nickname = name;
+        }
+        public override ObservableCollection<Message> filter()
+        {
+            ObservableCollection<Message> sorted = new ObservableCollection<Message>();
+            List<Message> list = new List<Message>(getlist());
+            list = (from msg in list where msg.getGroupId() == getgid()& msg.getUserName().Equals(getnickname()) select msg).ToList();
+            foreach (Message message in list)
             {
-                return nickname;
+                sorted.Add(message);
             }
-            public void setnickname(String name)
-            {
-                nickname = name;
-            }
-
-            public override List<Message> filter()
-            {
-                List<Message> sorted = new List<Message>();
-                sorted = (from msg in getlist() where msg.getUserName().Equals(getnickname()) select msg).ToList();
-                return sorted;
-            }
+            return sorted;
         }
     }
 }

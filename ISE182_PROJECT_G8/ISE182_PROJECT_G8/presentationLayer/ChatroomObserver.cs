@@ -97,7 +97,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
             }
         }
 
-        public ObservableCollection<string> Messages { get; } = new ObservableCollection<string>();
+        public ObservableCollection<Message> Messages { get; } = new ObservableCollection<Message>();
 
         private void Messages_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
