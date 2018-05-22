@@ -102,7 +102,7 @@ namespace ISE182_PROJECT_G8.logicLayer
             }
             else
             {
-                list = (from msg in getlist() orderby msg.getGroupId(), msg.getUserName(), msg.getTime() descending select msg).ToList();
+                list = (from msg in getlist() orderby msg.getGroupId() descending, msg.getUserName() descending, msg.getTime() descending select msg).ToList();
             }
             foreach (Message message in list)
             {
