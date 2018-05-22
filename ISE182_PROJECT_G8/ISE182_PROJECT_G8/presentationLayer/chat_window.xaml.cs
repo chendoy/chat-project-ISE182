@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -37,6 +39,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
             this.DataContext = chatroomObserver;
             send_button.IsDefault = true;
             chatroom.RetreiveMessages();
+            //Add sort filter here for testing
             UpdateMessageList();
             Logger.Instance.Info("chat window started successfully");
 
@@ -74,7 +77,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
             chatroomObserver.Messages.Clear();
             foreach (Message message in list)
             {
-                chatroomObserver.Messages.Add(message.ToString());
+                chatroomObserver.Messages.Add(message);
             }
         }
 
@@ -120,9 +123,25 @@ namespace ISE182_PROJECT_G8.presentationLayer
 
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void Filter(object sender, TextChangedEventArgs e)
         {
+            ObservableCollection<Message> list = chatroomObserver.Messages;
+            if (chatroomObserver.GidEnable)
+            {
+                String gid = chatroomObserver.GroupID;
+                int gidnum = int.Parse(gid);
+                if(chatroomObserver.NicknameEnable)
+                {
+                    String name = chatroomObserver.Name;
+                }
 
+            }
+        }
+        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+            Logger.Instance.Info("Group if textBox content validated successfully");
         }
     }
 }
