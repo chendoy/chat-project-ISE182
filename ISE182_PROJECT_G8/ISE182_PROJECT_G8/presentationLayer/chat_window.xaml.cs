@@ -181,7 +181,9 @@ namespace ISE182_PROJECT_G8.presentationLayer
             if (chatroomObserver.GidEnable)
             {
                 String gid = chatroomObserver.GroupID;
-                int gidnum = int.Parse(gid);
+                int gidnum = 0;
+                int.TryParse(gid,out gidnum);
+                
                 if(chatroomObserver.NicknameEnable)
                 {
                     String name = chatroomObserver.Name;

@@ -142,8 +142,9 @@
                             <Setter Property="IsEnabled" Value="True"/>
                         </DataTrigger>
                         <DataTrigger Binding="{Binding Path=GidEnable}" Value="False">
-                            <Setter Property="IsEnabled" Value="False"/>
                             <Setter Property="IsChecked" Value="False"/>
+                            <Setter Property="IsEnabled" Value="False"/>
+
                         </DataTrigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="IsChecked" Value="False"/>
