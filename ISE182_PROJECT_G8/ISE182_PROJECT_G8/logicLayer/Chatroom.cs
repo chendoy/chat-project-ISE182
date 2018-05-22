@@ -186,7 +186,12 @@ namespace ISE182_PROJECT_G8.logicLayer
         public Saver getSaver() { return this.saver; }
 
         public void clearUsersList() { this.userList.Clear(); }
-        
+
+        public void saveRememberedUser(User userToBeRemembered)
+        {
+            getSaver().SaveRememberMe(userToBeRemembered);
+        }
+
     }
     }
    

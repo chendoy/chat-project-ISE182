@@ -41,12 +41,12 @@ namespace ISE182_PROJECT_G8.presentationLayer
 
                     if (loginObserver.RememberMe) //remember me was ticked - save the user//
                     {
-                        chatroom.getSaver().SaveRememberMe(new User(username, groupID));
+                        SaveRememberedUser(new User(username, groupID));
 
                     }
                     else //wasn't ticked - save a "dummy" user
                     {
-                        chatroom.getSaver().SaveRememberMe(new User("", -1));
+                        SaveRememberedUser(new User("", -1));
                     }
                     Logger.Instance.Info("User: " + username + " logged-in successfully, starting chat window");
                     chat_window chat_window = new chat_window(chatroom);
@@ -108,6 +108,12 @@ namespace ISE182_PROJECT_G8.presentationLayer
                 }
             }
         }
+
+        private void SaveRememberedUser(User userToBeRemembered)
+        {
+            chatroom.saveRememberedUser(userToBeRemembered); //delegates to BL layer
+        }
+
 
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
         {
