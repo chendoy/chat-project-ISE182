@@ -92,11 +92,11 @@ namespace ISE182_PROJECT_G8.presentationLayer
 
         private void LoadRememberedUser()
         {
-            User user =  chatroom.getRememberedUser();
+            UserPL user =  chatroom.GetRememberedUser();
             if (user != null)
             {
-                loginObserver.Username = user.getNickname();
-                loginObserver.GroupID = user.getGroupID().ToString();
+                loginObserver.Username = user.GetNickname();
+                loginObserver.GroupID = user.GetGroupID().ToString();
                 if (loginObserver.GroupID == "0")
                 {
                     loginObserver.Username="";

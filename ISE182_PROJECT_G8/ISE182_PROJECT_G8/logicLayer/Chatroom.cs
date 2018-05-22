@@ -66,7 +66,7 @@ namespace ISE182_PROJECT_G8.logicLayer
         {
             //linq query to find existing user in 'userList'//
             var loggedin = (from user in userList
-                            where user.getNickname().Equals(nickname) & user.getGroupID()==groupId
+                            where user.GetNickname().Equals(nickname) & user.GetGroupID()==groupId
                             select user).FirstOrDefault();
             if (loggedin != null)
             {
@@ -96,7 +96,7 @@ namespace ISE182_PROJECT_G8.logicLayer
         public string LogOut()
         {
             this.loggedInUser.loginOrOff();
-            string nickname = loggedInUser.getNickname();
+            string nickname = loggedInUser.GetNickname();
             this.loggedInUser = null;
             Logger.Instance.Info("Chatroom: user "+nickname+" logged-out");
             return nickname;
@@ -115,7 +115,7 @@ namespace ISE182_PROJECT_G8.logicLayer
                 try
                 {
                     Message message = loggedInUser.Send(this._url, msg); //asks the logged in user instance to send the message//
-                    Logger.Instance.Info("Chatroom: asks " + this.loggedInUser.getNickname() + " to send message");
+                    Logger.Instance.Info("Chatroom: asks " + this.loggedInUser.GetNickname() + " to send message");
                     this.messageList.Add(message); //adds the sent message to the chat's message list (RAM)//
                     saver.SaveMessages(this.messageList); //persisting received messages data//
                     this.messageList = MessageHandler.sortbytime(this.messageList);
@@ -180,7 +180,7 @@ namespace ISE182_PROJECT_G8.logicLayer
                 return false;
             }
         }
-        public User getRememberedUser() {
+        public UserPL GetRememberedUser() {
             this.rememberedUser = Saver.Instance.LoadRememberMe();
             return this.rememberedUser; }
         public Saver getSaver() { return this.saver; }
