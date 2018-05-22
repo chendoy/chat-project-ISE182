@@ -160,11 +160,19 @@ namespace ISE182_PROJECT_G8.presentationLayer
         }
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
-
+            //chatroomObserver.GidEnable =true;
         }
         private void CheckBox_Checked_1(object sender, RoutedEventArgs e)
         {
-
+            //if(chatroomObserver.GidEnable)
+            //{
+            //    chatroomObserver.NicknameEnable = true;
+            //}
+            //else
+            //{
+            //    chatroomObserver.NicknameEnable = false;
+            //}
+            
         }
 
         private void Filter(object sender, TextChangedEventArgs e)

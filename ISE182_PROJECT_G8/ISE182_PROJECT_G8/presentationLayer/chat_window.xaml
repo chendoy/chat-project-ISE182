@@ -121,6 +121,7 @@
                     <Style.Triggers>
                         <DataTrigger Binding="{Binding Path=GidEnable}" Value="False">
                             <Setter Property="IsEnabled" Value="False"/>
+                            <!--<Setter Property="Text"-->
                         </DataTrigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Text" Value=""/>
@@ -135,13 +136,18 @@
             <CheckBox.Style>
                 <Style TargetType="{x:Type CheckBox}">
                     <Setter Property="IsEnabled" Value="False"/>
+                    <Setter Property="IsChecked" Value="False"/>
                     <Style.Triggers>
                         <DataTrigger Binding="{Binding Path=GidEnable}" Value="True">
                             <Setter Property="IsEnabled" Value="True"/>
                         </DataTrigger>
-                        <!--<Trigger Property="IsEnabled" Value="False">
+                        <DataTrigger Binding="{Binding Path=GidEnable}" Value="False">
+                            <Setter Property="IsEnabled" Value="False"/>
                             <Setter Property="IsChecked" Value="False"/>
-                        </Trigger>-->
+                        </DataTrigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="IsChecked" Value="False"/>
+                        </Trigger>
                     </Style.Triggers>
                 </Style>
             </CheckBox.Style>
