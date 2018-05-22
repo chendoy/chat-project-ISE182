@@ -58,7 +58,10 @@ namespace ISE182_PROJECT_G8.logicLayer
         }
         public int getGroupId()
         {
-            return Convert.ToInt32(this.GroupID);
+            if (int.TryParse(this.GroupID, out int gid))
+                return gid;
+            else
+                return -1;
         }
     
     }

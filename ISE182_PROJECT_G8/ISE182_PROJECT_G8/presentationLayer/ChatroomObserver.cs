@@ -24,7 +24,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        private string message;
+        private string message = "";
         public string Message
         {
             get

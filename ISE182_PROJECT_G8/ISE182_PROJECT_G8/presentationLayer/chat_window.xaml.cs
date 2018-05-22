@@ -44,7 +44,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
             UpadateMessageList();
             //DispatcherTimer init//
             dispatcherTimer.Tick += DispatcherTimer_Tick;   
-            dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 60);
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 2);
             dispatcherTimer.Start();
 
 
@@ -55,10 +55,9 @@ namespace ISE182_PROJECT_G8.presentationLayer
             if (chatroom.RetreiveMessages())
             {
                 chatroomObserver.Messages = chatroom.getMessageList();
-                Sorter(null, null);
                 Filter(null, null);
+                Sorter(null, null);
             }
-
         }
 
         private void Send_Button_Click(object sender, RoutedEventArgs e)
@@ -140,27 +139,11 @@ namespace ISE182_PROJECT_G8.presentationLayer
             nlist = sorter.Sort();
             chatroomObserver.Messages = nlist;
         }
-
-        private void CheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-            //chatroomObserver.GidEnable =true;
-        }
-        private void CheckBox_Checked_1(object sender, RoutedEventArgs e)
-        {
-            //if(chatroomObserver.GidEnable)
-            //{
-            //    chatroomObserver.NicknameEnable = true;
-            //}
-            //else
-            //{
-            //    chatroomObserver.NicknameEnable = false;
-            //}
-            
-        }
+        
 
         private void Filter(object sender, TextChangedEventArgs e)
         {
-            ObservableCollection<Message> list = chatroomObserver.Messages;
+            ObservableCollection<Message> list = chatroom.getMessageList();
             ObservableCollection<Message> nlist = null;
             Filter filter = null;
 
@@ -183,6 +166,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
                     }
                     nlist = filter.filter();
                     chatroomObserver.Messages = nlist;
+                    Sorter(sender, e);
                 }
             }
         }

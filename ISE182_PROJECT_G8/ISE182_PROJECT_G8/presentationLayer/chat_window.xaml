@@ -131,8 +131,8 @@
             </TextBox.Style>
         </TextBox>
         <TextBlock HorizontalAlignment="Left" Margin="139,346,0,-370" Grid.RowSpan="2" TextWrapping="Wrap" Text="GrouID:" VerticalAlignment="Top" Height="24"/>
-        <CheckBox x:Name="groupid" IsChecked="{Binding GidEnable}" Height="16" Margin="205,347,805.8,-363" Grid.RowSpan="2" VerticalAlignment="Top" Checked="CheckBox_Checked"/>
-        <CheckBox x:Name="nickname" Content="" IsChecked="{Binding NicknameEnable}" HorizontalAlignment="Left" Height="23" Margin="205,375,0,-398" Grid.RowSpan="2" VerticalAlignment="Top" Checked="CheckBox_Checked_1">
+        <CheckBox x:Name="groupid" IsChecked="{Binding GidEnable}" Height="16" Margin="205,347,805.8,-363" Grid.RowSpan="2" VerticalAlignment="Top"/>
+        <CheckBox x:Name="nickname" Content="" IsChecked="{Binding NicknameEnable}" HorizontalAlignment="Left" Height="23" Margin="205,375,0,-398" Grid.RowSpan="2" VerticalAlignment="Top">
             <CheckBox.Style>
                 <Style TargetType="{x:Type CheckBox}">
                     <Setter Property="IsEnabled" Value="False"/>
