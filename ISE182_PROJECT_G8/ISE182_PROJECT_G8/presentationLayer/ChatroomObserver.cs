@@ -13,18 +13,9 @@ namespace ISE182_PROJECT_G8.presentationLayer
 {
     public class ChatroomObserver : INotifyPropertyChanged
     {
-        private Boolean asc = true;
         public ChatroomObserver()
         {
             Messages.CollectionChanged += Messages_CollectionChanged;
-        }
-        public Boolean getasc()
-        {
-            return asc;
-        }
-        public void setasc(Boolean nasc)
-        {
-            asc = nasc;
         }
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -104,7 +95,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
                 OnPropertyChanged("Name");
             }
         }
-        private Boolean bytime;
+        private Boolean bytime = true;
         public Boolean ByTime
         {
             get
@@ -143,7 +134,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
                 OnPropertyChanged("ByAll");
             }
         }
-        private Boolean asctype;
+        private Boolean asctype = true;
         public Boolean AscType
         {
             get
@@ -169,21 +160,20 @@ namespace ISE182_PROJECT_G8.presentationLayer
                 OnPropertyChanged("DscType");
             }
         }
-        //private string name;
-        //public string Name
-        //{
-        //    get
-        //    {
-        //        return name;
-        //    }
-        //    set
-        //    {
-        //        name = value;
-        //        OnPropertyChanged("Name");
-        //    }
-        //}
 
-        public ObservableCollection<Message> Messages { get; } = new ObservableCollection<Message>();
+        private ObservableCollection<Message> messages = new ObservableCollection<Message>();
+        public ObservableCollection<Message> Messages
+        {
+            get
+            {
+                return messages;
+            }
+            set
+            {
+                messages = value;
+                OnPropertyChanged("Messages");
+            }
+        }
 
         private void Messages_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {

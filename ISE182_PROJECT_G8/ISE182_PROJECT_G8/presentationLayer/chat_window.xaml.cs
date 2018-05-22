@@ -93,71 +93,62 @@ namespace ISE182_PROJECT_G8.presentationLayer
 
         {
             Logger.Instance.Info("DispatcherTimer ticked");
-            chatroom.RetreiveMessages();
-            UpdateMessageList();
+            if (chatroom.RetreiveMessages())
+            {
+                //chatroomObserver.Messages = chatroom.getMessageList();
+                Sorter(sender, e);
+            }
+            
 
         }
 
-        private void Sorter(object sender, RoutedEventArgs e)
+        private void Sorter(object sender, EventArgs e)
         {
+            Sorter sorter = null;
             ObservableCollection<Message> list = chatroomObserver.Messages;
+            ObservableCollection<Message> nlist = null;
             if (chatroomObserver.ByAll)
             {
                 //Sort by all radio button clicked
-                if (chatroomObserver.getasc())
+                if (chatroomObserver.AscType)
                 {
-                    Sorter byall = new SortByAll(list, true);
-                    ObservableCollection<Message> nlist = byall.Sort();
+                    sorter = new SortByAll(list, true);  
                 }
                 else
                 {
-                    Sorter byall = new SortByAll(list, false);
-                    ObservableCollection<Message> nlist = byall.Sort();
+                    sorter = new SortByAll(list, false);
                 }
 
             }
             //Srot by name radio button clicked
             else if(chatroomObserver.ByName)
             {
-                if (chatroomObserver.getasc())
+                if (chatroomObserver.AscType)
                 {
-                    Sorter byname = new SortByNickname(list, true);
-                    ObservableCollection<Message> nlist = byname.Sort();
+                    sorter = new SortByNickname(list, true);
                 }
                 else
                 {
-                    Sorter byname = new SortByNickname(list, false);
-                    ObservableCollection<Message> nlist = byname.Sort();
+                    sorter = new SortByNickname(list, false);
                 }
             }
             // Else sort by time
-            else
+            else if(chatroomObserver.ByTime)
             {
-                if (chatroomObserver.getasc())
+                if (chatroomObserver.AscType)
                 {
-                    Sorter bytime = new SortByTime(list, true);
-                    ObservableCollection<Message> nlist = bytime.Sort();
+                    sorter = new SortByTime(list, true);
                 }
                 else
                 {
-                    Sorter bytime = new SortByTime(list, false);
-                    ObservableCollection<Message> nlist = bytime.Sort();
+                    sorter = new SortByTime(list, false);
                 }
             }
 
+            nlist = sorter.Sort();
+            chatroomObserver.Messages = nlist;
         }
-        //Set the asc value
-        private void type(object sender, RoutedEventArgs e)
-        {
-            if(chatroomObserver.AscType)
-            {
-                chatroomObserver.setasc(true);
-            }
-            if(chatroomObserver.DscType)
-            {
-                chatroomObserver.setasc(false);
-            }
-        }
+
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
             //chatroomObserver.GidEnable =true;
