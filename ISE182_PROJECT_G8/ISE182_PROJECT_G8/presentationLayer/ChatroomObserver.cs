@@ -39,31 +39,63 @@ namespace ISE182_PROJECT_G8.presentationLayer
             }
         }
 
-        //private string messages;
-        //public string Messages
-        //{
-        //    get
-        //    {
-        //        return messages;
-        //    }
-        //    set
-        //    {
-        //        messages = value;
-        //        OnPropertyChanged("Messages");
-        //    }
-        //}
+        private Boolean gidEnable;
+        public Boolean GidEnable
+        {
+            get
+            {
+                return gidEnable;
+            }
+            set
+            {
+                gidEnable = value;
+                OnPropertyChanged("GidEnable");
+            }
+        }
 
-        //private ObservableCollection<string> messages;
 
-        //public void UpdateMessageList(List<Message> list)
-        //{
-        //    //messages.Clear();
-        //    foreach (Message message in list)
-        //    {
-        //        messages.Add(message.ToString());
-        //    }
-        //    OnPropertyChanged("Messages");
-        //}
+        private string groupID;
+        public string GroupID
+        {
+            get
+            {
+                return groupID;
+            }
+            set
+            {
+                groupID = value;
+                OnPropertyChanged("GroupID");
+            }
+        }
+
+        private Boolean nicknameenable;
+        public Boolean NicknameEnable
+        {
+            get
+            {
+                return nicknameenable;
+            }
+            set
+            {
+                nicknameenable = value;
+                OnPropertyChanged("NicknameEnable");
+            }
+        }
+
+
+        private string name;
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+                OnPropertyChanged("Name");
+            }
+        }
 
         public ObservableCollection<string> Messages { get; } = new ObservableCollection<string>();
 

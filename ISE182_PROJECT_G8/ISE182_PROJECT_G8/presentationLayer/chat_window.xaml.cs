@@ -119,5 +119,10 @@ namespace ISE182_PROJECT_G8.presentationLayer
         {
 
         }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
