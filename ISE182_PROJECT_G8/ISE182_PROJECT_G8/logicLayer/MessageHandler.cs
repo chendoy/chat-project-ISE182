@@ -11,7 +11,7 @@ namespace ISE182_PROJECT_G8.logicLayer
     /* This class handle all the processes which
      * need to done on messages purely
      */
-    class MessageHandler
+    public static class MessageHandler
     {
 
         private static readonly int _maxLength = 150;
