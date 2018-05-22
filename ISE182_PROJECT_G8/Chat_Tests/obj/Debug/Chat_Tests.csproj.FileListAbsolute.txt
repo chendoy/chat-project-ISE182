@@ -42,6 +42,8 @@ C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJE
 C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\Chat_Tests\obj\Debug\Chat_Tests.csproj.CopyComplete
 C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\Chat_Tests\obj\Debug\Chat_Tests.dll
 C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\Chat_Tests\obj\Debug\Chat_Tests.pdb
+C:\Users\user\Source\Repos\ISE182_project\ISE182_PROJECT_G8\Chat_Tests\obj\Debug\Chat_Tests.csprojResolveAssemblyReference.cache
+C:\Users\user\Source\Repos\ISE182_project\ISE182_PROJECT_G8\Chat_Tests\obj\Debug\Chat_Tests.csproj.CoreCompileInputs.cache
 C:\Users\user\Source\Repos\ISE182_project\ISE182_PROJECT_G8\Chat_Tests\bin\Debug\log4net.config
 C:\Users\user\Source\Repos\ISE182_project\ISE182_PROJECT_G8\Chat_Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
 C:\Users\user\Source\Repos\ISE182_project\ISE182_PROJECT_G8\Chat_Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
@@ -59,8 +61,6 @@ C:\Users\user\Source\Repos\ISE182_project\ISE182_PROJECT_G8\Chat_Tests\bin\Debug
 C:\Users\user\Source\Repos\ISE182_project\ISE182_PROJECT_G8\Chat_Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
 C:\Users\user\Source\Repos\ISE182_project\ISE182_PROJECT_G8\Chat_Tests\bin\Debug\log4net.xml
 C:\Users\user\Source\Repos\ISE182_project\ISE182_PROJECT_G8\Chat_Tests\bin\Debug\Newtonsoft.Json.xml
-C:\Users\user\Source\Repos\ISE182_project\ISE182_PROJECT_G8\Chat_Tests\obj\Debug\Chat_Tests.csprojResolveAssemblyReference.cache
-C:\Users\user\Source\Repos\ISE182_project\ISE182_PROJECT_G8\Chat_Tests\obj\Debug\Chat_Tests.csproj.CoreCompileInputs.cache
 C:\Users\user\Source\Repos\ISE182_project\ISE182_PROJECT_G8\Chat_Tests\obj\Debug\Chat_Tests.csproj.CopyComplete
 C:\Users\user\Source\Repos\ISE182_project\ISE182_PROJECT_G8\Chat_Tests\obj\Debug\Chat_Tests.dll
 C:\Users\user\Source\Repos\ISE182_project\ISE182_PROJECT_G8\Chat_Tests\obj\Debug\Chat_Tests.pdb

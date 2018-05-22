@@ -98,7 +98,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
 
         }
 
-        private void Sorter(object sender, RoutedEventArgs e,String)
+        private void Sorter(object sender, RoutedEventArgs e)
         {
             ObservableCollection<Message> list = chatroomObserver.Messages;
             if (chatroomObserver.ByAll)
@@ -157,6 +157,14 @@ namespace ISE182_PROJECT_G8.presentationLayer
             {
                 chatroomObserver.setasc(false);
             }
+        }
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void CheckBox_Checked_1(object sender, RoutedEventArgs e)
+        {
+
         }
 
         private void Filter(object sender, TextChangedEventArgs e)
