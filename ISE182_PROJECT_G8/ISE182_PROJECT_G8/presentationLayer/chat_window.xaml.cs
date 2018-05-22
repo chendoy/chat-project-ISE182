@@ -133,8 +133,14 @@ namespace ISE182_PROJECT_G8.presentationLayer
                 if(chatroomObserver.NicknameEnable)
                 {
                     String name = chatroomObserver.Name;
+                    Filter filter = new FilterByNickname(list, name, gidnum);
+                    ObservableCollection<Message> nlist = filter.filter();
                 }
-
+                else
+                {
+                    Filter filter = new FilterByGroupID(list,gidnum);
+                    ObservableCollection<Message> nlist = filter.filter();
+                }
             }
         }
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)

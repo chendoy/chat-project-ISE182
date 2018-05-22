@@ -104,11 +104,11 @@
             </Button.Background>
         </Button>
         <TextBlock FontSize="40" HorizontalAlignment="Left" Margin="133,46,0,-109" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Height="63" Width="275" Text="Sort by"/>
-        <RadioButton Content="Time stemp" GroupName="sortby" FontSize="14" HorizontalAlignment="Left" Height="17" Margin="133,114,0,-131" Grid.RowSpan="2" VerticalAlignment="Top" Checked="RadioButton_Checked_1"/>
+        <RadioButton Content="Time stemp" IsChecked="True" GroupName="sortby" FontSize="14" HorizontalAlignment="Left" Height="17" Margin="133,114,0,-131" Grid.RowSpan="2" VerticalAlignment="Top" Checked="RadioButton_Checked_1"/>
         <RadioButton Content="Nickname"  GroupName="sortby" HorizontalAlignment="Left" Height="15" Margin="133,136,0,-151" Grid.RowSpan="2" VerticalAlignment="Top" Checked="RadioButton_Checked_2"/>
         <RadioButton Content="ID, Nickname ,Time stamp"  GroupName="sortby" HorizontalAlignment="Left" Height="17" Margin="133,156,0,-173" Grid.RowSpan="2" VerticalAlignment="Top" Checked="RadioButton_Checked"/>
         <TextBlock HorizontalAlignment="Left" FontSize="40" Margin="133,198,0,-251" Grid.RowSpan="2" TextWrapping="Wrap" Text="Sort order" VerticalAlignment="Top" Height="53" Width="193"/>
-        <RadioButton Content="Ascending"  GroupName="sortorder" HorizontalAlignment="Left" Height="15" Margin="139,251,0,-266" Grid.RowSpan="2" VerticalAlignment="Top"/>
+        <RadioButton Content="Ascending" IsChecked="True" GroupName="sortorder" HorizontalAlignment="Left" Height="15" Margin="139,251,0,-266" Grid.RowSpan="2" VerticalAlignment="Top"/>
         <RadioButton Content="Descending" GroupName="sortorder" HorizontalAlignment="Left" Height="17" Margin="139,271,0,-288" Grid.RowSpan="2" VerticalAlignment="Top" Checked="RadioButton_Checked"/>
         <TextBlock HorizontalAlignment="Left" FontSize="40" Margin="133,288,0,-375" Grid.RowSpan="2" TextWrapping="Wrap" Text="Filter by" VerticalAlignment="Top" Height="87" Width="151"/>
         <TextBox PreviewTextInput="NumberValidationTextBox"  HorizontalAlignment="Left" Height="16" Margin="230,347,0,-363" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Filter">
