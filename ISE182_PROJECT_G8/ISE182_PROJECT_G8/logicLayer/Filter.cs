@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ISE182_PROJECT_G8.logicLayer
 {
+    // Responsible for filtering
     abstract class Filter
     {
         private List<Message> list;
