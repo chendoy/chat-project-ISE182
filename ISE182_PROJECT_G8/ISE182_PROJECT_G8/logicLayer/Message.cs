@@ -47,10 +47,10 @@ namespace ISE182_PROJECT_G8.logicLayer
             return this.Date;
         }
 
-        override
-        public String ToString()
-            {
-            return "Guid: " + this.Id  +"\n"+"Time: " +this.Date  +"\n"+ this.UserName + "[" + this.GroupID + "]: "+ this.MessageContent+"\n";
+        public override String ToString()
+        {
+            String format = "{0} {1} - {2}[{3}] - {4}";
+            return String.Format(format, getTime().ToShortTimeString(), getTime().ToShortDateString(), getUserName(), getGroupId(), getContent());
         }
         public Guid getGuid()
         {
