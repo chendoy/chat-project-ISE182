@@ -4,6 +4,7 @@ using ISE182_PROJECT_G8.CommunicationLayer;
 using ISE182_PROJECT_G8.persistantLayer;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,7 +22,7 @@ namespace ISE182_PROJECT_G8.logicLayer
         private int port = 80;
         private User loggedInUser;
         private List<User> userList;  //in RAM, retreived from persistant layer//
-        private List<Message> messageList; //in RAM, retreived from persistant layer//
+        private ObservableCollection<Message> messageList; //in RAM, retreived from persistant layer//
         private Saver saver;
         private User rememberedUser;
 
@@ -87,7 +88,7 @@ namespace ISE182_PROJECT_G8.logicLayer
             return this.loggedInUser;
         }
 
-        public List<Message> getMessageList()
+        public ObservableCollection<Message> getMessageList()
         {
             return this.messageList;
         }
@@ -118,7 +119,7 @@ namespace ISE182_PROJECT_G8.logicLayer
                     Logger.Instance.Info("Chatroom: asks " + this.loggedInUser.GetNickname() + " to send message");
                     this.messageList.Add(message); //adds the sent message to the chat's message list (RAM)//
                     saver.SaveMessages(this.messageList); //persisting received messages data//
-                    this.messageList = MessageHandler.sortbytime(this.messageList);
+                    //this.messageList = MessageHandler.sortbytime(this.messageList);
                     Logger.Instance.Info("Message was sent successfully");
                     return true;
                 }
@@ -163,14 +164,14 @@ namespace ISE182_PROJECT_G8.logicLayer
                 List<IMessage> imsgRetreived = Communication.Instance.GetTenMessages(this._url); //asks communication layer to retreive messages//
 
                 //generates a list of type: 'Messege' from list of type: 'IMessege'//
-                List<Message> msgRetreived = new List<Message>();
+                ObservableCollection<Message> msgRetreived = new ObservableCollection<Message>();
                 foreach (IMessage imsg in imsgRetreived)
                     msgRetreived.Add(new Message(imsg));
 
                 //adds the retreived messages as a whole to the chat's messages list//
                 MessageHandler.addUniqueByGuid(this.messageList, msgRetreived);
                 saver.SaveMessages(this.messageList); //persisting received messages data//
-                this.messageList = MessageHandler.sortbytime(this.messageList);
+                //this.messageList = MessageHandler.sortbytime(this.messageList);
                 Logger.Instance.Info("Messages retreived successfully from server");
                 return true;
             }

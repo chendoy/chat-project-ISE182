@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using ISE182_PROJECT_G8.logicLayer;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Collections.ObjectModel;
 
 namespace ISE182_PROJECT_G8.persistantLayer
 {
@@ -75,7 +76,7 @@ namespace ISE182_PROJECT_G8.persistantLayer
             return new List<User>(); //the file doesn't exist - return an empty list//
         }
 
-        public void SaveMessages(List<Message> MessagesToSave)
+        public void SaveMessages(ObservableCollection<Message> MessagesToSave)
         {
             Stream Filestream = File.Create(MessagesFilename);
             BinaryFormatter serializer = new BinaryFormatter();
@@ -84,18 +85,18 @@ namespace ISE182_PROJECT_G8.persistantLayer
             Logger.Instance.Info("Messages data was persisted successfully");
         }
 
-        public List<Message> LoadMessages()
+        public ObservableCollection<Message> LoadMessages()
         {
             if (File.Exists(MessagesFilename))
             {
                 Stream Filestream = File.OpenRead(MessagesFilename);
                 BinaryFormatter deserializer = new BinaryFormatter();
-                List<Message> loadedMessages = (List<Message>)deserializer.Deserialize(Filestream);
+                ObservableCollection<Message> loadedMessages = (ObservableCollection<Message>)deserializer.Deserialize(Filestream);
                 Filestream.Close();
                 Logger.Instance.Info("Messages data was loaded successfully");
                 return loadedMessages;
             }
-            return new List<Message>();  //the file doesn't exist - return an empty list//
+            return new ObservableCollection<Message>();  //the file doesn't exist - return an empty list//
 
 
         }

@@ -38,16 +38,26 @@ namespace ISE182_PROJECT_G8.presentationLayer
             chatroomObserver = new ChatroomObserver();
             this.DataContext = chatroomObserver;
             send_button.IsDefault = true;
-            chatroom.RetreiveMessages();
-            //Add sort filter here for testing
-            UpdateMessageList();
-            Logger.Instance.Info("chat window started successfully");
 
+            
+            Logger.Instance.Info("chat window started successfully");
+            UpadateMessageList();
             //DispatcherTimer init//
-            dispatcherTimer.Tick += dispatcherTimer_Tick;   
-            dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 2);
+            dispatcherTimer.Tick += DispatcherTimer_Tick;   
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 60);
             dispatcherTimer.Start();
 
+
+        }
+
+        private void UpadateMessageList()
+        {
+            if (chatroom.RetreiveMessages())
+            {
+                chatroomObserver.Messages = chatroom.getMessageList();
+                Sorter(null, null);
+                Filter(null, null);
+            }
 
         }
 
@@ -58,7 +68,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
             {
                 Logger.Instance.Info("Message was sent successfully");
                 chatroomObserver.Message = "";
-                UpdateMessageList();
+                UpadateMessageList();
             }
         }
         private void Logout_Button_Click(object sender, RoutedEventArgs e)
@@ -70,17 +80,6 @@ namespace ISE182_PROJECT_G8.presentationLayer
             this.Close();
         }
 
-        public void UpdateMessageList()
-        {
-            Logger.Instance.Info("Message list was updated successfully");
-            List<Message> list = chatroom.getMessageList();
-            chatroomObserver.Messages.Clear();
-            foreach (Message message in list)
-            {
-                chatroomObserver.Messages.Add(message);
-            }
-        }
-
         private void TextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
@@ -89,17 +88,10 @@ namespace ISE182_PROJECT_G8.presentationLayer
             }
         }
 
-        private void dispatcherTimer_Tick(object sender, EventArgs e)
-
+        private void DispatcherTimer_Tick(object sender, EventArgs e)
         {
             Logger.Instance.Info("DispatcherTimer ticked");
-            if (chatroom.RetreiveMessages())
-            {
-                //chatroomObserver.Messages = chatroom.getMessageList();
-                Sorter(sender, e);
-            }
-            
-
+            UpadateMessageList();
         }
 
         private void Sorter(object sender, EventArgs e)
@@ -169,25 +161,32 @@ namespace ISE182_PROJECT_G8.presentationLayer
         private void Filter(object sender, TextChangedEventArgs e)
         {
             ObservableCollection<Message> list = chatroomObserver.Messages;
+            ObservableCollection<Message> nlist = null;
+            Filter filter = null;
+
             if (chatroomObserver.GidEnable)
             {
                 String gid = chatroomObserver.GroupID;
-                int gidnum = 0;
-                int.TryParse(gid,out gidnum);
-                
-                if(chatroomObserver.NicknameEnable)
+                if (!String.IsNullOrWhiteSpace(gid))
                 {
+                    int gidnum = 0;
+                    int.TryParse(gid, out gidnum);
+
                     String name = chatroomObserver.Name;
-                    Filter filter = new FilterByNickname(list, name, gidnum);
-                    ObservableCollection<Message> nlist = filter.filter();
-                }
-                else
-                {
-                    Filter filter = new FilterByGroupID(list,gidnum);
-                    ObservableCollection<Message> nlist = filter.filter();
+                    if (chatroomObserver.NicknameEnable & !String.IsNullOrWhiteSpace(name))
+                    {
+                        filter = new FilterByNickname(list, name, gidnum);
+                    }
+                    else
+                    {
+                        filter = new FilterByGroupID(list, gidnum);
+                    }
+                    nlist = filter.filter();
+                    chatroomObserver.Messages = nlist;
                 }
             }
         }
+           
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
         {
             Regex regex = new Regex("[^0-9]+");

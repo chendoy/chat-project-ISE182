@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace ISE182_PROJECT_G8.logicLayer
         private static readonly int _maxLength = 150;
 
         //adds messages from 'toAddList' to 'mainList' if it has unique GUID among the 'mainList' messages//
-        public static void addUniqueByGuid(List<Message> mainList, List<Message> toAddList)
+        public static void addUniqueByGuid(ObservableCollection<Message> mainList, ObservableCollection<Message> toAddList)
         {
             foreach (Message message in toAddList)
             {
@@ -28,14 +29,14 @@ namespace ISE182_PROJECT_G8.logicLayer
                     mainList.Add(message);
             }
         }
-        //sorting by timestamp//
-        public static List<Message> sortbytime(List<Message> list)
-        {
-            List<Message> sorted = new List<Message>();
-            sorted = list.OrderBy(o => o.getTime()).ToList();
-            Logger.Instance.Info("Messages sorted successfully");
-            return sorted;
-        }
+        ////sorting by timestamp//
+        //public static List<Message> sortbytime(ObservableCollection<Message> list)
+        //{
+        //    List<Message> sorted = new List<Message>();
+        //    sorted = list.OrderBy(o => o.getTime()).ToList();
+        //    Logger.Instance.Info("Messages sorted successfully");
+        //    return sorted;
+        //}
 
         // Checks the message length for 150 length max limit//
         public static Boolean isValid(String message)
