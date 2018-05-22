@@ -17,7 +17,7 @@ namespace ISE182_PROJECT_G8.logicLayer
      */
     public class Chatroom
     {
-        private String _url = "http://ise172.ise.bgu.ac.il"; //  "http://localhost/";
+        private String _url = "http://ise172.ise.bgu.ac.il"; // "http://localhost/"; //  
         private int port = 80;
         private User loggedInUser;
         private List<User> userList;  //in RAM, retreived from persistant layer//
