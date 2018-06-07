@@ -72,6 +72,8 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dataAccessLayer\DBA.cs" />
+    <Compile Include="dataAccessLayer\Query.cs" />
     <Compile Include="logicLayer\Filter.cs" />
     <Compile Include="logicLayer\Sorter.cs" />
     <Compile Include="logicLayer\UserPL.cs" />

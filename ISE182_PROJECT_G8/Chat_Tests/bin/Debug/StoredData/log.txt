@@ -1122,3 +1122,9 @@
 2018-05-22 21:15:18,439 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - User: clark_kent failed to log-in - doesn't exist
 2018-05-22 21:15:18,439 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - User: peter_parker8 failed to log-in - doesn't exist
 2018-05-22 21:15:18,439 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - User: tony_stark failed to log-in - doesn't exist
+2018-06-07 09:20:29,154 [15] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Message content validation returned: Not Valid
+2018-06-07 09:20:29,166 [15] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Message content validation returned: Not Valid
+2018-06-07 09:20:29,166 [15] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Message content validation returned: Not Valid
+2018-06-07 09:20:54,921 [15] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Message content validation returned: Not Valid
+2018-06-07 09:20:54,939 [15] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Message content validation returned: Not Valid
+2018-06-07 09:20:54,939 [15] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Message content validation returned: Not Valid

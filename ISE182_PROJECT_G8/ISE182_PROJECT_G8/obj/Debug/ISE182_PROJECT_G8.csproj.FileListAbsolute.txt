@@ -71,7 +71,6 @@ C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJE
 C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\bin\Debug\log4net.xml
 C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\bin\Debug\Newtonsoft.Json.xml
-C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8.csprojResolveAssemblyReference.cache
 C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\presentationLayer\chat_window.g.cs
 C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\presentationLayer\Login.g.cs
 C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8_Content.g.cs
@@ -85,3 +84,4 @@ C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJE
 C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8.csproj.CopyComplete
 C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8.exe
 C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8.pdb
+C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\ISE182_PROJECT_G8\obj\Debug\ISE182_PROJECT_G8.csprojAssemblyReference.cache
