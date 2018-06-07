@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="logicLayer\Filter.cs" />
+    <Compile Include="logicLayer\Hashing.cs" />
     <Compile Include="logicLayer\Sorter.cs" />
     <Compile Include="logicLayer\UserPL.cs" />
     <Compile Include="presentationLayer\chat_window.xaml.cs">

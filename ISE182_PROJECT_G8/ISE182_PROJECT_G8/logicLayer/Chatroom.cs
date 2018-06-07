@@ -1,6 +1,5 @@
 ﻿
 using ISE182_PROJECT_G8.CommunicationLayer;
-//using ISE182_PROJECT_G8.presentationLayer;
 using ISE182_PROJECT_G8.persistantLayer;
 using System;
 using System.Collections.Generic;
@@ -25,6 +24,7 @@ namespace ISE182_PROJECT_G8.logicLayer
         private ObservableCollection<Message> messageList; //in RAM, retreived from persistant layer//
         private Saver saver;
         private User rememberedUser;
+        public string SALT = "1337";
 
         //public constructor for chatroom
         public Chatroom()
