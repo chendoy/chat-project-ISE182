@@ -73,7 +73,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="dataAccessLayer\DBA.cs" />
+    <Compile Include="dataAccessLayer\GroupFilter.cs" />
+    <Compile Include="dataAccessLayer\IQueryFilter.cs" />
+    <Compile Include="dataAccessLayer\MessageRetriever.cs" />
+    <Compile Include="dataAccessLayer\NicknameFilter.cs" />
     <Compile Include="dataAccessLayer\Query.cs" />
+    <Compile Include="dataAccessLayer\QueryMessage.cs" />
+    <Compile Include="dataAccessLayer\TimeFilter.cs" />
     <Compile Include="logicLayer\Filter.cs" />
     <Compile Include="logicLayer\Hashing.cs" />
     <Compile Include="logicLayer\Sorter.cs" />
