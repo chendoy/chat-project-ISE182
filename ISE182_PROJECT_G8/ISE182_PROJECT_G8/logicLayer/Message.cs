@@ -32,6 +32,15 @@ namespace ISE182_PROJECT_G8.logicLayer
             this.GroupID = msg.GroupID;
         }
 
+        public Message(Guid id, string userName, DateTime date, string messageContent, string groupID)
+        {
+            Id = id;
+            UserName = userName;
+            Date = date;
+            MessageContent = messageContent;
+            GroupID = groupID;
+        }
+
         //getters and setters://
 
         public String getUserName()

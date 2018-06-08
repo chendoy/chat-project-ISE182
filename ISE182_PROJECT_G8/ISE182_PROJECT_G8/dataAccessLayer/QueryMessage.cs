@@ -1,5 +1,8 @@
-﻿using System;
+﻿using ISE182_PROJECT_G8.logicLayer;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,40 +11,60 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
 {
     class QueryMessage
     {
-        private string selectFields;
-        private string fromTable;
+        // NEED TO ADD OPTION TO CLEAR FILTERS AND ADD THEM
+        private readonly int retrieveCap = 200;
+        private readonly string selectFields = "[Guid], [Group_Id], [Nickname], [SendTime], [Body]";
+        private readonly string fromTable = "[dbo].[Messages] JOIN [dbo].[Users] ON [User_Id] = [Id]";
+        
         private IList<IQueryFilter> filters;
 
-        public QueryMessage(string selectFields, string fromTable)
+        public QueryMessage()
         {
-            this.selectFields = selectFields;
-            this.fromTable = fromTable;
             this.filters = new List<IQueryFilter>();
         }
 
-        public ObservableCollection<T> Excute<T>(SqlConnection connection)
+        private string WhereStatement()
+        {
+            string where = "";
+            foreach (IQueryFilter filter in this.filters)
+            {
+                where += filter.GenerateWhereClause();
+                where += " AND ";
+            }
+
+            where = where.Substring(0, where.Length - 5);
+            if (String.IsNullOrWhiteSpace(where))
+            {
+                return "";
+            }
+            else
+            {
+                return "Where " + where;
+            }
+        }
+
+        public void Excute(SqlConnection connection, ref ObservableCollection<Message> messages)
         {
             SqlCommand command;
             SqlDataReader data_reader;
 
             try
             {
-                ObservableCollection<T> objects = new ObservableCollection<T>();
-
                 connection.Open();
-                string sql_query = $"SELECT {selectFields} FROM [dbo].[{fromTable}] WHERE {where};";
+                string sql_query = $"SELECT TOP {retrieveCap.ToString()} {selectFields} FROM {fromTable} {WhereStatement()};";
                 command = new SqlCommand(sql_query, connection);
                 data_reader = command.ExecuteReader();
-                if (fromTable == "Messages")
+                
+                while (data_reader.Read())
                 {
-                    while (data_reader.Read())
-                    {
-                        DateTime dateFacturation = new DateTime();
-                        if (!data_reader.IsDBNull(2))
-                            dateFacturation = data_reader.GetDateTime(2); //2 is the coloumn index of the date. There are such               
-                        Console.WriteLine("GUID: " + data_reader.GetValue(0) + "UserID: " + data_reader.GetValue(1) + ", Message date: " + dateFacturation.ToString() + ", Body: " + data_reader.GetValue(3));
-                    }
+                    Guid.TryParse(data_reader.GetString(0), out Guid guid);
+                    int groupId = data_reader.GetInt32(1);
+                    string nickname = data_reader.GetString(2);
+                    DateTime sendTime = data_reader.GetDateTime(3);
+                    string body = data_reader.GetString(4);
+                    messages.Add(new Message(guid, nickname, sendTime, body, groupId.ToString()));
                 }
+                
                 data_reader.Close();
                 command.Dispose();
                 connection.Close();
@@ -51,8 +74,7 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
                 Console.WriteLine("Error");
                 Console.WriteLine(ex.ToString());
             }
-
-            return null;
         }
+
     }
 }

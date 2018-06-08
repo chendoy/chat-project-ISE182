@@ -8,11 +8,12 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
 {
     class MessageRetriever
     {
+        // REDUNDENT WITH QUERYMESSAGE
         private readonly int retrieveCap = 200;
         private readonly string fields = "[Guid], [Group_Id], [Nickname], [SendTime], [Body]";
         private readonly string from = "[dbo].[Messages] JOIN[dbo].[Users] ON[User_Id] = [Id]";
 
-        private Query query;
+        private QueryMessage query;
 
         public MessageRetriever()
         {
