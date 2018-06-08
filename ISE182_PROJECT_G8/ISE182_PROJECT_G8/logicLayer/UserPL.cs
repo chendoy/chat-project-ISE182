@@ -13,6 +13,7 @@ namespace ISE182_PROJECT_G8.logicLayer
     {
         private String nickname;
         private int groupID;
+        private String password;
 
         public UserPL(String nickname, int groupID)
         {
@@ -20,6 +21,8 @@ namespace ISE182_PROJECT_G8.logicLayer
             {
                 this.nickname = nickname;
                 this.groupID = groupID;
+      
+
                 Logger.Instance.Info("User: " + nickname + " of group " + groupID + " created successfully");
             }
             else
