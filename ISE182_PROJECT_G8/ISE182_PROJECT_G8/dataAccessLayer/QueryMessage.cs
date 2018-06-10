@@ -48,7 +48,7 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
             }
         }
 
-        public void Excute(SqlConnection connection, ref ObservableCollection<Message> messages)
+        public bool Excute(SqlConnection connection, ref ObservableCollection<Message> messages)
         {
             SqlCommand command;
             SqlDataReader data_reader;
@@ -73,17 +73,26 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
                 data_reader.Close();
                 command.Dispose();
                 connection.Close();
+                return true;
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Error");
                 Console.WriteLine(ex.ToString());
+                return false;
             }
         }
 
-        public void SetTimeFilter(DateTime dateTime)
+        public void SetTimeFilter(DateTime? dateTime)
         {
-            this.filters[0] = new TimeFilter(dateTime);
+            if (dateTime.HasValue)
+            {
+                this.filters[0] = new TimeFilter(dateTime.Value);
+            }
+            else
+            {
+                this.filters[0] = null;
+            }
         }
 
         public void SetGroupFilter(int groupId)

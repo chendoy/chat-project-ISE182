@@ -52,10 +52,10 @@ namespace ISE182_PROJECT_G8.presentationLayer
 
         private void UpadateMessageList()
         {
-            if (chatroom.RetreiveMessages())
+            Filter(null, null);
+            if (chatroom.RetreiveMessages(chatroomObserver.Messages))
             {
-                chatroomObserver.Messages = chatroom.getMessageList();
-                Filter(null, null);
+                //chatroomObserver.Messages = chatroom.getMessageList();
                 Sorter(null, null);
             }
         }
@@ -155,17 +155,15 @@ namespace ISE182_PROJECT_G8.presentationLayer
                     int gidnum = 0;
                     int.TryParse(gid, out gidnum);
 
+                    chatroom.SetGroupFilter(gidnum);
                     String name = chatroomObserver.Name;
                     if (chatroomObserver.NicknameEnable & !String.IsNullOrWhiteSpace(name))
                     {
-                        filter = new FilterByNickname(list, name, gidnum);
+                        chatroom.SetNicknameFilter(name);
                     }
-                    else
-                    {
-                        filter = new FilterByGroupID(list, gidnum);
-                    }
-                    nlist = filter.filter();
-                    chatroomObserver.Messages = nlist;
+                    
+                    //nlist = filter.filter();
+                    //chatroomObserver.Messages = nlist;
                     Sorter(sender, e);
                 }
             }

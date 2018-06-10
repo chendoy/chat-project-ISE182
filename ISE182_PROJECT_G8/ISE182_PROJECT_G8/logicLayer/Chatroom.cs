@@ -1,6 +1,7 @@
 ﻿
 using ISE182_PROJECT_G8.CommunicationLayer;
 using ISE182_PROJECT_G8.persistantLayer;
+using ISE182_PROJECT_G8.dataAccessLayer;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -25,6 +26,7 @@ namespace ISE182_PROJECT_G8.logicLayer
         private Saver saver;
         private User rememberedUser;
         public string SALT = "1337";
+        private MessageRetriever messageRetriever;
 
         //public constructor for chatroom
         public Chatroom()
@@ -34,8 +36,7 @@ namespace ISE182_PROJECT_G8.logicLayer
             this.messageList = saver.LoadMessages(); //un-persisting messages data to RAM//
             this.userList = saver.LoadUsers(); //un-persisting users data to RAM//
             this.rememberedUser = saver.LoadRememberMe();
-            //if (rememberedUser.getGroupID() == -1)
-                //rememberedUser = null;
+            this.messageRetriever = new MessageRetriever();
         }
 
         public bool Register(String nickname, int groupID)
@@ -61,7 +62,6 @@ namespace ISE182_PROJECT_G8.logicLayer
                 return false;
             }
         }
-
 
         public bool Login(string nickname, int groupId)
         {
@@ -145,16 +145,7 @@ namespace ISE182_PROJECT_G8.logicLayer
             return stringBuilder.ToString();
         }
 
-        //displaying specific number of messages//
-        public string DisplayNmessages(int n)
-        {
-            StringBuilder stringBuilder = new StringBuilder();
-            int startIndex = Math.Max(0,this.messageList.Count - n);
-            for (int i = startIndex; this.messageList.ElementAtOrDefault(i) != null & i < this.messageList.Count; i++)
-                stringBuilder.AppendLine(this.messageList.ElementAt(i).ToString());
-            Logger.Instance.Info("Chatroom: "+n+" messages list was generetad");
-            return stringBuilder.ToString();
-        }
+        #region Retreive Messages
 
         public bool RetreiveMessages()
         {
@@ -181,6 +172,29 @@ namespace ISE182_PROJECT_G8.logicLayer
                 return false;
             }
         }
+
+        public bool RetreiveMessages(ObservableCollection<Message> messages)
+        {
+            return messageRetriever.RetreiveMessages(ref messages);
+        }
+
+        public void SetGroupFilter(int groupId)
+        {
+            messageRetriever.SetGroupFilter(groupId);
+        }
+
+        public void SetNicknameFilter(string nickname)
+        {
+            messageRetriever.SetNicknameFilter(nickname);
+        }
+
+        public void ClearFilters()
+        {
+            messageRetriever.ClearFilters();
+        }
+
+        #endregion
+
         public UserPL GetRememberedUser()
         {
             this.rememberedUser = Saver.Instance.LoadRememberMe();
