@@ -8,17 +8,33 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
 {
     class MessageRetriever
     {
-        // REDUNDENT WITH QUERYMESSAGE
-        private readonly int retrieveCap = 200;
-        private readonly string fields = "[Guid], [Group_Id], [Nickname], [SendTime], [Body]";
-        private readonly string from = "[dbo].[Messages] JOIN[dbo].[Users] ON[User_Id] = [Id]";
+        // Access via Chatroom
 
         private QueryMessage query;
 
         public MessageRetriever()
         {
+            query = new QueryMessage();
         }
 
+        public void SetTimeFilter(DateTime dateTime)
+        {
+            query.SetTimeFilter(dateTime);
+        }
 
+        public void SetGroupFilter(int groupId)
+        {
+            query.SetGroupFilter(groupId);
+        }
+
+        public void SetNicknameFilter(string nickname)
+        {
+            query.SetNicknameFilter(nickname);
+        }
+
+        public void ClearFilters()
+        {
+            query.ClearFilters();
+        }
     }
 }

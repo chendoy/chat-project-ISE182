@@ -16,11 +16,12 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
         private readonly string selectFields = "[Guid], [Group_Id], [Nickname], [SendTime], [Body]";
         private readonly string fromTable = "[dbo].[Messages] JOIN [dbo].[Users] ON [User_Id] = [Id]";
         
-        private IList<IQueryFilter> filters;
+        private IQueryFilter[] filters;
 
         public QueryMessage()
         {
-            this.filters = new List<IQueryFilter>();
+            this.filters = new IQueryFilter[3];
+            ClearFilters();
         }
 
         private string WhereStatement()
@@ -28,17 +29,21 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
             string where = "";
             foreach (IQueryFilter filter in this.filters)
             {
-                where += filter.GenerateWhereClause();
-                where += " AND ";
+                if (filter != null)
+                {
+                    where += filter.GenerateWhereClause();
+                    where += " AND ";
+                }
+                
             }
-
-            where = where.Substring(0, where.Length - 5);
+            
             if (String.IsNullOrWhiteSpace(where))
             {
                 return "";
             }
             else
             {
+                where = where.Substring(0, where.Length - 5);
                 return "Where " + where;
             }
         }
@@ -76,5 +81,27 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
             }
         }
 
+        public void SetTimeFilter(DateTime dateTime)
+        {
+            this.filters[0] = new TimeFilter(dateTime);
+        }
+
+        public void SetGroupFilter(int groupId)
+        {
+            this.filters[1] = new GroupFilter(groupId);
+        }
+
+        public void SetNicknameFilter(string nickname)
+        {
+            this.filters[2] = new NicknameFilter(nickname);
+        }
+
+        public void ClearFilters()
+        {
+            for (int i = 0; i < this.filters.Length; i++)
+            {
+                this.filters[i] = null;
+            }
+        }
     }
 }
