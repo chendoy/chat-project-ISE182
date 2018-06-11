@@ -74,6 +74,7 @@
   <ItemGroup>
     <Compile Include="dataAccessLayer\DBA.cs" />
     <Compile Include="dataAccessLayer\GroupFilter.cs" />
+    <Compile Include="dataAccessLayer\Insert.cs" />
     <Compile Include="dataAccessLayer\IQueryFilter.cs" />
     <Compile Include="dataAccessLayer\MessageRetriever.cs" />
     <Compile Include="dataAccessLayer\NicknameFilter.cs" />
