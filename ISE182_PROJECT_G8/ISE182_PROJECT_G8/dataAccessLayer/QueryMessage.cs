@@ -1,4 +1,5 @@
 ﻿using ISE182_PROJECT_G8.logicLayer;
+using ISE182_PROJECT_G8.persistantLayer;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -78,7 +79,7 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
             catch (Exception ex)
             {
                 Console.WriteLine("Error");
-                Console.WriteLine(ex.ToString());
+                Logger.Instance.Error(ex.ToString());
                 return false;
             }
         }
