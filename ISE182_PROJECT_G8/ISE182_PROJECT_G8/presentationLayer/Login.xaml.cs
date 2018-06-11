@@ -7,6 +7,7 @@ using ISE182_PROJECT_G8.logicLayer;
 using System.Text.RegularExpressions;
 using System.Windows.Input;
 using ISE182_PROJECT_G8.persistantLayer;
+using System.Collections.ObjectModel;
 
 namespace ISE182_PROJECT_G8.presentationLayer
 {
@@ -35,10 +36,22 @@ namespace ISE182_PROJECT_G8.presentationLayer
         {
             try
             {
+                //Sundy code
                string username = loginObserver.Username;
                int groupID = Int32.Parse(loginObserver.GroupID);
-                if((bool)chatroom.Login(username, groupID)) {
+               //Protect us from pass the hash attack
+               if(checkuser(username, groupID))
+                {
+                    //Need checn to add thw password field
+                    //String hash = logicLayer.Hashing(password);
+                    //String where = "Nickname =" + username + " AND Group_Id = " + groupID+"NPK = "+hash;
+                    //dataAccessLayer.Query Cuser = new dataAccessLayer.Query("Nickname,Group_ID", "Users", where);
+                    //ObservableCollection<User> objects = Cuser.Excute<User>()
+                    //if (objects != null) { Go to * }
+                }
 
+                if ((bool)chatroom.Login(username, groupID)) {
+                    //*
                     if (loginObserver.RememberMe) //remember me was ticked - save the user//
                     {
                         SaveRememberedUser(new User(username, groupID));
@@ -66,7 +79,17 @@ namespace ISE182_PROJECT_G8.presentationLayer
                 loginObserver.ErrorMessage = "User not found, Please try again or register";
             }
         }
-
+        //Sundy code
+        private Boolean checkuser(String name,int id)
+        {
+            String where = "Nickname =" + name + " AND Group_Id = " + id;
+            dataAccessLayer.Query Cuser = new dataAccessLayer.Query("Nickname,Group_ID", "Users",where);
+            //Lets say naor return observablecollection from query.execute
+            //ObservableCollection<User> objects = Cuser.Excute<User>()
+            //if (objects != null) { return true; }
+            
+            return false;
+        }
         private void Remember_Me_Checked(object sender, RoutedEventArgs e)
         {
 
@@ -77,6 +100,23 @@ namespace ISE182_PROJECT_G8.presentationLayer
 
             try
             {
+                //Sundy code
+                String name = loginObserver.Username;
+                int gid = Int32.Parse(loginObserver.GroupID);
+                //If user exsist
+                if (checkuser(name, gid))
+                {
+                    loginObserver.ErrorMessage = "User already registered";
+                }
+                else
+                {
+                    string pass = "";
+                    string table = "Users";
+                    String col = "Group_Id,Nickname,Password";
+                    String values = gid + "," + name + "," + pass;
+                    dataAccessLayer.Insert command = new dataAccessLayer.Insert(table, col, values);
+                    //return command.Excute();
+                }
                 if ((bool)chatroom.Register(loginObserver.Username, Int32.Parse(loginObserver.GroupID)))
                 {
                     Logger.Instance.Info("User registered successfully");
