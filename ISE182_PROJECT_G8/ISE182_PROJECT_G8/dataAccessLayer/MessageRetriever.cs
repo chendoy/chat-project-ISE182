@@ -29,6 +29,11 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
 
         public bool RetreiveMessages(ref ObservableCollection<Message> messages)
         {
+            if (!query.HasTimeFilter())
+            {
+                messages.Clear();
+            }
+
             bool isRetrieved = query.Excute(connection, ref messages);
             if (isRetrieved)
             {

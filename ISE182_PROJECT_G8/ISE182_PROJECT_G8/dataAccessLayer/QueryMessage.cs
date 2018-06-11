@@ -95,6 +95,11 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
             }
         }
 
+        public bool HasTimeFilter()
+        {
+            return this.filters[0] != null;
+        }
+
         public void SetGroupFilter(int groupId)
         {
             this.filters[1] = new GroupFilter(groupId);

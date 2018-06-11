@@ -52,7 +52,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
 
         private void UpadateMessageList()
         {
-            Filter(null, null);
+            //Filter(null, null);
             if (chatroom.RetreiveMessages(chatroomObserver.Messages))
             {
                 //chatroomObserver.Messages = chatroom.getMessageList();
