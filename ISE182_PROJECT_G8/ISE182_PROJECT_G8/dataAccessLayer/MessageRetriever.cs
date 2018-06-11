@@ -43,10 +43,17 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
             return isRetrieved;
         }
 
-        public void SetGroupFilter(int groupId)
+        public void SetGroupFilter(int? groupId)
         {
-            query.SetGroupFilter(groupId);
-            query.SetTimeFilter(null);
+            if (groupId.HasValue)
+            {
+                query.SetGroupFilter(groupId.Value);
+                query.SetTimeFilter(null);
+            }
+            else
+            {
+                query.SetGroupFilter(null);
+            }
         }
 
         public void SetNicknameFilter(string nickname)

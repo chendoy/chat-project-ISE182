@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,9 +17,12 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
             this.nickname = nickname;
         }
 
-        public string GenerateWhereClause()
+        public string GenerateWhereClause(SqlCommand command)
         {
-            return $"{nicknameField} = {this.nickname}";
+            string where = $"{nicknameField} = @nickname";
+            SqlParameter nickname = new SqlParameter(@"nickname", this.nickname);
+            command.Parameters.Add(nickname);
+            return where;
         }
     }
 }
