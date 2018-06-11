@@ -132,7 +132,7 @@
         </TextBox>
         <TextBlock HorizontalAlignment="Left" Margin="139,366,0,-390" Grid.RowSpan="2" TextWrapping="Wrap" Text="GroupID:" VerticalAlignment="Top" Height="24"/>
         <CheckBox IsChecked="{Binding GidEnable}" Height="16" Margin="205,367,805.8,-383" Grid.RowSpan="2" VerticalAlignment="Top"/>
-        <CheckBox Content="" IsChecked="{Binding NicknameEnable}" HorizontalAlignment="Left" Height="23" Margin="205,395,0,-418" Grid.RowSpan="2" VerticalAlignment="Top">
+        <CheckBox Content="" IsChecked="{Binding NicknameEnable}" HorizontalAlignment="Left" Height="23" Margin="205,395,0,-418" Grid.RowSpan="2" VerticalAlignment="Top" IsEnabledChanged="CheckBox_IsEnabledChanged">
             <CheckBox.Style>
                 <Style TargetType="{x:Type CheckBox}">
                     <Setter Property="IsEnabled" Value="False"/>

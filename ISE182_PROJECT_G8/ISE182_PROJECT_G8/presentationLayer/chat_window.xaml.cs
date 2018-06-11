@@ -32,11 +32,11 @@ namespace ISE182_PROJECT_G8.presentationLayer
 
         public chat_window(Chatroom chatroom)
         {
+            chatroomObserver = new ChatroomObserver();
+            this.DataContext = chatroomObserver;
             this.chatroom = chatroom;
             InitializeComponent();
             this.ResizeMode = ResizeMode.NoResize;
-            chatroomObserver = new ChatroomObserver();
-            this.DataContext = chatroomObserver;
             send_button.IsDefault = true;
 
             
@@ -144,8 +144,8 @@ namespace ISE182_PROJECT_G8.presentationLayer
         private void Filter(object sender, TextChangedEventArgs e)
         {
             ObservableCollection<Message> list = chatroom.getMessageList();
-            ObservableCollection<Message> nlist = null;
-            Filter filter = null;
+            //ObservableCollection<Message> nlist = null;
+            //Filter filter = null;
 
             if (chatroomObserver.GidEnable)
             {
@@ -192,6 +192,14 @@ namespace ISE182_PROJECT_G8.presentationLayer
             }
 
             Filter(sender, null);
+        }
+
+        private void CheckBox_IsEnabledChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if (!((CheckBox)sender).IsEnabled)
+            {
+                chatroomObserver.NicknameEnable = false;
+            }
         }
     }
 }
