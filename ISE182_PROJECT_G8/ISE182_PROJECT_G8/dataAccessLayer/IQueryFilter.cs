@@ -10,5 +10,6 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
     interface IQueryFilter
     {
         string GenerateWhereClause(SqlCommand command);
+
     }
 }

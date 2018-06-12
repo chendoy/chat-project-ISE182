@@ -36,7 +36,7 @@ namespace ISE182_PROJECT_G8.logicLayer
         {
             Id = id;
             UserName = userName;
-            Date = date;
+            Date = TimeZoneInfo.ConvertTimeFromUtc(date, timezone);
             MessageContent = messageContent;
             GroupID = groupID;
         }

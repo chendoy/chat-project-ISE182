@@ -17,13 +17,12 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
         private readonly string user_name = "publicUser";
         private readonly string password = "isANerd";
 
-        private SqlConnection connection;
+        private string connectionString;
         private QueryMessage query;
 
         public MessageRetriever()
         {
-            string connetion_string = connetion_string = $"Data Source={server_address};Initial Catalog={database_name };User ID={user_name};Password={password}";
-            this.connection = new SqlConnection(connetion_string);
+            this.connectionString = $"Data Source={server_address};Initial Catalog={database_name };User ID={user_name};Password={password}";
             query = new QueryMessage();
         }
 
@@ -34,7 +33,7 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
                 messages.Clear();
             }
 
-            bool isRetrieved = query.Excute(connection, ref messages);
+            bool isRetrieved = query.Excute(this.connectionString, ref messages);
             if (isRetrieved)
             {
                 query.SetTimeFilter(DateTime.UtcNow);
@@ -45,21 +44,18 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
 
         public void SetGroupFilter(int? groupId)
         {
-            if (groupId.HasValue)
-            {
-                query.SetGroupFilter(groupId.Value);
+            bool filterChanged = query.SetGroupFilter(groupId);
+            
+            if (filterChanged)
                 query.SetTimeFilter(null);
-            }
-            else
-            {
-                query.SetGroupFilter(null);
-            }
         }
 
         public void SetNicknameFilter(string nickname)
         {
-            query.SetNicknameFilter(nickname);
-            query.SetTimeFilter(null);
+            bool filterChanged = query.SetNicknameFilter(nickname);
+
+            if (filterChanged)
+                query.SetTimeFilter(null);
         }
 
         public void ClearFilters()

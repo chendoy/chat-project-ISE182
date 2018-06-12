@@ -47,39 +47,42 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
 
             if (!String.IsNullOrWhiteSpace(where))
             {
-                where = "WHERE" + where;
+                where = "WHERE " + where;
             }
 
             return where;            
         }
 
-        public bool Excute(SqlConnection connection, ref ObservableCollection<Message> messages)
+        public bool Excute(string connectionString, ref ObservableCollection<Message> messages)
         {
             
             SqlDataReader data_reader;
 
             try
             {
-                connection.Open();
-                command.Connection = connection;
-                string sql_query = $"SELECT TOP {retrieveCap.ToString()} {selectFields} FROM {fromTable} {WhereStatement()};";
-                command.CommandText = sql_query;
-                data_reader = command.ExecuteReader();
-                
-                while (data_reader.Read())
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    Guid.TryParse(data_reader.GetString(0), out Guid guid);
-                    int groupId = data_reader.GetInt32(1);
-                    string nickname = data_reader.GetString(2);
-                    DateTime sendTime = data_reader.GetDateTime(3);
-                    string body = data_reader.GetString(4);
-                    messages.Add(new Message(guid, nickname, sendTime, body, groupId.ToString()));
+                    connection.Open();
+                    command.Connection = connection;
+                    string sql_query = $"SELECT TOP {retrieveCap.ToString()} {selectFields} FROM {fromTable} {WhereStatement()};";
+                    command.CommandText = sql_query;
+                    data_reader = command.ExecuteReader();
+
+                    while (data_reader.Read())
+                    {
+                        Guid.TryParse(data_reader.GetString(0), out Guid guid);
+                        int groupId = data_reader.GetInt32(1);
+                        string nickname = data_reader.GetString(2);
+                        DateTime sendTime = data_reader.GetDateTime(3);
+                        string body = data_reader.GetString(4);
+                        messages.Add(new Message(guid, nickname, sendTime, body, groupId.ToString()));
+                    }
+
+                    data_reader.Close();
+                    command.Dispose();
+                    //connection.Close();
+                    return true;
                 }
-                
-                data_reader.Close();
-                command.Dispose();
-                connection.Close();
-                return true;
             }
             catch (Exception ex)
             {
@@ -106,29 +109,52 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
             return this.filters[0] != null;
         }
 
-        public void SetGroupFilter(int? groupId)
+        public bool SetGroupFilter(int? groupId)
         {
+            bool filterChanged = false;
             if (groupId.HasValue)
             {
-                this.filters[1] = new GroupFilter(groupId.Value);
+                GroupFilter newFilter = new GroupFilter(groupId.Value);
+                if (!newFilter.Equals(this.filters[1]))
+                {
+                    this.filters[1] = newFilter;
+                    filterChanged = true;
+                }
             }
             else
             {
-                this.filters[1] = null;
+                if (this.filters[1] != null)
+                {
+                    this.filters[1] = null;
+                    filterChanged = true;
+                }
             }
+
+            return filterChanged;
         }
 
-        public void SetNicknameFilter(string nickname)
+        public bool SetNicknameFilter(string nickname)
         {
+            bool filterChanged = false;
             if (nickname != null)
             {
-                this.filters[2] = new NicknameFilter(nickname);
-
+                NicknameFilter newFilter = new NicknameFilter(nickname);
+                if (!newFilter.Equals(this.filters[2]))
+                {
+                    this.filters[2] = newFilter;
+                    filterChanged = true;
+                }
             }
             else
             {
-                this.filters[2] = null;
+                if (this.filters[2] != null)
+                {
+                    this.filters[2] = null;
+                    filterChanged = true;
+                }
             }
+
+            return filterChanged;
         }
 
         public void ClearFilters()

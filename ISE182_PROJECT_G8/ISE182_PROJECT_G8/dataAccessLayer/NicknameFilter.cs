@@ -17,6 +17,13 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
             this.nickname = nickname;
         }
 
+        public override bool Equals(object obj)
+        {
+            var filter = obj as NicknameFilter;
+            return filter != null &&
+                   nickname == filter.nickname;
+        }
+
         public string GenerateWhereClause(SqlCommand command)
         {
             string where = $"{nicknameField} = @nickname";
@@ -24,5 +31,7 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
             command.Parameters.Add(nickname);
             return where;
         }
+
+
     }
 }

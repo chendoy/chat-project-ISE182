@@ -178,7 +178,7 @@ namespace ISE182_PROJECT_G8.logicLayer
             return messageRetriever.RetreiveMessages(ref messages);
         }
 
-        public void SetGroupFilter(int groupId)
+        public void SetGroupFilter(int? groupId)
         {
             messageRetriever.SetGroupFilter(groupId);
         }

@@ -32,6 +32,7 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
                 string sql_query = $"INSERT TO [dbo].[{InsertTable}] ({Insertcolumns}) ({InsertValue});";
                 command = new SqlCommand(sql_query, connection);
                 data_reader = command.ExecuteReader();
+                connection.Close();
                 return true;
             }
             catch (Exception ex)
@@ -42,5 +43,4 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
             }
         }
     }
-}
 }
