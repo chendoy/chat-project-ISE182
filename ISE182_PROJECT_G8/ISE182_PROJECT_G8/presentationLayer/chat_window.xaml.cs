@@ -163,6 +163,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
             else
             {
                 chatroom.SetGroupFilter(null);
+                chatroom.SetNicknameFilter(null);
             }
 
             //Sorter(sender, e);

@@ -64,7 +64,7 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
                 {
                     connection.Open();
                     command.Connection = connection;
-                    string sql_query = $"SELECT TOP {retrieveCap.ToString()} {selectFields} FROM {fromTable} {WhereStatement()};";
+                    string sql_query = $"SELECT TOP {retrieveCap.ToString()} {selectFields} FROM {fromTable} {WhereStatement()} ORDER BY [SendTime] DESC;";
                     command.CommandText = sql_query;
                     data_reader = command.ExecuteReader();
 
