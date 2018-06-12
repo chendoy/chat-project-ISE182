@@ -27,7 +27,7 @@ namespace ISE182_PROJECT_G8.logicLayer
         {
             this.Id = msg.Id;
             this.UserName = msg.UserName;
-            this.Date = TimeZoneInfo.ConvertTimeFromUtc(msg.Date, timezone);
+            this.Date = msg.Date;
             this.MessageContent = msg.MessageContent;
             this.GroupID = msg.GroupID;
         }
@@ -35,8 +35,8 @@ namespace ISE182_PROJECT_G8.logicLayer
         public Message(Guid id, string userName, DateTime date, string messageContent, string groupID)
         {
             Id = id;
-            UserName = userName;
-            Date = TimeZoneInfo.ConvertTimeFromUtc(date, timezone);
+            UserName = userName.Trim();
+            Date = date;
             MessageContent = messageContent;
             GroupID = groupID;
         }
@@ -58,8 +58,9 @@ namespace ISE182_PROJECT_G8.logicLayer
 
         public override String ToString()
         {
+            DateTime dateLocal = TimeZoneInfo.ConvertTimeFromUtc(getTime(), timezone);
             String format = "{0} {1} - {2}[{3}] - {4}";
-            return String.Format(format, getTime().ToShortTimeString(), getTime().ToShortDateString(), getUserName(), getGroupId(), getContent());
+            return String.Format(format, dateLocal.ToShortTimeString(), dateLocal.ToShortDateString(), getUserName(), getGroupId(), getContent());
         }
         public Guid getGuid()
         {
