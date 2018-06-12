@@ -19,7 +19,7 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
 
         public string GenerateWhereClause(SqlCommand command)
         {
-            string dateToString = this.dateTime.ToString("yyyy'-'MM'-'dd HH':'mm':'ss'.'ms", System.Globalization.DateTimeFormatInfo.InvariantInfo);
+            string dateToString = this.dateTime.ToString("yyyy'-'MM'-'dd HH':'mm':'ss'.'fff", System.Globalization.DateTimeFormatInfo.InvariantInfo);
             string whereClause = $"{dateField} >= '{dateToString}'";
             return whereClause;
         }
