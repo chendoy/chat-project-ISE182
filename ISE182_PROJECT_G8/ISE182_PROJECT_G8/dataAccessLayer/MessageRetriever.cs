@@ -23,7 +23,17 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
         public MessageRetriever()
         {
             this.connectionString = $"Data Source={server_address};Initial Catalog={database_name };User ID={user_name};Password={password}";
-            query = new QueryMessage();
+            query = new QueryMessage(connectionString);
+        }
+
+        public UserPL GetUser(int groupId, string nickname)
+        {
+            return null;
+        }
+
+        public UserPL Register(int groupId, string nickname, string password)
+        {
+            return null;
         }
 
         public bool RetreiveMessages(ref ObservableCollection<Message> messages)
@@ -33,13 +43,29 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
                 messages.Clear();
             }
 
-            bool isRetrieved = query.Excute(this.connectionString, ref messages);
+            bool isRetrieved = false; // query.Excute(this.connectionString, ref messages);
             if (isRetrieved)
             {
                 query.SetTimeFilter(DateTime.UtcNow);
             }
 
             return isRetrieved;
+        }
+
+        public IList<Message> RetreiveMessages()
+        {
+            return null;
+        }
+
+
+        public Message SendMessage(DateTime sendTime, int groupId, string nickname, string body)
+        {
+            return null;
+        }
+
+        public bool UpdateMessage(Guid guid, DateTime updateTime, string body)
+        {
+            return false;
         }
 
         public void SetGroupFilter(int? groupId)
