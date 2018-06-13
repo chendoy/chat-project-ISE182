@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -8,53 +7,126 @@ using System.Threading.Tasks;
 
 namespace ISE182_PROJECT_G8.dataAccessLayer
 {
-    class Query
+    abstract class Query<T>
     {
-        private string selectFields;
-        private string fromTable;
-        private string where;
+        protected string connectionString;
+        protected SqlCommand command;
+        protected IQueryFilter[] filters;
+        // Indexes of filters
+        private const int TIME = 0;
+        private const int GROUP = 1;
+        private const int NICKNAME = 2;
 
-        public Query(string selectFields, string fromTable, string where)
+        protected Query(string connectionString)
         {
-            this.selectFields = selectFields;
-            this.fromTable = fromTable;
-            this.where = where;
+            this.connectionString = connectionString;
+            this.command = new SqlCommand(); ;
+            this.filters = new IQueryFilter[3];
+            ClearFilters();
         }
 
-        public ObservableCollection<T> Excute<T>(SqlConnection connection)
+        public abstract IList<T> Select();
+
+        protected string WhereStatement()
         {
-            SqlCommand command;
-            SqlDataReader data_reader;
-
-            try
+            command.Parameters.Clear();
+            string where = "";
+            bool first = true;
+            foreach (IQueryFilter filter in this.filters)
             {
-                ObservableCollection<T>  objects = new ObservableCollection<T>();
-
-                connection.Open();
-                string sql_query = $"SELECT {selectFields} FROM [dbo].[{fromTable}] WHERE {where};";
-                command = new SqlCommand(sql_query, connection);
-                data_reader = command.ExecuteReader();
-                if (fromTable == "Messages")
+                if (filter != null)
                 {
-                    while (data_reader.Read())
+                    if (!first)
                     {
-                        DateTime dateFacturation = new DateTime();
-                        if (!data_reader.IsDBNull(2))
-                            dateFacturation = data_reader.GetDateTime(2); //2 is the coloumn index of the date. There are such               
-                        Console.WriteLine("GUID: " + data_reader.GetValue(0) + "UserID: " + data_reader.GetValue(1) + ", Message date: " + dateFacturation.ToString() + ", Body: " + data_reader.GetValue(3));
+                        where += " AND ";
                     }
+
+                    where += filter.GenerateWhereClause(command);
+                    first = false;
                 }
-                data_reader.Close();
-                command.Dispose();
-                connection.Close();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error");
-                Console.WriteLine(ex.ToString());
             }
 
-            return null;
+            if (!String.IsNullOrWhiteSpace(where))
+            {
+                where = "WHERE " + where;
+            }
+
+            return where;
         }
+
+        #region Filters
+        public void SetTimeFilter(DateTime? dateTime)
+        {
+            if (dateTime.HasValue)
+            {
+                this.filters[TIME] = new TimeFilter(dateTime.Value);
+            }
+            else
+            {
+                this.filters[TIME] = null;
+            }
+        }
+
+        public bool HasTimeFilter()
+        {
+            return this.filters[TIME] != null;
+        }
+
+        public bool SetGroupFilter(int? groupId)
+        {
+            bool filterChanged = false;
+            if (groupId.HasValue)
+            {
+                GroupFilter newFilter = new GroupFilter(groupId.Value);
+                if (!newFilter.Equals(this.filters[GROUP]))
+                {
+                    this.filters[GROUP] = newFilter;
+                    filterChanged = true;
+                }
+            }
+            else
+            {
+                if (this.filters[GROUP] != null)
+                {
+                    this.filters[GROUP] = null;
+                    filterChanged = true;
+                }
+            }
+
+            return filterChanged;
+        }
+
+        public bool SetNicknameFilter(string nickname)
+        {
+            bool filterChanged = false;
+            if (nickname != null)
+            {
+                NicknameFilter newFilter = new NicknameFilter(nickname);
+                if (!newFilter.Equals(this.filters[NICKNAME]))
+                {
+                    this.filters[NICKNAME] = newFilter;
+                    filterChanged = true;
+                }
+            }
+            else
+            {
+                if (this.filters[NICKNAME] != null)
+                {
+                    this.filters[NICKNAME] = null;
+                    filterChanged = true;
+                }
+            }
+
+            return filterChanged;
+        }
+
+        public void ClearFilters()
+        {
+            for (int i = 0; i < this.filters.Length; i++)
+            {
+                this.filters[i] = null;
+            }
+        }
+        #endregion
     }
 }

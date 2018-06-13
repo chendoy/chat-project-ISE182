@@ -31,7 +31,7 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
             string fromTable = "Messages";
             string dateToString = fromTime.ToString("yyyy'-'MM'-'dd HH':'mm':'ss'.'ms", System.Globalization.DateTimeFormatInfo.InvariantInfo);
             string where = $"SendTime >= '{dateToString}'";
-            Query query = new Query(selectFields, fromTable, where);
+            Query_old query = new Query_old(selectFields, fromTable, where);
             return query.Excute<Message>(this.connection);
         }
     }

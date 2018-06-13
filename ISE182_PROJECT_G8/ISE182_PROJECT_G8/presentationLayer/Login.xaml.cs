@@ -83,7 +83,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
         private Boolean checkuser(String name,int id)
         {
             String where = "Nickname =" + name + " AND Group_Id = " + id;
-            dataAccessLayer.Query Cuser = new dataAccessLayer.Query("Nickname,Group_ID", "Users",where);
+            dataAccessLayer.Query_old Cuser = new dataAccessLayer.Query_old("Nickname,Group_ID", "Users",where);
             //Lets say naor return observablecollection from query.execute
             //ObservableCollection<User> objects = Cuser.Excute<User>()
             //if (objects != null) { return true; }
