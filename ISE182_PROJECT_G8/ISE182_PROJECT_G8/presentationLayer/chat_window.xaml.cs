@@ -32,11 +32,11 @@ namespace ISE182_PROJECT_G8.presentationLayer
 
         public chat_window(Chatroom chatroom)
         {
+            chatroomObserver = new ChatroomObserver();
+            this.DataContext = chatroomObserver;
             this.chatroom = chatroom;
             InitializeComponent();
             this.ResizeMode = ResizeMode.NoResize;
-            chatroomObserver = new ChatroomObserver();
-            this.DataContext = chatroomObserver;
             send_button.IsDefault = true;
 
             
@@ -52,10 +52,10 @@ namespace ISE182_PROJECT_G8.presentationLayer
 
         private void UpadateMessageList()
         {
-            if (chatroom.RetreiveMessages())
+            Filter(null, null);
+            if (chatroom.RetreiveMessages(chatroomObserver.Messages))
             {
-                chatroomObserver.Messages = chatroom.getMessageList();
-                Filter(null, null);
+                //chatroomObserver.Messages = chatroom.getMessageList();
                 Sorter(null, null);
             }
         }
@@ -77,6 +77,11 @@ namespace ISE182_PROJECT_G8.presentationLayer
             Login login_window = new Login(chatroom);
             login_window.Show();
             this.Close();
+        }
+
+        private void Edit_Button_Click(object sender, RoutedEventArgs e)
+        {
+         
         }
 
         private void TextBox_KeyDown(object sender, KeyEventArgs e)
@@ -139,36 +144,34 @@ namespace ISE182_PROJECT_G8.presentationLayer
             nlist = sorter.Sort();
             chatroomObserver.Messages = nlist;
         }
-        
+
 
         private void Filter(object sender, TextChangedEventArgs e)
         {
-            ObservableCollection<Message> list = chatroom.getMessageList();
-            ObservableCollection<Message> nlist = null;
-            Filter filter = null;
-
-            if (chatroomObserver.GidEnable)
+            String gid = chatroomObserver.GroupID;
+            if (!String.IsNullOrWhiteSpace(gid))
             {
-                String gid = chatroomObserver.GroupID;
-                if (!String.IsNullOrWhiteSpace(gid))
-                {
-                    int gidnum = 0;
-                    int.TryParse(gid, out gidnum);
+                int gidnum = 0;
+                int.TryParse(gid, out gidnum);
+                chatroom.SetGroupFilter(gidnum);
 
-                    String name = chatroomObserver.Name;
-                    if (chatroomObserver.NicknameEnable & !String.IsNullOrWhiteSpace(name))
-                    {
-                        filter = new FilterByNickname(list, name, gidnum);
-                    }
-                    else
-                    {
-                        filter = new FilterByGroupID(list, gidnum);
-                    }
-                    nlist = filter.filter();
-                    chatroomObserver.Messages = nlist;
-                    Sorter(sender, e);
+                String name = chatroomObserver.Name;
+                if (chatroomObserver.NicknameEnable & !String.IsNullOrWhiteSpace(name))
+                {
+                    chatroom.SetNicknameFilter(name);
+                }
+                else
+                {
+                    chatroom.SetNicknameFilter(null);
                 }
             }
+            else
+            {
+                chatroom.SetGroupFilter(null);
+                chatroom.SetNicknameFilter(null);
+            }
+
+            //Sorter(sender, e);
         }
            
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
@@ -184,6 +187,8 @@ namespace ISE182_PROJECT_G8.presentationLayer
             {
                 chatroomObserver.Name = "";
             }
+
+            Filter(sender, null);
         }
 
         private void TextBox_IsEnabledChanged_1(object sender, DependencyPropertyChangedEventArgs e)
@@ -191,9 +196,16 @@ namespace ISE182_PROJECT_G8.presentationLayer
             if (!((TextBox)sender).IsEnabled)
             {
                 chatroomObserver.GroupID = "";
+                Filter(sender, null);
             }
+        }
 
-            Filter(sender, null);
+        private void CheckBox_IsEnabledChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if (!((CheckBox)sender).IsEnabled)
+            {
+                chatroomObserver.NicknameEnable = false;
+            }
         }
     }
 }

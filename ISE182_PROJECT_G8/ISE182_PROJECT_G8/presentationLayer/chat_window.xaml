@@ -93,7 +93,7 @@
                 </Style>
             </TextBlock.Style>
         </TextBlock>
-        <Button Click="Send_Button_Click" Name="send_button" Style="{StaticResource MyButtonStyle2}" Margin="989,488,-107.2,-539" Grid.Row="4" >
+        <Button Click="Send_Button_Click" Name="send_button" Style="{StaticResource MyButtonStyle2}" Margin="989,470,-107.2,-521" Grid.Row="4" >
             <Button.Background>
                 <ImageBrush ImageSource="Images/send_btn.jpg"/>
             </Button.Background>
@@ -101,6 +101,11 @@
         <Button Click="Logout_Button_Click" Name="logout_button" Style="{StaticResource MyButtonStyle2}" Margin="100,535,851.8,-563" Grid.Row="4" >
             <Button.Background>
                 <ImageBrush ImageSource="Images/logout_btn.jpg"/>
+            </Button.Background>
+        </Button>
+        <Button Click="Edit_Button_Click" Name="edit_button" Style="{StaticResource MyButtonStyle2}" Margin="1023,532,-71.2,-560" Grid.Row="4" >
+            <Button.Background>
+                <ImageBrush ImageSource="Images/edit.jpg"/>
             </Button.Background>
         </Button>
         <TextBlock FontSize="40" HorizontalAlignment="Left" Margin="133,31,0,-94" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Height="63" Width="275" Text="Sort by"/>
@@ -132,7 +137,7 @@
         </TextBox>
         <TextBlock HorizontalAlignment="Left" Margin="139,366,0,-390" Grid.RowSpan="2" TextWrapping="Wrap" Text="GroupID:" VerticalAlignment="Top" Height="24"/>
         <CheckBox IsChecked="{Binding GidEnable}" Height="16" Margin="205,367,805.8,-383" Grid.RowSpan="2" VerticalAlignment="Top"/>
-        <CheckBox Content="" IsChecked="{Binding NicknameEnable}" HorizontalAlignment="Left" Height="23" Margin="205,395,0,-418" Grid.RowSpan="2" VerticalAlignment="Top">
+        <CheckBox Content="" IsChecked="{Binding NicknameEnable}" HorizontalAlignment="Left" Height="23" Margin="205,395,0,-418" Grid.RowSpan="2" VerticalAlignment="Top" IsEnabledChanged="CheckBox_IsEnabledChanged">
             <CheckBox.Style>
                 <Style TargetType="{x:Type CheckBox}">
                     <Setter Property="IsEnabled" Value="False"/>

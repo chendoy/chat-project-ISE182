@@ -72,6 +72,16 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dataAccessLayer\GroupFilter.cs" />
+    <Compile Include="dataAccessLayer\Insert.cs" />
+    <Compile Include="dataAccessLayer\IQueryFilter.cs" />
+    <Compile Include="dataAccessLayer\DBA.cs" />
+    <Compile Include="dataAccessLayer\NicknameFilter.cs" />
+    <Compile Include="dataAccessLayer\Query.cs" />
+    <Compile Include="dataAccessLayer\QueryUser.cs" />
+    <Compile Include="dataAccessLayer\Query_old.cs" />
+    <Compile Include="dataAccessLayer\QueryMessage.cs" />
+    <Compile Include="dataAccessLayer\TimeFilter.cs" />
     <Compile Include="logicLayer\Filter.cs" />
     <Compile Include="logicLayer\Hashing.cs" />
     <Compile Include="logicLayer\Sorter.cs" />

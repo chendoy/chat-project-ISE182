@@ -7,6 +7,7 @@ using ISE182_PROJECT_G8.logicLayer;
 using System.Text.RegularExpressions;
 using System.Windows.Input;
 using ISE182_PROJECT_G8.persistantLayer;
+using System.Collections.ObjectModel;
 
 namespace ISE182_PROJECT_G8.presentationLayer
 {
@@ -33,12 +34,14 @@ namespace ISE182_PROJECT_G8.presentationLayer
         }
         private void Login_Button_Click(object sender, RoutedEventArgs e)
         {
+            String username = loginObserver.Username;
+            int groupID = int.Parse(loginObserver.GroupID);
             try
             {
-               string username = loginObserver.Username;
-               int groupID = Int32.Parse(loginObserver.GroupID);
-                if((bool)chatroom.Login(username, groupID)) {
+                // Login  call
 
+                if ((bool)chatroom.Login(username, groupID)) {
+                    //*
                     if (loginObserver.RememberMe) //remember me was ticked - save the user//
                     {
                         SaveRememberedUser(new User(username, groupID));
@@ -66,7 +69,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
                 loginObserver.ErrorMessage = "User not found, Please try again or register";
             }
         }
-
+        
         private void Remember_Me_Checked(object sender, RoutedEventArgs e)
         {
 
@@ -77,6 +80,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
 
             try
             {
+                
                 if ((bool)chatroom.Register(loginObserver.Username, Int32.Parse(loginObserver.GroupID)))
                 {
                     Logger.Instance.Info("User registered successfully");
