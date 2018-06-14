@@ -27,6 +27,8 @@ namespace ISE182_PROJECT_G8.logicLayer
             return sb.ToString();
         }
 
+        public bool isValid()
+
 
     }
 }

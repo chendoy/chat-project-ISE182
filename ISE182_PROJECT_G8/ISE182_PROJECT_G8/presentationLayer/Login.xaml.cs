@@ -34,6 +34,8 @@ namespace ISE182_PROJECT_G8.presentationLayer
         }
         private void Login_Button_Click(object sender, RoutedEventArgs e)
         {
+            String username = loginObserver.Username;
+            int groupID = int.Parse(loginObserver.GroupID);
             try
             {
                 // Login  call
