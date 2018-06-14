@@ -16,9 +16,14 @@ namespace ISE182_PROJECT_G8.logicLayer
     {
         private int status;  //0 - logged off, 1 - logged-in//
 
-        public User(String nickname, int groupID) : base(nickname, groupID)
+        public User(String nickname, int groupID,string password) : base(nickname, groupID,password)
         {
             this.status = 0; //fresh user is initially logged-off//
+        }
+
+        public User(UserPL userpl) : base(userpl.GetNickname(), userpl.GetGroupID(), userpl.GetPassword())
+        {
+            this.status = 0;
         }
         
         public void loginOrOff() //flips the user login status - log-in if it was off and vice versa//
