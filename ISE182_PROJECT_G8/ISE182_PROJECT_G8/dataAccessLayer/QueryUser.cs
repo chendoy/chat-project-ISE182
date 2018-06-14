@@ -2,6 +2,7 @@
 using ISE182_PROJECT_G8.persistantLayer;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -55,7 +56,36 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
 
         public bool Insert(int groupId, string nickname, string password)
         {
-            return false;
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    Logger.Instance.Info("Connected to the database");
+                    command.Connection = connection;
+
+                    SqlParameter nickname_param = new SqlParameter(@"nickname", SqlDbType.Text, 20);
+                    nickname_param.Value = nickname;
+                    SqlParameter password_param = new SqlParameter(@"password", SqlDbType.Text, 20);
+                    password_param.Value = password;
+                    SqlParameter groupid_param = new SqlParameter(@"groupId", SqlDbType.Int, 20);
+                    groupid_param.Value = groupId;
+                    string values = "@groupId , @nickname , @password";
+
+                    string sql_query = $"INSERT INTO {fromTable} ({selectFields}) VALUES ({values});";
+                    command.CommandText = sql_query;
+                    int num_rows_changed = command.ExecuteNonQuery();
+                    command.Dispose();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.Instance.Error(ex.ToString());
+                return false;
+            }
+            
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -27,8 +28,9 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
         public string GenerateWhereClause(SqlCommand command)
         {
             string where = $"{nicknameField} = @nickname";
-            SqlParameter nickname = new SqlParameter(@"nickname", this.nickname);
-            command.Parameters.Add(nickname);
+            SqlParameter nickname_param = new SqlParameter(@"nickname", SqlDbType.Text, 20);
+            nickname_param.Value = this.nickname;
+            command.Parameters.Add(nickname_param);
             return where;
         }
 

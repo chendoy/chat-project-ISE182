@@ -3,6 +3,7 @@ using ISE182_PROJECT_G8.persistantLayer;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -49,9 +50,10 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
 
         }
 
-        public UserPL Register(int groupId, string nickname, string password)
+        public Boolean Register(int groupId, string nickname, string password)
         {
-            return null;
+            QueryUser userquey = new QueryUser(connectionString);
+            return userquey.Insert(groupId, nickname, password);
         }
 
         public bool RetreiveMessages(ref ObservableCollection<Message> messages)
