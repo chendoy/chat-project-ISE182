@@ -28,8 +28,9 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
         public string GenerateWhereClause(SqlCommand command)
         {
             string where = $"{nicknameField} = @nickname";
-            SqlParameter nickname_param = new SqlParameter(@"nickname", SqlDbType.Text, 20);
+            SqlParameter nickname_param = new SqlParameter(@"nickname", SqlDbType.Char, 8);
             nickname_param.Value = this.nickname;
+            //SqlParameter nickname_param = new SqlParameter(@"nickname", this.nickname);
             command.Parameters.Add(nickname_param);
             return where;
         }

@@ -30,6 +30,7 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
                     connection.Open();
                     Logger.Instance.Info("Connected to the database");
                     command.Connection = connection;
+                  
                     string sql_query = $"SELECT {selectFields} FROM {fromTable} {WhereStatement()};";
                     command.CommandText = sql_query;
                     data_reader = command.ExecuteReader();
@@ -37,8 +38,8 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
                     while (data_reader.Read())
                     {
                         int groupId = data_reader.GetInt32(0);
-                        string nickname = data_reader.GetString(1);
-                        string password = data_reader.GetString(2);
+                        string nickname = data_reader.GetString(1).Trim();
+                        string password = data_reader.GetString(2).Trim();
                         users.Add(new UserPL(nickname, groupId,password));
                     }
 
@@ -65,12 +66,15 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
                     Logger.Instance.Info("Connected to the database");
                     command.Connection = connection;
 
-                    SqlParameter nickname_param = new SqlParameter(@"nickname", SqlDbType.Text, 20);
+                    SqlParameter nickname_param = new SqlParameter(@"nickname", SqlDbType.Char, 8);
                     nickname_param.Value = nickname;
-                    SqlParameter password_param = new SqlParameter(@"password", SqlDbType.Text, 20);
+                    command.Parameters.Add(nickname_param);
+                    SqlParameter password_param = new SqlParameter(@"password", SqlDbType.Char, 64);
                     password_param.Value = password;
+                    command.Parameters.Add(password_param);
                     SqlParameter groupid_param = new SqlParameter(@"groupId", SqlDbType.Int, 20);
                     groupid_param.Value = groupId;
+                    command.Parameters.Add(groupid_param);
                     string values = "@groupId , @nickname , @password";
 
                     string sql_query = $"INSERT INTO {fromTable} ({selectFields}) VALUES ({values});";

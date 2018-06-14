@@ -44,7 +44,7 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
             }
             else
             {
-                Logger.Instance.Fatal($"Found {userlist.Count.ToString()}  users with same nickname:{nickname} and id:{groupId.ToString()}");
+                Logger.Instance.Info($"Found {userlist.Count.ToString()}  users with same nickname:{nickname} and id:{groupId.ToString()}");
                 return null;
             }
 
