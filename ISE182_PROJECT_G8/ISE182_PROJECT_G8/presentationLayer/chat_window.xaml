@@ -73,7 +73,7 @@
 
         </ListBox>
 
-        <TextBox MaxLength="150" FontFamily="Century Gothic" HorizontalContentAlignment="Left" FontSize="16" Background="#7FD6E7FF" Padding="6,3,0,0" Width="507"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="467,480,0,-547" Height="67" Grid.RowSpan="2" KeyDown="TextBox_KeyDown" TextWrapping="Wrap" BorderBrush="#66ABADB3">
+        <TextBox MaxLength="100" FontFamily="Century Gothic" HorizontalContentAlignment="Left" FontSize="16" Background="#7FD6E7FF" Padding="6,3,0,0" Width="507"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="467,480,0,-547" Height="67" Grid.RowSpan="2" KeyDown="TextBox_KeyDown" TextWrapping="Wrap" BorderBrush="#66ABADB3">
             <TextBox.Text>
                 <Binding Path="Message" UpdateSourceTrigger="PropertyChanged"/>
             </TextBox.Text>

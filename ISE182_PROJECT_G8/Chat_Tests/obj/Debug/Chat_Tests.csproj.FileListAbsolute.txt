@@ -42,3 +42,7 @@ C:\Users\user\Source\Repos\ISE182_project\ISE182_PROJECT_G8\Chat_Tests\bin\Debug
 C:\Users\user\Source\Repos\ISE182_project\ISE182_PROJECT_G8\Chat_Tests\obj\Debug\Chat_Tests.csproj.CopyComplete
 C:\Users\user\Source\Repos\ISE182_project\ISE182_PROJECT_G8\Chat_Tests\obj\Debug\Chat_Tests.dll
 C:\Users\user\Source\Repos\ISE182_project\ISE182_PROJECT_G8\Chat_Tests\obj\Debug\Chat_Tests.pdb
+C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\Chat_Tests\obj\Debug\Chat_Tests.csprojAssemblyReference.cache
+C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\Chat_Tests\obj\Debug\Chat_Tests.csproj.CoreCompileInputs.cache
+C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\Chat_Tests\obj\Debug\Chat_Tests.dll
+C:\Users\Naork\Documents\Visual Studio 2017\Projects\ISE182_project\ISE182_PROJECT_G8\Chat_Tests\obj\Debug\Chat_Tests.pdb
