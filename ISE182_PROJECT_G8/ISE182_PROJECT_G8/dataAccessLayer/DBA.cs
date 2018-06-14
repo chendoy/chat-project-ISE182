@@ -11,28 +11,83 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
 {
     class DBA
     {
+        // Access via Chatroom
         private readonly string server_address = "ise172.ise.bgu.ac.il,1433\\DB_LAB";
         private readonly string database_name = "MS3";
         private readonly string user_name = "publicUser";
         private readonly string password = "isANerd";
-    
-        private SqlConnection connection;
+
+        private string connectionString;
+        private QueryMessage query;
 
         public DBA()
         {
-            string connetion_string = null;
-            connetion_string = $"Data Source={server_address};Initial Catalog={database_name };User ID={user_name};Password={password}";
-            this.connection = new SqlConnection(connetion_string);
+            this.connectionString = $"Data Source={server_address};Initial Catalog={database_name };User ID={user_name};Password={password}";
+            query = new QueryMessage(connectionString);
         }
 
-        public ObservableCollection<Message> GetNewMessages(DateTime fromTime)
+        public UserPL GetUser(int groupId, string nickname)
         {
-            string selectFields = "*";
-            string fromTable = "Messages";
-            string dateToString = fromTime.ToString("yyyy'-'MM'-'dd HH':'mm':'ss'.'ms", System.Globalization.DateTimeFormatInfo.InvariantInfo);
-            string where = $"SendTime >= '{dateToString}'";
-            Query_old query = new Query_old(selectFields, fromTable, where);
-            return query.Excute<Message>(this.connection);
+            return null;
+        }
+
+        public UserPL Register(int groupId, string nickname, string password)
+        {
+            return null;
+        }
+
+        public bool RetreiveMessages(ref ObservableCollection<Message> messages)
+        {
+            if (!query.HasTimeFilter())
+            {
+                messages.Clear();
+            }
+
+            bool isRetrieved = false; // query.Excute(this.connectionString, ref messages);
+            if (isRetrieved)
+            {
+                query.SetTimeFilter(DateTime.UtcNow);
+            }
+
+            return isRetrieved;
+        }
+
+        public IList<Message> RetreiveMessages()
+        {
+            return null;
+        }
+
+
+        public Message SendMessage(DateTime sendTime, int groupId, string nickname, string body)
+        {
+            return null;
+        }
+
+        public bool UpdateMessage(Guid guid, DateTime updateTime, string body)
+        {
+            return false;
+        }
+
+        public void SetGroupFilter(int? groupId)
+        {
+            bool filterChanged = query.SetGroupFilter(groupId);
+            
+            if (filterChanged)
+                query.SetTimeFilter(null);
+        }
+
+        public void SetNicknameFilter(string nickname)
+        {
+            bool filterChanged = query.SetNicknameFilter(nickname);
+
+            if (filterChanged)
+                query.SetTimeFilter(null);
+        }
+
+        public void ClearFilters()
+        {
+            query.ClearFilters();
+            query.SetTimeFilter(null);
         }
     }
 }

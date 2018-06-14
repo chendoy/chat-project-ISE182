@@ -26,7 +26,7 @@ namespace ISE182_PROJECT_G8.logicLayer
         private Saver saver;
         private User rememberedUser;
         public string SALT = "1337";
-        private MessageRetriever messageRetriever;
+        private DBA messageRetriever;
 
         //public constructor for chatroom
         public Chatroom()
@@ -36,7 +36,7 @@ namespace ISE182_PROJECT_G8.logicLayer
             this.messageList = saver.LoadMessages(); //un-persisting messages data to RAM//
             this.userList = saver.LoadUsers(); //un-persisting users data to RAM//
             this.rememberedUser = saver.LoadRememberMe();
-            this.messageRetriever = new MessageRetriever();
+            this.messageRetriever = new DBA();
         }
 
         public bool Register(String nickname, int groupID)
