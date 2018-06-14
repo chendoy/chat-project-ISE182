@@ -30,7 +30,7 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
                     connection.Open();
                     Logger.Instance.Info("Connected to the database");
                     command.Connection = connection;
-                    //string sql_query = $"SELECT {selectFields} FROM {fromTable} {WhereStatement()};";  WHERE Group_Id = 8 AND Nickname = 'Naorko'
+                  
                     string sql_query = $"SELECT {selectFields} FROM {fromTable} {WhereStatement()};";
                     command.CommandText = sql_query;
                     data_reader = command.ExecuteReader();
