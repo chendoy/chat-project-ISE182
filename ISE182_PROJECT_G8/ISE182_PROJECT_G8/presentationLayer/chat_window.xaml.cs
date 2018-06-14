@@ -29,6 +29,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
         private Chatroom chatroom;
         private ChatroomObserver chatroomObserver;
         DispatcherTimer dispatcherTimer = new DispatcherTimer();  // member 
+        private ListBoxItem selectedItemInListBox;
 
         public chat_window(Chatroom chatroom)
         {
@@ -60,6 +61,14 @@ namespace ISE182_PROJECT_G8.presentationLayer
             }
         }
 
+        public void OnSelected(object sender, RoutedEventArgs e)
+        {
+            ListBoxItem listBoxItem = sender as ListBoxItem;
+            if (listBoxItem != null)
+                this.selectedItemInListBox = listBoxItem;
+
+        }
+
         private void Send_Button_Click(object sender, RoutedEventArgs e)
         {
             string content = chatroomObserver.Message;
@@ -81,7 +90,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
 
         private void Edit_Button_Click(object sender, RoutedEventArgs e)
         {
-            
+            Message selectedMessage = selectedItemInListBox as Message;
         }
 
         private void TextBox_KeyDown(object sender, KeyEventArgs e)

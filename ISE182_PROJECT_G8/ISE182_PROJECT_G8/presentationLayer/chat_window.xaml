@@ -53,7 +53,7 @@
 
 
 
-        <ListBox ItemsSource="{Binding Messages}" w:ListBox.AutoScroll="True" ScrollViewer.CanContentScroll="True" Margin="464,4,-106,-441" RenderTransformOrigin="10.453,0.719" HorizontalAlignment="Left" Width="674" Grid.RowSpan="2">
+        <ListBox  ItemsSource="{Binding Messages}" Selected="OnSelected" Unselected="OnUnselected" w:ListBox.AutoScroll="True" ScrollViewer.CanContentScroll="True" Margin="464,4,-106,-441" RenderTransformOrigin="10.453,0.719" HorizontalAlignment="Left" Width="674" Grid.RowSpan="2">
             <ListBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
