@@ -27,7 +27,13 @@ namespace ISE182_PROJECT_G8.logicLayer
             return sb.ToString();
         }
 
-        public bool isValid()
+        public static bool isValid(string password)
+        {
+            if (password.Length < 4 || password.Length > 16)
+                return false;
+           return password.All(c => Char.IsLetterOrDigit(c) || c.Equals('_'));
+           
+        }
 
 
     }

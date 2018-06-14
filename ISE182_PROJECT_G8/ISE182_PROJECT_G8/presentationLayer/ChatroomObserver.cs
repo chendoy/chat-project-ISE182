@@ -38,20 +38,6 @@ namespace ISE182_PROJECT_G8.presentationLayer
             }
         }
 
-        private string password = "";
-        public string Password
-        {
-            get
-            {
-                return password;
-            }
-            set
-            {
-                password = value;
-                OnPropertyChanged("Password");
-            }
-        }
-
 
         private Boolean gidEnable;
         public Boolean GidEnable

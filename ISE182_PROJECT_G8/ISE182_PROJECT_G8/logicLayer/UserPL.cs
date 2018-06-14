@@ -15,12 +15,13 @@ namespace ISE182_PROJECT_G8.logicLayer
         private int groupID;
         private String password;
 
-        public UserPL(String nickname, int groupID)
+        public UserPL(String nickname, int groupID, string password)
         {
             if (UserHandler.isValid(nickname, groupID))
             {
                 this.nickname = nickname;
                 this.groupID = groupID;
+                this.password = password;
       
 
                 Logger.Instance.Info("User: " + nickname + " of group " + groupID + " created successfully");
@@ -45,6 +46,10 @@ namespace ISE182_PROJECT_G8.logicLayer
         public override String ToString()
         {
             return this.nickname + "[" + this.groupID + "]";
+        }
+        public String GetPassword()
+        {
+            return this.password;
         }
     }
 }

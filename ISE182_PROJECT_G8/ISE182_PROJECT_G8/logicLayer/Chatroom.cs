@@ -39,7 +39,7 @@ namespace ISE182_PROJECT_G8.logicLayer
             this.messageRetriever = new DBA();
         }
 
-        public bool Register(String nickname, int groupID)
+        public bool Register(String nickname, int groupID, string hashedPassword)
         {
             if (!UserHandler.isValid(nickname, groupID)) //details of registration was not valid - will not register// 
             {
@@ -48,7 +48,7 @@ namespace ISE182_PROJECT_G8.logicLayer
             }
             else
             {
-                User newUser = new User(nickname, groupID); // If not valid - need to improve 
+                User newUser = new User(nickname, groupID, hashedPassword); // If not valid - need to improve 
                 bool alreadyExist = UserHandler.existIn(newUser, this.userList);
 
                 if (!alreadyExist)

@@ -121,7 +121,7 @@ namespace ISE182_PROJECT_G8.persistantLayer
                 Logger.Instance.Info("Remember me data was loaded successfully");
                 return rememberMeUser;
             }
-            return new User("",-1); //the file doesn't exist - return a dummy user//
+            return new User("",-1,""); //the file doesn't exist - return a dummy user//
         }
     }
 

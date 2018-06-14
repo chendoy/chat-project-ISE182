@@ -16,7 +16,7 @@ namespace ISE182_PROJECT_G8.logicLayer
     {
         private int status;  //0 - logged off, 1 - logged-in//
 
-        public User(String nickname, int groupID) : base(nickname, groupID)
+        public User(String nickname, int groupID, string password) : base(nickname, groupID, password)
         {
             this.status = 0; //fresh user is initially logged-off//
         }

@@ -8,6 +8,7 @@ using System.Text.RegularExpressions;
 using System.Windows.Input;
 using ISE182_PROJECT_G8.persistantLayer;
 using System.Collections.ObjectModel;
+using System.Windows.Controls;
 
 namespace ISE182_PROJECT_G8.presentationLayer
 {
@@ -19,6 +20,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
 
         private Chatroom chatroom;
         private LoginObserver loginObserver;
+        private const string SALT = "1337";
 
         public Login(Chatroom chatroom)
         {
@@ -34,22 +36,23 @@ namespace ISE182_PROJECT_G8.presentationLayer
         }
         private void Login_Button_Click(object sender, RoutedEventArgs e)
         {
-            String username = loginObserver.Username;
-            int groupID = int.Parse(loginObserver.GroupID);
-            try
+            string password = loginObserver.Password;
+            if (password != null)
             {
-                // Login  call
+                String username = loginObserver.Username;
+                int groupID = int.Parse(loginObserver.GroupID);
 
-                if ((bool)chatroom.Login(username, groupID)) {
+                if (chatroom.Login(username, groupID, password))
+                {
                     //*
                     if (loginObserver.RememberMe) //remember me was ticked - save the user//
                     {
-                        SaveRememberedUser(new User(username, groupID));
+                        SaveRememberedUser(new User(username, groupID, ""));
 
                     }
                     else //wasn't ticked - save a "dummy" user
                     {
-                        SaveRememberedUser(new User("", -1));
+                        SaveRememberedUser(new User("", -1, ""));
                     }
                     Logger.Instance.Info("User: " + username + " logged-in successfully, starting chat window");
                     chat_window chat_window = new chat_window(chatroom);
@@ -63,11 +66,6 @@ namespace ISE182_PROJECT_G8.presentationLayer
                 }
 
             }
-            catch
-            {
-                Logger.Instance.Error("User not found when trying to log-in");
-                loginObserver.ErrorMessage = "User not found, Please try again or register";
-            }
         }
         
         private void Remember_Me_Checked(object sender, RoutedEventArgs e)
@@ -75,23 +73,24 @@ namespace ISE182_PROJECT_G8.presentationLayer
 
         }
 
-        private void Register_Button_Click(object sender, RoutedEventArgs e)
-        {
+        private void Register_Button_Click(object sender, RoutedEventArgs e) { 
 
-            try
-            {
-                
-                if ((bool)chatroom.Register(loginObserver.Username, Int32.Parse(loginObserver.GroupID)))
+            string password = loginObserver.Password;
+            if (password != null) {
+
+                if (chatroom.Register(loginObserver.Username, Int32.Parse(loginObserver.GroupID),loginObserver.Password))
                 {
                     Logger.Instance.Info("User registered successfully");
                     loginObserver.ErrorMessage = "User registered successfully!";
                 }
-            }
-            catch
+            
+            else
             {
                 Logger.Instance.Error("Incorrect input was entered while trying to register");
                 loginObserver.ErrorMessage = "Incorrect input...please try again";
             }
+}
+
         }
 
         private void LoadRememberedUser()
@@ -126,6 +125,17 @@ namespace ISE182_PROJECT_G8.presentationLayer
             Logger.Instance.Info("Group if textBox content validated successfully");
         }
 
+        private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            PasswordBox pb = sender as PasswordBox;
+            if (Hashing.isValid(pb.Password))
+            {
+                loginObserver.Password = Hashing.GetHashString(pb.Password + SALT);  
+            }
+            else
+                loginObserver.Password = null;
+            
+        }
     }
 
 
