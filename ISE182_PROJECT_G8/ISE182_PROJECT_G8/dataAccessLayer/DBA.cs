@@ -1,7 +1,9 @@
 ﻿using ISE182_PROJECT_G8.logicLayer;
+using ISE182_PROJECT_G8.persistantLayer;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -28,12 +30,30 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
 
         public UserPL GetUser(int groupId, string nickname)
         {
-            return null;
+            QueryUser userquey = new QueryUser(connectionString);
+            userquey.SetGroupFilter(groupId);
+            userquey.SetNicknameFilter(nickname);
+            IList<UserPL> userlist = userquey.Select();
+            if(userlist.Count == 1)
+            {
+                foreach(UserPL user in userlist)
+                {
+                    return user;
+                }
+                return null;
+            }
+            else
+            {
+                Logger.Instance.Fatal($"Found {userlist.Count.ToString()}  users with same nickname:{nickname} and id:{groupId.ToString()}");
+                return null;
+            }
+
         }
 
-        public UserPL Register(int groupId, string nickname, string password)
+        public Boolean Register(int groupId, string nickname, string password)
         {
-            return null;
+            QueryUser userquey = new QueryUser(connectionString);
+            return userquey.Insert(groupId, nickname, password);
         }
 
         public bool RetreiveMessages(ref ObservableCollection<Message> messages)

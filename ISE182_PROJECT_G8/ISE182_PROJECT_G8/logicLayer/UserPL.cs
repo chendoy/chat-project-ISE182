@@ -1,3 +1,4 @@
+﻿
 ﻿using ISE182_PROJECT_G8.persistantLayer;
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,6 @@ namespace ISE182_PROJECT_G8.logicLayer
                 this.nickname = nickname;
                 this.groupID = groupID;
                 this.password = password;
-      
 
                 Logger.Instance.Info("User: " + nickname + " of group " + groupID + " created successfully");
             }

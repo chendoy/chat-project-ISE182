@@ -1,5 +1,4 @@
-﻿
-using ISE182_PROJECT_G8.CommunicationLayer;
+﻿using ISE182_PROJECT_G8.CommunicationLayer;
 using ISE182_PROJECT_G8.persistantLayer;
 using ISE182_PROJECT_G8.dataAccessLayer;
 using System;
@@ -39,7 +38,7 @@ namespace ISE182_PROJECT_G8.logicLayer
             this.messageRetriever = new DBA();
         }
 
-        public bool Register(String nickname, int groupID, string hashedPassword)
+        public bool Register(String nickname, int groupID, string password)
         {
             if (!UserHandler.isValid(nickname, groupID)) //details of registration was not valid - will not register// 
             {
@@ -48,38 +47,47 @@ namespace ISE182_PROJECT_G8.logicLayer
             }
             else
             {
-                User newUser = new User(nickname, groupID, hashedPassword); // If not valid - need to improve 
-                bool alreadyExist = UserHandler.existIn(newUser, this.userList);
-
-                if (!alreadyExist)
+                DBA conn = new DBA();
+                UserPL exsist = conn.GetUser(groupID, nickname);
+                if (exsist != null)
                 {
-                    this.userList.Add(newUser);
+                    Logger.Instance.Info("User:" + nickname + " already exsist");
+                    return false;
+                }
+                else
+                {
+                    Boolean ans = conn.Register(groupID, nickname, password);
                     saver.SaveUsers(this.userList); //persisting registered users data//
                     Logger.Instance.Info("User: " + nickname + " registered successfully");
-                    return true;
+                    return ans;
                 }
-                Logger.Instance.Warn("User: " + nickname + " failed to register - already exists");
-                return false;
             }
         }
 
-        public bool Login(string nickname, int groupId)
+        public bool Login(string nickname, int groupId, string password)
         {
+            DBA conn = new DBA();
             //linq query to find existing user in 'userList'//
-            var loggedin = (from user in userList
-                            where user.GetNickname().Equals(nickname) & user.GetGroupID()==groupId
-                            select user).FirstOrDefault();
+            var loggedin = conn.GetUser(groupId, nickname);
             if (loggedin != null)
             {
-                this.loggedInUser = loggedin; //changes the 'Chat' object status//
-                Logger.Instance.Info("User: "+nickname+" is now logged in to the chat");
-                this.loggedInUser.loginOrOff(); //changes the 'User' object status//
-                return true;
+                if (password.Equals(loggedin.GetPassword()))
+                {
+                    this.loggedInUser = new User(loggedin); //changes the 'Chat' object status//
+                    Logger.Instance.Info("User: " + nickname + " is now logged in to the chat");
+                    this.loggedInUser.loginOrOff(); //changes the 'User' object status//
+                    return true;
+                }
+                else
+                {
+                    Logger.Instance.Info("User: " + nickname + "typped wrong password");
+                    return false;
+                }
             }
             else
             {
-                Logger.Instance.Error("User: "+ nickname +" failed to log-in - doesn't exist");
-                return false; 
+                Logger.Instance.Error("User: " + nickname + " failed to log-in - doesn't exist");
+                return false;
             }
         }
 
@@ -99,7 +107,7 @@ namespace ISE182_PROJECT_G8.logicLayer
             this.loggedInUser.loginOrOff();
             string nickname = loggedInUser.GetNickname();
             this.loggedInUser = null;
-            Logger.Instance.Info("Chatroom: user "+nickname+" logged-out");
+            Logger.Instance.Info("Chatroom: user " + nickname + " logged-out");
             return nickname;
         }
 
@@ -136,12 +144,12 @@ namespace ISE182_PROJECT_G8.logicLayer
             StringBuilder stringBuilder = new StringBuilder();
 
             //linq query//
-            var messages = (from msg in messageList where msg.getUserName().Equals(nickname) & msg.getGroupId()==groupId select msg);
+            var messages = (from msg in messageList where msg.getUserName().Equals(nickname) & msg.getGroupId() == groupId select msg);
 
             //appending the messages to a list//
             foreach (Message msg in messages)
                 stringBuilder.AppendLine(msg.ToString());
-            Logger.Instance.Info("Chatroom: messages by user "+nickname+" was built");
+            Logger.Instance.Info("Chatroom: messages by user " + nickname + " was built");
             return stringBuilder.ToString();
         }
 
@@ -216,7 +224,4 @@ namespace ISE182_PROJECT_G8.logicLayer
         }
 
     }
-    }
-   
-
-
+}
