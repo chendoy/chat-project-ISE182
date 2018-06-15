@@ -14,10 +14,10 @@ namespace ISE182_PROJECT_G8.logicLayer
     public static class MessageHandler
     {
 
-        private static readonly int _maxLength = 150;
+        private static readonly int _maxLength = 100;
 
         //adds messages from 'toAddList' to 'mainList' if it has unique GUID among the 'mainList' messages//
-        public static void addUniqueByGuid(ObservableCollection<Message> mainList, ObservableCollection<Message> toAddList)
+        public static void addUniqueByGuid(IList<Message> mainList, IList<Message> toAddList)
         {
             foreach (Message message in toAddList)
             {

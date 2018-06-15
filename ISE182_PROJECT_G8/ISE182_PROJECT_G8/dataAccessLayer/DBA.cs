@@ -118,7 +118,6 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
         public void ClearFilters()
         {
             retrieveQuery.ClearFilters();
-            retrieveQuery.SetTimeFilter(null);
         }
     }
 }

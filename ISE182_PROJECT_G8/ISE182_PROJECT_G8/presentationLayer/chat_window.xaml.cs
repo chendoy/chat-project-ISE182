@@ -54,9 +54,19 @@ namespace ISE182_PROJECT_G8.presentationLayer
         private void UpadateMessageList()
         {
             Filter(null, null);
-            if (chatroom.RetreiveMessages(chatroomObserver.Messages))
+            if (chatroom.RetreiveMessages(out IList<Message> addMsgs))
             {
-                chatroomObserver.Messages = chatroom.getMessageList(); // Need to add manually
+                chatroomObserver.Messages.Clear();
+
+            }
+
+            foreach (Message msg in addMsgs)
+            {
+                chatroomObserver.Messages.Add(msg);
+            }
+
+            if (addMsgs.Count > 0)
+            {
                 Sorter(null, null);
             }
         }

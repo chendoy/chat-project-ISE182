@@ -47,12 +47,12 @@ namespace ISE182_PROJECT_G8.presentationLayer
                     //*
                     if (loginObserver.RememberMe) //remember me was ticked - save the user//
                     {
-                        SaveRememberedUser(new User(username, groupID, ""));
+                        SaveRememberedUser(new User(username, groupID, "", -1));
 
                     }
                     else //wasn't ticked - save a "dummy" user
                     {
-                        SaveRememberedUser(new User("", -1, ""));
+                        SaveRememberedUser(new User("", -1, "", -1));
                     }
                     Logger.Instance.Info("User: " + username + " logged-in successfully, starting chat window");
                     chat_window chat_window = new chat_window(chatroom);

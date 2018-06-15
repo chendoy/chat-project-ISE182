@@ -17,14 +17,13 @@ namespace ISE182_PROJECT_G8.logicLayer
      */
     public class Chatroom
     {
-        private String _url = "http://ise172.ise.bgu.ac.il"; // "http://localhost/"; //  
-        private int port = 80;
         private User loggedInUser;
         private List<User> userList;  //in RAM, retreived from persistant layer//
         private IList<Message> messageList; //in RAM, retreived from persistant layer//
         private Saver saver;
         private User rememberedUser;
-        public string SALT = "1337";
+        private const string SALT = "1337";
+        private const int msgLimit = 200;
         private DBA messageRetriever;
 
         //public constructor for chatroom
@@ -96,7 +95,7 @@ namespace ISE182_PROJECT_G8.logicLayer
             return this.loggedInUser;
         }
 
-        public IList<Message> getMessageList()
+        public IList<Message> GetMessageList()
         {
             return this.messageList;
         }
@@ -111,7 +110,7 @@ namespace ISE182_PROJECT_G8.logicLayer
             return nickname;
         }
 
-        public bool Send(string msg) // Need to change
+        public bool Send(string msg) // Need to change via DAL
         {
             if (!MessageHandler.isValid(msg))
             {
@@ -123,9 +122,9 @@ namespace ISE182_PROJECT_G8.logicLayer
                 User loggedInUser = GetLoggedInUser();
                 try
                 {
-                    Message message = loggedInUser.Send(this._url, msg); //asks the logged in user instance to send the message//
+                    //Message message = loggedInUser.Send(this._url, msg); //asks the logged in user instance to send the message//
                     Logger.Instance.Info("Chatroom: asks " + this.loggedInUser.GetNickname() + " to send message");
-                    this.messageList.Add(message); //adds the sent message to the chat's message list (RAM)//
+                    //this.messageList.Add(message); //adds the sent message to the chat's message list (RAM)//
                     //saver.SaveMessages(this.messageList); //persisting received messages data//
                     //this.messageList = MessageHandler.sortbytime(this.messageList);
                     Logger.Instance.Info("Message was sent successfully");
@@ -133,82 +132,85 @@ namespace ISE182_PROJECT_G8.logicLayer
                 }
                 catch
                 {
-                    Logger.Instance.Fatal(String.Format("Could not reach the server: {0}", _url));
+                    //Logger.Instance.Fatal(String.Format("Could not reach the server: {0}", _url));
                     return false;
                 }
             }
         }
+        
 
-        public string DisplayMessagesByUser(string nickname, int groupId) // OLD Function
+        public bool RetreiveMessages(out IList<Message> addMsgs) // Need to check 200
         {
-            StringBuilder stringBuilder = new StringBuilder();
-
-            //linq query//
-            var messages = (from msg in messageList where msg.getUserName().Equals(nickname) & msg.getGroupId() == groupId select msg);
-
-            //appending the messages to a list//
-            foreach (Message msg in messages)
-                stringBuilder.AppendLine(msg.ToString());
-            Logger.Instance.Info("Chatroom: messages by user " + nickname + " was built");
-            return stringBuilder.ToString();
-        }
-
-        #region Retreive Messages
-        /*
-        public bool RetreiveMessages()
-        {
-            try
-            {
-                //retreives the messages from the server//
-                List<IMessage> imsgRetreived = Communication.Instance.GetTenMessages(this._url); //asks communication layer to retreive messages//
-
-                //generates a list of type: 'Messege' from list of type: 'IMessege'//
-                ObservableCollection<Message> msgRetreived = new ObservableCollection<Message>();
-                foreach (IMessage imsg in imsgRetreived)
-                    msgRetreived.Add(new Message(imsg));
-
-                //adds the retreived messages as a whole to the chat's messages list//
-                MessageHandler.addUniqueByGuid(this.messageList, msgRetreived);
-                saver.SaveMessages(this.messageList); //persisting received messages data//
-                //this.messageList = MessageHandler.sortbytime(this.messageList);
-                Logger.Instance.Info("Messages retreived successfully from server");
-                return true;
-            }
-            catch
-            {
-                Logger.Instance.Fatal(String.Format("Could not reach the server: {0}", _url));
-                return false;
-            }
-        }
-        */
-
-        public bool RetreiveMessages() // Need to check 200
-        {
-            if (!messageRetriever.HasTimeFilter())
+            bool needToReset = false;
+            if (!messageRetriever.HasTimeFilter()) // Means the filter changed and need to reload all the messages
             {
                 this.messageList = new List<Message>();
+                needToReset = true;
             }
 
-            IList<Message> newMessages = messageRetriever.RetreiveMessages();
-            if (newMessages.Count > 0)
+            addMsgs = messageRetriever.RetreiveMessages();
+            if (addMsgs.Count > 0)
             {
-                this.messageList.Concat(newMessages);
-                return true;
+                needToReset = AddByKeepUniqueGuid(this.messageList, addMsgs);
+
+                if (messageList.Count > msgLimit)
+                {
+                    for (int i = 0; i < messageList.Count - msgLimit; i++)
+                    {
+                        this.messageList.RemoveAt(0);
+                    }
+
+                    needToReset = true;
+                }
             }
-            else
+
+            if (needToReset)
             {
-                return false;
+                addMsgs = this.messageList;
             }
+
+            messageRetriever.SetTimeFilter(DateTime.UtcNow); // For receiving only new messages
+
+            return needToReset;
         }
 
+        private bool AddByKeepUniqueGuid(IList<Message> mainList, IList<Message> toAddList)
+        {
+            bool removed = false;
+            foreach (Message message in toAddList)
+            {
+                Message msgWithThisGuid = (from msg in mainList
+                                       where msg.getGuid().Equals(message.getGuid())
+                                       select msg).FirstOrDefault();
+
+                if (msgWithThisGuid != null) //there is message with this GUID in the main list, so it was updated
+                {
+                    mainList.Remove(msgWithThisGuid);
+                    removed = true;
+                }
+                mainList.Add(message);
+            }
+
+            return removed;
+        }
+
+        #region Filters
         public void SetGroupFilter(int? groupId)
         {
-            messageRetriever.SetGroupFilter(groupId);
+            bool filterChanged = messageRetriever.SetGroupFilter(groupId);
+            if (filterChanged)
+            {
+                messageRetriever.SetTimeFilter(null);
+            }
         }
 
         public void SetNicknameFilter(string nickname)
         {
-            messageRetriever.SetNicknameFilter(nickname);
+            bool filterChanged = messageRetriever.SetNicknameFilter(nickname);
+            if (filterChanged)
+            {
+                messageRetriever.SetTimeFilter(null);
+            }
         }
 
         public void ClearFilters()
