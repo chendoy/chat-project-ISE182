@@ -30,7 +30,6 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
             string where = $"{nicknameField} = @nickname";
             SqlParameter nickname_param = new SqlParameter(@"nickname", SqlDbType.Char, 8);
             nickname_param.Value = this.nickname;
-            //SqlParameter nickname_param = new SqlParameter(@"nickname", this.nickname);
             command.Parameters.Add(nickname_param);
             return where;
         }

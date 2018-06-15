@@ -16,12 +16,13 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
         private const int TIME = 0;
         private const int GROUP = 1;
         private const int NICKNAME = 2;
+        private const int GUID = 3;
 
         protected Query(string connectionString)
         {
             this.connectionString = connectionString;
             this.command = new SqlCommand(); ;
-            this.filters = new IQueryFilter[3];
+            this.filters = new IQueryFilter[4];
             ClearFilters();
         }
 
@@ -118,6 +119,18 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
             }
 
             return filterChanged;
+        }
+
+        public void SetGuidFilter(Guid guid)
+        {
+            if (guid != null)
+            {
+                this.filters[GUID] = new GuidFilter(guid);
+            }
+            else
+            {
+                this.filters[GUID] = null;
+            }
         }
 
         public void ClearFilters()

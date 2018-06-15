@@ -89,7 +89,7 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
         public bool UpdateMessage(Guid guid, DateTime updateTime, string body)
         {
             QueryMessage messagequey = new QueryMessage(connectionString);
-            //userquey.SetGuidFilter(guid);
+            messagequey.SetGuidFilter(guid);
             Boolean ans = messagequey.Update(guid,updateTime,body);
             Logger.Instance.Info($"Updated message with guid: {guid}  to :{body} at:{updateTime}");
             return ans;
