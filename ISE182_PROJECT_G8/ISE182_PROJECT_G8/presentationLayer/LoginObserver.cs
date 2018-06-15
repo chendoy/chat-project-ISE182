@@ -92,5 +92,18 @@ namespace ISE182_PROJECT_G8.presentationLayer
             }
         }
 
+        private bool passwordEmpty = true;
+        public bool PasswordEmpty
+        {
+            get
+            {
+                return passwordEmpty;
+            }
+            set
+            {
+                passwordEmpty = value;
+                OnPropertyChanged("PasswordEmpty");
+            }
+        }
     }
 }

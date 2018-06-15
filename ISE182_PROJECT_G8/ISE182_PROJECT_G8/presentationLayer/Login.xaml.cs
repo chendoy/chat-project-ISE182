@@ -128,6 +128,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
         private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
         {
             PasswordBox pb = sender as PasswordBox;
+            loginObserver.PasswordEmpty = string.IsNullOrWhiteSpace(pb.Password);
             if (Hashing.isValid(pb.Password))
             {
                 loginObserver.Password = Hashing.GetHashString(pb.Password + SALT);  
