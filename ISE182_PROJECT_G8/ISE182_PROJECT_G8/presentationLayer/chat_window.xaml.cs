@@ -56,7 +56,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
             Filter(null, null);
             if (chatroom.RetreiveMessages(chatroomObserver.Messages))
             {
-                //chatroomObserver.Messages = chatroom.getMessageList();
+                chatroomObserver.Messages = chatroom.getMessageList(); // Need to add manually
                 Sorter(null, null);
             }
         }

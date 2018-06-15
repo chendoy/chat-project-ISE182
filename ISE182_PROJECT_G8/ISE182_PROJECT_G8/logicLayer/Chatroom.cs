@@ -21,7 +21,7 @@ namespace ISE182_PROJECT_G8.logicLayer
         private int port = 80;
         private User loggedInUser;
         private List<User> userList;  //in RAM, retreived from persistant layer//
-        private ObservableCollection<Message> messageList; //in RAM, retreived from persistant layer//
+        private IList<Message> messageList; //in RAM, retreived from persistant layer//
         private Saver saver;
         private User rememberedUser;
         public string SALT = "1337";
@@ -32,7 +32,7 @@ namespace ISE182_PROJECT_G8.logicLayer
         {
             this.loggedInUser = null;
             saver = Saver.Instance;
-            this.messageList = saver.LoadMessages(); //un-persisting messages data to RAM//
+            this.messageList = new List<Message>(); //saver.LoadMessages(); //un-persisting messages data to RAM//
             this.userList = saver.LoadUsers(); //un-persisting users data to RAM//
             this.rememberedUser = saver.LoadRememberMe();
             this.messageRetriever = new DBA();
@@ -96,7 +96,7 @@ namespace ISE182_PROJECT_G8.logicLayer
             return this.loggedInUser;
         }
 
-        public ObservableCollection<Message> getMessageList()
+        public IList<Message> getMessageList()
         {
             return this.messageList;
         }
@@ -111,7 +111,7 @@ namespace ISE182_PROJECT_G8.logicLayer
             return nickname;
         }
 
-        public bool Send(string msg)
+        public bool Send(string msg) // Need to change
         {
             if (!MessageHandler.isValid(msg))
             {
@@ -126,7 +126,7 @@ namespace ISE182_PROJECT_G8.logicLayer
                     Message message = loggedInUser.Send(this._url, msg); //asks the logged in user instance to send the message//
                     Logger.Instance.Info("Chatroom: asks " + this.loggedInUser.GetNickname() + " to send message");
                     this.messageList.Add(message); //adds the sent message to the chat's message list (RAM)//
-                    saver.SaveMessages(this.messageList); //persisting received messages data//
+                    //saver.SaveMessages(this.messageList); //persisting received messages data//
                     //this.messageList = MessageHandler.sortbytime(this.messageList);
                     Logger.Instance.Info("Message was sent successfully");
                     return true;
@@ -139,7 +139,7 @@ namespace ISE182_PROJECT_G8.logicLayer
             }
         }
 
-        public string DisplayMessagesByUser(string nickname, int groupId)
+        public string DisplayMessagesByUser(string nickname, int groupId) // OLD Function
         {
             StringBuilder stringBuilder = new StringBuilder();
 
@@ -154,7 +154,7 @@ namespace ISE182_PROJECT_G8.logicLayer
         }
 
         #region Retreive Messages
-
+        /*
         public bool RetreiveMessages()
         {
             try
@@ -180,10 +180,25 @@ namespace ISE182_PROJECT_G8.logicLayer
                 return false;
             }
         }
+        */
 
-        public bool RetreiveMessages(ObservableCollection<Message> messages)
+        public bool RetreiveMessages() // Need to check 200
         {
-            return messageRetriever.RetreiveMessages(ref messages);
+            if (!messageRetriever.HasTimeFilter())
+            {
+                this.messageList = new List<Message>();
+            }
+
+            IList<Message> newMessages = messageRetriever.RetreiveMessages();
+            if (newMessages.Count > 0)
+            {
+                this.messageList.Concat(newMessages);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public void SetGroupFilter(int? groupId)

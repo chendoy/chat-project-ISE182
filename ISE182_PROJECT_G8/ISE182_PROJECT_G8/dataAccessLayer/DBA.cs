@@ -20,12 +20,12 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
         private readonly string password = "isANerd";
 
         private string connectionString;
-        private QueryMessage query;
+        private QueryMessage retrieveQuery;
 
         public DBA()
         {
             this.connectionString = $"Data Source={server_address};Initial Catalog={database_name };User ID={user_name};Password={password}";
-            query = new QueryMessage(connectionString);
+            retrieveQuery = new QueryMessage(connectionString);
         }
 
         public UserPL GetUser(int groupId, string nickname)
@@ -58,7 +58,7 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
 
         public bool RetreiveMessages(ref ObservableCollection<Message> messages)
         {
-            if (!query.HasTimeFilter())
+            if (!retrieveQuery.HasTimeFilter())
             {
                 messages.Clear();
             }
@@ -66,7 +66,7 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
             bool isRetrieved = false; // query.Excute(this.connectionString, ref messages);
             if (isRetrieved)
             {
-                query.SetTimeFilter(DateTime.UtcNow);
+                retrieveQuery.SetTimeFilter(DateTime.UtcNow);
             }
 
             return isRetrieved;
@@ -74,7 +74,7 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
 
         public IList<Message> RetreiveMessages()
         {
-            return null;
+            return retrieveQuery.Select();
         }
 
 
@@ -95,26 +95,30 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
             return ans;
         }
 
-        public void SetGroupFilter(int? groupId)
+        public bool SetGroupFilter(int? groupId)
         {
-            bool filterChanged = query.SetGroupFilter(groupId);
-            
-            if (filterChanged)
-                query.SetTimeFilter(null);
+            return retrieveQuery.SetGroupFilter(groupId);
         }
 
-        public void SetNicknameFilter(string nickname)
+        public bool SetNicknameFilter(string nickname)
         {
-            bool filterChanged = query.SetNicknameFilter(nickname);
+            return retrieveQuery.SetNicknameFilter(nickname);
+        }
 
-            if (filterChanged)
-                query.SetTimeFilter(null);
+        public void SetTimeFilter(DateTime? dateTime)
+        {
+            retrieveQuery.SetTimeFilter(dateTime);
+        }
+
+        public bool HasTimeFilter()
+        {
+            return retrieveQuery.HasTimeFilter();
         }
 
         public void ClearFilters()
         {
-            query.ClearFilters();
-            query.SetTimeFilter(null);
+            retrieveQuery.ClearFilters();
+            retrieveQuery.SetTimeFilter(null);
         }
     }
 }

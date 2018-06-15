@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="dataAccessLayer\GroupFilter.cs" />
+    <Compile Include="dataAccessLayer\GuidFilter.cs" />
     <Compile Include="dataAccessLayer\Insert.cs" />
     <Compile Include="dataAccessLayer\IQueryFilter.cs" />
     <Compile Include="dataAccessLayer\DBA.cs" />
