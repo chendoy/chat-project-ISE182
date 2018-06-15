@@ -16,13 +16,13 @@ namespace ISE182_PROJECT_G8.logicLayer
     {
         private int status;  //0 - logged off, 1 - logged-in//
 
-        public User(String nickname, int groupID, string password) : base(nickname, groupID, password)
+        public User(String nickname, int groupID, string password,int userid) : base(nickname, groupID, password,userid)
 
         {
             this.status = 0; //fresh user is initially logged-off//
         }
 
-        public User(UserPL userpl) : base(userpl.GetNickname(), userpl.GetGroupID(), userpl.GetPassword())
+        public User(UserPL userpl) : base(userpl.GetNickname(), userpl.GetGroupID(), userpl.GetPassword(),userpl.GetUserId())
         {
             this.status = 0;
         }

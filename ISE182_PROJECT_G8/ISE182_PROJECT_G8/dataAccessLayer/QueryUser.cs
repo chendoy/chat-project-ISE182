@@ -12,7 +12,7 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
 {
     class QueryUser : Query<UserPL>
     {
-        private readonly string selectFields = "[Group_Id], [Nickname], [Password]";
+        private readonly string selectFields = "[Group_Id], [Nickname], [Password],[Id]";
         private readonly string fromTable = "[dbo].[Users]";
 
         public QueryUser(string connectionString) : base(connectionString)
@@ -40,7 +40,8 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
                         int groupId = data_reader.GetInt32(0);
                         string nickname = data_reader.GetString(1).Trim();
                         string password = data_reader.GetString(2).Trim();
-                        users.Add(new UserPL(nickname, groupId,password));
+                        int userid = data_reader.GetInt32(4);
+                        users.Add(new UserPL(nickname, groupId,password,userid));
                     }
 
                     data_reader.Close();

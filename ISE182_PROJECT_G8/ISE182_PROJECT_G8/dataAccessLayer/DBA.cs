@@ -78,14 +78,21 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
         }
 
 
-        public Message SendMessage(DateTime sendTime, int groupId, string nickname, string body)
+        public Boolean SendMessage(DateTime sendTime, int groupId, string nickname, string body)
         {
-            return null;
+            QueryMessage messagequery = new QueryMessage(connectionString);
+            UserPL user = GetUser(groupId, nickname);
+            int userid = user.GetUserId();
+            return messagequery.Insert(sendTime, userid, body);
         }
 
         public bool UpdateMessage(Guid guid, DateTime updateTime, string body)
         {
-            return false;
+            QueryMessage messagequey = new QueryMessage(connectionString);
+            //userquey.SetGuidFilter(guid);
+            Boolean ans = messagequey.Update(guid,updateTime,body);
+            Logger.Instance.Info($"Updated message with guid: {guid}  to :{body} at:{updateTime}");
+            return ans;
         }
 
         public void SetGroupFilter(int? groupId)
