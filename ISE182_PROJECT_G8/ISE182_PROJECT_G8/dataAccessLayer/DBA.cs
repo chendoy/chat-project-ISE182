@@ -78,11 +78,11 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
         }
 
 
-        public Boolean SendMessage(DateTime sendTime, int groupId, string nickname, string body)
+        public Boolean SendMessage(DateTime sendTime, int userid, string body)
         {
             QueryMessage messagequery = new QueryMessage(connectionString);
-            UserPL user = GetUser(groupId, nickname);
-            int userid = user.GetUserId();
+            //UserPL user = GetUser(groupId, nickname);
+            //int userid = user.GetUserId();
             return messagequery.Insert(sendTime, userid, body);
         }
 

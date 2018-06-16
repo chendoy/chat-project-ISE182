@@ -88,6 +88,10 @@ namespace ISE182_PROJECT_G8.presentationLayer
                 chatroomObserver.Message = "";
                 UpadateMessageList();
             }
+            else
+            {
+                chatroomObserver.Message = "";
+            }
         }
         private void Logout_Button_Click(object sender, RoutedEventArgs e)
         {

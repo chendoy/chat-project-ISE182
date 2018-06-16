@@ -119,20 +119,28 @@ namespace ISE182_PROJECT_G8.logicLayer
             }
             else
             {
+                DBA conn = new DBA();
                 User loggedInUser = GetLoggedInUser();
-                try
+                if (loggedInUser != null)
                 {
-                    //Message message = loggedInUser.Send(this._url, msg); //asks the logged in user instance to send the message//
-                    Logger.Instance.Info("Chatroom: asks " + this.loggedInUser.GetNickname() + " to send message");
-                    //this.messageList.Add(message); //adds the sent message to the chat's message list (RAM)//
-                    //saver.SaveMessages(this.messageList); //persisting received messages data//
-                    //this.messageList = MessageHandler.sortbytime(this.messageList);
-                    Logger.Instance.Info("Message was sent successfully");
-                    return true;
+                    DateTime localDateTimeExample = DateTime.Now;
+                    DateTime time = localDateTimeExample.ToUniversalTime();
+                    Boolean ans = conn.SendMessage(time, loggedInUser.GetUserId(), msg);
+                    if(ans)
+                    {
+                        Logger.Instance.Info("Chatroom: asks " + this.loggedInUser.GetNickname() + " to send message");
+                        Logger.Instance.Info("Message was sent successfully");
+                        return true;
+                    }
+                    else
+                    {
+                        Logger.Instance.Info("Send Message failed ");
+                        return false;
+                    }
                 }
-                catch
+                else
                 {
-                    //Logger.Instance.Fatal(String.Format("Could not reach the server: {0}", _url));
+                    Logger.Instance.Info("Tried to send message without login");
                     return false;
                 }
             }
