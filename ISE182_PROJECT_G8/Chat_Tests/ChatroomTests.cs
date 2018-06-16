@@ -11,26 +11,28 @@ namespace Chat_Tests
         public void Register_with_invalid_details()
         {
             Chatroom chatRoom = new Chatroom();
-
             chatRoom.clearUsersList();
+            String dummyPassword = "1234";
 
-            Assert.IsFalse(chatRoom.Register("Chen", -1));
-            Assert.IsFalse(chatRoom.Register("Chen2", 0));
-            Assert.IsFalse(chatRoom.Register("", -1));
-            Assert.IsFalse(chatRoom.Register("", 5));
-            Assert.IsFalse(chatRoom.Register("Bruce Wayne", 5));
-            Assert.IsFalse(chatRoom.Register("Bruce Wayne", -5));
-            Assert.IsFalse(chatRoom.Register(" ", -1));
-            Assert.IsFalse(chatRoom.Register("      ", 5));
+            Assert.IsFalse(chatRoom.Register("Chen", -1, dummyPassword));
+            Assert.IsFalse(chatRoom.Register("Chen2", 0, dummyPassword));
+            Assert.IsFalse(chatRoom.Register("", -1, dummyPassword));
+            Assert.IsFalse(chatRoom.Register("", 5, dummyPassword));
+            Assert.IsFalse(chatRoom.Register("Bruce Wayne", 5, dummyPassword));
+            Assert.IsFalse(chatRoom.Register("Bruce Wayne", -5, dummyPassword));
+            Assert.IsFalse(chatRoom.Register(" ", -1, dummyPassword));
+            Assert.IsFalse(chatRoom.Register("      ", 5, dummyPassword));
         }
 
         [TestMethod]
         public void Send_empty_message_OR_more_than_150()
         {
             Chatroom chatroom = new Chatroom();
-            chatroom.Register("Chen", 8);
+            String dummyPassword = "1234";
+
+            chatroom.Register("Chen", 8, dummyPassword);
             chatroom.clearUsersList();
-            chatroom.Login("Chen", 8);
+            chatroom.Login("Chen", 8, dummyPassword);
 
             Assert.IsFalse(chatroom.Send(""));
             Assert.IsFalse(chatroom.Send(" "));
@@ -44,11 +46,14 @@ namespace Chat_Tests
         public void Send_message_without_logging_in()
         {
             Chatroom chatroom = new Chatroom();
+            String dummyPassword = "1234";
+            Random rnd = new Random();
+            int appendix = rnd.Next(1000);
 
             Assert.IsFalse(chatroom.Send("This will probably not be sent"));
             Assert.IsFalse(chatroom.Send("This will not either"));
-            chatroom.Register("chendoy", 8);
-            chatroom.Login("chendoy", 8);
+            chatroom.Register("chendoy"+ appendix, appendix, dummyPassword);
+            chatroom.Login("chendoy"+ appendix, appendix, dummyPassword);
             Assert.IsTrue(chatroom.Send("This SHOULD be sent"));
             chatroom.LogOut();
             Assert.IsFalse(chatroom.Send("Aaaaand this won't"));
@@ -70,15 +75,20 @@ namespace Chat_Tests
         [TestMethod]
         public void Logout_test()
         {
+
+            String dummyPassword = "1234";
+            Random rnd = new Random();
+            int appendix = rnd.Next(1000);
             Chatroom chatroom = new Chatroom();
-            chatroom.Register("chendoy", 8);
-            chatroom.Login("chendoy", 8);
+
+            chatroom.Register("chendoy"+ appendix, appendix, dummyPassword);
+            chatroom.Login("chendoy"+ appendix, appendix, dummyPassword);
             chatroom.LogOut();
             Assert.IsNull(chatroom.GetLoggedInUser());
-            chatroom.Login("chendoy", 8);
+            chatroom.Login("chendoy"+ appendix, appendix, dummyPassword);
             chatroom.LogOut();
             Assert.IsNull(chatroom.GetLoggedInUser());
-            chatroom.Login("chendoy", 8);
+            chatroom.Login("chendoy"+ appendix, appendix, dummyPassword);
             Assert.IsNotNull(chatroom.GetLoggedInUser());
         }
 
@@ -87,20 +97,29 @@ namespace Chat_Tests
         {
             Chatroom chatroom = new Chatroom();
             chatroom.clearUsersList();
-            Assert.IsTrue(chatroom.Register("bruce_wayne", 42));
-            Assert.IsTrue(chatroom.Register("peter_parker8", 16));
-            Assert.IsTrue(chatroom.Register("clark_kent", 3));
+            String dummyPassword = "1234";
+            Random rnd = new Random();
+            int appendix = rnd.Next(1000);
+   
+
+            Assert.IsTrue(chatroom.Register("bruce_wayne"+ appendix, appendix, dummyPassword));
+            Assert.IsTrue(chatroom.Register("peter_parker8"+ appendix, appendix, dummyPassword));
+            Assert.IsTrue(chatroom.Register("clark_kent"+ appendix, appendix, dummyPassword));
         }
 
         [TestMethod]
         public void Login_With_Non_Existing_User()
         {
+            String dummyPassword = "1234";
             Chatroom chatroom = new Chatroom();
-            Assert.IsFalse(chatroom.Login("chendoy", 8));
-            Assert.IsFalse(chatroom.Login("Bruce_Wayne", 5));
-            Assert.IsFalse(chatroom.Login("clark_kent", 22));
-            Assert.IsFalse(chatroom.Login("peter_parker8", 8));
-            Assert.IsFalse(chatroom.Login("tony_stark", 31));
+            Random rnd = new Random();
+            int appendix = rnd.Next(1000);
+
+            Assert.IsFalse(chatroom.Login("chendoy"+ appendix, appendix, dummyPassword));
+            Assert.IsFalse(chatroom.Login("Bruce_Wayne"+ appendix, appendix, dummyPassword));
+            Assert.IsFalse(chatroom.Login("clark_kent"+ appendix, appendix, dummyPassword));
+            Assert.IsFalse(chatroom.Login("peter_parker8"+ appendix, appendix, dummyPassword));
+            Assert.IsFalse(chatroom.Login("tony_stark"+ appendix, appendix, dummyPassword));
         }
 
     }
