@@ -12,8 +12,8 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
 {
     class QueryUser : Query<UserPL>
     {
-        private readonly string selectFields = "[Group_Id], [Nickname], [Password],[Id]";
-        private readonly string fromTable = "[dbo].[Users]";
+        private readonly string selectFields = "[Group_Id], [Nickname], [Password]";
+        private readonly string fromTable = "[MS3].[dbo].[Users]";
 
         public QueryUser(string connectionString) : base(connectionString)
         {
@@ -31,16 +31,16 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
                     Logger.Instance.Info("Connected to the database");
                     command.Connection = connection;
                   
-                    string sql_query = $"SELECT {selectFields} FROM {fromTable} {WhereStatement()};";
+                    string sql_query = $"SELECT * FROM {fromTable} {WhereStatement()};";
                     command.CommandText = sql_query;
                     data_reader = command.ExecuteReader();
 
                     while (data_reader.Read())
                     {
-                        int groupId = data_reader.GetInt32(0);
-                        string nickname = data_reader.GetString(1).Trim();
-                        string password = data_reader.GetString(2).Trim();
-                        int userid = data_reader.GetInt32(4);
+                        int userid = data_reader.GetInt32(0);
+                        int groupId = data_reader.GetInt32(1);
+                        string nickname = data_reader.GetString(2).Trim();
+                        string password = data_reader.GetString(3).Trim();
                         users.Add(new UserPL(nickname, groupId,password,userid));
                     }
 
