@@ -14,7 +14,7 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
     class DBA
     {
         // Access via Chatroom
-        private readonly string server_address = "NAOR-LAP\\SQLEXPRESS"; // "ise172.ise.bgu.ac.il,1433\\DB_LAB"; //
+        private readonly string server_address = "ise172.ise.bgu.ac.il,1433\\DB_LAB"; // "NAOR-LAP\\SQLEXPRESS"; //
         private readonly string database_name = "MS3";
         private readonly string user_name = "publicUser";
         private readonly string password = "isANerd";
@@ -24,8 +24,8 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
 
         public DBA()
         {
-            //this.connectionString = $"Data Source={server_address};Initial Catalog={database_name };User ID={user_name};Password={password}";
-            this.connectionString = $"Data Source={server_address};Initial Catalog={database_name };Trusted_Connection=True;";
+            this.connectionString = $"Data Source={server_address};Initial Catalog={database_name };User ID={user_name};Password={password}";
+            //this.connectionString = $"Data Source={server_address};Initial Catalog={database_name };Trusted_Connection=True;";
             retrieveQuery = new QueryMessage(connectionString);
         }
 
@@ -55,22 +55,6 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
         {
             QueryUser userquey = new QueryUser(connectionString);
             return userquey.Insert(groupId, nickname, password);
-        }
-
-        public bool RetreiveMessages(ref ObservableCollection<Message> messages)
-        {
-            if (!retrieveQuery.HasTimeFilter())
-            {
-                messages.Clear();
-            }
-
-            bool isRetrieved = false; // query.Excute(this.connectionString, ref messages);
-            if (isRetrieved)
-            {
-                retrieveQuery.SetTimeFilter(DateTime.UtcNow);
-            }
-
-            return isRetrieved;
         }
 
         public IList<Message> RetreiveMessages()

@@ -110,7 +110,7 @@ namespace ISE182_PROJECT_G8.logicLayer
             return nickname;
         }
 
-        public bool Send(string msg) // Need to change via DAL
+        public bool Send(string msg)
         {
             if (!MessageHandler.isValid(msg))
             {

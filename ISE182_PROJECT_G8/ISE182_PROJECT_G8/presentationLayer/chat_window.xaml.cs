@@ -42,7 +42,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
 
             
             Logger.Instance.Info("chat window started successfully");
-            UpadateMessageList();
+            UpdateMessageList();
             //DispatcherTimer init//
             dispatcherTimer.Tick += DispatcherTimer_Tick;   
             dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 2);
@@ -51,9 +51,9 @@ namespace ISE182_PROJECT_G8.presentationLayer
 
         }
 
-        private void UpadateMessageList()
+        private void UpdateMessageList()
         {
-            Filter(null, null);
+            //Filter(null, null);
             if (chatroom.RetreiveMessages(out IList<Message> addMsgs))
             {
                 chatroomObserver.Messages.Clear();
@@ -86,7 +86,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
             {
                 Logger.Instance.Info("Message was sent successfully");
                 chatroomObserver.Message = "";
-                UpadateMessageList();
+                UpdateMessageList();
             }
             else
             {
@@ -118,7 +118,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
         private void DispatcherTimer_Tick(object sender, EventArgs e)
         {
             Logger.Instance.Info("DispatcherTimer ticked");
-            UpadateMessageList();
+            UpdateMessageList();
         }
 
         private void Sorter(object sender, EventArgs e)
@@ -199,7 +199,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
                 chatroom.SetNicknameFilter(null);
             }
 
-            //Sorter(sender, e);
+            UpdateMessageList();
         }
            
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
