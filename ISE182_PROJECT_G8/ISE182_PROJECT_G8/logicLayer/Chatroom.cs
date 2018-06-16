@@ -121,7 +121,7 @@ namespace ISE182_PROJECT_G8.logicLayer
             {
                 DBA conn = new DBA();
                 User loggedInUser = GetLoggedInUser();
-                if (loggedInUser != null) // Use DateTime.UTCNow
+                if (loggedInUser != null)
                 {
                     DateTime time = DateTime.UtcNow;
                     Boolean ans = conn.SendMessage(time, loggedInUser.GetUserId(), msg);
