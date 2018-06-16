@@ -12,6 +12,8 @@ using System.Threading.Tasks;
 namespace ISE182_PROJECT_G8.presentationLayer
 {
     public class ChatroomObserver : INotifyPropertyChanged
+
+
     {
         public ChatroomObserver()
         {
@@ -35,6 +37,33 @@ namespace ISE182_PROJECT_G8.presentationLayer
             {
                 message = value;
                 OnPropertyChanged("Message");
+            }
+        }
+
+        private Message messageToEdit = null;
+        public Message MessageToEdit
+        {
+            get
+            {
+                return MessageToEdit;
+            }
+            set
+            {
+                MessageToEdit = value;
+                OnPropertyChanged("MessageToEdit");
+            }
+        }
+        private bool editMode = false;
+        public bool EditMode
+        {
+            get
+            {
+                return EditMode;
+            }
+            set
+            {
+                EditMode = value;
+                OnPropertyChanged("EditMode");
             }
         }
 

@@ -40,11 +40,11 @@ namespace ISE182_PROJECT_G8.presentationLayer
             this.ResizeMode = ResizeMode.NoResize;
             send_button.IsDefault = true;
 
-            
+
             Logger.Instance.Info("chat window started successfully");
             UpdateMessageList();
             //DispatcherTimer init//
-            dispatcherTimer.Tick += DispatcherTimer_Tick;   
+            dispatcherTimer.Tick += DispatcherTimer_Tick;
             dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 2);
             dispatcherTimer.Start();
 
@@ -71,26 +71,53 @@ namespace ISE182_PROJECT_G8.presentationLayer
             }
         }
 
-        public void OnSelected(object sender, RoutedEventArgs e)
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ListBoxItem listBoxItem = sender as ListBoxItem;
-            //if (listBoxItem != null)
-               // this.selectedItemInListBox = listBoxItem;
+
+            if (((ListBox)sender).SelectedItem != null)
+            {
+                var data = ((ListBox)sender).SelectedItem as Message;
+                if (chatroom.GetLoggedInUser().GetNickname().Equals(data.getUserName()) & chatroom.GetLoggedInUser().GetGroupID().Equals(data.getGroupId()))
+                    chatroomObserver.MessageToEdit = data;
+                else
+                    chatroomObserver.MessageToEdit = null;
+
+            }
+
 
         }
 
         private void Send_Button_Click(object sender, RoutedEventArgs e)
         {
             string content = chatroomObserver.Message;
-            if ((bool)chatroom.Send(content))
+            if (chatroomObserver.EditMode) //we're on edit mode
             {
-                Logger.Instance.Info("Message was sent successfully");
-                chatroomObserver.Message = "";
-                UpdateMessageList();
+                Guid guidOfEdit = chatroomObserver.MessageToEdit.getGuid();
+
+                if ((bool)chatroom.UpdateMessage(guidOfEdit, content)) //sundy needs to complete
+                {
+                    Logger.Instance.Info("Message was edited successfully");
+                    chatroomObserver.Message = "";
+                    UpdateMessageList();
+                }
+                else
+                {
+                    chatroomObserver.Message = "";
+                }
             }
-            else
+
+            else //not on edit mode
             {
-                chatroomObserver.Message = "";
+                if ((bool)chatroom.Send(content))
+                {
+                    Logger.Instance.Info("Message was sent successfully");
+                    chatroomObserver.Message = "";
+                    UpdateMessageList();
+                }
+                else
+                {
+                    chatroomObserver.Message = "";
+                }
             }
         }
         private void Logout_Button_Click(object sender, RoutedEventArgs e)
@@ -104,7 +131,9 @@ namespace ISE182_PROJECT_G8.presentationLayer
 
         private void Edit_Button_Click(object sender, RoutedEventArgs e)
         {
-       //     Message selectedMessage = selectedItemInListBox as Message;
+            if (chatroomObserver.MessageToEdit != null) //there is message to edit
+                chatroomObserver.EditMode = true; //then enable edit mode
+
         }
 
         private void TextBox_KeyDown(object sender, KeyEventArgs e)
@@ -131,7 +160,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
                 //Sort by all radio button clicked
                 if (chatroomObserver.AscType)
                 {
-                    sorter = new SortByAll(list, true);  
+                    sorter = new SortByAll(list, true);
                 }
                 else
                 {
@@ -140,7 +169,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
 
             }
             //Srot by name radio button clicked
-            else if(chatroomObserver.ByName)
+            else if (chatroomObserver.ByName)
             {
                 if (chatroomObserver.AscType)
                 {
@@ -152,7 +181,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
                 }
             }
             // Else sort by time
-            else if(chatroomObserver.ByTime)
+            else if (chatroomObserver.ByTime)
             {
                 if (chatroomObserver.AscType)
                 {
@@ -201,7 +230,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
 
             UpdateMessageList();
         }
-           
+
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
         {
             Regex regex = new Regex("[^0-9]+");

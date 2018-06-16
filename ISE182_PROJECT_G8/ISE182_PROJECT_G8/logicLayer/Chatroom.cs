@@ -90,6 +90,12 @@ namespace ISE182_PROJECT_G8.logicLayer
             }
         }
 
+        public bool UpdateMessage(Guid guidOfEdit, string content)
+        {
+            DateTime sendTime =DateTime.UtcNow;
+            throw new NotImplementedException();
+        }
+
         public User GetLoggedInUser()
         {
             return this.loggedInUser;

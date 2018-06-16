@@ -53,7 +53,7 @@
 
 
 
-        <ListBox  ItemsSource="{Binding Messages}"  w:ListBox.AutoScroll="True" ScrollViewer.CanContentScroll="True" Margin="464,4,-106,-441" RenderTransformOrigin="10.453,0.719" HorizontalAlignment="Left" Width="674" Grid.RowSpan="2">
+        <ListBox  ItemsSource="{Binding Messages}" SelectionChanged="ListBox_SelectionChanged"  w:ListBox.AutoScroll="True" ScrollViewer.CanContentScroll="True" Margin="464,4,-106,-441" RenderTransformOrigin="10.453,0.719" HorizontalAlignment="Left" Width="674" Grid.RowSpan="2">
             <ListBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -82,9 +82,12 @@
             <TextBlock.Style>
 
                 <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Setter Property="Visibility" Value="Hidden"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Text, ElementName=groupID_textbox}" Value="">
+                        <DataTrigger Binding="{Binding Message}" Value="">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Message}" Value="{x:Null}">
                             <Setter Property="Visibility" Value="Visible"/>
                         </DataTrigger>
                     </Style.Triggers>
