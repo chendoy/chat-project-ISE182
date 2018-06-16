@@ -165,7 +165,12 @@ namespace ISE182_PROJECT_G8.presentationLayer
             }
 
             nlist = sorter.Sort();
-            chatroomObserver.Messages = nlist;
+            //chatroomObserver.Messages = nlist;
+            chatroomObserver.Messages.Clear();
+            foreach (Message msg in nlist)
+            {
+                chatroomObserver.Messages.Add(msg);
+            }
         }
 
 
