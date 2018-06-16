@@ -28,7 +28,5 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
         {
             return $"{groupField} = {groupId.ToString()}";
         }
-
-        
     }
 }
