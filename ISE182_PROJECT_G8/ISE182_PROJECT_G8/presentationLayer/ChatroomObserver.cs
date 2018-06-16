@@ -45,11 +45,11 @@ namespace ISE182_PROJECT_G8.presentationLayer
         {
             get
             {
-                return MessageToEdit;
+                return messageToEdit;
             }
             set
             {
-                MessageToEdit = value;
+                messageToEdit = value;
                 OnPropertyChanged("MessageToEdit");
             }
         }
@@ -58,11 +58,11 @@ namespace ISE182_PROJECT_G8.presentationLayer
         {
             get
             {
-                return EditMode;
+                return editMode;
             }
             set
             {
-                EditMode = value;
+                editMode = value;
                 OnPropertyChanged("EditMode");
             }
         }

@@ -78,7 +78,7 @@
                 <Binding Path="Message" UpdateSourceTrigger="PropertyChanged"/>
             </TextBox.Text>
         </TextBox>
-        <TextBlock FontSize="25" TextAlignment="Left" IsHitTestVisible="False" Text=" Type your message here" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="68,351,0,-398" Foreground="DarkGray" Height="47" Width="353" Grid.RowSpan="2">
+        <TextBlock FontSize="25" TextAlignment="Left" IsHitTestVisible="False" Text=" Type your message here..." VerticalAlignment="Center" HorizontalAlignment="Left" Margin="467,480,0,-527" Foreground="DarkGray" Height="47" Width="353" Grid.RowSpan="2">
             <TextBlock.Style>
 
                 <Style TargetType="{x:Type TextBlock}">
@@ -96,6 +96,7 @@
                 </Style>
             </TextBlock.Style>
         </TextBlock>
+        
         <Button Click="Send_Button_Click" Name="send_button" Style="{StaticResource MyButtonStyle2}" Margin="989,470,-107.2,-521" Grid.Row="4" >
             <Button.Background>
                 <ImageBrush ImageSource="Images/send_btn.jpg"/>
@@ -106,10 +107,43 @@
                 <ImageBrush ImageSource="Images/logout_btn.jpg"/>
             </Button.Background>
         </Button>
-        <Button Click="Edit_Button_Click" Name="edit_button" Style="{StaticResource MyButtonStyle2}" Margin="1023,532,-71.2,-560" Grid.Row="4" >
+        
+        <Button Click="Edit_Button_Click" Name="edit_button" Margin="1023,532,-71.2,-560" Grid.Row="4" >
             <Button.Background>
                 <ImageBrush ImageSource="Images/edit.jpg"/>
             </Button.Background>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="OverridesDefaultStyle" Value="True"/>
+                    <Setter Property="Margin" Value="5"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border Name="border" 
+                            BorderThickness="1"
+                            Padding="4,2" 
+                            BorderBrush="DarkGray" 
+                            CornerRadius="3" 
+                            Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="border" Property="BorderBrush" Value="Black" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    
+                    <Setter Property="IsEnabled" Value="True"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Path=MessageToEdit}" Value="{x:Null}">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
         </Button>
         <TextBlock FontSize="40" HorizontalAlignment="Left" Margin="133,31,0,-94" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Height="63" Width="275" Text="Sort by"/>
         <RadioButton Content="Time stamp" IsChecked="{Binding ByTime}" GroupName="sortby" FontSize="14" HorizontalAlignment="Left" Height="17" Margin="133,99,0,-116" Grid.RowSpan="2" VerticalAlignment="Top" Checked="Sorter"/>
