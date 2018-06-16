@@ -158,7 +158,7 @@ namespace ISE182_PROJECT_G8.logicLayer
             addMsgs = messageRetriever.RetreiveMessages();
             if (addMsgs.Count > 0)
             {
-                needToReset = AddByKeepUniqueGuid(this.messageList, addMsgs);
+                needToReset = (AddByKeepUniqueGuid(this.messageList, addMsgs) | needToReset);
 
                 if (messageList.Count > msgLimit)
                 {
