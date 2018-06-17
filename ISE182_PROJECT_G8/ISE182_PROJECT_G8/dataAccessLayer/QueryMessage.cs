@@ -26,7 +26,7 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
         public override IList<Message> Select()
         {
             SqlDataReader data_reader;
-            IList<Message> messages = new List<Message>();
+            List<Message> messages = new List<Message>();
             try
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
@@ -48,6 +48,7 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
                         messages.Add(new Message(guid, nickname, sendTime, body, groupId.ToString()));
                     }
 
+                    messages.Reverse(); // send the messages via sendTime ASC
                     data_reader.Close();
                     command.Dispose();
                     return messages;
