@@ -152,9 +152,10 @@ namespace ISE182_PROJECT_G8.presentationLayer
 
         private void Sorter(object sender, EventArgs e)
         {
-            Sorter sorter = null;
+            
             ObservableCollection<Message> list = chatroomObserver.Messages;
             ObservableCollection<Message> nlist = null;
+            Sorter sorter = new SortByTime(list, true);
             if (chatroomObserver.ByAll)
             {
                 //Sort by all radio button clicked
