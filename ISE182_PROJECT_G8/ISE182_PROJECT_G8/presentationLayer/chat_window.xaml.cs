@@ -94,7 +94,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
             {
                 Guid guidOfEdit = chatroomObserver.MessageToEdit.getGuid();
 
-                if ((bool)chatroom.UpdateMessage(guidOfEdit, content)) //sundy needs to complete
+                if (chatroom.UpdateMessage(guidOfEdit, content)) //sundy needs to complete
                 {
                     Logger.Instance.Info("Message was edited successfully");
                     chatroomObserver.Message = "";
@@ -108,7 +108,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
 
             else //not on edit mode
             {
-                if ((bool)chatroom.Send(content))
+                if (chatroom.Send(content))
                 {
                     Logger.Instance.Info("Message was sent successfully");
                     chatroomObserver.Message = "";
@@ -131,8 +131,19 @@ namespace ISE182_PROJECT_G8.presentationLayer
 
         private void Edit_Button_Click(object sender, RoutedEventArgs e)
         {
-            if (chatroomObserver.MessageToEdit != null) //there is message to edit
-                chatroomObserver.EditMode = true; //then enable edit mode
+            if (chatroomObserver.EditMode == false)
+            {
+                if (chatroomObserver.MessageToEdit != null) //there is message to edit
+                {
+                    chatroomObserver.EditMode = true; //then enable edit mode
+                    chatroomObserver.Message = chatroomObserver.MessageToEdit.getContent();
+                }
+            }
+            else
+            {
+                chatroomObserver.EditMode = false;
+                chatroomObserver.Message = "";
+            }
 
         }
 

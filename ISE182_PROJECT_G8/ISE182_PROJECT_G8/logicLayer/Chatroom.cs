@@ -92,8 +92,9 @@ namespace ISE182_PROJECT_G8.logicLayer
 
         public bool UpdateMessage(Guid guidOfEdit, string content)
         {
-            DateTime sendTime =DateTime.UtcNow;
-            throw new NotImplementedException();
+            DateTime sendTime = DateTime.UtcNow;
+            DBA conn = new DBA();
+            return conn.UpdateMessage(guidOfEdit, sendTime, content);
         }
 
         public User GetLoggedInUser()

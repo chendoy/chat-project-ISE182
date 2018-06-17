@@ -126,6 +126,8 @@
   <ItemGroup>
     <Content Include="bin\Debug\ISE182_PROJECT_G8.exe" />
     <Content Include="bin\Debug\ISE182_PROJECT_G8.pdb" />
+    <Resource Include="presentationLayer\Images\cancel_edit.jpg" />
+    <Resource Include="presentationLayer\Images\edit_disabled.jpeg" />
     <Resource Include="presentationLayer\Images\edit.jpg" />
     <Resource Include="presentationLayer\Images\chat_background.jpg" />
     <Resource Include="presentationLayer\Images\chat_icon.ico" />

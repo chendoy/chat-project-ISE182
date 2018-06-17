@@ -29,7 +29,7 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
         {
             string where = $"{guidField} = @guid";
             SqlParameter guid_param = new SqlParameter(@"guid", SqlDbType.Char, 68);
-            guid_param.Value = this.guid;
+            guid_param.Value = this.guid.ToString();
             command.Parameters.Add(guid_param);
             return where;
         }
