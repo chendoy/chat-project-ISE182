@@ -9,8 +9,10 @@ namespace ISE182_PROJECT_G8.logicLayer
 {
 
     /*
-     Used to produce Hashed password for authentication 
+     Used to produce Hashed password for authentication
+     and validating the password according to the requirments
      */
+
     class Hashing
     {
         public static byte[] GetHash(string inputString)

@@ -11,6 +11,10 @@ using System.Threading.Tasks;
 
 namespace ISE182_PROJECT_G8.dataAccessLayer
 {
+    /*
+     * establishes the connection between the program and the 
+     * SQL-server. This class allows to create SQl commands
+     */
     class DBA
     {
         // Access via Chatroom
@@ -34,9 +38,9 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
             userquey.SetGroupFilter(groupId);
             userquey.SetNicknameFilter(nickname);
             IList<UserPL> userlist = userquey.Select();
-            if(userlist.Count == 1)
+            if (userlist.Count == 1)
             {
-                foreach(UserPL user in userlist)
+                foreach (UserPL user in userlist)
                 {
                     return user;
                 }

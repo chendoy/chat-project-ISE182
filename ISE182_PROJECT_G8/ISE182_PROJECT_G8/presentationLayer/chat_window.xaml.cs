@@ -31,6 +31,10 @@ namespace ISE182_PROJECT_G8.presentationLayer
         DispatcherTimer dispatcherTimer = new DispatcherTimer();  // member 
         //private ListBoxItem selectedItemInListBox;
 
+        private const string EDITABLE = "Images/edit.jpg";
+        private const string NOTEDITABLE = "Images/edit_disabled.jpeg";
+        private const string CANCELEDIT = "Images/cancel_edit.jpg";
+
         public chat_window(Chatroom chatroom)
         {
             chatroomObserver = new ChatroomObserver();
@@ -84,7 +88,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
 
             }
 
-
+            UpdateEditButtonImage();
         }
 
         private void Send_Button_Click(object sender, RoutedEventArgs e)
@@ -98,12 +102,16 @@ namespace ISE182_PROJECT_G8.presentationLayer
                 {
                     Logger.Instance.Info("Message was edited successfully");
                     chatroomObserver.Message = "";
+                    chatroomObserver.MessageToEdit = null;
                     UpdateMessageList();
                 }
                 else
                 {
                     chatroomObserver.Message = "";
                 }
+
+                chatroomObserver.EditMode = false;
+                UpdateEditButtonImage();
             }
 
             else //not on edit mode
@@ -144,6 +152,28 @@ namespace ISE182_PROJECT_G8.presentationLayer
                 chatroomObserver.EditMode = false;
                 chatroomObserver.Message = "";
             }
+
+            UpdateEditButtonImage();
+        }
+
+        private void UpdateEditButtonImage()
+        {
+            if (chatroomObserver.MessageToEdit != null)
+            {
+                if (chatroomObserver.EditMode)
+                {
+                    chatroomObserver.EditImage = CANCELEDIT;
+                }
+                else
+                {
+                    chatroomObserver.EditImage = EDITABLE;
+                }
+            }
+            else
+            {
+                chatroomObserver.EditImage = NOTEDITABLE;
+            }
+            
 
         }
 

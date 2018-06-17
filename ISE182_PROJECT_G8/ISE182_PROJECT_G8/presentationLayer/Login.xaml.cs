@@ -41,21 +41,30 @@ namespace ISE182_PROJECT_G8.presentationLayer
             {
                 String username = loginObserver.Username;
                 int groupID = int.Parse(loginObserver.GroupID);
-
-                if (chatroom.Login(username, groupID, password))
+                bool? checker = chatroom.Login(username, groupID, password);
+                if (checker.HasValue)
                 {
-                    if (loginObserver.RememberMe) //remember me was ticked - save the user//
+                    if (checker.Value)
                     {
-                        SaveRememberedUser(new User(username, groupID, "", -1));
+                        if (loginObserver.RememberMe) //remember me was ticked - save the user//
+                        {
+                            SaveRememberedUser(new User(username, groupID, "", -1));
+                        }
+                        else //wasn't ticked - save a "dummy" user
+                        {
+                            SaveRememberedUser(new User("", -1, "", -1));
+                        }
+                        Logger.Instance.Info("User: " + username + " logged-in successfully, starting chat window");
+                        chat_window chat_window = new chat_window(chatroom);
+                        chat_window.Show();
+                        this.Close();
                     }
-                    else //wasn't ticked - save a "dummy" user
+                    else
                     {
-                        SaveRememberedUser(new User("", -1, "", -1));
+                        loginObserver.ErrorMessage = "Password is incorrect Please try again";
+                        Logger.Instance.Error("User: " + username + "Typed incorrect Password ");
                     }
-                    Logger.Instance.Info("User: " + username + " logged-in successfully, starting chat window");
-                    chat_window chat_window = new chat_window(chatroom);
-                    chat_window.Show();
-                    this.Close();
+
                 }
                 else
                 {
@@ -65,7 +74,7 @@ namespace ISE182_PROJECT_G8.presentationLayer
 
             }
         }
-        
+
         private void Remember_Me_Checked(object sender, RoutedEventArgs e)
         {
 

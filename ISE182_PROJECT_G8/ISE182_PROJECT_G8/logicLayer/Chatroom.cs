@@ -24,7 +24,7 @@ namespace ISE182_PROJECT_G8.logicLayer
         private User rememberedUser;
         private const string SALT = "1337";
         private const int msgLimit = 200;
-        private DBA messageRetriever;
+        private DBA conn;
 
         //public constructor for chatroom
         public Chatroom()
@@ -34,7 +34,7 @@ namespace ISE182_PROJECT_G8.logicLayer
             this.messageList = new List<Message>(); //saver.LoadMessages(); //un-persisting messages data to RAM//
             this.userList = saver.LoadUsers(); //un-persisting users data to RAM//
             this.rememberedUser = saver.LoadRememberMe();
-            this.messageRetriever = new DBA();
+            this.conn = new DBA();
         }
 
         public bool Register(String nickname, int groupID, string password)
@@ -46,7 +46,6 @@ namespace ISE182_PROJECT_G8.logicLayer
             }
             else
             {
-                DBA conn = new DBA();
                 UserPL exsist = conn.GetUser(groupID, nickname);
                 if (exsist != null)
                 {
@@ -63,9 +62,9 @@ namespace ISE182_PROJECT_G8.logicLayer
             }
         }
 
-        public bool Login(string nickname, int groupId, string password)
+    public bool? Login(string nickname, int groupId, string password)
         {
-            DBA conn = new DBA();
+            //DBA conn = new DBA();
             //linq query to find existing user in 'userList'//
             var loggedin = conn.GetUser(groupId, nickname);
             if (loggedin != null)
@@ -86,14 +85,18 @@ namespace ISE182_PROJECT_G8.logicLayer
             else
             {
                 Logger.Instance.Error("User: " + nickname + " failed to log-in - doesn't exist");
-                return false;
+                return null;
             }
         }
 
         public bool UpdateMessage(Guid guidOfEdit, string content)
         {
+            if (!MessageHandler.isValid(content))
+            {
+                Logger.Instance.Error("Message was not valid");
+                return false;
+            }
             DateTime sendTime = DateTime.UtcNow;
-            DBA conn = new DBA();
             return conn.UpdateMessage(guidOfEdit, sendTime, content);
         }
 
@@ -126,7 +129,6 @@ namespace ISE182_PROJECT_G8.logicLayer
             }
             else
             {
-                DBA conn = new DBA();
                 User loggedInUser = GetLoggedInUser();
                 if (loggedInUser != null)
                 {
@@ -156,13 +158,13 @@ namespace ISE182_PROJECT_G8.logicLayer
         public bool RetreiveMessages(out IList<Message> addMsgs) // Need to check 200
         {
             bool needToReset = false;
-            if (!messageRetriever.HasTimeFilter()) // Means the filter changed and need to reload all the messages
+            if (!conn.HasTimeFilter()) // Means the filter changed and need to reload all the messages
             {
                 this.messageList = new List<Message>();
                 needToReset = true;
             }
 
-            addMsgs = messageRetriever.RetreiveMessages();
+            addMsgs = conn.RetreiveMessages();
             if (addMsgs.Count > 0)
             {
                 needToReset = (AddByKeepUniqueGuid(this.messageList, addMsgs) | needToReset);
@@ -183,7 +185,7 @@ namespace ISE182_PROJECT_G8.logicLayer
                 addMsgs = this.messageList;
             }
 
-            messageRetriever.SetTimeFilter(DateTime.UtcNow); // For receiving only new messages
+            conn.SetTimeFilter(DateTime.UtcNow); // For receiving only new messages
 
             return needToReset;
         }
@@ -211,25 +213,25 @@ namespace ISE182_PROJECT_G8.logicLayer
         #region Filters
         public void SetGroupFilter(int? groupId)
         {
-            bool filterChanged = messageRetriever.SetGroupFilter(groupId);
+            bool filterChanged = conn.SetGroupFilter(groupId);
             if (filterChanged)
             {
-                messageRetriever.SetTimeFilter(null);
+                conn.SetTimeFilter(null);
             }
         }
 
         public void SetNicknameFilter(string nickname)
         {
-            bool filterChanged = messageRetriever.SetNicknameFilter(nickname);
+            bool filterChanged = conn.SetNicknameFilter(nickname);
             if (filterChanged)
             {
-                messageRetriever.SetTimeFilter(null);
+                conn.SetTimeFilter(null);
             }
         }
 
         public void ClearFilters()
         {
-            messageRetriever.ClearFilters();
+            conn.ClearFilters();
         }
 
         #endregion

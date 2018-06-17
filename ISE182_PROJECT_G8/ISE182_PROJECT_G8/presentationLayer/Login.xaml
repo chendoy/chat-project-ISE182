@@ -87,7 +87,7 @@
 
             </Label.Style>
         </Label>
-        <TextBox FontFamily="Century Gothic" HorizontalContentAlignment="Center" FontSize="30" Background="Transparent" Padding="6,3,0,0" Width="244"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-202,130,0,116.2" Height="57" Grid.Row="2" BorderThickness="2" BorderBrush="#FFA7BBFA" Grid.RowSpan="2">
+        <TextBox FontFamily="Century Gothic" HorizontalContentAlignment="Center" FontSize="30" Background="Transparent" Padding="6,3,0,0" Width="244"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-202,130,0,116.2" Height="57" Grid.Row="2" BorderThickness="2" BorderBrush="#FFA7BBFA" Grid.RowSpan="2" MaxLength="8">
             <TextBox.Text>
                 <Binding Path="Username" UpdateSourceTrigger="PropertyChanged"/>
             </TextBox.Text>

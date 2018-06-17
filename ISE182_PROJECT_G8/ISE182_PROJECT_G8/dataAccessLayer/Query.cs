@@ -7,6 +7,12 @@ using System.Threading.Tasks;
 
 namespace ISE182_PROJECT_G8.dataAccessLayer
 {
+
+    /*
+     * Abstract query. We use this class to create queries that will be 
+     * executed on the DB. There are two child-classes that extends this class
+     */
+
     abstract class Query<T>
     {
         protected string connectionString;

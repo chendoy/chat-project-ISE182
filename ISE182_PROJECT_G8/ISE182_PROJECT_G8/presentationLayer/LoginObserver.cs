@@ -8,6 +8,10 @@ using System.Threading.Tasks;
 using System.Windows;
 
 namespace ISE182_PROJECT_G8.presentationLayer
+
+    /*
+     * responsible for the view-model of the login window
+     */
 {
     public class LoginObserver : INotifyPropertyChanged
     {

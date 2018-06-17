@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 
 namespace ISE182_PROJECT_G8.presentationLayer
 {
+    /*
+    * responsible for the view-model of the chatroom window
+    */
     public class ChatroomObserver : INotifyPropertyChanged
 
 
@@ -67,6 +70,19 @@ namespace ISE182_PROJECT_G8.presentationLayer
             }
         }
 
+        private string editImage = "Images/edit_disabled.jpeg";
+        public string EditImage
+        {
+            get
+            {
+                return editImage;
+            }
+            set
+            {
+                editImage = value;
+                OnPropertyChanged("EditImage");
+            }
+        }
 
         private Boolean gidEnable;
         public Boolean GidEnable

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -26,6 +27,9 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
 
         public string GenerateWhereClause(SqlCommand command)
         {
+            SqlParameter groupid_param = new SqlParameter(@"groupId", SqlDbType.Int, 20);
+            groupid_param.Value = groupId;
+            command.Parameters.Add(groupid_param);
             return $"{groupField} = {groupId.ToString()}";
         }
     }

@@ -52,12 +52,6 @@ namespace Chat_Tests
 
             Assert.IsFalse(chatroom.Send("This will probably not be sent"));
             Assert.IsFalse(chatroom.Send("This will not either"));
-            chatroom.Register("chendoy"+ appendix, appendix, dummyPassword);
-            chatroom.Login("chendoy"+ appendix, appendix, dummyPassword);
-            Assert.IsTrue(chatroom.Send("This SHOULD be sent"));
-            chatroom.LogOut();
-            Assert.IsFalse(chatroom.Send("Aaaaand this won't"));
-            Assert.IsFalse(chatroom.Send("This will not either"));
         }
 
         [TestMethod]
@@ -78,7 +72,7 @@ namespace Chat_Tests
 
             String dummyPassword = "1234";
             Random rnd = new Random();
-            int appendix = rnd.Next(1000);
+            int appendix = rnd.Next(9);
             Chatroom chatroom = new Chatroom();
 
             chatroom.Register("chendoy"+ appendix, appendix, dummyPassword);
@@ -99,12 +93,12 @@ namespace Chat_Tests
             chatroom.clearUsersList();
             String dummyPassword = "1234";
             Random rnd = new Random();
-            int appendix = rnd.Next(1000);
+            int appendix = rnd.Next(9);
    
 
-            Assert.IsTrue(chatroom.Register("bruce_wayne"+ appendix, appendix, dummyPassword));
-            Assert.IsTrue(chatroom.Register("peter_parker8"+ appendix, appendix, dummyPassword));
-            Assert.IsTrue(chatroom.Register("clark_kent"+ appendix, appendix, dummyPassword));
+            Assert.IsTrue(chatroom.Register("bruce"+ appendix, appendix, dummyPassword));
+            Assert.IsTrue(chatroom.Register("peter"+ appendix, appendix, dummyPassword));
+            Assert.IsTrue(chatroom.Register("clark"+ appendix, appendix, dummyPassword));
         }
 
         [TestMethod]
@@ -115,11 +109,11 @@ namespace Chat_Tests
             Random rnd = new Random();
             int appendix = rnd.Next(1000);
 
-            Assert.IsFalse(chatroom.Login("chendoy"+ appendix, appendix, dummyPassword));
-            Assert.IsFalse(chatroom.Login("Bruce_Wayne"+ appendix, appendix, dummyPassword));
-            Assert.IsFalse(chatroom.Login("clark_kent"+ appendix, appendix, dummyPassword));
-            Assert.IsFalse(chatroom.Login("peter_parker8"+ appendix, appendix, dummyPassword));
-            Assert.IsFalse(chatroom.Login("tony_stark"+ appendix, appendix, dummyPassword));
+            Assert.IsNull((chatroom.Login("chendoy"+ appendix, appendix, dummyPassword)));
+            Assert.IsNull(chatroom.Login("Bruce_Wayne"+ appendix, appendix, dummyPassword));
+            Assert.IsNull(chatroom.Login("clark_kent"+ appendix, appendix, dummyPassword));
+            Assert.IsNull(chatroom.Login("peter_parker8"+ appendix, appendix, dummyPassword));
+            Assert.IsNull(chatroom.Login("tony_stark"+ appendix, appendix, dummyPassword));
         }
 
     }

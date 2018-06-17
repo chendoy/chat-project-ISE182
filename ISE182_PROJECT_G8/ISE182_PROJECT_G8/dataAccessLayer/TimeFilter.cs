@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -19,8 +20,11 @@ namespace ISE182_PROJECT_G8.dataAccessLayer
 
         public string GenerateWhereClause(SqlCommand command)
         {
-            string dateToString = this.dateTime.ToString("yyyy'-'MM'-'dd HH':'mm':'ss'.'fff", System.Globalization.DateTimeFormatInfo.InvariantInfo);
-            string whereClause = $"{dateField} >= '{dateToString}'";
+            //string dateToString = this.dateTime.ToString("yyyy'-'MM'-'dd HH':'mm':'ss'.'fff", System.Globalization.DateTimeFormatInfo.InvariantInfo);
+            SqlParameter date_param = new SqlParameter(@"dateTime", SqlDbType.DateTime, 8);
+            date_param.Value = dateTime;
+            command.Parameters.Add(date_param);
+            string whereClause = $"{dateField} >= @dateTime";
             return whereClause;
         }
     }

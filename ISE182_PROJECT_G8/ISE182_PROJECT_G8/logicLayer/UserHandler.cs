@@ -12,6 +12,8 @@ namespace ISE182_PROJECT_G8.logicLayer
      */
     public static class UserHandler
     {
+        private const int maxNicknameLength = 8; //magic number
+
         //returns true if 'user' exists in 'userList' using a linq query//
         public static Boolean existIn(User user, List<User> userList)
         {
@@ -24,7 +26,7 @@ namespace ISE182_PROJECT_G8.logicLayer
         
         public static Boolean isValid(String nickname, int groupID)
         {
-            Boolean nicknameVaild = (nickname.Length > 0) && (!nickname.Contains(" "));
+            Boolean nicknameVaild = (nickname.Length > 0) && nickname.Length<= maxNicknameLength && (!nickname.Contains(" "));
             Boolean groupIDValid = groupID >= 1;
             Logger.Instance.Info("User and group id validation performed");
             return groupIDValid & nicknameVaild;

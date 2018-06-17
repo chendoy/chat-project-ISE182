@@ -32,6 +32,41 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <ImageBrush x:Key="EditImage" ImageSource="Images/edit.jpg"></ImageBrush>
+        <ImageBrush x:Key="DisEditImage" ImageSource="Images/edit_disabled.jpeg"></ImageBrush>
+        <ImageBrush x:Key="CancelEditImage" ImageSource="Images/cancel_edit.jpg"></ImageBrush>
+        <Style x:Key="MyEditButton" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" 
+                            BorderThickness="1"
+                            Padding="4,2" 
+                            BorderBrush="DarkGray" 
+                            CornerRadius="3" 
+                            Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="Black" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Background" Value="{StaticResource EditImage}"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding EditImage}" Value="Images/edit_disabled.jpeg">
+                    <Setter Property="Background" Value="{StaticResource DisEditImage}"></Setter>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding EditImage}" Value="Images/cancel_edit.jpg">
+                    <Setter Property="Background" Value="{StaticResource CancelEditImage}" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
     </Window.Resources>
     <Window.Background>
         <ImageBrush ImageSource="Images/chat_background.jpg"></ImageBrush>
@@ -107,44 +142,13 @@
                 <ImageBrush ImageSource="Images/logout_btn.jpg"/>
             </Button.Background>
         </Button>
-        
-        <Button Click="Edit_Button_Click" Name="edit_button" Margin="1023,532,-71.2,-560" Grid.Row="4" >
-            <Button.Background>
-                <ImageBrush ImageSource="Images/edit.jpg"/>
-            </Button.Background>
-            <Button.Style>
-                <Style TargetType="{x:Type Button}">
-                    <Setter Property="OverridesDefaultStyle" Value="True"/>
-                    <Setter Property="Margin" Value="5"/>
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="Button">
-                                <Border Name="border" 
-                            BorderThickness="1"
-                            Padding="4,2" 
-                            BorderBrush="DarkGray" 
-                            CornerRadius="3" 
-                            Background="{TemplateBinding Background}">
-                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                </Border>
-                                <ControlTemplate.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter TargetName="border" Property="BorderBrush" Value="Black" />
-                                    </Trigger>
-                                </ControlTemplate.Triggers>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                    
-                    <Setter Property="IsEnabled" Value="True"/>
-                    <Style.Triggers>
-                        <DataTrigger Binding="{Binding Path=MessageToEdit}" Value="{x:Null}">
-                            <Setter Property="IsEnabled" Value="False"/>
-                        </DataTrigger>
-                    </Style.Triggers>
-                </Style>
-            </Button.Style>
+
+        <Button Click="Edit_Button_Click" Name="edit_button" Style="{StaticResource MyEditButton}" Margin="1023,532,-71.2,-560" Grid.Row="4" >
+            
         </Button>
+
+
+
         <TextBlock FontSize="40" HorizontalAlignment="Left" Margin="133,31,0,-94" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Height="63" Width="275" Text="Sort by"/>
         <RadioButton Content="Time stamp" IsChecked="{Binding ByTime}" GroupName="sortby" FontSize="14" HorizontalAlignment="Left" Height="17" Margin="133,99,0,-116" Grid.RowSpan="2" VerticalAlignment="Top" Checked="Sorter"/>
         <RadioButton Content="Nickname"  GroupName="sortby"  IsChecked="{Binding ByName}" HorizontalAlignment="Left" Height="15" Margin="133,121,0,-136" Grid.RowSpan="2" VerticalAlignment="Top" Checked="Sorter"/>
