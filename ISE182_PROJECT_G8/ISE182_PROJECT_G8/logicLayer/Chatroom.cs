@@ -155,7 +155,7 @@ namespace ISE182_PROJECT_G8.logicLayer
         }
         
 
-        public bool RetreiveMessages(out IList<Message> addMsgs) // Need to check 200
+        public bool RetreiveMessages(out IList<Message> addMsgs) 
         {
             bool needToReset = false;
             if (!conn.HasTimeFilter()) // Means the filter changed and need to reload all the messages

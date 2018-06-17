@@ -75,14 +75,14 @@ namespace Chat_Tests
             int appendix = rnd.Next(9);
             Chatroom chatroom = new Chatroom();
 
-            chatroom.Register("chendoy"+ appendix, appendix, dummyPassword);
-            chatroom.Login("chendoy"+ appendix, appendix, dummyPassword);
+            chatroom.Register("chend"+ appendix, appendix, dummyPassword);
+            chatroom.Login("chend"+ appendix, appendix, dummyPassword);
             chatroom.LogOut();
             Assert.IsNull(chatroom.GetLoggedInUser());
-            chatroom.Login("chendoy"+ appendix, appendix, dummyPassword);
+            chatroom.Login("chend"+ appendix, appendix, dummyPassword);
             chatroom.LogOut();
             Assert.IsNull(chatroom.GetLoggedInUser());
-            chatroom.Login("chendoy"+ appendix, appendix, dummyPassword);
+            chatroom.Login("chend"+ appendix, appendix, dummyPassword);
             Assert.IsNotNull(chatroom.GetLoggedInUser());
         }
 
@@ -96,9 +96,9 @@ namespace Chat_Tests
             int appendix = rnd.Next(9);
    
 
-            Assert.IsTrue(chatroom.Register("bruce"+ appendix, appendix, dummyPassword));
-            Assert.IsTrue(chatroom.Register("peter"+ appendix, appendix, dummyPassword));
-            Assert.IsTrue(chatroom.Register("clark"+ appendix, appendix, dummyPassword));
+            Assert.IsTrue(chatroom.Register("bruc"+ appendix, appendix, dummyPassword));
+            Assert.IsTrue(chatroom.Register("pete"+ appendix, appendix, dummyPassword));
+            Assert.IsTrue(chatroom.Register("clar"+ appendix, appendix, dummyPassword));
         }
 
         [TestMethod]
