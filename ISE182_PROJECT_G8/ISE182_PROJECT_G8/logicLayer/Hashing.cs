@@ -31,7 +31,7 @@ namespace ISE182_PROJECT_G8.logicLayer
         {
             if (password.Length < 4 || password.Length > 16)
                 return false;
-           return password.All(c => Char.IsLetterOrDigit(c) || c.Equals('_'));
+           return password.All(c => Char.IsLetterOrDigit(c));
            
         }
 

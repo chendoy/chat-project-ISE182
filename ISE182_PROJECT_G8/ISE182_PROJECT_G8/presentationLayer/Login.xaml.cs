@@ -44,11 +44,9 @@ namespace ISE182_PROJECT_G8.presentationLayer
 
                 if (chatroom.Login(username, groupID, password))
                 {
-                    //*
                     if (loginObserver.RememberMe) //remember me was ticked - save the user//
                     {
                         SaveRememberedUser(new User(username, groupID, "", -1));
-
                     }
                     else //wasn't ticked - save a "dummy" user
                     {
@@ -78,17 +76,20 @@ namespace ISE182_PROJECT_G8.presentationLayer
             string password = loginObserver.Password;
             if (password != null) {
 
-                if (chatroom.Register(loginObserver.Username, Int32.Parse(loginObserver.GroupID),loginObserver.Password))
-                {
-                    Logger.Instance.Info("User registered successfully");
-                    loginObserver.ErrorMessage = "User registered successfully!";
-                }
-            
-            else
-            {
-                Logger.Instance.Error("Incorrect input was entered while trying to register");
-                loginObserver.ErrorMessage = "Incorrect input...please try again";
-            }
+               
+
+                    if (chatroom.Register(loginObserver.Username, Int32.Parse(loginObserver.GroupID), loginObserver.Password))
+                    {
+                        Logger.Instance.Info("User registered successfully");
+                        loginObserver.ErrorMessage = "User registered successfully!";
+                    }
+
+                    else //registeration wasn't successfull  
+                    {
+                        Logger.Instance.Error("Incorrect input was entered while trying to register");
+                        loginObserver.ErrorMessage = "User Already Exist";
+                    }
+                
 }
 
         }
@@ -131,10 +132,15 @@ namespace ISE182_PROJECT_G8.presentationLayer
             loginObserver.PasswordEmpty = string.IsNullOrWhiteSpace(pb.Password);
             if (Hashing.isValid(pb.Password))
             {
-                loginObserver.Password = Hashing.GetHashString(pb.Password + SALT);  
+                loginObserver.Password = Hashing.GetHashString(pb.Password + SALT);
+                loginObserver.ErrorMessage = "";
             }
-            else
+            else //pasword is invalid
+            {
+                loginObserver.ErrorMessage = "Password is Invalid";
+                Logger.Instance.Error("User " + loginObserver.Username + " tried to register with invalid password");
                 loginObserver.Password = null;
+            }
             
         }
     }

@@ -1921,3 +1921,136 @@
 2018-06-16 15:28:47,466 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Connected to the database
 2018-06-16 15:28:47,469 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Found 0  users with same nickname:tony_stark449 and id:449
 2018-06-16 15:28:47,469 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - User: tony_stark449 failed to log-in - doesn't exist
+2018-06-17 14:29:58,708 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-06-17 14:29:58,734 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User and group id validation performed
+2018-06-17 14:29:58,734 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-06-17 14:29:58,741 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User and group id validation performed
+2018-06-17 14:29:58,741 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-06-17 14:29:58,741 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User and group id validation performed
+2018-06-17 14:29:58,741 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-06-17 14:29:58,741 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User and group id validation performed
+2018-06-17 14:29:58,741 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-06-17 14:29:58,741 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User and group id validation performed
+2018-06-17 14:29:58,741 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-06-17 14:29:58,741 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User and group id validation performed
+2018-06-17 14:29:58,741 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-06-17 14:29:58,741 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User and group id validation performed
+2018-06-17 14:29:58,741 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-06-17 14:29:58,741 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User and group id validation performed
+2018-06-17 14:29:58,741 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-06-17 14:29:58,741 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User and group id validation performed
+2018-06-17 14:29:58,741 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Register info was not valid
+2018-06-17 14:29:58,748 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-06-17 14:29:58,748 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User and group id validation performed
+2018-06-17 14:29:58,748 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-06-17 14:29:58,748 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User and group id validation performed
+2018-06-17 14:29:59,065 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Connected to the database
+2018-06-17 14:29:59,161 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User and group id validation performed
+2018-06-17 14:29:59,161 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: Chen of group 8 created successfully
+2018-06-17 14:29:59,184 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User:Chen already exsist
+2018-06-17 14:29:59,199 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Connected to the database
+2018-06-17 14:29:59,199 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User and group id validation performed
+2018-06-17 14:29:59,199 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: Chen of group 8 created successfully
+2018-06-17 14:29:59,199 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: Chentypped wrong password
+2018-06-17 14:29:59,199 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Message content validation returned: Not Valid
+2018-06-17 14:29:59,199 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Message was not valid
+2018-06-17 14:29:59,199 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Message content validation returned: Not Valid
+2018-06-17 14:29:59,199 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Message was not valid
+2018-06-17 14:29:59,199 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Message content validation returned: Not Valid
+2018-06-17 14:29:59,199 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Message was not valid
+2018-06-17 14:29:59,199 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Message content validation returned: Not Valid
+2018-06-17 14:29:59,199 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Message was not valid
+2018-06-17 14:29:59,199 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-06-17 14:29:59,199 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User and group id validation performed
+2018-06-17 14:29:59,199 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-06-17 14:29:59,199 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Tried to send message without login
+2018-06-17 14:29:59,199 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Tried to send message without login
+2018-06-17 14:29:59,199 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User and group id validation performed
+2018-06-17 14:29:59,199 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Connected to the database
+2018-06-17 14:29:59,199 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Found 0  users with same nickname:chendoy121 and id:121
+2018-06-17 14:29:59,215 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Connected to the database
+2018-06-17 14:29:59,216 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was persisted successfully
+2018-06-17 14:29:59,223 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: chendoy121 registered successfully
+2018-06-17 14:29:59,223 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Connected to the database
+2018-06-17 14:29:59,224 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User and group id validation performed
+2018-06-17 14:29:59,224 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: chendoy1 of group 121 created successfully
+2018-06-17 14:29:59,224 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User and group id validation performed
+2018-06-17 14:29:59,224 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: chendoy1 of group 121 created successfully
+2018-06-17 14:29:59,224 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: chendoy121 is now logged in to the chat
+2018-06-17 14:29:59,227 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Connected to the database
+2018-06-17 14:29:59,228 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Chatroom: asks chendoy1 to send message
+2018-06-17 14:29:59,228 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Message was sent successfully
+2018-06-17 14:29:59,228 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Chatroom: user chendoy1 logged-out
+2018-06-17 14:29:59,228 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Tried to send message without login
+2018-06-17 14:29:59,228 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Tried to send message without login
+2018-06-17 14:29:59,228 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Message content validation returned: Not Valid
+2018-06-17 14:29:59,228 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Message content validation returned: Not Valid
+2018-06-17 14:29:59,228 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Message content validation returned: Not Valid
+2018-06-17 14:29:59,228 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-06-17 14:29:59,228 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User and group id validation performed
+2018-06-17 14:29:59,228 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-06-17 14:29:59,228 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User and group id validation performed
+2018-06-17 14:29:59,228 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Connected to the database
+2018-06-17 14:29:59,228 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Found 0  users with same nickname:chendoy316 and id:316
+2018-06-17 14:29:59,228 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Connected to the database
+2018-06-17 14:29:59,248 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was persisted successfully
+2018-06-17 14:29:59,248 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: chendoy316 registered successfully
+2018-06-17 14:29:59,248 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Connected to the database
+2018-06-17 14:29:59,293 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User and group id validation performed
+2018-06-17 14:29:59,293 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: chendoy3 of group 316 created successfully
+2018-06-17 14:29:59,293 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User and group id validation performed
+2018-06-17 14:29:59,293 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: chendoy3 of group 316 created successfully
+2018-06-17 14:29:59,293 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: chendoy316 is now logged in to the chat
+2018-06-17 14:29:59,293 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Chatroom: user chendoy3 logged-out
+2018-06-17 14:29:59,293 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Connected to the database
+2018-06-17 14:29:59,293 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User and group id validation performed
+2018-06-17 14:29:59,293 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: chendoy3 of group 316 created successfully
+2018-06-17 14:29:59,293 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User and group id validation performed
+2018-06-17 14:29:59,293 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: chendoy3 of group 316 created successfully
+2018-06-17 14:29:59,293 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: chendoy316 is now logged in to the chat
+2018-06-17 14:29:59,293 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Chatroom: user chendoy3 logged-out
+2018-06-17 14:29:59,293 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Connected to the database
+2018-06-17 14:29:59,302 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User and group id validation performed
+2018-06-17 14:29:59,302 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: chendoy3 of group 316 created successfully
+2018-06-17 14:29:59,302 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User and group id validation performed
+2018-06-17 14:29:59,302 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: chendoy3 of group 316 created successfully
+2018-06-17 14:29:59,302 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: chendoy316 is now logged in to the chat
+2018-06-17 14:29:59,302 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-06-17 14:29:59,302 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User and group id validation performed
+2018-06-17 14:29:59,302 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-06-17 14:29:59,302 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User and group id validation performed
+2018-06-17 14:29:59,302 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Connected to the database
+2018-06-17 14:29:59,302 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Found 0  users with same nickname:bruce_wayne65 and id:65
+2018-06-17 14:29:59,302 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Connected to the database
+2018-06-17 14:29:59,317 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was persisted successfully
+2018-06-17 14:29:59,317 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: bruce_wayne65 registered successfully
+2018-06-17 14:29:59,317 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User and group id validation performed
+2018-06-17 14:29:59,317 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Connected to the database
+2018-06-17 14:29:59,318 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Found 0  users with same nickname:peter_parker865 and id:65
+2018-06-17 14:29:59,318 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Connected to the database
+2018-06-17 14:29:59,324 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was persisted successfully
+2018-06-17 14:29:59,324 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: peter_parker865 registered successfully
+2018-06-17 14:29:59,324 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User and group id validation performed
+2018-06-17 14:29:59,325 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Connected to the database
+2018-06-17 14:29:59,326 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Found 0  users with same nickname:clark_kent65 and id:65
+2018-06-17 14:29:59,326 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Connected to the database
+2018-06-17 14:29:59,330 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was persisted successfully
+2018-06-17 14:29:59,330 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User: clark_kent65 registered successfully
+2018-06-17 14:29:59,334 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Users data was loaded successfully
+2018-06-17 14:29:59,334 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - User and group id validation performed
+2018-06-17 14:29:59,334 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - Failed to create User:  of group -1 already exist
+2018-06-17 14:29:59,334 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Connected to the database
+2018-06-17 14:29:59,336 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Found 0  users with same nickname:chendoy783 and id:783
+2018-06-17 14:29:59,336 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - User: chendoy783 failed to log-in - doesn't exist
+2018-06-17 14:29:59,336 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Connected to the database
+2018-06-17 14:29:59,336 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Found 0  users with same nickname:Bruce_Wayne783 and id:783
+2018-06-17 14:29:59,336 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - User: Bruce_Wayne783 failed to log-in - doesn't exist
+2018-06-17 14:29:59,336 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Connected to the database
+2018-06-17 14:29:59,346 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Found 0  users with same nickname:clark_kent783 and id:783
+2018-06-17 14:29:59,346 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - User: clark_kent783 failed to log-in - doesn't exist
+2018-06-17 14:29:59,346 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Connected to the database
+2018-06-17 14:29:59,349 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Found 0  users with same nickname:peter_parker8783 and id:783
+2018-06-17 14:29:59,350 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - User: peter_parker8783 failed to log-in - doesn't exist
+2018-06-17 14:29:59,350 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Connected to the database
+2018-06-17 14:29:59,352 [16] INFO  ISE182_PROJECT_G8.persistantLayer.Logger - Found 0  users with same nickname:tony_stark783 and id:783
+2018-06-17 14:29:59,352 [16] ERROR ISE182_PROJECT_G8.persistantLayer.Logger - User: tony_stark783 failed to log-in - doesn't exist
